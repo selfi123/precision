@@ -1,0 +1,24 @@
+{
+  "name": "precision-allele-dx",
+  "version": "1.0.0",
+  "description": "Precision Allele.Dx - Official Company Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "diagnostics",
+    "oncology",
+    "precision-medicine",
+    "healthcare"
+  ],
+  "author": "Precision Allele.Dx",
+  "license": "UNLICENSED"
+}

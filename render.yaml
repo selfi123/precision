@@ -1,0 +1,14 @@
+# Render Deployment Configuration
+# https://render.com/docs/render-yaml
+
+services:
+  - type: web
+    name: precision-allele-dx
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
