@@ -76,8 +76,8 @@
 
   /* Text (Dark for Light Theme) */
   --text-primary:   #0F172A; /* Slate 900 */
-  --text-secondary: #475569; /* Slate 600 */
-  --text-muted:     #64748B; /* Slate 500 */
+  --text-secondary: #334155; /* Slate 700 (Darkened for contrast) */
+  --text-muted:     #475569; /* Slate 600 (Darkened for contrast) */
   --text-accent:    var(--indigo-mid);
 
   /* Typography */
@@ -1187,28 +1187,73 @@ a.contact-value:hover { color: var(--cyan); }
 .footer-contact address { display: flex; flex-direction: column; gap: 0.6rem; margin-top: var(--space-sm); }
 
 .footer-bottom {
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--color-border-subtle);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 .footer-bottom .container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
   gap: var(--space-sm);
-}
-.footer-bottom p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  color: #94A3B8;
+  font-size: 0.9rem;
 }
 .footer-legal {
   display: flex;
   gap: var(--space-md);
 }
-.footer-legal a {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  transition: color var(--transition-base);
+.footer-legal a { color: #94A3B8; }
+.footer-legal a:hover { color: #fff; }
+
+@media (max-width: 768px) {
+  .footer-bottom .container { flex-direction: column; text-align: center; }
+}
+
+/* ============================================================
+   SECTION OVERVIEW IMAGES (Added for Visual Enhancements)
+   ============================================================ */
+
+.section-overview-img {
+  width: 100%;
+  height: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.layout-2col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .layout-2col {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.img-banner-container {
+  width: 100%;
+  margin-bottom: var(--space-lg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.img-banner-container img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  display: block;
 }
 .footer-legal a:hover { color: var(--cyan); }
 
