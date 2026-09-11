@@ -324,7 +324,6 @@ function initHeroScrollAnimation() {
       end:   'bottom bottom',   // 300vh => 2 viewports of scroll
       scrub: 1.2,               // smooth scrubbing
       pin:   false,             // sticky CSS handles the pin
-      invalidateOnRefresh: true,
       onUpdate: (self) => {
         /* Scroll progress bar */
         if (progressBar) progressBar.style.width = (self.progress * 100) + '%';
@@ -356,18 +355,18 @@ function initHeroScrollAnimation() {
     }, 0.1)
 
     /* 0.3 – 0.42: phase-0 fades out */
-    .to(phase0, {
-      autoAlpha: 0,
-      y: -30,
-      duration: 0.12,
-    }, 0.3)
+    .fromTo(phase0,
+      { autoAlpha: 1, y: 0 },
+      { autoAlpha: 0, y: -30, duration: 0.12 },
+      0.3
+    )
 
     /* 0.38 – 0.55: phase-1 fades in (stats) */
-    .to(phase1, {
-      autoAlpha: 1,
-      duration: 0.17,
-      onStart: () => triggerStatCounters(),
-    }, 0.38)
+    .fromTo(phase1,
+      { autoAlpha: 0 },
+      { autoAlpha: 1, duration: 0.17, onStart: () => triggerStatCounters() },
+      0.38
+    )
 
   /* ============================================
      PHASE 1 → PHASE 2  (progress 0.45 → 0.85)
@@ -400,10 +399,11 @@ function initHeroScrollAnimation() {
     }, 0.65)
 
     /* 0.72 – 0.84: phase-2 fades in */
-    .to(phase2, {
-      autoAlpha: 1,
-      duration: 0.12,
-    }, 0.72)
+    .fromTo(phase2,
+      { autoAlpha: 0 },
+      { autoAlpha: 1, duration: 0.12 },
+      0.72
+    )
 
   /* ============================================
      PHASE 2 → EXIT  (progress 0.85 → 1.0)
