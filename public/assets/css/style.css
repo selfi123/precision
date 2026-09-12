@@ -12,9 +12,9 @@
 /* ---- 1. CSS CUSTOM PROPERTIES (Design Tokens) ---- */
 :root {
   /* ── Light Backgrounds (Clinical / Hospital-friendly) ── */
-  --color-bg:            #F8FAFC; /* Slate 50 */
-  --color-bg-2:          #F1F5F9; /* Slate 100 */
-  --color-bg-3:          #E2E8F0; /* Slate 200 */
+  --color-bg:            #FFFFFF; /* Pure White as requested */
+  --color-bg-2:          #F8FAFC; /* Slate 50 */
+  --color-bg-3:          #F1F5F9; /* Slate 100 */
   --color-surface:       #FFFFFF; /* Pure White */
   --color-surface-2:     #F8FAFC; /* Slate 50 */
   --color-border:        rgba(15, 23, 42, 0.1);
@@ -113,6 +113,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 html {
@@ -432,50 +437,17 @@ address { font-style: normal; }
 .nav-hamburger.active span:nth-child(2) { opacity: 0; }
 .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
 
-/* ---- 7. HERO SECTION — Scroll-Driven 3D ---- */
-
-/*
- * Layout:
- *  .hero-outer   → 300vh tall; GSAP ScrollTrigger's trigger element
- *  .hero-sticky  → sticky viewport panel; stays in view while scrolling
- *  #hero-canvas  → Three.js fullscreen canvas inside sticky panel
- *  .hero-phase   → absolutely positioned text overlay, animated by GSAP
- */
-
-/* WebGL Fallback */
-.hero-webgl-fallback {
-  display: none; /* shown via JS if WebGL unavailable */
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
-.hero-webgl-fallback.visible { display: block; }
-.fallback-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.35) saturate(1.4);
-}
-
-/* Outer scroll-space container (300vh gives GSAP its scroll distance) */
-.hero-outer {
+/* ---- 7. HERO SECTION (Standard) ---- */
+.hero-section {
   position: relative;
-  height: 300vh;
-  /* No overflow:hidden here — we want the sticky child to work */
-}
-
-/* Sticky viewport panel — stays fixed while .hero-outer scrolls past */
-.hero-sticky {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg);
   overflow: hidden;
-  /* stacking context so canvas and overlays layer correctly */
-  isolation: isolate;
 }
 
-/* Three.js canvas fills the sticky panel */
+/* Three.js canvas fills the section */
 #hero-canvas {
   position: absolute;
   inset: 0;
@@ -486,43 +458,20 @@ address { font-style: normal; }
   display: block;
 }
 
-/* Radial vignette to ground the 3D scene */
-.hero-vignette {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, rgba(6,11,24,0.6) 100%),
-    linear-gradient(to bottom, rgba(6,11,24,0.4) 0%, transparent 20%, transparent 80%, rgba(6,11,24,0.8) 100%);
+@media (max-width: 768px) {
+  #hero-canvas {
+    display: none !important;
+  }
 }
 
-/* ---- Phase text overlays (positioned within .hero-sticky) ---- */
-.hero-phase {
-  position: absolute;
-  inset: 0;
+.hero-content {
+  position: relative;
   z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 clamp(1.5rem, 6vw, 8rem);
   padding-top: 80px; /* clear navbar */
-  /* GSAP controls opacity/transform; start hidden for phase 1+ */
-  pointer-events: none; /* let GSAP enable interaction when visible */
-}
-/* Phase 0 starts visible */
-#phase-0 {
-  visibility: visible;
-  opacity: 1;
-}
-/* Phase 1 & 2 start hidden, GSAP will scrub them in using autoAlpha */
-#phase-1,
-#phase-2 {
-  visibility: hidden;
-  opacity: 0;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
 }
 
 /* Hero badge */
@@ -555,13 +504,18 @@ address { font-style: normal; }
 /* Main headline */
 .hero-title {
   font-family: var(--font-sans);
-  font-size: clamp(3.2rem, 8vw, 6.5rem);
-  font-weight: 900;
-  line-height: 1.0;
+  font-size: clamp(2.2rem, 10vw, 6rem);
+  font-weight: 800;
+  line-height: 1.05;
   letter-spacing: -0.04em;
+  color: var(--text-primary);
+  margin-bottom: var(--space-sm);
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--space-sm);
+  align-items: flex-start;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 .title-row {
   display: flex;
@@ -617,9 +571,14 @@ address { font-style: normal; }
   flex-wrap: wrap;
 }
 
-/* ---- Phase 1: Stats ---- */
-.hero-phase--stats {
-  gap: var(--space-md);
+/* ---- Stats Ribbon ---- */
+.stats-ribbon {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg-2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .phase-label {
   font-family: var(--font-mono);
@@ -1392,16 +1351,53 @@ a.contact-value:hover { color: var(--cyan); }
   border-radius: 4px;
 }
 
-/* === PHASE 2 GRID === */
-.phase-2-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+/* === ECOSYSTEM SECTION === */
+.ecosystem-section {
+  padding: 6rem 2rem;
+  background-color: var(--color-bg);
+}
+.phase-2-container { max-width: 1200px; margin: 0 auto; }
 .phase-2-title { text-align: center; font-size: 3rem; margin-bottom: 3rem; }
 .phase-2-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.phase-2-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(16px); padding: 2.5rem; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.8); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); transition: transform 0.3s ease; }
+.phase-2-card { 
+  background: #ffffff; 
+  padding: 2.5rem; 
+  border-radius: 24px; 
+  border: 1px solid rgba(0, 0, 0, 0.05); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.3s ease; 
+}
 .phase-2-card:hover { transform: translateY(-10px); }
-.phase-2-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text); }
+.phase-2-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-primary); }
 .phase-2-card p { font-size: 1rem; color: var(--text-muted); line-height: 1.6; }
 @media(max-width: 768px) { .phase-2-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+}
 
-.phase-2-card { background: transparent !important; border: none !important; box-shadow: none !important; backdrop-filter: none !important; } .phase-2-card h3 { text-shadow: 0 2px 10px rgba(255,255,255,0.8); } .phase-2-card p { text-shadow: 0 1px 5px rgba(255,255,255,0.8); font-weight: 500; }
-
-.phase-2-card { background: rgba(255, 255, 255, 0.75) !important; border: 1px solid rgba(255, 255, 255, 0.9) !important; backdrop-filter: blur(8px) !important; box-shadow: 0 10px 30px rgba(0,0,0,0.05) !important; }
+/* Articles Slider (Mobile Horizontal Scroll) */
+@media (max-width: 900px) {
+  .articles-slider {
+    display: flex !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 1.5rem;
+    gap: 1rem;
+    margin-right: -2rem; /* bleed to edge if container has padding */
+    padding-right: 2rem;
+  }
+  .articles-slider .bento-item {
+    flex: 0 0 85%;
+    scroll-snap-align: start;
+  }
+  .articles-slider::-webkit-scrollbar {
+    height: 6px;
+  }
+  .articles-slider::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 4px;
+  }
+}
