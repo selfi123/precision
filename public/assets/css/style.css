@@ -530,18 +530,18 @@ address { font-style: normal; }
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(0, 200, 190, 0.09);
-  border: 1px solid rgba(0, 200, 190, 0.25);
-  color: var(--teal);
+  background: #060B18; /* Dark background for extreme contrast */
+  border: 1px solid rgba(0, 200, 190, 0.4);
+  color: #00C8BE; /* Bright cyan pops beautifully on dark */
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.1em;
   padding: 0.45rem 1rem;
   border-radius: var(--radius-full);
   width: fit-content;
   margin-bottom: var(--space-md);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 .badge-dot {
   width: 6px;
@@ -594,20 +594,19 @@ address { font-style: normal; }
 /* Tagline & description */
 .hero-tagline {
   font-family: var(--font-mono);
-  font-size: 1rem;
-  background: var(--brand-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary); /* Solid dark brand blue for maximum legibility */
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: var(--space-sm);
 }
 .hero-description {
-  font-size: 1.05rem;
-  color: var(--text-secondary);
-  max-width: 520px;
-  line-height: 1.85;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #334155; /* Darker slate for strong contrast */
+  max-width: 540px;
+  line-height: 1.8;
   margin-bottom: var(--space-md);
 }
 

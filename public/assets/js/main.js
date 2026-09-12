@@ -85,6 +85,7 @@ const sceneAnim = {
   particleOpacity: 0.55,
   bgFogDensity: 0.0,
   morphProgress: 0.0,
+  entryOffsetX: 25, // Separated from helixPosX to prevent GSAP conflicts
 };
 
 function initThreeScene() {
@@ -120,13 +121,12 @@ function initThreeScene() {
   clock = new THREE.Clock();
 
   /* ---- Initial Entry Animation (From right side) ---- */
-  sceneAnim.helixPosX = 25; // start far right
+  sceneAnim.helixPosX = 5; // Base resting position
   if (typeof gsap !== 'undefined') {
     gsap.to(sceneAnim, {
-      helixPosX: 5, // Rest on the right side of the screen
-      duration: 2.5,
+      entryOffsetX: 0, // Animates from 25 to 0
+      duration: 2.0,
       ease: "power3.out",
-      delay: 0.2
     });
   }
 
@@ -293,12 +293,34 @@ function buildDiagnosticSphere() { // keeping name for backward compatibility in
         vec3 spherePos = aPosSphere;
         vec3 gridPos = aPosGrid;
         
+        // --- CONTINUOUS SPHERE ROTATION ---
+        // Spin the sphere on the Y axis over time. 
+        // We do this in the shader so the Grid state remains perfectly static and forward-facing!
+        float angle = time * 0.15;
+        float cosA = cos(angle);
+        float sinA = sin(angle);
+        mat2 rotMat = mat2(cosA, -sinA, sinA, cosA);
+        spherePos.xz = rotMat * spherePos.xz;
+        
+        // Also rotate the sphere quaternions so the sticks point correctly after spinning
+        // A rotation quaternion around Y axis is (0, sin(angle/2), 0, cos(angle/2))
+        float halfAngle = angle * 0.5;
+        vec4 rotYQuat = vec4(0.0, sin(halfAngle), 0.0, cos(halfAngle));
+        // Multiply quaternions: rotYQuat * aRotSphere
+        vec4 spunRotSphere = vec4(
+          rotYQuat.w * aRotSphere.x + rotYQuat.x * aRotSphere.w + rotYQuat.y * aRotSphere.z - rotYQuat.z * aRotSphere.y,
+          rotYQuat.w * aRotSphere.y - rotYQuat.x * aRotSphere.z + rotYQuat.y * aRotSphere.w + rotYQuat.z * aRotSphere.x,
+          rotYQuat.w * aRotSphere.z + rotYQuat.x * aRotSphere.y - rotYQuat.y * aRotSphere.x + rotYQuat.z * aRotSphere.w,
+          rotYQuat.w * aRotSphere.w - rotYQuat.x * aRotSphere.x - rotYQuat.y * aRotSphere.y - rotYQuat.z * aRotSphere.z
+        );
+        
         vec3 finalInstPos = mix(spherePos, gridPos, uMorphProgress);
-        vec4 finalInstRot = slerp(aRotSphere, aRotGrid, uMorphProgress);
+        vec4 finalInstRot = slerp(spunRotSphere, aRotGrid, uMorphProgress);
         
         // --- WAVE MOVEMENT FOR SPHERE ---
-        // Create a 3D noise/wave based on the instance position on the sphere
-        float wave = sin(spherePos.x * 1.5 + time * 3.0) * cos(spherePos.y * 1.5 + time * 2.0);
+        // Create a 3D noise/wave based on the un-spun instance position so the waves travel
+        // Slower "snail" movement using lower time multipliers
+        float wave = sin(aPosSphere.x * 1.5 + time * 0.5) * cos(aPosSphere.y * 1.5 + time * 0.3);
         
         // Scale the stick length (Z-axis) based on the wave. 
         // This makes the sphere "breathe" with moving waves.
@@ -423,9 +445,9 @@ function animateThree() {
       sceneAnim.helixScaleY,
       sceneAnim.helixScaleZ
     );
-    helixGroup.rotation.y = sceneAnim.helixRotY + elapsed * (0.15 * (1.0 - sceneAnim.morphProgress)); // Spin slows down as it morphs
+    helixGroup.rotation.y = sceneAnim.helixRotY; // GSAP controls base rotation only
     helixGroup.rotation.z = sceneAnim.helixRotZ;
-    helixGroup.position.x = sceneAnim.helixPosX;
+    helixGroup.position.x = sceneAnim.helixPosX + sceneAnim.entryOffsetX; // Combine ScrollTrigger + Entry offset
     
     // Update Shader Time & Morph
     if (helixGroup.userData.mat) {
@@ -576,12 +598,9 @@ function initHeroScrollAnimation() {
       { autoAlpha: 1, duration: 0.12 },
       0.72
     )
-
-    /* Phase-2 fades at the very end */
-    .to(phase2, {
-      autoAlpha: 0,
-      duration: 0.07,
-    }, 0.93);
+    
+    /* Pad the timeline to 1.0 so scroll mapping remains consistent with the original design */
+    .to({}, { duration: 0.16 }, 0.84);
 
   /* ---- Entry animation (plays immediately on load, not scroll-driven) ---- */
   const entryTl = gsap.timeline({ delay: 0.3 });
@@ -659,13 +678,20 @@ function initNavbar() {
     navbar.classList.toggle('scrolled', scrollY > 60);
 
     if (scrollY > 300) {
-      navbar.style.transform =
-        scrollY > lastScroll + 5 ? 'translateY(-100%)' : 'translateY(0)';
+      if (scrollY > lastScroll + 10) {
+        // Scrolling down
+        navbar.style.transform = 'translateY(-100%)';
+        lastScroll = scrollY;
+      } else if (scrollY < lastScroll - 10) {
+        // Scrolling up
+        navbar.style.transform = 'translateY(0)';
+        lastScroll = scrollY;
+      }
     } else {
       navbar.style.transform = 'translateY(0)';
+      lastScroll = scrollY;
     }
 
-    lastScroll = scrollY;
     ticking = false;
   }
 
@@ -840,6 +866,14 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initActiveNav();
   initTilt();
+
+  // Force a ScrollTrigger refresh after all assets and fonts are fully loaded
+  // This prevents scroll boundaries from being miscalculated and causing the scroll to get "stuck"
+  window.addEventListener('load', () => {
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  });
 });
 
 /* Dev console branding */
