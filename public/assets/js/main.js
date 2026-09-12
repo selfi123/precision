@@ -84,6 +84,7 @@ const sceneAnim = {
   particleSpread: 1,
   particleOpacity: 0.55,
   bgFogDensity: 0.0,
+  morphProgress: 0.0,
 };
 
 function initThreeScene() {
@@ -118,49 +119,217 @@ function initThreeScene() {
   /* ---- Clock ---- */
   clock = new THREE.Clock();
 
+  /* ---- Initial Entry Animation (From right side) ---- */
+  sceneAnim.helixPosX = 25; // start far right
+  if (typeof gsap !== 'undefined') {
+    gsap.to(sceneAnim, {
+      helixPosX: 5, // Rest on the right side of the screen
+      duration: 2.5,
+      ease: "power3.out",
+      delay: 0.2
+    });
+  }
+
   /* ---- Resize ---- */
   window.addEventListener('resize', onResize);
 }
 
-/* --- Build the Diagnostic Sphere & Rings --- */
-function buildDiagnosticSphere() {
+/* --- Build Morphing Sticks (Sphere to Grid) --- */
+function buildDiagnosticSphere() { // keeping name for backward compatibility in init function
   const group = new THREE.Group();
+  
+  // 1. Geometry: Perfectly straight line (cylinder)
+  const geometry = new THREE.CylinderGeometry(0.02, 0.02, 1.5, 8);
+  // Orient geometry along Z-axis so it points outward easily
+  geometry.rotateX(Math.PI / 2);
+  // Shift origin to the base so it scales from the sphere surface outward
+  geometry.translate(0, 0, 0.75);
 
-  // Core glass sphere
-  const sphereGeo = new THREE.IcosahedronGeometry(4, 4);
-  const sphereMat = new THREE.MeshPhysicalMaterial({
-    color: 0xffffff,
-    metalness: 0.1,
-    roughness: 0.2,
-    transmission: 0.9, // glass effect
-    ior: 1.5,
-    thickness: 2.0,
-    transparent: true,
-    opacity: 1,
-    side: THREE.DoubleSide
-  });
-  const coreSphere = new THREE.Mesh(sphereGeo, sphereMat);
-  group.add(coreSphere);
-
-  // Inner glowing core
-  const innerGeo = new THREE.IcosahedronGeometry(2, 2);
-  const innerMat = new THREE.MeshBasicMaterial({ color: 0x00C8BE, wireframe: true, transparent: true, opacity: 0.4 });
-  const innerSphere = new THREE.Mesh(innerGeo, innerMat);
-  group.add(innerSphere);
-
-  // Orbiting scanning rings
-  function createRing(radius, color, rotationX, rotationY) {
-    const ringGeo = new THREE.TorusGeometry(radius, 0.05, 16, 100);
-    const ringMat = new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.6 });
-    const ring = new THREE.Mesh(ringGeo, ringMat);
-    ring.rotation.set(rotationX, rotationY, 0);
-    return ring;
+  const count = 3000;
+  
+  const posSphere = new Float32Array(count * 3);
+  const rotSphere = new Float32Array(count * 4);
+  const posGrid = new Float32Array(count * 3);
+  const rotGrid = new Float32Array(count * 4);
+  const colors = new Float32Array(count * 3);
+  
+  const palette = [
+    new THREE.Color(0x00E5FF),
+    new THREE.Color(0xD62BC7),
+    new THREE.Color(0x1E2F7A)
+  ];
+  
+  const dummy = new THREE.Object3D();
+  
+  const gridCols = 30;
+  const gridRows = 10;
+  const gridDepth = 10;
+  const spacingX = 1.5;
+  const spacingY = 1.5;
+  const spacingZ = 1.5;
+  
+  for(let i = 0; i < count; i++) {
+    // ---- SPHERE LAYOUT (Fibonacci sphere) ----
+    const phi = Math.acos(1 - 2 * (i + 0.5) / count);
+    const theta = Math.PI * (1 + Math.sqrt(5)) * i;
+    const r = 4.0; // Perfect uniform radius for the base of the sticks
+    
+    const sx = r * Math.sin(phi) * Math.cos(theta);
+    const sy = r * Math.sin(phi) * Math.sin(theta);
+    const sz = r * Math.cos(phi);
+    
+    dummy.position.set(sx, sy, sz);
+    // Look OUTWARD from the center
+    dummy.lookAt(sx * 2, sy * 2, sz * 2);
+    
+    posSphere[i*3] = dummy.position.x;
+    posSphere[i*3+1] = dummy.position.y;
+    posSphere[i*3+2] = dummy.position.z;
+    
+    rotSphere[i*4] = dummy.quaternion.x;
+    rotSphere[i*4+1] = dummy.quaternion.y;
+    rotSphere[i*4+2] = dummy.quaternion.z;
+    rotSphere[i*4+3] = dummy.quaternion.w;
+    
+    // ---- 3-PANEL GRID LAYOUT ----
+    const sticksPerCard = 1000;
+    const cardCols = 25;
+    const cardRows = 40;
+    // Much wider spacing to make it sparse and clean
+    const cardSpacingX = 1.2;
+    const cardSpacingY = 0.9;
+    
+    const cardIndex = Math.floor(i / sticksPerCard); // 0, 1, or 2
+    const stickInCard = i % sticksPerCard;
+    
+    const col = stickInCard % cardCols;
+    const row = Math.floor(stickInCard / cardCols);
+    
+    // Local center of the card
+    const localX = (col - cardCols/2) * cardSpacingX;
+    const localY = (row - cardRows/2) * cardSpacingY;
+    
+    // Global position of the 3 cards (Spread out heavily)
+    const gap = 28; 
+    const globalX = (cardIndex - 1) * gap;
+    
+    // Push them down and back so they sit behind the text as a clean backdrop
+    dummy.position.set(globalX + localX, localY - 8, -10);
+    
+    // Form a perfectly straight structural grid (Tic-Tac-Toe / Circuit style)
+    if (stickInCard % 2 === 0) {
+      dummy.rotation.set(0, Math.PI/2, 0); // Horizontal along X
+    } else {
+      dummy.rotation.set(Math.PI/2, 0, 0); // Vertical along Y
+    }
+    
+    posGrid[i*3] = dummy.position.x;
+    posGrid[i*3+1] = dummy.position.y;
+    posGrid[i*3+2] = dummy.position.z;
+    
+    rotGrid[i*4] = dummy.quaternion.x;
+    rotGrid[i*4+1] = dummy.quaternion.y;
+    rotGrid[i*4+2] = dummy.quaternion.z;
+    rotGrid[i*4+3] = dummy.quaternion.w;
+    
+    // ---- COLORS ----
+    const c = palette[Math.floor(Math.random() * palette.length)];
+    colors[i*3] = c.r;
+    colors[i*3+1] = c.g;
+    colors[i*3+2] = c.b;
   }
   
-  group.add(createRing(5.5, 0x1E2F7A, Math.PI / 2, 0)); // Indigo ring
-  group.add(createRing(6.5, 0x00C8BE, Math.PI / 3, Math.PI / 4)); // Teal ring
-  group.add(createRing(7.5, 0xD62BC7, -Math.PI / 4, -Math.PI / 3)); // Magenta ring
+  geometry.setAttribute('aPosSphere', new THREE.InstancedBufferAttribute(posSphere, 3));
+  geometry.setAttribute('aRotSphere', new THREE.InstancedBufferAttribute(rotSphere, 4));
+  geometry.setAttribute('aPosGrid', new THREE.InstancedBufferAttribute(posGrid, 3));
+  geometry.setAttribute('aRotGrid', new THREE.InstancedBufferAttribute(rotGrid, 4));
+  geometry.setAttribute('aColor', new THREE.InstancedBufferAttribute(colors, 3));
+  
+  const material = new THREE.ShaderMaterial({
+    uniforms: {
+      time: { value: 0 },
+      uMorphProgress: { value: 0 }
+    },
+    vertexShader: `
+      uniform float time;
+      uniform float uMorphProgress;
+      
+      attribute vec3 aPosSphere;
+      attribute vec4 aRotSphere;
+      attribute vec3 aPosGrid;
+      attribute vec4 aRotGrid;
+      attribute vec3 aColor;
+      
+      varying vec3 vColor;
+      varying vec3 vNormal;
+      
+      vec3 applyQuaternionToVector(vec4 q, vec3 v) {
+        return v + 2.0 * cross(q.xyz, cross(q.xyz, v) + q.w * v);
+      }
+      
+      vec4 slerp(vec4 q1, vec4 q2, float t) {
+        float cosHalfTheta = dot(q1, q2);
+        if (cosHalfTheta < 0.0) {
+          q2 = -q2;
+          cosHalfTheta = -cosHalfTheta;
+        }
+        if (abs(cosHalfTheta) >= 1.0) {
+          return q1;
+        }
+        float halfTheta = acos(cosHalfTheta);
+        float sinHalfTheta = sqrt(1.0 - cosHalfTheta * cosHalfTheta);
+        if (abs(sinHalfTheta) < 0.001) {
+          return vec4(q1 * 0.5 + q2 * 0.5);
+        }
+        float ratioA = sin((1.0 - t) * halfTheta) / sinHalfTheta;
+        float ratioB = sin(t * halfTheta) / sinHalfTheta;
+        return q1 * ratioA + q2 * ratioB;
+      }
 
+      void main() {
+        vColor = aColor;
+        vNormal = normal;
+        
+        vec3 spherePos = aPosSphere;
+        vec3 gridPos = aPosGrid;
+        
+        vec3 finalInstPos = mix(spherePos, gridPos, uMorphProgress);
+        vec4 finalInstRot = slerp(aRotSphere, aRotGrid, uMorphProgress);
+        
+        // --- WAVE MOVEMENT FOR SPHERE ---
+        // Create a 3D noise/wave based on the instance position on the sphere
+        float wave = sin(spherePos.x * 1.5 + time * 3.0) * cos(spherePos.y * 1.5 + time * 2.0);
+        
+        // Scale the stick length (Z-axis) based on the wave. 
+        // This makes the sphere "breathe" with moving waves.
+        // As it morphs to the grid, this wave flattens out to 1.0 (perfectly rigid grid).
+        float stretch = 1.0 + wave * 0.6 * (1.0 - uMorphProgress);
+        
+        vec3 localPos = position;
+        localPos.z *= stretch;
+        
+        vec3 rotatedLocalPos = applyQuaternionToVector(finalInstRot, localPos);
+        vec3 finalPos = finalInstPos + rotatedLocalPos;
+        
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(finalPos, 1.0);
+      }
+    `,
+    fragmentShader: `
+      varying vec3 vColor;
+      varying vec3 vNormal;
+      void main() {
+        float intensity = max(dot(normalize(vNormal), vec3(0.5, 1.0, 1.0)), 0.3);
+        gl_FragColor = vec4(vColor * intensity, 1.0);
+      }
+    `,
+    side: THREE.DoubleSide
+  });
+
+  const instancedMesh = new THREE.InstancedMesh(geometry, material, count);
+  group.add(instancedMesh);
+  
+  group.userData.mat = material;
+  
   return group;
 }
 
@@ -254,9 +423,15 @@ function animateThree() {
       sceneAnim.helixScaleY,
       sceneAnim.helixScaleZ
     );
-    helixGroup.rotation.y = sceneAnim.helixRotY + elapsed * 0.3; // base + GSAP offset
+    helixGroup.rotation.y = sceneAnim.helixRotY + elapsed * (0.15 * (1.0 - sceneAnim.morphProgress)); // Spin slows down as it morphs
     helixGroup.rotation.z = sceneAnim.helixRotZ;
     helixGroup.position.x = sceneAnim.helixPosX;
+    
+    // Update Shader Time & Morph
+    if (helixGroup.userData.mat) {
+      helixGroup.userData.mat.uniforms.time.value = elapsed;
+      helixGroup.userData.mat.uniforms.uMorphProgress.value = sceneAnim.morphProgress;
+    }
   }
 
   /* Particle drift + spread controlled by sceneAnim.particleSpread */
@@ -368,28 +543,25 @@ function initHeroScrollAnimation() {
       0.38
     )
 
-  /* ============================================
-     PHASE 1 → PHASE 2  (progress 0.45 → 0.85)
-     Scene: camera pulls back, helix scales up
-            then particles explode outward
-     Text:  phase-1 fades out, phase-2 fades in
-     ============================================ */
-
-    /* 0.55 – 0.7: helix scales up and camera orbits */
+    /* ============================================
+       PHASE 1 → PHASE 2 (MORPH INTO GRID)
+       ============================================ */
+    /* 0.55 – 0.8: Sphere morphs into the flat background grid panels */
     .to(sceneAnim, {
-      helixScaleX: 1.3,
-      helixScaleY: 1.3,
-      helixScaleZ: 1.3,
-      helixRotZ: 0.4,
-      helixPosX: 0,
-      particleOpacity: 0.8,
-      duration: 0.15,
+      morphProgress: 1.0,
+      helixRotY: 0, 
+      helixRotZ: 0,
+      helixPosX: 0, // Reset to center for the grid
+      duration: 0.25,
+      ease: "power2.inOut"
     }, 0.55)
 
     .to(camAnim, {
-      posZ: 18,
-      posX:  3,
-      duration: 0.15,
+      posZ: 45, // pull back further to see the massive spaced out panels
+      posY: 5,  // look slightly down at them
+      posX: 0,
+      duration: 0.25,
+      ease: "power2.inOut"
     }, 0.55)
 
     /* 0.65 – 0.73: phase-1 fades out */
@@ -404,31 +576,6 @@ function initHeroScrollAnimation() {
       { autoAlpha: 1, duration: 0.12 },
       0.72
     )
-
-  /* ============================================
-     PHASE 2 → EXIT  (progress 0.85 → 1.0)
-     Scene: helix & particles explode outward
-            camera pulls back to full distance
-     ============================================ */
-    /* 0.84 – 1.0: particles explode outward */
-    .to(sceneAnim, {
-      particleSpread: 2.2,
-      particleOpacity: 0.15,
-      helixScaleX: 0.5,
-      helixScaleY: 0.5,
-      helixScaleZ: 0.5,
-      helixRotZ: 1.2,
-      bgFogDensity: 0.015,
-      duration: 0.16,
-    }, 0.84)
-
-    /* Camera pulls all the way back */
-    .to(camAnim, {
-      posZ: 38,
-      posX:  0,
-      posY:  0,
-      duration: 0.16,
-    }, 0.84)
 
     /* Phase-2 fades at the very end */
     .to(phase2, {
