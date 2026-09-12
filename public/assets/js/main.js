@@ -331,15 +331,11 @@ function animateThree() {
   renderer.render(scene, camera);
 }
 
-/* =========================================================
-   4. HERO ENTRY ANIMATION (No Scroll Pinning)
-   ========================================================= */
+  /* =========================================================
+     4. HERO ENTRY ANIMATION (No Scroll Pinning)
+     ========================================================= */
 function initHeroEntryAnimation() {
   if (typeof gsap === 'undefined') return;
-
-  // Trigger stat counters immediately or via intersection observer, 
-  // since they are no longer part of a pinned scroll timeline.
-  setTimeout(() => { triggerStatCounters(); }, 1000);
 
   /* ---- Entry animation (plays immediately on load, not scroll-driven) ---- */
   const entryTl = gsap.timeline({ delay: 0.3 });
@@ -349,8 +345,36 @@ function initHeroEntryAnimation() {
     .from('#hero-tagline-text', { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' }, '-=0.3')
     .from('#hero-desc-text',    { opacity: 0, y: 20, duration: 0.6, ease: 'power2.out' }, '-=0.3')
     .from('#hero-cta-group',    { opacity: 0, y: 20, duration: 0.5, ease: 'power2.out' }, '-=0.3')
-    .from('.hero-badge',        { opacity: 0, scale: 0.85, duration: 0.4, ease: 'back.out(2)' }, 0.2)
-    .from('.scroll-progress-bar', { opacity: 0, duration: 0.4 }, 1.2);
+    .from('.hero-badge',        { opacity: 0, scale: 0.85, duration: 0.4, ease: 'back.out(2)' }, 0.2);
+}
+
+/* =========================================================
+   4b. SCROLL ANIMATIONS (Legacy & Ecosystem)
+   ========================================================= */
+function initScrollAnimations() {
+  if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate Stats Ribbon
+  ScrollTrigger.create({
+    trigger: '.stats-ribbon',
+    start: 'top 80%',
+    onEnter: () => triggerStatCounters()
+  });
+
+  gsap.from('.stat-item', {
+    scrollTrigger: {
+      trigger: '.stats-ribbon',
+      start: 'top 80%',
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: 'back.out(1.5)'
+  });
+
+  // Ecosystem Cards now use native .reveal CSS in HTML
 }
 
 /* =========================================================
@@ -567,12 +591,14 @@ function initActiveNav() {
    11. CARD 3D TILT
    ========================================================= */
 function initTilt() {
-  document.querySelectorAll('.service-image-wrap, .about-card').forEach((el) => {
+  document.querySelectorAll('.service-image-wrap, .about-card, .phase-2-card').forEach((el) => {
     el.addEventListener('mousemove', (e) => {
       const r  = el.getBoundingClientRect();
       const x  = (e.clientX - r.left) / r.width  - 0.5;
       const y  = (e.clientY - r.top)  / r.height - 0.5;
-      el.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) scale(1.02)`;
+      const isCard = el.classList.contains('phase-2-card');
+      const lift = isCard ? 'translateY(-8px)' : '';
+      el.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${-y * 7}deg) scale(1.02) ${lift}`;
     });
     el.addEventListener('mouseleave', () => { el.style.transform = ''; });
   });
@@ -598,6 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateThree();
   }
 
+  initScrollAnimations();
   initNavbar();
   initMobileMenu();
   initReveal();
