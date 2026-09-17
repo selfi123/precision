@@ -1,98 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Precision Allele.Dx — Next-generation medical diagnostics, oncology testing, hospital management solutions, and B2B doctor network agreements. Precision with every allele." />
-  <meta name="keywords" content="precision diagnostics, cancer genomics, oncology testing, hospital management, doctor network, allele testing, genetic diagnostics" />
-  <meta name="author" content="Precision Allele.Dx" />
-  <meta property="og:title" content="Precision Allele.Dx | Precision with every allele" />
-  <meta property="og:description" content="Next-generation genetic diagnostics and precision oncology for the modern healthcare ecosystem." />
-  <meta property="og:type" content="website" />
-  <title>Precision Allele.Dx | Precision with every allele</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Precision Allele.Dx | Precision in every allele</title>
+  
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Icons (Phosphor Icons) -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- ========== NAVIGATION ========== -->
-  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo" aria-label="Precision Allele.Dx Home">
-        <div class="logo-icon" aria-hidden="true">
-          <svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="pGrad" x1="0" y1="10" x2="0" y2="86" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stop-color="#00E5FF"/>
-                <stop offset="25%" stop-color="#0066FF"/>
-                <stop offset="50%" stop-color="#7B2FBE"/>
-                <stop offset="75%" stop-color="#D62BC7"/>
-                <stop offset="100%" stop-color="#F5861F"/>
-              </linearGradient>
-            </defs>
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M 45 10 L 70 10 C 86 10, 96 20, 96 34 C 96 48, 86 58, 70 58 L 59 58 L 59 80 C 59 83.5, 56.5 86, 53 86 L 45 86 L 45 10 Z M 59 23 L 70 23 C 78 23, 81 28, 81 34 C 81 40, 78 45, 70 45 L 59 45 L 59 23 Z" fill="url(#pGrad)"/>
-            <g stroke="url(#pGrad)" stroke-width="5" stroke-linecap="round">
-              <line x1="28" y1="14" x2="30" y2="14"/> <line x1="36" y1="14" x2="46" y2="14"/>
-              <line x1="18" y1="22" x2="28" y2="22"/> <line x1="34" y1="22" x2="46" y2="22"/>
-              <line x1="8" y1="30" x2="16" y2="30"/> <line x1="22" y1="30" x2="46" y2="30"/>
-              <line x1="12" y1="38" x2="14" y2="38"/> <line x1="20" y1="38" x2="28" y2="38"/> <line x1="34" y1="38" x2="46" y2="38"/>
-              <line x1="22" y1="46" x2="26" y2="46"/> <line x1="32" y1="46" x2="46" y2="46"/>
-              <line x1="26" y1="54" x2="28" y2="54"/> <line x1="34" y1="54" x2="46" y2="54"/>
-              <line x1="30" y1="62" x2="34" y2="62"/> <line x1="40" y1="62" x2="46" y2="62"/>
-              <line x1="34" y1="70" x2="38" y2="70"/> <line x1="44" y1="70" x2="46" y2="70"/>
-              <line x1="38" y1="78" x2="46" y2="78"/>
-            </g>
-          </svg>
-        </div>
-        <span class="logo-text">recision <span class="logo-accent">allele.Dx</span></span>
-      </a>
-
-      <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#tests" class="nav-link">Tests & Services</a></li>
-        <li><a href="#informatics" class="nav-link">Informatics</a></li>
-        <li><a href="#testing-matters" class="nav-link">Why Testing Matters</a></li>
-        <li><a href="#quality" class="nav-link">Quality</a></li>
-        <li><a href="#insights" class="nav-link">Insights</a></li>
-      </ul>
-
-      <a href="#contact" class="nav-cta" id="nav-cta-btn">Get In Touch</a>
-
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false" aria-controls="nav-links">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ========== HERO SECTION (Scroll-Driven 3D) ========== -->
-  <!--
-    Structure:
-    .hero-outer       → 300vh tall scroll-trigger target
-    .hero-sticky      → sticky viewport panel (pinned by GSAP)
-    #hero-canvas      → Three.js full-viewport renderer
-    .hero-overlay     → layered text phases animated by GSAP
-  -->
-  <!-- ========== HERO SECTION (Standard) ========== -->
-  <section class="hero-section" id="hero" aria-label="Hero">
-
-    <!-- Three.js Canvas -->
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-
-    <div class="hero-content">
-      <div class="hero-badge" role="status">
-        <span class="badge-dot" aria-hidden="true"></span>
-        Genomic Research & Diagnostics
-      </div>
-      <h1 class="hero-title">
-        <div class="title-row" id="title-word-1">
-          <div class="hero-logo-icon" aria-hidden="true">
-            <svg width="1em" height="1em" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- ==================== HEADER ==================== -->
+  <header class="header">
+    <div class="container header-container">
+      <a href="#" class="brand-logo-container">
+        <div class="logo-top">
+          <div class="logo-icon">
+            <svg width="72" height="72" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="pGrad" x1="0" y1="10" x2="0" y2="86" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#00E5FF"/>
+                  <stop offset="25%" stop-color="#0066FF"/>
+                  <stop offset="50%" stop-color="#7B2FBE"/>
+                  <stop offset="75%" stop-color="#D62BC7"/>
+                  <stop offset="100%" stop-color="#F5861F"/>
+                </linearGradient>
+              </defs>
               <path fill-rule="evenodd" clip-rule="evenodd" d="M 45 10 L 70 10 C 86 10, 96 20, 96 34 C 96 48, 86 58, 70 58 L 59 58 L 59 80 C 59 83.5, 56.5 86, 53 86 L 45 86 L 45 10 Z M 59 23 L 70 23 C 78 23, 81 28, 81 34 C 81 40, 78 45, 70 45 L 59 45 L 59 23 Z" fill="url(#pGrad)"/>
               <g stroke="url(#pGrad)" stroke-width="5" stroke-linecap="round">
                 <line x1="28" y1="14" x2="30" y2="14"/> <line x1="36" y1="14" x2="46" y2="14"/>
@@ -107,641 +48,514 @@
               </g>
             </svg>
           </div>
-          <span class="title-line">recision</span>
+          <span class="logo-text">recision <span class="logo-accent">allele</span><span class="logo-accent-orange">.Dx</span></span>
         </div>
-        <div class="title-row" id="title-word-2">
-          <span class="title-line title-gradient">allele.Dx</span>
-        </div>
-      </h1>
-      <p class="hero-tagline" id="hero-tagline-text">PRECISION WITH EVERY ALLELE</p>
-      <p class="hero-description" id="hero-desc-text">
-        We turn complex genomics into simple solutions. We’re a genomics research and diagnostics company transforming complex genomic data into actionable insights.
-      </p>
-      <div class="hero-actions" id="hero-cta-group">
-        <a href="#contact" class="btn btn-primary" aria-label="Get in touch with us">
-          Get in Touch <span aria-hidden="true">&rarr;</span>
-        </a>
-        <a href="#about" class="btn btn-secondary" aria-label="Know more about us">
-          Know More
-        </a>
+        <div class="logo-subline">PRECISION IN EVERY ALLELE</div>
+      </a>
+      
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#panels">Diagnostic Panels</a></li>
+          <li><a href="#technology">Technology</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#contact" class="btn btn-primary btn-gradient">Talk to us <i class="ph ph-arrow-up-right"></i></a>
+        <button class="menu-toggle"><i class="ph ph-list"></i></button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- ========== STATS RIBBON ========== -->
-  <section class="stats-ribbon">
-    <div class="container text-center reveal" style="margin-bottom: 4rem;">
-      <h2 class="section-title reveal">Our <span class="text-gradient">Legacy</span></h2>
-    </div>
-    <div class="hero-stats" id="stats-container" role="list" style="width: 100%;">
-      <div class="stat-item" role="listitem">
-        <span class="stat-number" data-count="25">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Years of Experience</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item" role="listitem">
-        <span class="stat-number" data-count="25000">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Citations & Publications</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item" role="listitem">
-        <span class="stat-number" data-count="75000">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Genetic Tests Reported</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item" role="listitem">
-        <span class="stat-number" data-count="2500">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Clinicians & Hospitals</span>
-      </div>
-      <div class="stat-divider" aria-hidden="true"></div>
-      <div class="stat-item" role="listitem">
-        <span class="stat-number" data-count="20">0</span><span class="stat-plus">+</span>
-        <span class="stat-label">Countries</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== OUR ECOSYSTEM ========== -->
-  <section class="ecosystem-section">
-    <div class="phase-2-container">
-      <h2 class="phase-2-title reveal">Our <span class="text-gradient">Ecosystem</span></h2>
-      <div class="phase-2-grid">
-        <div class="phase-2-card reveal">
-          <h3>Precision Oncology</h3>
-          <p>Advanced tumor profiling and somatic mutation tracking for personalized cancer therapies and early intervention.</p>
-        </div>
-        <div class="phase-2-card reveal">
-          <h3>Inherited Diseases</h3>
-          <p>Comprehensive germline analysis and carrier screening utilizing expansive bioinformatics networks.</p>
-        </div>
-        <div class="phase-2-card reveal">
-          <h3>Clinical Research</h3>
-          <p>Partnering with academia to build massive datasets that push the boundaries of genomic science.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CLINICAL EDGE SECTION (Metrics & Mission) ========== -->
-  <section class="clinical-edge" id="about" aria-labelledby="about-heading">
-    <!-- Full-width Metrics Banner -->
-    <div class="metrics-banner">
-      <div class="metric-item">
-        <div class="metric-number text-gradient">99.9%</div>
-        <div class="metric-label">Diagnostic Accuracy</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-number text-gradient">24hr</div>
-        <div class="metric-label">Critical Turnaround</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-number text-gradient">500+</div>
-        <div class="metric-label">Genes Profiled</div>
-      </div>
-      <div class="metric-item">
-        <div class="metric-number text-gradient">NABL</div>
-        <div class="metric-label">Fully Accredited</div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="layout-2col">
-        <div class="mission-text">
-          <h2 class="section-title reveal" id="about-heading">
-            Who <span class="text-gradient">We Are</span>
-          </h2>
-          <p class="lead-text">
-            We turn complex genomics into simple solutions.
-          </p>
-          <p>
-            We’re a genomics research and diagnostics company, a subsidiary of Reliance Industries Limited. We began our journey as a bioinformatics start-up within the innovation ecosystem of the Indian Institute of Science (IISc) and were an early example of academic entrepreneurship in India.
-          </p>
-          <p class="mt-3">
-            For the past 25 years, we’ve been tackling some of the toughest challenges in healthcare genomics. We transform complex genomic data into actionable insights, providing solutions in clinical diagnostics, translational medicine, bioinformatics, engineering, and science. By collaborating with global partners, we’re helping shape the future of personalized medicine.
-          </p>
-          <a href="#tests" class="btn btn-secondary mt-4">Explore Tests & Services</a>
-        </div>
-        <div class="reveal">
-          <img src="assets/images/section_about.jpg" alt="Genomic Laboratory" class="section-overview-img">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TESTS & SERVICES ========== -->
-  <section class="services" id="tests" aria-labelledby="tests-heading" style="padding: 5rem 0; background: var(--bg-alt);">
-    <div class="container">
-      <div class="img-banner-container reveal">
-        <img src="assets/images/section_tests.jpg" alt="Tests & Services Overview">
-      </div>
-      <h2 class="section-title text-center reveal" id="tests-heading">
-        Tests & <span class="text-gradient">Services</span>
-      </h2>
-      <p class="section-subtitle text-center reveal">
-        Empowering better outcomes with comprehensive genomic insights.
-      </p>
-
-      <div class="bento-grid mt-5" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); display: grid; gap: 1rem;">
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero">
+    <div class="hero-bg-glow"></div>
+    <div class="container hero-container">
+      
+      <!-- Hero Left: Content -->
+      <div class="hero-content">
         
-        <div class="bento-item bento-medium reveal" style="text-align: center; padding: 2rem 1rem;">
-          <div class="bento-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="10" cy="10" r="7"/>
-              <path d="M21 21l-6-6"/>
-              <path d="M6 10h2l1-2 2 4 1-2h2"/>
-            </svg>
-            <h3 style="font-size: 1.1rem; margin-bottom: 0;">Reproductive Health & Rare Disease</h3>
-          </div>
-        </div>
-
-        <div class="bento-item bento-medium reveal" style="text-align: center; padding: 2rem 1rem;">
-          <div class="bento-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="9" stroke-dasharray="2 4"/>
-              <circle cx="12" cy="12" r="4"/>
-              <path d="M12 12l6-6"/>
-              <path d="M16 4l4 4"/>
-              <path d="M20 4l-4 4"/>
-              <path d="M18 6l2-2"/>
-            </svg>
-            <h3 style="font-size: 1.1rem; margin-bottom: 0;">Oncology</h3>
-          </div>
-        </div>
-
-        <div class="bento-item bento-medium reveal" style="text-align: center; padding: 2rem 1rem;">
-          <div class="bento-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"/>
-              <circle cx="5" cy="5" r="2"/>
-              <circle cx="19" cy="5" r="2"/>
-              <circle cx="5" cy="19" r="2"/>
-              <circle cx="19" cy="19" r="2"/>
-              <path d="M6.5 6.5l4 4"/>
-              <path d="M17.5 6.5l-4 4"/>
-              <path d="M6.5 17.5l4-4"/>
-              <path d="M17.5 17.5l-4-4"/>
-            </svg>
-            <h3 style="font-size: 1.1rem; margin-bottom: 0;">Research Services</h3>
-          </div>
-        </div>
-
-        <div class="bento-item bento-medium reveal" style="text-align: center; padding: 2rem 1rem;">
-          <div class="bento-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/>
-              <path d="M9 9a3 3 0 0 1 4.24 0l1.76 1.76a3 3 0 1 1-4.24 4.24L9 13.24a3 3 0 0 1 0-4.24z"/>
-              <path d="M12.5 9.5l-3 3"/>
-            </svg>
-            <h3 style="font-size: 1.1rem; margin-bottom: 0;">Genomic Wellness</h3>
-          </div>
-        </div>
-
-        <div class="bento-item bento-medium reveal" style="text-align: center; padding: 2rem 1rem;">
-          <div class="bento-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 2v4"/>
-              <path d="M16 2v4"/>
-              <rect x="6" y="4" width="12" height="12" rx="1"/>
-              <path d="M8 8h8"/>
-              <path d="M8 12h4"/>
-              <path d="M4 16c0-2 2-3 4-3h8c2 0 4 1 4 3v6H4v-6z"/>
-            </svg>
-            <h3 style="font-size: 1.1rem; margin-bottom: 0;">Genetic Counseling</h3>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== INFORMATICS CAPABILITIES ========== -->
-  <section class="informatics" id="informatics" aria-labelledby="informatics-heading" style="padding: 5rem 0;">
-    <div class="container">
-      <div class="img-banner-container reveal">
-        <img src="assets/images/section_informatics.jpg" alt="Informatics Overview">
-      </div>
-      <h2 class="section-title text-center reveal" id="informatics-heading">
-        Informatics <span class="text-gradient">Capabilities</span>
-      </h2>
-      <p class="section-subtitle text-center reveal" style="max-width: 800px; margin: 0 auto;">
-        Strand Life Sciences combines a long track record in bioinformatics with cutting-edge laboratory assays and a vast hospital partner network.
-      </p>
-
-      <div class="bento-grid mt-5">
-        <div class="bento-item bento-large reveal" style="overflow: hidden; padding: 0;">
-          <div class="bento-content layout-2col" style="height: 100%; gap: 0;">
-            <div style="padding: 2.5rem;">
-              <div class="service-tag">Data</div>
-              <h3 style="font-size: 2rem; margin-bottom: 1.5rem;">Data-Centric Solutions</h3>
-              <ul class="bento-features">
-                <li>Real World Data Standardization</li>
-                <li>Data Cleaning & Harmonization</li>
-                <li>Precision Analytics & Predictive Modeling</li>
-                <li>Machine Learning</li>
-              </ul>
-            </div>
-            <div style="height: 100%; min-height: 300px;">
-              <img src="assets/images/bento_data_solutions.jpg" alt="Data Centric Solutions Visualization" style="width: 100%; height: 100%; object-fit: cover;">
-            </div>
-          </div>
-        </div>
+        <h1 class="hero-title">
+          Precision in <br>
+          every <span class="text-gradient">allele.</span>
+        </h1>
         
-        <div class="bento-item bento-medium reveal">
-          <div class="bento-content">
-            <div class="service-tag">Discovery</div>
-            <h3>Pharma & Biomarker Discovery</h3>
-            <ul class="bento-features">
-              <li>Public Datasets Curation</li>
-              <li>Multi-omics Analysis</li>
-              <li>Custom Bioinformatics Pipelines</li>
-              <li>Spatial & Single-cell Transcriptomics</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bento-item bento-medium reveal">
-          <div class="bento-content">
-            <div class="service-tag">Diagnostics</div>
-            <h3>NGS & PCR Diagnostics</h3>
-            <ul class="bento-features">
-              <li>Variant Mapping & Annotation</li>
-              <li>Variant and KB curation with Reporting</li>
-              <li>NGS Assay validation</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="bento-item bento-wide reveal">
-          <div class="bento-content">
-            <div class="service-tag">Software</div>
-            <h3>Software Development & QA</h3>
-            <p>Algorithm Verification & Validation, Genomics Product Development, Cloud Migration with Integration.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== WHY GENETIC TESTING MATTERS ========== -->
-  <section class="integration-timeline" id="testing-matters" aria-labelledby="testing-heading">
-    <div class="container layout-2col" style="align-items: start;">
-      <div class="timeline-image reveal" style="position: sticky; top: 120px;">
-        <img src="assets/images/section_timeline.jpg" alt="Diagnostic Insights" class="section-overview-img">
-      </div>
-      <div>
-        <h2 class="section-title reveal" id="testing-heading">
-          Why Genetic Testing <span class="text-gradient">Matters</span>
-        </h2>
-        <p class="section-subtitle reveal" style="margin-left: 0; text-align: left;">
-          Genetic testing helps us understand the blueprint of life to drive innovations in diagnosis and health.
+        <p class="hero-desc">
+          High-end next-generation sequencing solutions designed to turn complex genomic signals into clear, actionable insights for cancer care.
         </p>
-
-        <div class="timeline-container mt-5">
-          <div class="timeline-line"></div>
+        
+        <div class="hero-features">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="ph ph-dna"></i></div>
+            <div class="feature-text">
+              <strong>High-End NGS</strong>
+              <span>Deep coverage. Greater insight.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="ph ph-target"></i></div>
+            <div class="feature-text">
+              <strong>Pan-Cancer Panels</strong>
+              <span>Comprehensive molecular profiling.</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="ph ph-lightning"></i></div>
+            <div class="feature-text">
+              <strong>Rapid Turnaround</strong>
+              <span>Actionable reports in record time.</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-cta-group">
+          <a href="#panels" class="btn btn-primary btn-gradient">Explore diagnostic panels <i class="ph ph-arrow-up-right"></i></a>
+          <a href="#solutions" class="btn btn-secondary btn-white">Discover our approach</a>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>25+</strong>
+            <span>Diagnostic Panels</span>
+          </div>
+          <div class="stat">
+            <strong>Multiple</strong>
+            <span>Tumor Types</span>
+          </div>
+          <div class="stat">
+            <strong>NGS</strong>
+            <span>DNA &bull; RNA &bull; ctDNA</span>
+          </div>
+          <div class="stat">
+            <strong>Actionable</strong>
+            <span>Clinical Insights</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hero Right: 3D Visualization / Glass Cards -->
+      <div class="hero-visual">
+        <div class="visual-wrapper">
+          <!-- Central DNA Image -->
+          <img src="assets/images/dna-hero.png" alt="DNA Sequencing" class="dna-model">
           
-          <div class="timeline-step reveal">
-            <div class="timeline-content" style="padding-left: 0;">
-              <h3>Rare & Inherited Conditions</h3>
-              <p>Over 70 million people in India suffer from rare and inherited conditions. Early genetic testing can lead to faster diagnosis and treatment.</p>
+          <!-- Floating Glass Cards -->
+          <div class="glass-card card-tl">
+            <div class="card-icon"><i class="ph ph-file-text"></i></div>
+            <div class="card-text">
+              <strong>Comprehensive<br>Genomic Profiling</strong>
+              <span>SNV &bull; CNV &bull; MSI &bull; TMB<br>Fusion &bull; HRD</span>
+            </div>
+          </div>
+          
+          <div class="glass-card card-tr highlight-card">
+            <div class="card-text text-right">
+              <strong class="text-gradient-purple">From<br>Sequence<br>to Better<br>Outcomes</strong>
+            </div>
+            <div class="card-list">
+              <span>DETECT</span>
+              <span>UNDERSTAND</span>
+              <span>MATCH</span>
+              <span>TREAT</span>
+              <span>IMPROVE</span>
+            </div>
+          </div>
+          
+          <div class="glass-card card-mr">
+            <div class="card-icon"><i class="ph ph-clock"></i></div>
+            <div class="card-text">
+              <strong>Deep Sequencing</strong>
+              <span>High resolution<br>Accurate detection</span>
+            </div>
+          </div>
+          
+          <div class="glass-card card-bl">
+            <div class="card-icon"><i class="ph ph-chart-bar"></i></div>
+            <div class="card-text">
+              <strong>Clinical Decision<br>Support</strong>
+              <span>Therapy matching &<br>trial opportunities</span>
+            </div>
+          </div>
+          
+          <div class="glass-card card-br">
+            <div class="card-icon"><i class="ph ph-users-three"></i></div>
+            <div class="card-text">
+              <strong>Personalized<br>Oncology</strong>
+              <span>For better patient<br>outcomes</span>
             </div>
           </div>
 
-          <div class="timeline-step reveal">
-            <div class="timeline-content" style="padding-left: 0;">
-              <h3>Carrier Screening</h3>
-              <p>Carrier screening can prevent inherited conditions in children. Testing before or during pregnancy helps couples make informed decisions.</p>
+          <!-- Base Carousel -->
+          <div class="visual-base">
+            <div class="base-carousel">
+              <div class="carousel-item">
+                <div class="c-icon"><i class="ph ph-waveform"></i></div>
+                <span>SNV</span>
+              </div>
+              <div class="carousel-item">
+                <div class="c-icon"><i class="ph ph-copy"></i></div>
+                <span>CNV</span>
+              </div>
+              <div class="carousel-item">
+                <div class="c-icon"><i class="ph ph-target"></i></div>
+                <span>MSI</span>
+              </div>
+              <div class="carousel-item">
+                <div class="c-icon"><i class="ph ph-git-merge"></i></div>
+                <span>FUSION</span>
+              </div>
+              <div class="carousel-item">
+                <div class="c-icon"><i class="ph ph-activity"></i></div>
+                <span>TMB</span>
+              </div>
+              <div class="carousel-item">
+                <div class="c-icon"><i class="ph ph-intersect"></i></div>
+                <span>HRD</span>
+              </div>
             </div>
           </div>
 
-          <div class="timeline-step reveal">
-            <div class="timeline-content" style="padding-left: 0;">
-              <h3>Early Diagnosis = Better Outcomes</h3>
-              <p>Delays in rare disease diagnosis average 7 years. Genetic testing can shorten this "Diagnostic Odyssey" and reduce long-term healthcare costs.</p>
-            </div>
-          </div>
-
-          <div class="timeline-step reveal">
-            <div class="timeline-content" style="padding-left: 0;">
-              <h3>Targeted Therapies</h3>
-              <p>Genetic testing can guide targeted therapies—especially in Breast, Ovarian, Lung, and Colorectal cancers—improving survival.</p>
-            </div>
-          </div>
         </div>
       </div>
+      
     </div>
   </section>
 
-  <!-- ========== QUALITY PROMISE ========== -->
-  <section class="why-us" id="quality" aria-labelledby="quality-heading">
+  <!-- ==================== OUR VISION ==================== -->
+  <section class="vision section-padding" id="about">
     <div class="container">
-      <div class="img-banner-container reveal">
-        <img src="assets/images/section_quality.jpg" alt="Quality Promise">
-      </div>
-      <h2 class="section-title text-center reveal" id="quality-heading">
-        Why Choose <span class="text-gradient">Strand Life Sciences</span>
-      </h2>
-      <p class="section-subtitle text-center reveal">
-        Our Ethos: Quality Is Not An Option - It’s A Guarantee.
-      </p>
-      <div class="why-grid mt-5">
-        <div class="why-card reveal" id="why-card-1">
-          <div class="why-card-glow" aria-hidden="true"></div>
-          <div class="why-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg>
-          </div>
-          <h3>100+ QC Checks per Test</h3>
-          <p>Ensures precision at every analytical stage, reducing the chance of reporting error.</p>
-        </div>
-        <div class="why-card reveal" id="why-card-2">
-          <div class="why-card-glow" aria-hidden="true"></div>
-          <div class="why-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          </div>
-          <h3>CAP and NABL Accredited</h3>
-          <p>Regular audits with 100% compliance and top proficiency scores ensure gold-standard reliability.</p>
-        </div>
-        <div class="why-card reveal" id="why-card-3">
-          <div class="why-card-glow" aria-hidden="true"></div>
-          <div class="why-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-          </div>
-          <h3>Controls in Every Run</h3>
-          <p>Guarantees internal validation for each batch—every result, every time.</p>
-        </div>
-        <div class="why-card reveal" id="why-card-4">
-          <div class="why-card-glow" aria-hidden="true"></div>
-          <div class="why-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3>Transparent Documentation</h3>
-          <p>All limitations are clearly identified; no hidden caveats or assumptions.</p>
-        </div>
-        <div class="why-card reveal" id="why-card-5">
-          <div class="why-card-glow" aria-hidden="true"></div>
-          <div class="why-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <h3>Reproducibility & Consistency</h3>
-          <p>Every test is backed by SOP-driven, audited processes for result stability and repeatability.</p>
-        </div>
-        <div class="why-card reveal" id="why-card-6">
-          <div class="why-card-glow" aria-hidden="true"></div>
-          <div class="why-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75M9 7a4 4 0 110 8 4 4 0 010-8z"/></svg>
-          </div>
-          <h3>High Sensitivity & Specificity</h3>
-          <p>All variant types are validated against positive and negative controls, reducing false rates.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== INSIGHTS SECTION ========== -->
-  <section class="insights" id="insights" aria-labelledby="insights-heading" style="padding: 5rem 0;">
-    <div class="container">
-      <h2 class="section-title text-center reveal" id="insights-heading">
-        Insights
-      </h2>
-      <p class="section-subtitle text-center reveal">
-        Latest articles, case studies, publications, webinars, white papers & posters based on trending info.
-      </p>
-
-      <div class="bento-grid mt-5 articles-slider">
-        
-        <div class="bento-item bento-medium reveal" style="grid-column: span 1;">
-          <div class="bento-content">
-            <div class="service-tag">Nature Medicine</div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Clinical Integration of Whole-Genome Sequencing in Solid Cancers</h3>
-            <p style="font-size: 0.875rem; color: var(--text-muted);">Real-world studies demonstrate high success rates in generating actionable diagnostic reports.</p>
-            <a href="https://www.nature.com/nm/" target="_blank" class="btn btn-secondary mt-3" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read more</a>
-          </div>
-        </div>
-
-        <div class="bento-item bento-medium reveal" style="grid-column: span 1;">
-          <div class="bento-content">
-            <div class="service-tag">Frontiers in AI</div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Multi-Modal AI Integration in Precision Oncology</h3>
-            <p style="font-size: 0.875rem; color: var(--text-muted);">Integrating genomics with medical imaging and EHR for superior patient stratification.</p>
-            <a href="https://www.frontiersin.org/journals/artificial-intelligence" target="_blank" class="btn btn-secondary mt-3" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read more</a>
-          </div>
-        </div>
-
-        <div class="bento-item bento-medium reveal" style="grid-column: span 1;">
-          <div class="bento-content">
-            <div class="service-tag">Cell / Science</div>
-            <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Spatial Genomics Redefining Cancer Diagnostics</h3>
-            <p style="font-size: 0.875rem; color: var(--text-muted);">Identifying tumor subtypes and cryptic histological regions previously undetectable.</p>
-            <a href="https://www.cell.com/" target="_blank" class="btn btn-secondary mt-3" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Read more</a>
-          </div>
-        </div>
-
-      </div>
-      <div class="text-center mt-5">
-        <a href="#" class="btn btn-primary">View Knowledge Hub</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CAREERS SECTION ========== -->
-  <section class="careers" id="careers" aria-labelledby="careers-heading" style="padding: 5rem 0; background: var(--bg-alt);">
-    <div class="container">
-      <div class="text-center" style="max-width: 600px; margin: 0 auto;">
-        <h2 class="section-title reveal" id="careers-heading">
-          Join <span class="text-gradient">Our Team</span>
-        </h2>
-        <p class="section-subtitle reveal">
-          Help us pioneer the next generation of multiomics and bioinformatics. We are always looking for talented bioinformaticians, software engineers, and researchers.
+      <div class="vision-box">
+        <h2 class="section-title text-center">Our Vision</h2>
+        <p class="text-center lead">
+          Transforming precision oncology through accessible, high-resolution genomic diagnostics. We aim to empower oncologists and clinicians worldwide with actionable, comprehensive molecular insights that guide individualized patient care and improve clinical outcomes across all tumor types.
         </p>
-        <a href="#contact" class="btn btn-primary mt-4">View Open Positions</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== CONTACT SECTION ========== -->
-  <section class="contact" id="contact" aria-labelledby="contact-heading">
+  <!-- ==================== SOLUTIONS / CAPABILITIES ==================== -->
+  <section class="solutions section-padding bg-light" id="solutions">
     <div class="container">
-
-      <h2 class="section-title text-center reveal" id="contact-heading">
-        Ready to advance <span class="text-gradient">precision medicine?</span>
-      </h2>
-      <p class="section-subtitle reveal">
-        Whether you're a hospital, a clinic, or an independent practitioner — we have a partnership tier designed for you.
-      </p>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <h3 class="contact-info-title">Connect With Us</h3>
-          <div class="contact-details">
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">Email</span>
-                <a href="mailto:partnerships@precisionalleleDx.com" class="contact-value">partnerships@precisionalleleDx.com</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 9.77a19.79 19.79 0 01-3.07-8.67A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.1a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">Phone</span>
-                <a href="tel:+911234567890" class="contact-value">+91 12345 67890</a>
-              </div>
-            </div>
-            <div class="contact-item">
-              <div class="contact-icon" aria-hidden="true">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              </div>
-              <div>
-                <span class="contact-label">Location</span>
-                <span class="contact-value">Hyderabad, Telangana, India</span>
-              </div>
-            </div>
+      <h2 class="section-title text-center">Precision Oncology & Genomic Diagnostics</h2>
+      <p class="section-subtitle text-center">Comprehensive biomarker profiling and clinical decision support designed for personalized cancer therapy.</p>
+      
+      <div class="solutions-grid">
+        <!-- Solution 1 -->
+        <div class="solution-card">
+          <div class="card-header">
+            <h3>Comprehensive Solid Tumor Profiling</h3>
           </div>
-
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter/X">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-            </a>
-            <a href="#" class="social-link" aria-label="YouTube">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.41 19.1C5.12 19.56 12 19.56 12 19.56s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95 29 29 0 00.46-5.25 29 29 0 00-.46-5.48z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#0a0f1e"/></svg>
-            </a>
+          <div class="card-body">
+            <ul>
+              <li>Multi-gene Next-Generation Sequencing (NGS) panels targeting actionable driver mutations.</li>
+              <li>Detects key single nucleotide variants (SNVs), indels, copy number variations (CNVs), and gene fusions.</li>
+              <li>Guides precision treatment access tailored to tumor molecular profile.</li>
+            </ul>
           </div>
         </div>
 
-        <form class="contact-form reveal" id="contact-form" novalidate aria-label="Partnership inquiry form">
-          <div class="form-group">
-            <label for="name" class="form-label">Full Name</label>
-            <input type="text" id="name" name="name" class="form-input" placeholder="Dr. John Smith" autocomplete="name" required />
+        <!-- Solution 2 -->
+        <div class="solution-card">
+          <div class="card-header">
+            <h3>Liquid Biopsy & ctDNA Analysis</h3>
           </div>
-          <div class="form-group">
-            <label for="email" class="form-label">Email Address</label>
-            <input type="email" id="email" name="email" class="form-input" placeholder="doctor@hospital.com" autocomplete="email" required />
+          <div class="card-body">
+            <ul>
+              <li>Non-invasive, blood-based genomic profiling for circulating tumor DNA.</li>
+              <li>Enables early detection and ongoing treatment response tracking.</li>
+              <li>Minimal Residual Disease (MRD) monitoring for early relapse detection.</li>
+            </ul>
           </div>
-          <div class="form-group">
-            <label for="organization" class="form-label">Organization / Hospital</label>
-            <input type="text" id="organization" name="organization" class="form-input" placeholder="City Hospital, Mumbai" autocomplete="organization" />
+        </div>
+
+        <!-- Solution 3 -->
+        <div class="solution-card">
+          <div class="card-header">
+            <h3>Hereditary Cancer Screening</h3>
           </div>
-          <div class="form-group">
-            <label for="inquiry" class="form-label">Area of Interest</label>
-            <select id="inquiry" name="inquiry" class="form-input form-select">
-              <option value="" disabled selected>Select partnership type</option>
-              <option value="cancer-diagnostics">Advanced Cancer Diagnostics</option>
-              <option value="hospital-management">Hospital Management Solutions</option>
-              <option value="doctor-network">Doctor Network Agreement</option>
-              <option value="general">General Inquiry</option>
-            </select>
+          <div class="card-body">
+            <ul>
+              <li>Targeted germline panel testing for inherited predisposition genes (e.g., BRCA1/2, Lynch syndrome).</li>
+              <li>Comprehensive risk assessment for familial cancer syndromes.</li>
+              <li>Empowers proactive screening and risk-reduction strategies.</li>
+            </ul>
           </div>
-          <div class="form-group">
-            <label for="message" class="form-label">Message</label>
-            <textarea id="message" name="message" class="form-input form-textarea" placeholder="Tell us about your diagnostic needs..." rows="4"></textarea>
+        </div>
+
+        <!-- Solution 4 -->
+        <div class="solution-card">
+          <div class="card-header">
+            <h3>Hematologic Malignancy Panels</h3>
           </div>
-          <button type="submit" class="btn btn-primary btn-full" id="form-submit-btn">
-            Send Inquiry
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
-          </button>
-          <p class="form-note">We respond to all partnership inquiries within 24 business hours.</p>
-        </form>
+          <div class="card-body">
+            <ul>
+              <li>Specialized genomic profiling panels for leukemia, lymphoma, and myeloma.</li>
+              <li>Informs risk stratification, diagnosis, and targeted regimen selection.</li>
+              <li>Monitors clonal evolution throughout therapeutic interventions.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer" role="contentinfo">
-    <div class="footer-top">
-      <div class="container">
-        <div class="footer-grid">
-          <div class="footer-brand">
-            <a href="#hero" class="nav-logo footer-logo" aria-label="Precision Allele.Dx">
-              <div class="logo-icon" aria-hidden="true">
-                <svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="pGradFooter" x1="0" y1="10" x2="0" y2="86" gradientUnits="userSpaceOnUse">
-                      <stop offset="0%" stop-color="#00E5FF"/>
-                      <stop offset="25%" stop-color="#0066FF"/>
-                      <stop offset="50%" stop-color="#7B2FBE"/>
-                      <stop offset="75%" stop-color="#D62BC7"/>
-                      <stop offset="100%" stop-color="#F5861F"/>
-                    </linearGradient>
-                  </defs>
-                  <path fill-rule="evenodd" clip-rule="evenodd" d="M 45 10 L 70 10 C 86 10, 96 20, 96 34 C 96 48, 86 58, 70 58 L 59 58 L 59 80 C 59 83.5, 56.5 86, 53 86 L 45 86 L 45 10 Z M 59 23 L 70 23 C 78 23, 81 28, 81 34 C 81 40, 78 45, 70 45 L 59 45 L 59 23 Z" fill="url(#pGradFooter)"/>
-                  <g stroke="url(#pGradFooter)" stroke-width="5" stroke-linecap="round">
-                    <line x1="28" y1="14" x2="30" y2="14"/> <line x1="36" y1="14" x2="46" y2="14"/>
-                    <line x1="18" y1="22" x2="28" y2="22"/> <line x1="34" y1="22" x2="46" y2="22"/>
-                    <line x1="8" y1="30" x2="16" y2="30"/> <line x1="22" y1="30" x2="46" y2="30"/>
-                    <line x1="12" y1="38" x2="14" y2="38"/> <line x1="20" y1="38" x2="28" y2="38"/> <line x1="34" y1="38" x2="46" y2="38"/>
-                    <line x1="22" y1="46" x2="26" y2="46"/> <line x1="32" y1="46" x2="46" y2="46"/>
-                    <line x1="26" y1="54" x2="28" y2="54"/> <line x1="34" y1="54" x2="46" y2="54"/>
-                    <line x1="30" y1="62" x2="34" y2="62"/> <line x1="40" y1="62" x2="46" y2="62"/>
-                    <line x1="34" y1="70" x2="38" y2="70"/> <line x1="44" y1="70" x2="46" y2="70"/>
-                    <line x1="38" y1="78" x2="46" y2="78"/>
-                  </g>
-                </svg>
-              </div>
-              <span class="logo-text">recision <span class="logo-accent">allele.Dx</span></span>
-            </a>
-            <p class="footer-tagline">Precision in every allele</p>
-            <p class="footer-desc">Pioneering the next generation of molecular diagnostics for India's healthcare ecosystem.</p>
+  <!-- ==================== BIOINFORMATICS BANNER ==================== -->
+  <section class="bioinformatics">
+    <div class="container">
+      <div class="bio-banner">
+        <div class="bio-content">
+          <h2>Bioinformatics & Clinical Decision Support</h2>
+          <p>Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.</p>
+        </div>
+        
+        <div class="bio-stats">
+          <div class="b-stat">
+            <strong>&lt; 0.5%</strong>
+            <span>ALLELE FREQUENCY SENSITIVITY</span>
           </div>
+          <div class="divider"></div>
+          <div class="b-stat">
+            <strong>4-21 Days</strong>
+            <span>SAMPLE-TO-REPORT TAT</span>
+          </div>
+          <div class="divider"></div>
+          <div class="b-stat">
+            <strong>CAP / NABL</strong>
+            <span>QUALITY ACCREDITATIONS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-          <nav class="footer-nav" aria-label="Footer navigation">
-            <h4 class="footer-nav-title">Company</h4>
-            <ul role="list">
+  <!-- ==================== DIAGNOSTIC PANELS ==================== -->
+  <section class="panels section-padding" id="panels">
+    <div class="container">
+      <h2 class="section-title text-center">Our Diagnostic Panels</h2>
+      <p class="section-subtitle text-center">A comprehensive menu of testing solutions for all clinical scenarios.</p>
+
+      <div class="table-responsive mt-5">
+        <table class="panel-table">
+          <thead>
+            <tr>
+              <th>Panel Name</th>
+              <th>Test Cover</th>
+              <th>Sample Type</th>
+              <th>TAT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Somatic Whole Exome Sequencing</td>
+              <td>NGS-All Human ~23000 genes (300x coverage)</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr>
+              <td>Somatic Comprehensive Genomics Profiling (MSI+TMB+HRD)</td>
+              <td>NGS-1080 DNA Genes +104 fusion partners MSI+TMB+HRD</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr>
+              <td>Somatic Pan-Solid Tumour Panel</td>
+              <td>126 Genes and MSI</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr>
+              <td>Somatic 96hrs Solid Tumour Panel (Oncomine)</td>
+              <td>50 key oncology genes Pan Cancer</td>
+              <td>FFPE Tissue Block / 10ml Blood</td>
+              <td>4 Days</td>
+            </tr>
+            <tr>
+              <td>Germline Whole Exome Sequencing</td>
+              <td>NGS-All Human ~23000 genes (100x coverage)</td>
+              <td>Whole Blood in EDTA Tube</td>
+              <td>16 Days</td>
+            </tr>
+            <tr>
+              <td>PCR- EGFR Mutation Panel</td>
+              <td>Exon 18 19 20 21-Hotspots</td>
+              <td>FFPE / 10ml Blood</td>
+              <td>2 Days</td>
+            </tr>
+            <tr>
+              <td>PAM 50 -BREAST CANCER PROGNOSTICATION</td>
+              <td>PAM50, TIS, ROR/Genomic Risk</td>
+              <td>FFPE Tissue Block</td>
+              <td>21 Days</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="text-center mt-4">
+         <a href="#" class="btn btn-primary btn-gradient">Download Full Panel Menu</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== TECHNOLOGY ==================== -->
+  <section class="technology section-padding bg-light" id="technology">
+    <div class="container">
+      <h2 class="section-title text-center">Advanced <span class="text-gradient">Technology</span></h2>
+      <p class="section-subtitle text-center">Powered by cutting-edge sequencing systems for unparalleled precision.</p>
+
+      <div class="tech-grid">
+        <div class="tech-card">
+          <div class="tech-icon"><i class="ph ph-cpu"></i></div>
+          <h3>Thermo Fisher Genexus</h3>
+          <p>The first fully integrated next-generation sequencing platform featuring an automated specimen-to-report workflow.</p>
+        </div>
+        <div class="tech-card">
+          <div class="tech-icon"><i class="ph ph-microscope"></i></div>
+          <h3>nCounter Analysis System</h3>
+          <p>Advanced digital counting of nucleic acids for highly multiplexed, direct profiling of individual molecules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== RESOURCES ==================== -->
+  <section class="resources section-padding" id="resources">
+    <div class="container">
+      <h2 class="section-title text-center">Resources & <span class="text-gradient">Insights</span></h2>
+      <p class="section-subtitle text-center">Stay updated with the latest in precision oncology, case studies, and clinical research.</p>
+
+      <div class="resources-grid mt-5">
+        <div class="resource-card">
+          <div class="resource-tag">Case Study</div>
+          <h3>Clinical Integration of WGS in Solid Cancers</h3>
+          <p>Real-world studies demonstrating high success rates in generating actionable diagnostic reports.</p>
+          <button class="btn-link" onclick="openPaper('paper-wgs.html')">Read Paper in Frame &rarr;</button>
+        </div>
+        
+        <div class="resource-card">
+          <div class="resource-tag">Publication</div>
+          <h3>Multi-Modal AI in Precision Oncology</h3>
+          <p>Integrating genomics with medical imaging and EHR for superior patient stratification.</p>
+          <button class="btn-link" onclick="openPaper('paper-ai.html')">Read Paper in Frame &rarr;</button>
+        </div>
+
+        <div class="resource-card">
+          <div class="resource-tag">Webinar</div>
+          <h3>Spatial Genomics Redefining Diagnostics</h3>
+          <p>Identifying tumor subtypes and cryptic histological regions previously undetectable.</p>
+          <button class="btn-link" onclick="openPaper('paper-spatial.html')">Read Paper in Frame &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PAPER MODAL ==================== -->
+  <div id="paper-modal" class="modal-overlay">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 id="modal-title">Research Article</h3>
+        <button class="modal-close" onclick="closePaper()"><i class="ph ph-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <iframe id="paper-frame" src="" frameborder="0"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact section-padding bg-light" id="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h2>Ready to advance <br><span class="text-gradient">precision medicine?</span></h2>
+          <p class="mt-4">Whether you're a hospital, a clinic, or an independent practitioner — we have a partnership tier designed for you.</p>
+          
+          <ul class="contact-details mt-5">
+            <li>
+              <i class="ph ph-envelope-simple"></i>
+              <span>partnerships@precisionalleleDx.com</span>
+            </li>
+            <li>
+              <i class="ph ph-phone"></i>
+              <span>+91 12345 67890</span>
+            </li>
+            <li>
+              <i class="ph ph-map-pin"></i>
+              <span>Hyderabad, Telangana, India</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="contact-form-container">
+          <form class="contact-form">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Dr. John Smith" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" placeholder="doctor@hospital.com" required>
+            </div>
+            <div class="form-group">
+              <label>Message</label>
+              <textarea rows="4" placeholder="How can we partner together?"></textarea>
+            </div>
+            <button class="btn btn-primary btn-gradient w-100">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/images/logo.png" alt="Precision Allele.Dx" class="footer-logo">
+          <p>Next-Generation Sequencing Solutions for Cancer Diagnostics.</p>
+        </div>
+        <div class="footer-links">
+          <div class="link-col">
+            <h4>Company</h4>
+            <ul>
               <li><a href="#about">About Us</a></li>
-              <li><a href="#quality">Quality Promise</a></li>
-              <li><a href="#careers">Careers</a></li>
+              <li><a href="#solutions">Solutions</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-          </nav>
-
-          <nav class="footer-nav" aria-label="Services navigation">
-            <h4 class="footer-nav-title">Explore</h4>
-            <ul role="list">
-              <li><a href="#tests">Tests & Services</a></li>
-              <li><a href="#informatics">Informatics</a></li>
-              <li><a href="#testing-matters">Why Testing Matters</a></li>
-              <li><a href="#insights">Insights</a></li>
+          </div>
+          <div class="link-col">
+            <h4>Diagnostics</h4>
+            <ul>
+              <li><a href="#panels">Panel Menu</a></li>
+              <li><a href="#technology">Technology</a></li>
+              <li><a href="#">Sample Requirements</a></li>
             </ul>
-          </nav>
-
-          <div class="footer-contact">
-            <h4 class="footer-nav-title">Contact</h4>
-            <address>
-              <p><a href="mailto:partnerships@precisionalleleDx.com">partnerships@precisionalleleDx.com</a></p>
-              <p><a href="tel:+911234567890">+91 12345 67890</a></p>
-              <p>Hyderabad, Telangana, India</p>
-            </address>
           </div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; 2026 Precision Allele.Dx. All rights reserved.</p>
-        <div class="footer-legal">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Cookie Policy</a>
-        </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Precision Allele.Dx | Oncology Genomics Division. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
-  <!-- === Third-party Libraries === -->
-  <!-- Lenis: smooth scroll -->
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
-  <!-- Three.js r128 -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <!-- GSAP + ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Script for Modal -->
+  <script>
+    function openPaper(url) {
+      document.getElementById('paper-frame').src = url;
+      document.getElementById('paper-modal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-  <!-- App -->
-  <script src="assets/js/main.js"></script>
+    function closePaper() {
+      document.getElementById('paper-modal').classList.remove('active');
+      document.getElementById('paper-frame').src = '';
+      document.body.style.overflow = 'auto';
+    }
+  </script>
 </body>
 </html>
