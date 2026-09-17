@@ -140,8 +140,8 @@
       <!-- Hero Right: 3D Visualization / Glass Cards -->
       <div class="hero-visual">
         <div class="visual-wrapper">
-          <!-- Central DNA Image -->
-          <img src="assets/images/dna-hero.png" alt="DNA Sequencing" class="dna-model">
+          <!-- Central DNA 3D Model Container -->
+          <div id="dna-canvas-container" class="dna-model"></div>
           
           <!-- Floating Glass Cards -->
           <div class="glass-card card-tl">
@@ -155,14 +155,15 @@
           <div class="glass-card card-tr highlight-card">
             <div class="card-text text-right">
               <strong class="text-gradient-purple">From<br>Sequence<br>to Better<br>Outcomes</strong>
+              <div class="card-list">
+                <span>DETECT</span>
+                <span>UNDERSTAND</span>
+                <span>MATCH</span>
+                <span>TREAT</span>
+                <span>IMPROVE</span>
+              </div>
             </div>
-            <div class="card-list">
-              <span>DETECT</span>
-              <span>UNDERSTAND</span>
-              <span>MATCH</span>
-              <span>TREAT</span>
-              <span>IMPROVE</span>
-            </div>
+            <div class="card-icon"><i class="ph ph-list-dashes"></i></div>
           </div>
           
           <div class="glass-card card-mr">
@@ -557,5 +558,9 @@
       document.body.style.overflow = 'auto';
     }
   </script>
+
+  <!-- Three.js for 3D DNA -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="assets/js/dna3d.js"></script>
 </body>
 </html>

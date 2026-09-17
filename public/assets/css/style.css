@@ -411,14 +411,14 @@ ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: auto;
+  width: 100%;
+  max-width: 500px;
   height: 90%;
   max-height: 600px;
-  object-fit: contain;
   z-index: 1;
-  mix-blend-mode: darken; /* Better blending for light backgrounds */
-  -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);
-  mask-image: radial-gradient(circle, black 40%, transparent 70%);
+  /* Keep the mask to softly fade the top/bottom edges of the 3D model into the background */
+  -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  mask-image: radial-gradient(circle, black 30%, transparent 70%);
 }
 
 /* DNA HUD Annotations (replacing boxes) */
@@ -489,12 +489,13 @@ ul {
   flex-direction: column;
   position: relative;
   z-index: 2;
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   padding: 0.75rem 1.25rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .card-text h4 {
@@ -534,29 +535,29 @@ ul {
 }
 
 .highlight-card .card-text {
-  border: none;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .card-list {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  margin-left: 0;
-  padding-left: 0;
-  border-left: none;
+  gap: 0.15rem;
   margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  text-align: right;
 }
 
 .card-list span {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--color-text-muted);
   letter-spacing: 0.05em;
+  font-weight: 600;
 }
 
 /* Positioning of cards */
-.card-tl { top: 10%; left: 0%; width: 220px; }
-.card-tr { top: 15%; right: -5%; flex-direction: row-reverse;}
+.card-tl { top: 10%; left: 0%; }
+.card-tr { top: 15%; right: -5%; }
 .card-mr { top: 45%; right: 0%; }
 .card-bl { bottom: 25%; left: 0%; }
 .card-br { bottom: 15%; right: 5%; }
