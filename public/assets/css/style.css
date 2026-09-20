@@ -1001,18 +1001,17 @@ ul {
 }
 
 .footer-brand {
-  max-width: 300px;
+  max-width: 350px;
 }
 
-.footer-logo {
-  height: 48px;
-  margin-bottom: 1rem;
-  filter: brightness(0) invert(1);
+.footer-brand-logo .logo-text {
+  color: #fff;
 }
 
 .footer-brand p {
   color: #94A3B8;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  margin-top: 1rem;
 }
 
 .footer-links {
@@ -1156,15 +1155,136 @@ ul {
   }
 }
 
+/* Hide mobile nav overlay on desktop entirely */
+.mobile-nav-overlay {
+  display: none;
+}
+
+/* ==================== RESPONSIVE: TABLETS & SMALL DESKTOPS (< 1024px) ==================== */
+@media (max-width: 1024px) {
+  .hero-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 100px;
+  }
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  .hero-features {
+    justify-content: center;
+  }
+  .hero-visual {
+    height: 500px;
+  }
+  .card-tl { top: 0; left: -10%; }
+  .card-tr { top: 5%; right: -10%; }
+  .card-mr { display: none; /* Hide middle card on tablet to reduce clutter */ }
+  .panels-grid, .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==================== RESPONSIVE: MOBILE PHONES (< 768px) ==================== */
 @media (max-width: 768px) {
+  /* Navbar */
   .main-nav, .header-actions .btn {
     display: none;
   }
   .menu-toggle {
     display: block;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    cursor: pointer;
+    z-index: 1000;
+    position: relative;
   }
-  .solutions-grid {
+  
+  /* Mobile Nav Overlay */
+  .mobile-nav-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Logo Scaling */
+  .logo-text { font-size: 1.8rem; margin-top: 8px; }
+  .logo-icon svg { width: 54px; height: 54px; }
+  .logo-subline { font-size: 0.6rem; padding-left: 2.8rem; }
+  .mobile-nav-overlay.active {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .mobile-nav-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .mobile-nav-container a {
+    font-size: 1.5rem;
+    font-family: var(--font-heading);
+    color: var(--color-text-main);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  .mobile-nav-container a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Hero adjustments for mobile */
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
+  }
+  .hero-features {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .hero-visual {
+    height: 400px;
+  }
+  
+  /* Hide all HUD cards on small mobile to just focus on the 3D DNA */
+  .glass-card, .visual-base {
+    display: none;
+  }
+
+  /* Sections */
+  .section-title {
+    font-size: 2rem;
+  }
+  .solutions-grid, .panels-grid, .resources-grid, .tech-grid, .tech-stats {
     grid-template-columns: 1fr;
+  }
+  .panel-card {
+    padding: 1.5rem;
   }
   .bio-stats {
     flex-direction: column;
@@ -1173,6 +1293,32 @@ ul {
   .bio-stats .divider {
     width: 60px;
     height: 1px;
+  }
+  
+  /* Contact / Footer */
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+  .contact-info, .contact-form-container {
+    padding: 1.5rem;
+  }
+  .contact-info h2 {
+    font-size: 1.8rem;
+  }
+  .contact-details li {
+    align-items: flex-start;
+  }
+  .contact-details li span {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
+    flex: 1;
+  }
+  .hero-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
   }
   .footer-top {
     flex-direction: column;

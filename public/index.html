@@ -66,7 +66,23 @@
 
       <div class="header-actions">
         <a href="#contact" class="btn btn-primary btn-gradient">Talk to us <i class="ph ph-arrow-up-right"></i></a>
-        <button class="menu-toggle"><i class="ph ph-list"></i></button>
+        <button class="menu-toggle" id="mobile-menu-btn">
+          <i class="ph ph-list"></i>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="mobile-nav-overlay" id="mobile-nav">
+      <div class="mobile-nav-container">
+        <ul>
+          <li><a href="#about" class="mobile-link">About</a></li>
+          <li><a href="#solutions" class="mobile-link">Solutions</a></li>
+          <li><a href="#panels" class="mobile-link">Diagnostic Panels</a></li>
+          <li><a href="#technology" class="mobile-link">Technology</a></li>
+          <li><a href="#resources" class="mobile-link">Resources</a></li>
+          <li><a href="#contact" class="mobile-link">Contact</a></li>
+        </ul>
       </div>
     </div>
   </header>
@@ -516,7 +532,37 @@
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="assets/images/logo.png" alt="Precision Allele.Dx" class="footer-logo">
+          <a href="#" class="brand-logo-container footer-brand-logo">
+            <div class="logo-top">
+              <div class="logo-icon">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="pGradFooter" x1="0" y1="10" x2="0" y2="86" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stop-color="#00E5FF"/>
+                      <stop offset="25%" stop-color="#0066FF"/>
+                      <stop offset="50%" stop-color="#7B2FBE"/>
+                      <stop offset="75%" stop-color="#D62BC7"/>
+                      <stop offset="100%" stop-color="#F5861F"/>
+                    </linearGradient>
+                  </defs>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M 45 10 L 70 10 C 86 10, 96 20, 96 34 C 96 48, 86 58, 70 58 L 59 58 L 59 80 C 59 83.5, 56.5 86, 53 86 L 45 86 L 45 10 Z M 59 23 L 70 23 C 78 23, 81 28, 81 34 C 81 40, 78 45, 70 45 L 59 45 L 59 23 Z" fill="url(#pGradFooter)"/>
+                  <g stroke="url(#pGradFooter)" stroke-width="5" stroke-linecap="round">
+                    <line x1="28" y1="14" x2="30" y2="14"/> <line x1="36" y1="14" x2="46" y2="14"/>
+                    <line x1="18" y1="22" x2="28" y2="22"/> <line x1="34" y1="22" x2="46" y2="22"/>
+                    <line x1="8" y1="30" x2="16" y2="30"/> <line x1="22" y1="30" x2="46" y2="30"/>
+                    <line x1="12" y1="38" x2="14" y2="38"/> <line x1="20" y1="38" x2="28" y2="38"/> <line x1="34" y1="38" x2="46" y2="38"/>
+                    <line x1="22" y1="46" x2="26" y2="46"/> <line x1="32" y1="46" x2="46" y2="46"/>
+                    <line x1="26" y1="54" x2="28" y2="54"/> <line x1="34" y1="54" x2="46" y2="54"/>
+                    <line x1="30" y1="62" x2="34" y2="62"/> <line x1="40" y1="62" x2="46" y2="62"/>
+                    <line x1="34" y1="70" x2="38" y2="70"/> <line x1="44" y1="70" x2="46" y2="70"/>
+                    <line x1="38" y1="78" x2="46" y2="78"/>
+                  </g>
+                </svg>
+              </div>
+              <span class="logo-text">recision <span class="logo-accent">allele</span><span class="logo-accent-orange">.Dx</span></span>
+            </div>
+            <div class="logo-subline">PRECISION IN EVERY ALLELE</div>
+          </a>
           <p>Next-Generation Sequencing Solutions for Cancer Diagnostics.</p>
         </div>
         <div class="footer-links">
@@ -562,5 +608,6 @@
   <!-- Three.js for 3D DNA -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="assets/js/dna3d.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
