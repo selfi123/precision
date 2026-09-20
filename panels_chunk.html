@@ -1,0 +1,55 @@
+      <div class="panel-filters-container">
+        <button class="filter-btn active" data-filter="all">All <span class="badge">25</span></button>
+        <button class="filter-btn" data-filter="somatic">Somatic <span class="badge">15</span></button>
+        <button class="filter-btn" data-filter="germline">Germline <span class="badge">4</span></button>
+        <button class="filter-btn" data-filter="pcr">PCR <span class="badge">5</span></button>
+        <button class="filter-btn" data-filter="other">Other <span class="badge">1</span></button>
+      </div>
+
+      <div class="table-responsive mt-5">
+        <table class="panel-table futuristic-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>PANEL</th>
+              <th>TEST COVER</th>
+              <th>SAMPLE TYPE</th>
+              <th>TAT</th>
+            </tr>
+          </thead>
+          <tbody id="panel-table-body">
+            <!-- Somatic -->
+            <tr data-category="somatic"><td>1</td><td class="panel-name">Somatic Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td><td>NGS-All Human ~23000 genes (300x coverage)</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>2</td><td class="panel-name">Somatic Comprehensive Genomics Profiling (MSI+TMB+HRD) <i class="ph ph-arrow-up-right"></i></td><td>NGS-1080 DNA Genes +104 fusion partners MSI+TMB+HRD</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>3</td><td class="panel-name">Somatic Lung Gene panel <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>4</td><td class="panel-name">Somatic Pan-Solid Tumour Panel <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>5</td><td class="panel-name">Somatic Sarcoma Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>NGS-571 DNA Genes + 2660 RNA fusion partners, TMB and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>6</td><td class="panel-name">Somatic Endometrium Panel <i class="ph ph-arrow-up-right"></i></td><td>51 HRR Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>7</td><td class="panel-name">Somatic Targeted Lung cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>12 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>8</td><td class="panel-name">Somatic Targeted Breast Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>25 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>9</td><td class="panel-name">Somatic Targeted Colorectal Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>41 genes + 11 MSI Markers</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>10</td><td class="panel-name">Somatic Targeted Ovarian Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>26 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>11</td><td class="panel-name">Somatic Targeted endometrium Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>34 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>12</td><td class="panel-name">Somatic 96hrs Solid Tumour Panel (Oncomine Precision Assay) <i class="ph ph-arrow-up-right"></i></td><td>50 key oncology genes Pan Cancer</td><td>FFPE Tissue Block or 10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td><td>4 Days</td></tr>
+            <tr data-category="somatic"><td>13</td><td class="panel-name">Somatic 96hrs Myeloid Panel (Oncomine Myeloid Assay) <i class="ph ph-arrow-up-right"></i></td><td>DNA Panel: Hotspot Gene (23) Full Gene (17) RNA Panel: Expression Gene (5) Expression Control Gene (5) Fusion Driver Gene (29)</td><td>3ml Bone marrow Aspirate in EDTA Tube</td><td>4 Days</td></tr>
+            <tr data-category="somatic"><td>14</td><td class="panel-name">Somatic Comprehensive Leukaemia Panel (ALL/AML) <i class="ph ph-arrow-up-right"></i></td><td>NGS-98 DNA Genes + 119 RNA Fusions</td><td>3ml Bone Marrow Aspirate in EDTA Tube</td><td>16 Days</td></tr>
+            <tr data-category="somatic"><td>15</td><td class="panel-name">Comprehensive Pan- Liquid Biopsy (CtDNA) <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td><td>16 Days</td></tr>
+            
+            <!-- Germline -->
+            <tr data-category="germline"><td>16</td><td class="panel-name">Germline Oncomine BRCA 1 and BRCA2 <i class="ph ph-arrow-up-right"></i></td><td>BRCA 1 and BRCA2 - Full Gene</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
+            <tr data-category="germline"><td>17</td><td class="panel-name">Germline Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td><td>NGS-All Human ~23000 genes (100x coverage)</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
+            <tr data-category="germline"><td>18</td><td class="panel-name">Germline Comprehensive Hereditary Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>74 Genes</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
+            <tr data-category="germline"><td>19</td><td class="panel-name">Germline BRCA 1 & 2 deletion/duplication by MLPA <i class="ph ph-arrow-up-right"></i></td><td>BRCA 1 and BRCA2 - Full Gene</td><td>Whole Blood in EDTA Tube</td><td>10 Days</td></tr>
+            
+            <!-- PCR -->
+            <tr data-category="pcr"><td>20</td><td class="panel-name">PCR- EGFR Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 18 19 20 21-Hotspots</td><td>FFPE Tissue Block or 10ml Blood In Streck Tube</td><td>2 Days</td></tr>
+            <tr data-category="pcr"><td>21</td><td class="panel-name">PCR- KRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 2 3 & 4 -Hotspots</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
+            <tr data-category="pcr"><td>22</td><td class="panel-name">PCR- NRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 2 3 & 4 -Hotspots</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
+            <tr data-category="pcr"><td>23</td><td class="panel-name">PCR- BRAF Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 15 V600E</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
+            <tr data-category="pcr"><td>24</td><td class="panel-name">PCR- DPYD Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>DPYD*2A/DPYD*13/D949V/IVS10 /DPYD*6</td><td>Whole Blood in EDTA Tube</td><td>2 Days</td></tr>
+            
+            <!-- Other -->
+            <tr data-category="other"><td>25</td><td class="panel-name">PAM 50 -BREAST CANCER PROGNOSTICATION ASSAY <i class="ph ph-arrow-up-right"></i></td><td>PAM50, Tumour Inflammation Signature (TIS), Risk of Recurrence (ROR)/Genomic Risk-776 (Human)</td><td>FFPE Tissue Block</td><td>21 Days</td></tr>
+          </tbody>
+        </table>
+      </div>
