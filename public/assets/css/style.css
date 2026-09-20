@@ -165,61 +165,59 @@ ul {
 
 .brand-logo-container {
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  align-items: flex-start;
+  gap: 0.2rem;
   text-decoration: none;
 }
 
-.logo-top {
-  display: flex;
-  align-items: flex-start;
-  gap: 0;
-}
-
 .logo-icon {
+  width: 72px;
+  height: 90px;
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  margin-top: -12px; /* Pull the P up slightly so its top aligns with the text */
-  margin-right: -4px; /* Pull the text closer to the P */
+  margin-top: -6px;
 }
 
-.logo-text {
-  font-family: var(--font-heading);
-  font-size: 2.5rem; /* Larger text to match the large P */
-  font-weight: 500;
-  color: #1E2F7A;
-  letter-spacing: -0.02em;
+.logo-text-block {
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+.logo-main-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.3rem;
   line-height: 1;
-  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-.logo-accent {
-  background: linear-gradient(90deg, #00E5FF, #0066FF);
+.text-recision {
+  color: #1E2F7A;
+}
+
+.text-allele-dx {
+  background: linear-gradient(90deg, #00E5FF, #0066FF, #7B2FBE, #D62BC7, #F5861F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.logo-accent-orange {
-  background: linear-gradient(90deg, #D62BC7, #F5861F);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.logo-divider {
+  height: 1px;
+  background: rgba(0,0,0,0.2);
+  margin: 0.4rem 0 0.3rem 0;
+  width: 100%;
 }
 
-.logo-subline {
+.logo-subtext {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  padding-left: 3.5rem;
-  background: linear-gradient(90deg, #00C8BE, #2B44C4, #F5861F);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  background: linear-gradient(90deg, #00C8BE, #2B44C4, #D62BC7, #F5861F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  border-top: 1px solid rgba(0,0,0,0.2);
-  margin-top: 0.1rem;
-  padding-top: 0.2rem;
-  width: max-content;
 }
 
 .main-nav ul {
