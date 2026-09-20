@@ -53,39 +53,4 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   });
-
-  // Futuristic Modal Logic
-  const modal = document.getElementById('panel-modal');
-  const closeModalBtn = document.querySelector('.close-modal');
-  const modalOverlay = document.querySelector('.modal-overlay');
-
-  const mTitle = document.getElementById('modal-title');
-  const mCover = document.getElementById('modal-cover');
-  const mSample = document.getElementById('modal-sample');
-  const mTat = document.getElementById('modal-tat');
-
-  tableRows.forEach(row => {
-    row.addEventListener('click', () => {
-      const name = row.cells[1].innerText;
-      const cover = row.cells[2].innerText;
-      const sample = row.cells[3].innerText;
-      const tat = row.cells[4].innerText;
-
-      mTitle.innerText = name;
-      mCover.innerText = cover;
-      mSample.innerText = sample;
-      mTat.innerText = tat;
-
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-
-  function closeModal() {
-    modal.classList.remove('active');
-    document.body.style.overflow = 'auto';
-  }
-
-  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
-  if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
 });
