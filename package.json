@@ -1,0 +1,13 @@
+{
+  "name": "precision-al-light",
+  "version": "1.0.0",
+  "description": "Precision Allele.Dx light theme landing page",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo 'No build step required'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
