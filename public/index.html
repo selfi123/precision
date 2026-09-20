@@ -139,6 +139,98 @@
       color: rgba(13, 27, 42, 0.7);
       text-transform: uppercase;
     }
+    
+    .mobile-nodes-wrapper {
+      display: contents;
+    }
+    
+    /* Mobile Adjustments for DNA Visual */
+    @media (max-width: 991px) {
+      .visual-base {
+        display: none !important;
+      }
+      .visual-wrapper {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      .dna-model {
+        position: relative !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 100% !important;
+        height: 400px !important;
+        max-width: 100%;
+        max-height: 400px;
+        border-radius: 20px;
+        -webkit-mask-image: radial-gradient(circle, black 30%, transparent 75%);
+        mask-image: radial-gradient(circle, black 30%, transparent 75%);
+      }
+      
+      /* Mobile Nodes 2x2 Grid Container */
+      .mobile-nodes-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+        gap: 0.75rem;
+      }
+      
+      /* Restyle nodes for 2x2 grid */
+      .holo-node {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100%;
+        animation: none !important;
+      }
+      .holo-node .node-content {
+        padding: 0.75rem;
+      }
+      .holo-node .node-content strong {
+        font-size: 0.85rem;
+      }
+      .holo-node .node-content span {
+        font-size: 0.65rem;
+      }
+      
+      /* Restyle Theme Text for mobile */
+      .theme-text-block {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        animation: none !important;
+        margin-top: 1rem;
+        width: 90%;
+      }
+      .theme-title {
+        text-align: center;
+      }
+      .theme-divider {
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(to right, rgba(0,229,255,0), rgba(0,229,255,1), rgba(214,43,199,1), rgba(214,43,199,0));
+      }
+      .theme-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+      }
+      
+      .hero-visual {
+        height: auto;
+        min-height: auto;
+        margin-bottom: 2rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -281,31 +373,33 @@
           </div>
           
           <!-- Floating Holographic Nodes -->
-          <div class="holo-node node-tl">
-            <div class="node-content">
-              <strong>Genomic Profiling</strong>
-              <span>SNV &bull; CNV &bull; MSI</span>
+          <div class="mobile-nodes-wrapper">
+            <div class="holo-node node-tl">
+              <div class="node-content">
+                <strong>Genomic Profiling</strong>
+                <span>SNV &bull; CNV &bull; MSI</span>
+              </div>
             </div>
-          </div>
-          
-          <div class="holo-node node-tr">
-            <div class="node-content">
-              <strong>Deep Sequencing</strong>
-              <span>High resolution detection</span>
+            
+            <div class="holo-node node-tr">
+              <div class="node-content">
+                <strong>Deep Sequencing</strong>
+                <span>High resolution detection</span>
+              </div>
             </div>
-          </div>
-          
-          <div class="holo-node node-bl">
-            <div class="node-content">
-              <strong>Clinical Support</strong>
-              <span>Therapy matching</span>
+            
+            <div class="holo-node node-bl">
+              <div class="node-content">
+                <strong>Clinical Support</strong>
+                <span>Therapy matching</span>
+              </div>
             </div>
-          </div>
-          
-          <div class="holo-node node-br">
-            <div class="node-content">
-              <strong>Personalized Oncology</strong>
-              <span>For better outcomes</span>
+            
+            <div class="holo-node node-br">
+              <div class="node-content">
+                <strong>Personalized Oncology</strong>
+                <span>For better outcomes</span>
+              </div>
             </div>
           </div>
 
