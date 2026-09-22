@@ -17,11 +17,119 @@
   <link rel="stylesheet" href="assets/css/style.css">
   
   <style>
-    /* Blend DNA image into background perfectly */
+    /* ==================== SEAMLESS DNA MODEL & AMBIENT AURA ==================== */
+    .visual-wrapper {
+      position: relative;
+    }
+
+    /* Ambient atmospheric bioluminescent aura behind DNA */
+    .visual-wrapper::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 600px;
+      background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.28) 0%, rgba(123, 47, 190, 0.18) 35%, rgba(214, 43, 199, 0.08) 55%, transparent 75%);
+      filter: blur(52px);
+      pointer-events: none;
+      z-index: 0;
+      animation: ambientAuraPulse 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientAuraPulse {
+      0% {
+        opacity: 0.75;
+        transform: translate(-50%, -50%) scale(0.94);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.06);
+      }
+    }
+
+    /* Flawlessly blend DNA image into background with multi-stop feathered elliptical mask */
     .dna-model {
-      -webkit-mask-image: radial-gradient(circle, black 35%, transparent 75%);
-      mask-image: radial-gradient(circle, black 35%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
+      mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
       object-fit: cover;
+      animation: dnaReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both, floatDNA 7s ease-in-out 1.4s infinite alternate;
+      will-change: transform;
+    }
+
+    @keyframes dnaReveal {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -46%) scale(0.92);
+        filter: blur(8px);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(0);
+      }
+    }
+
+    @keyframes floatDNA {
+      0% {
+        transform: translate(-50%, -50%) translateY(0) scale(1);
+      }
+      50% {
+        transform: translate(-50%, -50%) translateY(-10px) scale(1.012);
+      }
+      100% {
+        transform: translate(-50%, -50%) translateY(6px) scale(0.992);
+      }
+    }
+
+    /* ==================== HERO ENTRANCE CHOREOGRAPHY ==================== */
+    .header {
+      animation: headerSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+    @keyframes headerSlideDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-title {
+      animation: heroTitleIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
+    }
+    @keyframes heroTitleIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-desc {
+      animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
+    }
+
+    .hero-features .feature-item:nth-child(1) {
+      animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+    }
+    .hero-features .feature-item:nth-child(2) {
+      animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+    }
+    .hero-features .feature-item:nth-child(3) {
+      animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+    }
+
+    .hero-cta-group {
+      animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+    }
+
+    .hero-stats .stat:nth-child(1) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both; }
+    .hero-stats .stat:nth-child(2) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.78s both; }
+    .hero-stats .stat:nth-child(3) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.84s both; }
+    .hero-stats .stat:nth-child(4) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.90s both; }
+
+    @keyframes heroFadeSlideUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     /* Sleek Holographic Nodes replacing glass cards */
@@ -31,13 +139,29 @@
       align-items: center;
       gap: 0.75rem;
       z-index: 10;
-      animation: floatNode 6s ease-in-out infinite;
     }
     
-    .holo-node.node-tl { top: 14%; left: 4%; }
-    .holo-node.node-tr { top: 38%; right: 4%; animation-delay: -1s; }
-    .holo-node.node-bl { top: 56%; left: 4%; animation-delay: -2s; }
-    .holo-node.node-br { top: 74%; right: 4%; animation-delay: -3s; }
+    .holo-node.node-tl {
+      top: 14%; left: 4%;
+      animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both, floatNode 6s ease-in-out 1.35s infinite;
+    }
+    .holo-node.node-tr {
+      top: 38%; right: 4%;
+      animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both, floatNode 6s ease-in-out 1.5s infinite -1s;
+    }
+    .holo-node.node-bl {
+      top: 56%; left: 4%;
+      animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s both, floatNode 6s ease-in-out 1.65s infinite -2s;
+    }
+    .holo-node.node-br {
+      top: 74%; right: 4%;
+      animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.0s both, floatNode 6s ease-in-out 1.8s infinite -3s;
+    }
+
+    @keyframes nodeEntrance {
+      from { opacity: 0; transform: scale(0.7) translateY(15px); }
+      to { opacity: 1; transform: scale(1) translateY(0); }
+    }
 
     .node-content {
       background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.85));
@@ -49,6 +173,11 @@
       display: flex;
       flex-direction: column;
       position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .node-content:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 36px rgba(0, 229, 255, 0.2);
     }
 
     .node-content strong {
@@ -106,8 +235,13 @@
       display: flex;
       gap: 1.2rem;
       align-items: center;
-      animation: floatNode 8s ease-in-out infinite reverse;
+      animation: themeEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both, floatNode 8s ease-in-out 1.65s infinite reverse;
     }
+    @keyframes themeEntrance {
+      from { opacity: 0; transform: translateX(30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
     .theme-title {
       font-family: var(--font-heading);
       font-size: 1.8rem;
@@ -139,6 +273,14 @@
       letter-spacing: 2px;
       color: rgba(13, 27, 42, 0.7);
       text-transform: uppercase;
+    }
+
+    .visual-base {
+      animation: visualBaseIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.95s both;
+    }
+    @keyframes visualBaseIn {
+      from { opacity: 0; transform: translate(-50%, 25px); }
+      to { opacity: 1; transform: translate(-50%, 0); }
     }
     
     .mobile-nodes-wrapper {
@@ -200,6 +342,10 @@
         align-items: center;
         gap: 1.5rem;
       }
+      .visual-wrapper::before {
+        width: 320px;
+        height: 380px;
+      }
       .dna-model {
         position: relative !important;
         top: 0 !important;
@@ -210,8 +356,19 @@
         max-width: 100%;
         max-height: 380px;
         border-radius: 20px;
-        -webkit-mask-image: radial-gradient(circle, black 35%, transparent 75%);
-        mask-image: radial-gradient(circle, black 35%, transparent 75%);
+        -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
+        mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        animation: floatDNAMobile 7s ease-in-out infinite alternate !important;
+      }
+
+      @keyframes floatDNAMobile {
+        0% { transform: translateY(0) scale(1); }
+        50% { transform: translateY(-8px) scale(1.015); }
+        100% { transform: translateY(4px) scale(0.99); }
       }
       
       /* Mobile Nodes 2x2 Grid Container */
@@ -499,7 +656,7 @@
   <!-- ==================== OUR VISION ==================== -->
   <section class="vision section-padding" id="about">
     <div class="container">
-      <div class="vision-box">
+      <div class="vision-box reveal-on-scroll reveal-scale">
         <h2 class="section-title text-center">Our Vision</h2>
         <p class="text-center lead">
           Transforming precision oncology through accessible, high-resolution genomic diagnostics. We aim to empower oncologists and clinicians worldwide with actionable, comprehensive molecular insights that guide individualized patient care and improve clinical outcomes across all tumor types.
@@ -511,10 +668,10 @@
   <!-- ==================== SOLUTIONS / CAPABILITIES ==================== -->
   <section class="solutions section-padding bg-light" id="solutions">
     <div class="container">
-      <h2 class="section-title text-center">Precision Oncology & Genomic Diagnostics</h2>
-      <p class="section-subtitle text-center">Comprehensive biomarker profiling and clinical decision support designed for personalized cancer therapy.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Precision Oncology & Genomic Diagnostics</h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Comprehensive biomarker profiling and clinical decision support designed for personalized cancer therapy.</p>
       
-      <div class="solutions-grid">
+      <div class="solutions-grid reveal-stagger">
         <!-- Solution 1 -->
         <div class="solution-card">
           <div class="card-header">
@@ -577,13 +734,13 @@
   <!-- ==================== BIOINFORMATICS BANNER ==================== -->
   <section class="bioinformatics">
     <div class="container">
-      <div class="bio-banner">
-        <div class="bio-content">
+      <div class="bio-banner reveal-on-scroll reveal-scale">
+        <div class="bio-content reveal-on-scroll reveal-slide-left">
           <h2>Bioinformatics & Clinical Decision Support</h2>
           <p>Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.</p>
         </div>
         
-        <div class="bio-stats">
+        <div class="bio-stats reveal-stagger">
           <div class="b-stat">
             <strong>&lt; 0.5%</strong>
             <span>ALLELE FREQUENCY SENSITIVITY</span>
@@ -606,17 +763,17 @@
   <!-- ==================== DIAGNOSTIC PANELS ==================== -->
   <section class="panels section-padding" id="panels">
     <div class="container">
-      <h2 class="section-title text-center">Our Diagnostic Panels</h2>
-      <p class="section-subtitle text-center">A comprehensive menu of testing solutions for all clinical scenarios.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Our Diagnostic Panels</h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">A comprehensive menu of testing solutions for all clinical scenarios.</p>
 
-      <div class="panel-filters-container">
+      <div class="panel-filters-container reveal-on-scroll reveal-scale">
         <button class="filter-btn active" data-filter="all">All <span class="badge">24</span></button>
         <button class="filter-btn" data-filter="somatic">Somatic <span class="badge">15</span></button>
         <button class="filter-btn" data-filter="germline">Germline <span class="badge">4</span></button>
         <button class="filter-btn" data-filter="pcr">PCR <span class="badge">5</span></button>
       </div>
 
-      <div class="table-responsive mt-5">
+      <div class="table-responsive mt-5 reveal-on-scroll reveal-slide-up">
         <table class="panel-table futuristic-table">
           <thead>
             <tr>
@@ -666,10 +823,10 @@
   <!-- ==================== TECHNOLOGY ==================== -->
   <section class="technology section-padding bg-light" id="technology">
     <div class="container">
-      <h2 class="section-title text-center">Advanced <span class="text-gradient">Technology</span></h2>
-      <p class="section-subtitle text-center">Powered by cutting-edge sequencing systems for unparalleled precision.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Advanced <span class="text-gradient">Technology</span></h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Powered by cutting-edge sequencing systems for unparalleled precision.</p>
 
-      <div class="tech-grid">
+      <div class="tech-grid reveal-stagger">
         <div class="tech-card">
           <div class="tech-icon"><i class="ph ph-cpu"></i></div>
           <h3>Thermo Fisher Genexus</h3>
@@ -687,10 +844,10 @@
   <!-- ==================== RESOURCES ==================== -->
   <section class="resources section-padding" id="resources">
     <div class="container">
-      <h2 class="section-title text-center">Resources & <span class="text-gradient">Insights</span></h2>
-      <p class="section-subtitle text-center">Stay updated with the latest in precision oncology, case studies, and clinical research.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Resources & <span class="text-gradient">Insights</span></h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Stay updated with the latest in precision oncology, case studies, and clinical research.</p>
 
-      <div class="resources-grid mt-5">
+      <div class="resources-grid mt-5 reveal-stagger">
         <div class="resource-card">
           <div class="resource-visual card-vis-1">
             <i class="ph ph-microscope"></i>
@@ -746,8 +903,8 @@
   <!-- ==================== CONTACT ==================== -->
   <section class="contact section-padding bg-light" id="contact">
     <div class="container">
-      <div class="contact-wrapper">
-        <div class="contact-info">
+      <div class="contact-wrapper reveal-on-scroll reveal-scale">
+        <div class="contact-info reveal-on-scroll reveal-slide-left">
           <h2>Ready to advance <br><span class="text-gradient">precision medicine?</span></h2>
           <p class="mt-4">Whether you're a hospital, a clinic, or an independent practitioner — we have a partnership tier designed for you.</p>
           
@@ -767,7 +924,7 @@
           </ul>
         </div>
         
-        <div class="contact-form-container">
+        <div class="contact-form-container reveal-on-scroll reveal-slide-right">
           <form class="contact-form">
             <div class="form-group">
               <label>Full Name</label>
@@ -791,7 +948,7 @@
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-top">
+      <div class="footer-top reveal-on-scroll reveal-slide-up">
         <div class="footer-brand">
           <a href="#" class="brand-logo-container footer-brand-logo">
             <div class="logo-icon">
@@ -826,7 +983,7 @@
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-bottom reveal-on-scroll">
         <p>&copy; 2026 Precision Allele.Dx | Oncology Genomics Division. All rights reserved.</p>
       </div>
     </div>
