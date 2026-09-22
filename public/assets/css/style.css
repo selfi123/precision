@@ -41,6 +41,8 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -49,6 +51,8 @@ body {
   color: var(--color-text-main);
   line-height: 1.6;
   overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
 }
 
 img {
@@ -168,6 +172,7 @@ ul {
   align-items: flex-start;
   gap: 0.2rem;
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logo-icon {
@@ -240,6 +245,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 1rem;
+  flex-shrink: 0;
 }
 
 .menu-toggle {
@@ -774,14 +780,20 @@ ul {
 
 /* ---- 8. DIAGNOSTIC PANELS TABLE ---- */
 .table-responsive {
+  width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   background: var(--color-bg-white);
   border-radius: 16px;
   box-shadow: var(--shadow-sm);
+  display: block;
+  box-sizing: border-box;
 }
 
 .panel-table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
 }
 
@@ -1213,103 +1225,288 @@ ul {
   font-size: 0.85rem;
 }
 
-/* ---- RESPONSIVE ---- */
-@media (max-width: 1024px) {
+/* Hide mobile nav overlay on desktop entirely */
+@media (min-width: 769px) {
+  .mobile-nav-overlay {
+    display: none !important;
+  }
+}
+
+/* Medium Desktops, Laptops & Mobile in Desktop Mode (769px - 1180px) */
+@media (min-width: 769px) and (max-width: 1180px) {
+  .header {
+    padding: 0.75rem 0;
+  }
+  .header-container {
+    padding: 0 2%;
+    gap: 0.5rem;
+  }
+  .brand-logo-container {
+    gap: 0.1rem;
+    flex-shrink: 0;
+  }
+  .logo-icon {
+    width: 44px;
+    height: 56px;
+    margin-top: -2px;
+  }
+  .logo-icon img {
+    width: 44px;
+    height: 44px;
+  }
+  .logo-main-text {
+    font-size: 1.45rem;
+  }
+  .logo-subtext {
+    font-size: 0.52rem;
+    letter-spacing: 0.12em;
+  }
+  .main-nav {
+    flex-shrink: 1;
+  }
+  .main-nav ul {
+    gap: 0.75rem;
+  }
+  .main-nav a {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .header-actions {
+    flex-shrink: 0;
+  }
+  .header-actions .btn {
+    padding: 0.45rem 0.9rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Hero Section 2-Column Desktop layout */
+  .hero {
+    padding-top: 90px;
+    min-height: auto;
+    overflow: hidden;
+  }
   .hero-container {
-    flex-direction: column;
-    padding-top: 60px;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    padding-top: 0 !important;
+    text-align: left !important;
   }
   .hero-content {
-    max-width: 100%;
-    text-align: center;
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+    text-align: left !important;
+    z-index: 2;
   }
-  .hero-eyebrow { justify-content: center; }
-  .hero-features { justify-content: center; }
-  .hero-cta-group { justify-content: center; }
-  .hero-stats { justify-content: center; }
-  
+  .hero-title {
+    font-size: 2.25rem !important;
+    line-height: 1.1 !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .hero-desc {
+    font-size: 0.85rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.45 !important;
+  }
+  .hero-features {
+    justify-content: flex-start !important;
+    gap: 0.35rem !important;
+    margin-bottom: 1.1rem !important;
+  }
+  .feature-item {
+    padding: 0.3rem 0.5rem !important;
+  }
+  .feature-icon {
+    width: 28px !important;
+    height: 28px !important;
+    font-size: 0.85rem !important;
+  }
+  .feature-text strong {
+    font-size: 0.74rem !important;
+  }
+  .feature-text span {
+    font-size: 0.58rem !important;
+  }
+  .hero-cta-group {
+    justify-content: flex-start !important;
+    gap: 0.6rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+  .hero-cta-group .btn {
+    padding: 0.5rem 0.95rem !important;
+    font-size: 0.8rem !important;
+    width: auto !important;
+  }
+  .hero-stats {
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+  }
+  .stat strong {
+    font-size: 1rem !important;
+  }
+  .stat span {
+    font-size: 0.62rem !important;
+  }
+
+  /* Right Visual */
   .hero-visual {
-    width: 100%;
-    margin-top: 3rem;
+    flex: 0 0 55% !important;
+    max-width: 55% !important;
+    width: 55% !important;
+    height: 580px !important;
+    margin-top: 0 !important;
+    position: relative !important;
+    display: block !important;
+  }
+  .visual-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+  .dna-model {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 100% !important;
+    max-width: 280px !important;
+    height: 85% !important;
+    max-height: 480px !important;
+    z-index: 1 !important;
   }
   
+  /* Visual Base */
+  .visual-base {
+    display: block !important;
+    width: min(390px, 94%) !important;
+    padding: 0.45rem 0.75rem !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .carousel-item span {
+    font-size: 0.58rem !important;
+  }
+  .c-icon {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Tablets & Small Screens Grids (< 1024px) */
+@media (max-width: 1024px) {
+  .panels-grid, .resources-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
   .bio-banner {
     flex-direction: column;
     text-align: center;
   }
 }
 
-/* Hide mobile nav overlay on desktop entirely */
-.mobile-nav-overlay {
-  display: none;
-}
-
-/* ==================== RESPONSIVE: TABLETS & SMALL DESKTOPS (< 1024px) ==================== */
-@media (max-width: 1024px) {
-  .hero-container {
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    padding-top: 100px;
-  }
-  .hero-content {
-    max-width: 100%;
-    text-align: center;
-  }
-  .hero-features {
-    justify-content: center;
-  }
-  .hero-visual {
-    height: 500px;
-  }
-  .card-tl { top: 0; left: -10%; }
-  .card-tr { top: 5%; right: -10%; }
-  .card-mr { display: none; /* Hide middle card on tablet to reduce clutter */ }
-  .panels-grid, .resources-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* ==================== RESPONSIVE: MOBILE PHONES (< 768px) ==================== */
 @media (max-width: 768px) {
-  /* Navbar */
+  /* Navbar & Header Scaling for Mobile */
+  .header {
+    padding: 0.8rem 0;
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
+  }
+  .header-container {
+    padding: 0 4%;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand-logo-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.15rem;
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: calc(100% - 46px);
+  }
+  .logo-icon {
+    width: 36px;
+    height: 46px;
+    margin-top: -2px;
+    flex-shrink: 0;
+  }
+  .logo-icon img {
+    width: 36px;
+    height: 36px;
+  }
+  .logo-text-block {
+    padding-top: 5px;
+    min-width: 0;
+    overflow: hidden;
+  }
+  .logo-main-text {
+    font-size: 1.25rem;
+    line-height: 1;
+    white-space: nowrap;
+  }
+  .logo-divider {
+    margin: 0.2rem 0;
+  }
+  .logo-subtext {
+    font-size: 0.44rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
   .main-nav, .header-actions .btn {
     display: none;
   }
+  .header-actions {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
   .menu-toggle {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
     border: none;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--color-primary);
     cursor: pointer;
     z-index: 1000;
     position: relative;
+    padding: 4px;
+    width: 36px;
+    height: 36px;
   }
   
   /* Mobile Nav Overlay */
   .mobile-nav-overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100vh;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    z-index: 900;
-    display: flex;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #ffffff;
+    z-index: 999;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
   }
-  
-  /* Logo Scaling */
-  .logo-text { font-size: 1.8rem; margin-top: 8px; }
-  .logo-icon svg { width: 54px; height: 54px; }
-  .logo-subline { font-size: 0.6rem; padding-left: 2.8rem; }
   .mobile-nav-overlay.active {
-    opacity: 1;
-    pointer-events: all;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    visibility: visible !important;
   }
   .mobile-nav-container ul {
     list-style: none;
@@ -1333,17 +1530,24 @@ ul {
   }
 
   /* Hero adjustments for mobile */
-  .hero-title {
-    font-size: 2.8rem;
+  .hero-container {
+    flex-direction: column;
+    padding-top: 60px;
+    align-items: center;
+    gap: 2rem;
   }
-  .hero-desc {
-    font-size: 1rem;
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
   }
+  .hero-eyebrow { justify-content: center; }
   .hero-features {
+    justify-content: center;
     flex-direction: column;
     align-items: center;
   }
   .hero-cta-group {
+    justify-content: center;
     flex-direction: column;
     width: 100%;
   }
@@ -1351,8 +1555,19 @@ ul {
     width: 100%;
     justify-content: center;
   }
+  .hero-stats {
+    justify-content: center;
+  }
   .hero-visual {
+    width: 100%;
     height: 400px;
+    margin-top: 1rem;
+  }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+  .hero-desc {
+    font-size: 1rem;
   }
   
   /* Hide all HUD cards on small mobile to just focus on the 3D DNA */
