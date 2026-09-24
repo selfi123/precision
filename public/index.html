@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Precision Allele.Dx | Precision in every allele</title>
-  
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <!-- Icons (Phosphor Icons) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
-  
+
   <style>
     /* ==================== SEAMLESS DNA MODEL & AMBIENT AURA ==================== */
     .visual-wrapper {
@@ -43,6 +46,7 @@
         opacity: 0.75;
         transform: translate(-50%, -50%) scale(0.94);
       }
+
       100% {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1.06);
@@ -51,8 +55,8 @@
 
     /* Flawlessly blend DNA image into background with multi-stop feathered elliptical mask */
     .dna-model {
-      -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
-      mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0, 0, 0, 0.92) 32%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+      mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0, 0, 0, 0.92) 32%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
       -webkit-mask-size: 100% 100%;
       mask-size: 100% 100%;
       -webkit-mask-repeat: no-repeat;
@@ -68,6 +72,7 @@
         transform: translate(-50%, -46%) scale(0.92);
         filter: blur(8px);
       }
+
       to {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
@@ -79,9 +84,11 @@
       0% {
         transform: translate(-50%, -50%) translateY(0) scale(1);
       }
+
       50% {
         transform: translate(-50%, -50%) translateY(-10px) scale(1.012);
       }
+
       100% {
         transform: translate(-50%, -50%) translateY(6px) scale(0.992);
       }
@@ -91,17 +98,33 @@
     .header {
       animation: headerSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
     }
+
     @keyframes headerSlideDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero-title {
       animation: heroTitleIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
     }
+
     @keyframes heroTitleIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .hero-desc {
@@ -111,9 +134,11 @@
     .hero-features .feature-item:nth-child(1) {
       animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
     }
+
     .hero-features .feature-item:nth-child(2) {
       animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
     }
+
     .hero-features .feature-item:nth-child(3) {
       animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
     }
@@ -122,14 +147,32 @@
       animation: heroFadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
     }
 
-    .hero-stats .stat:nth-child(1) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both; }
-    .hero-stats .stat:nth-child(2) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.78s both; }
-    .hero-stats .stat:nth-child(3) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.84s both; }
-    .hero-stats .stat:nth-child(4) { animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.90s both; }
+    .hero-stats .stat:nth-child(1) {
+      animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.72s both;
+    }
+
+    .hero-stats .stat:nth-child(2) {
+      animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.78s both;
+    }
+
+    .hero-stats .stat:nth-child(3) {
+      animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.84s both;
+    }
+
+    .hero-stats .stat:nth-child(4) {
+      animation: heroFadeSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.90s both;
+    }
 
     @keyframes heroFadeSlideUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* Sleek Holographic Nodes replacing glass cards */
@@ -140,27 +183,41 @@
       gap: 0.75rem;
       z-index: 10;
     }
-    
+
     .holo-node.node-tl {
-      top: 14%; left: 4%;
+      top: 14%;
+      left: 4%;
       animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.55s both, floatNode 6s ease-in-out 1.35s infinite;
     }
+
     .holo-node.node-tr {
-      top: 38%; right: 4%;
+      top: 38%;
+      right: 4%;
       animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.7s both, floatNode 6s ease-in-out 1.5s infinite -1s;
     }
+
     .holo-node.node-bl {
-      top: 56%; left: 4%;
+      top: 56%;
+      left: 4%;
       animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s both, floatNode 6s ease-in-out 1.65s infinite -2s;
     }
+
     .holo-node.node-br {
-      top: 74%; right: 4%;
+      top: 74%;
+      right: 4%;
       animation: nodeEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 1.0s both, floatNode 6s ease-in-out 1.8s infinite -3s;
     }
 
     @keyframes nodeEntrance {
-      from { opacity: 0; transform: scale(0.7) translateY(15px); }
-      to { opacity: 1; transform: scale(1) translateY(0); }
+      from {
+        opacity: 0;
+        transform: scale(0.7) translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
 
     .node-content {
@@ -175,6 +232,7 @@
       position: relative;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .node-content:hover {
       transform: scale(1.05);
       box-shadow: 0 12px 36px rgba(0, 229, 255, 0.2);
@@ -187,7 +245,7 @@
       line-height: 1.2;
       font-weight: 600;
     }
-    
+
     .node-content span {
       font-size: 0.85rem;
       color: #5B6A82;
@@ -205,7 +263,7 @@
       height: 1.5px;
       background: linear-gradient(90deg, rgba(0, 229, 255, 0.8), transparent);
     }
-    
+
     .holo-node.node-tr .node-content::before,
     .holo-node.node-br .node-content::before {
       content: '';
@@ -218,12 +276,27 @@
     }
 
     @keyframes pulseGlow {
-      0% { opacity: 0.4; transform: scale(0.95); }
-      100% { opacity: 0.8; transform: scale(1.05); }
+      0% {
+        opacity: 0.4;
+        transform: scale(0.95);
+      }
+
+      100% {
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
     }
+
     @keyframes floatNode {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     /* Floating Theme Text Block */
@@ -237,9 +310,17 @@
       align-items: center;
       animation: themeEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both, floatNode 8s ease-in-out 1.65s infinite reverse;
     }
+
     @keyframes themeEntrance {
-      from { opacity: 0; transform: translateX(30px); }
-      to { opacity: 1; transform: translateX(0); }
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     .theme-title {
@@ -254,18 +335,21 @@
       text-transform: uppercase;
       letter-spacing: -1px;
     }
+
     .theme-divider {
       width: 3px;
       height: 100px;
       border-radius: 3px;
-      background: linear-gradient(to bottom, rgba(0,229,255,0), rgba(0,229,255,1), rgba(214,43,199,1), rgba(214,43,199,0));
+      background: linear-gradient(to bottom, rgba(0, 229, 255, 0), rgba(0, 229, 255, 1), rgba(214, 43, 199, 1), rgba(214, 43, 199, 0));
     }
+
     .theme-list {
       display: flex;
       flex-direction: column;
       gap: 0.4rem;
       text-align: left;
     }
+
     .theme-list span {
       font-family: 'Inter', sans-serif;
       font-size: 0.75rem;
@@ -278,63 +362,170 @@
     .visual-base {
       animation: visualBaseIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.95s both;
     }
+
     @keyframes visualBaseIn {
-      from { opacity: 0; transform: translate(-50%, 25px); }
-      to { opacity: 1; transform: translate(-50%, 0); }
+      from {
+        opacity: 0;
+        transform: translate(-50%, 25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+      }
     }
-    
+
     .mobile-nodes-wrapper {
       display: contents;
     }
 
-    /* Medium Desktops, Laptops & Mobile in Desktop Mode (769px - 1180px) */
-    @media (min-width: 769px) and (max-width: 1180px) {
-      .holo-node.node-tl { top: 12%; left: 1%; }
-      .holo-node.node-tr { top: 38%; right: 1%; }
-      .holo-node.node-bl { top: 56%; left: 1%; }
-      .holo-node.node-br { top: 74%; right: 1%; }
+    /* Standard Laptops & Medium Screens (1025px - 1440px, or height <= 820px) */
+    @media (min-width: 1025px) and (max-width: 1440px), (min-width: 769px) and (max-height: 820px) {
+      .visual-wrapper::before {
+        width: 360px;
+        height: 460px;
+      }
+      .holo-node.node-tl {
+        top: 12%;
+        left: 2%;
+      }
+      .holo-node.node-tr {
+        top: 36%;
+        right: 2%;
+      }
+      .holo-node.node-bl {
+        top: 56%;
+        left: 2%;
+      }
+      .holo-node.node-br {
+        top: 74%;
+        right: 2%;
+      }
+      .node-content {
+        padding: 0.5rem 1rem;
+        border-radius: 40px;
+      }
+      .node-content strong {
+        font-size: 0.88rem;
+      }
+      .node-content span {
+        font-size: 0.68rem;
+      }
+      .holo-node.node-tl .node-content::after,
+      .holo-node.node-bl .node-content::after {
+        width: 30px;
+        right: -30px;
+      }
+      .holo-node.node-tr .node-content::before,
+      .holo-node.node-br .node-content::before {
+        width: 30px;
+        left: -30px;
+      }
+      .theme-text-block {
+        top: 2%;
+        right: 2%;
+        gap: 0.75rem;
+      }
+      .theme-title {
+        font-size: 1.25rem;
+      }
+      .theme-divider {
+        height: 70px;
+      }
+      .theme-list span {
+        font-size: 0.65rem;
+        letter-spacing: 1.2px;
+      }
+    }
+
+    /* Ultra-Short Viewport Height (< 720px) on Laptops */
+    @media (min-width: 769px) and (max-height: 720px) {
+      .holo-node.node-tl { top: 9% !important; left: 1% !important; }
+      .holo-node.node-tr { top: 32% !important; right: 1% !important; }
+      .holo-node.node-bl { top: 51% !important; left: 1% !important; }
+      .holo-node.node-br { top: 69% !important; right: 1% !important; }
+      .theme-title { font-size: 1.05rem !important; }
+      .theme-divider { height: 48px !important; }
+      .theme-list span { font-size: 0.58rem !important; }
+      .theme-text-block { top: 2% !important; right: 1% !important; }
+      .node-content { padding: 0.35rem 0.75rem !important; }
+      .node-content strong { font-size: 0.8rem !important; }
+      .node-content span { font-size: 0.62rem !important; }
+    }
+
+    /* Tablets & Mobile in Desktop Mode (769px - 1024px) */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .holo-node.node-tl {
+        top: 12%;
+        left: 1%;
+      }
+
+      .holo-node.node-tr {
+        top: 38%;
+        right: 1%;
+      }
+
+      .holo-node.node-bl {
+        top: 56%;
+        left: 1%;
+      }
+
+      .holo-node.node-br {
+        top: 74%;
+        right: 1%;
+      }
+
       .node-content {
         padding: 0.5rem 0.85rem;
         border-radius: 40px;
       }
+
       .node-content strong {
         font-size: 0.85rem;
       }
+
       .node-content span {
         font-size: 0.65rem;
       }
+
       .holo-node.node-tl .node-content::after,
       .holo-node.node-bl .node-content::after {
         width: 25px;
         right: -25px;
       }
+
       .holo-node.node-tr .node-content::before,
       .holo-node.node-br .node-content::before {
         width: 25px;
         left: -25px;
       }
+
       .theme-text-block {
         top: 3%;
         right: 2%;
         gap: 0.6rem;
       }
+
       .theme-title {
         font-size: 1.15rem;
       }
+
       .theme-divider {
         height: 60px;
       }
+
       .theme-list span {
         font-size: 0.6rem;
         letter-spacing: 1.2px;
       }
     }
-    
+
     /* Mobile Adjustments for true mobile screens (< 768px) */
     @media (max-width: 768px) {
       .visual-base {
         display: none !important;
       }
+
       .visual-wrapper {
         height: auto;
         display: flex;
@@ -342,10 +533,12 @@
         align-items: center;
         gap: 1.5rem;
       }
+
       .visual-wrapper::before {
         width: 320px;
         height: 380px;
       }
+
       .dna-model {
         position: relative !important;
         top: 0 !important;
@@ -356,8 +549,8 @@
         max-width: 100%;
         max-height: 380px;
         border-radius: 20px;
-        -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
-        mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0,0,0,0.92) 32%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.15) 80%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0, 0, 0, 0.92) 32%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
+        mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 15%, rgba(0, 0, 0, 0.92) 32%, rgba(0, 0, 0, 0.5) 60%, rgba(0, 0, 0, 0.15) 80%, transparent 100%);
         -webkit-mask-size: 100% 100%;
         mask-size: 100% 100%;
         -webkit-mask-repeat: no-repeat;
@@ -366,11 +559,19 @@
       }
 
       @keyframes floatDNAMobile {
-        0% { transform: translateY(0) scale(1); }
-        50% { transform: translateY(-8px) scale(1.015); }
-        100% { transform: translateY(4px) scale(0.99); }
+        0% {
+          transform: translateY(0) scale(1);
+        }
+
+        50% {
+          transform: translateY(-8px) scale(1.015);
+        }
+
+        100% {
+          transform: translateY(4px) scale(0.99);
+        }
       }
-      
+
       /* Mobile Nodes 2x2 Grid Container */
       .mobile-nodes-wrapper {
         display: grid;
@@ -378,7 +579,7 @@
         width: 100%;
         gap: 0.75rem;
       }
-      
+
       /* Restyle nodes for 2x2 grid */
       .holo-node {
         position: relative !important;
@@ -390,7 +591,7 @@
         animation: none !important;
         justify-content: center;
       }
-      
+
       /* Hide connection lines on mobile */
       .holo-node .node-content::before,
       .holo-node .node-content::after {
@@ -403,15 +604,17 @@
         text-align: center;
         align-items: center;
       }
+
       .holo-node .node-content strong {
         font-size: 0.85rem;
         margin-bottom: 2px;
       }
+
       .holo-node .node-content span {
         font-size: 0.65rem;
         margin-top: 0;
       }
-      
+
       /* Restyle Theme Text for mobile */
       .theme-text-block {
         position: relative !important;
@@ -424,21 +627,24 @@
         margin-top: 1rem;
         width: 90%;
       }
+
       .theme-title {
         text-align: center;
       }
+
       .theme-divider {
         width: 100px;
         height: 3px;
-        background: linear-gradient(to right, rgba(0,229,255,0), rgba(0,229,255,1), rgba(214,43,199,1), rgba(214,43,199,0));
+        background: linear-gradient(to right, rgba(0, 229, 255, 0), rgba(0, 229, 255, 1), rgba(214, 43, 199, 1), rgba(214, 43, 199, 0));
       }
+
       .theme-list {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.8rem;
       }
-      
+
       .hero-visual {
         height: auto;
         min-height: auto;
@@ -447,6 +653,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- ==================== HEADER ==================== -->
@@ -464,7 +671,7 @@
           <div class="logo-subtext">PRECISION IN EVERY ALLELE</div>
         </div>
       </a>
-      
+
       <nav class="main-nav">
         <ul>
           <li><a href="#about">About</a></li>
@@ -483,7 +690,7 @@
         </button>
       </div>
     </div>
-    
+
     <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobile-nav">
       <div class="mobile-nav-container">
@@ -503,19 +710,20 @@
   <section class="hero">
     <div class="hero-bg-glow"></div>
     <div class="container hero-container">
-      
+
       <!-- Hero Left: Content -->
       <div class="hero-content">
-        
+
         <h1 class="hero-title">
           Precision in <br>
           every <span class="text-gradient">allele.</span>
         </h1>
-        
+
         <p class="hero-desc">
-          High-end next-generation sequencing solutions designed to turn complex genomic signals into clear, actionable insights for cancer care.
+          High-end next-generation sequencing solutions designed to turn complex genomic signals into clear, actionable
+          insights for cancer care.
         </p>
-        
+
         <div class="hero-features">
           <div class="feature-item">
             <div class="feature-icon"><i class="ph ph-dna"></i></div>
@@ -539,12 +747,13 @@
             </div>
           </div>
         </div>
-        
+
         <div class="hero-cta-group">
-          <a href="#panels" class="btn btn-primary btn-gradient">Explore diagnostic panels <i class="ph ph-arrow-up-right"></i></a>
+          <a href="#panels" class="btn btn-primary btn-gradient">Explore diagnostic panels <i
+              class="ph ph-arrow-up-right"></i></a>
           <a href="#solutions" class="btn btn-secondary btn-white">Discover our approach</a>
         </div>
-        
+
         <div class="hero-stats">
           <div class="stat">
             <strong>25+</strong>
@@ -564,13 +773,13 @@
           </div>
         </div>
       </div>
-      
+
       <!-- Hero Right: 3D Visualization / Glass Cards -->
       <div class="hero-visual">
         <div class="visual-wrapper">
           <!-- Central DNA Image Container -->
           <img src="assets/images/stunning_dna.jpg" alt="Stunning DNA" class="dna-model" />
-          
+
           <!-- Theme Text Block -->
           <div class="theme-text-block">
             <div class="theme-title">
@@ -585,7 +794,7 @@
               <span>IMPROVE</span>
             </div>
           </div>
-          
+
           <!-- Floating Holographic Nodes -->
           <div class="mobile-nodes-wrapper">
             <div class="holo-node node-tl">
@@ -594,21 +803,21 @@
                 <span>SNV &bull; CNV &bull; MSI</span>
               </div>
             </div>
-            
+
             <div class="holo-node node-tr">
               <div class="node-content">
                 <strong>Deep Sequencing</strong>
                 <span>High resolution detection</span>
               </div>
             </div>
-            
+
             <div class="holo-node node-bl">
               <div class="node-content">
                 <strong>Clinical Support</strong>
                 <span>Therapy matching</span>
               </div>
             </div>
-            
+
             <div class="holo-node node-br">
               <div class="node-content">
                 <strong>Personalized Oncology</strong>
@@ -649,7 +858,7 @@
 
         </div>
       </div>
-      
+
     </div>
   </section>
 
@@ -659,7 +868,9 @@
       <div class="vision-box reveal-on-scroll reveal-scale">
         <h2 class="section-title text-center">Our Vision</h2>
         <p class="text-center lead">
-          Transforming precision oncology through accessible, high-resolution genomic diagnostics. We aim to empower oncologists and clinicians worldwide with actionable, comprehensive molecular insights that guide individualized patient care and improve clinical outcomes across all tumor types.
+          Transforming precision oncology through accessible, high-resolution genomic diagnostics. We aim to empower
+          oncologists and clinicians worldwide with actionable, comprehensive molecular insights that guide
+          individualized patient care and improve clinical outcomes across all tumor types.
         </p>
       </div>
     </div>
@@ -668,9 +879,11 @@
   <!-- ==================== SOLUTIONS / CAPABILITIES ==================== -->
   <section class="solutions section-padding bg-light" id="solutions">
     <div class="container">
-      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Precision Oncology & Genomic Diagnostics</h2>
-      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Comprehensive biomarker profiling and clinical decision support designed for personalized cancer therapy.</p>
-      
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Precision Oncology & Genomic Diagnostics
+      </h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Comprehensive biomarker profiling and
+        clinical decision support designed for personalized cancer therapy.</p>
+
       <div class="solutions-grid reveal-stagger">
         <!-- Solution 1 -->
         <div class="solution-card">
@@ -680,7 +893,8 @@
           <div class="card-body">
             <ul>
               <li>Multi-gene Next-Generation Sequencing (NGS) panels targeting actionable driver mutations.</li>
-              <li>Detects key single nucleotide variants (SNVs), indels, copy number variations (CNVs), and gene fusions.</li>
+              <li>Detects key single nucleotide variants (SNVs), indels, copy number variations (CNVs), and gene
+                fusions.</li>
               <li>Guides precision treatment access tailored to tumor molecular profile.</li>
             </ul>
           </div>
@@ -707,7 +921,8 @@
           </div>
           <div class="card-body">
             <ul>
-              <li>Targeted germline panel testing for inherited predisposition genes (e.g., BRCA1/2, Lynch syndrome).</li>
+              <li>Targeted germline panel testing for inherited predisposition genes (e.g., BRCA1/2, Lynch syndrome).
+              </li>
               <li>Comprehensive risk assessment for familial cancer syndromes.</li>
               <li>Empowers proactive screening and risk-reduction strategies.</li>
             </ul>
@@ -737,9 +952,10 @@
       <div class="bio-banner reveal-on-scroll reveal-scale">
         <div class="bio-content reveal-on-scroll reveal-slide-left">
           <h2>Bioinformatics & Clinical Decision Support</h2>
-          <p>Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.</p>
+          <p>Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted
+            therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.</p>
         </div>
-        
+
         <div class="bio-stats reveal-stagger">
           <div class="b-stat">
             <strong>&lt; 0.5%</strong>
@@ -764,7 +980,8 @@
   <section class="panels section-padding" id="panels">
     <div class="container">
       <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Our Diagnostic Panels</h2>
-      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">A comprehensive menu of testing solutions for all clinical scenarios.</p>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">A comprehensive menu of testing solutions
+        for all clinical scenarios.</p>
 
       <div class="panel-filters-container reveal-on-scroll reveal-scale">
         <button class="filter-btn active" data-filter="all">All <span class="badge">24</span></button>
@@ -786,34 +1003,188 @@
           </thead>
           <tbody id="panel-table-body">
             <!-- Somatic -->
-            <tr data-category="somatic"><td>1</td><td class="panel-name">Somatic Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td><td>NGS-All Human ~23000 genes (300x coverage)</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>2</td><td class="panel-name">Somatic Comprehensive Genomics Profiling (MSI+TMB+HRD) <i class="ph ph-arrow-up-right"></i></td><td>NGS-1080 DNA Genes +104 fusion partners MSI+TMB+HRD</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>3</td><td class="panel-name">Somatic Lung Gene panel <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>4</td><td class="panel-name">Somatic Pan-Solid Tumour Panel <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>5</td><td class="panel-name">Somatic Sarcoma Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>NGS-571 DNA Genes + 2660 RNA fusion partners, TMB and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>6</td><td class="panel-name">Somatic Endometrium Panel <i class="ph ph-arrow-up-right"></i></td><td>51 HRR Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>7</td><td class="panel-name">Somatic Targeted Lung cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>12 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>8</td><td class="panel-name">Somatic Targeted Breast Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>25 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>9</td><td class="panel-name">Somatic Targeted Colorectal Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>41 genes + 11 MSI Markers</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>10</td><td class="panel-name">Somatic Targeted Ovarian Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>26 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>11</td><td class="panel-name">Somatic Targeted endometrium Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>34 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>12</td><td class="panel-name">Somatic 96hrs Solid Tumour Panel (Oncomine Precision Assay) <i class="ph ph-arrow-up-right"></i></td><td>50 key oncology genes Pan Cancer</td><td>FFPE Tissue Block or 10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td><td>4 Days</td></tr>
-            <tr data-category="somatic"><td>13</td><td class="panel-name">Somatic 96hrs Myeloid Panel (Oncomine Myeloid Assay) <i class="ph ph-arrow-up-right"></i></td><td>DNA Panel: Hotspot Gene (23) Full Gene (17) RNA Panel: Expression Gene (5) Expression Control Gene (5) Fusion Driver Gene (29)</td><td>3ml Bone marrow Aspirate in EDTA Tube</td><td>4 Days</td></tr>
-            <tr data-category="somatic"><td>14</td><td class="panel-name">Somatic Comprehensive Leukaemia Panel (ALL/AML) <i class="ph ph-arrow-up-right"></i></td><td>NGS-98 DNA Genes + 119 RNA Fusions</td><td>3ml Bone Marrow Aspirate in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>15</td><td class="panel-name">Comprehensive Pan- Liquid Biopsy (CtDNA) <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td><td>16 Days</td></tr>
-            
+            <tr data-category="somatic">
+              <td>1</td>
+              <td class="panel-name">Somatic Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td>
+              <td>NGS-All Human ~23000 genes (300x coverage)</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>2</td>
+              <td class="panel-name">Somatic Comprehensive Genomics Profiling (MSI+TMB+HRD) <i
+                  class="ph ph-arrow-up-right"></i></td>
+              <td>NGS-1080 DNA Genes +104 fusion partners MSI+TMB+HRD</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>3</td>
+              <td class="panel-name">Somatic Lung Gene panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>126 Genes and MSI</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>4</td>
+              <td class="panel-name">Somatic Pan-Solid Tumour Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>126 Genes and MSI</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>5</td>
+              <td class="panel-name">Somatic Sarcoma Gene Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>NGS-571 DNA Genes + 2660 RNA fusion partners, TMB and MSI</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>6</td>
+              <td class="panel-name">Somatic Endometrium Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>51 HRR Genes</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>7</td>
+              <td class="panel-name">Somatic Targeted Lung cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>12 Genes</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>8</td>
+              <td class="panel-name">Somatic Targeted Breast Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>25 Genes</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>9</td>
+              <td class="panel-name">Somatic Targeted Colorectal Cancer Gene Panel <i class="ph ph-arrow-up-right"></i>
+              </td>
+              <td>41 genes + 11 MSI Markers</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>10</td>
+              <td class="panel-name">Somatic Targeted Ovarian Cancer Gene Panel <i class="ph ph-arrow-up-right"></i>
+              </td>
+              <td>26 Genes</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>11</td>
+              <td class="panel-name">Somatic Targeted endometrium Cancer Gene Panel <i class="ph ph-arrow-up-right"></i>
+              </td>
+              <td>34 Genes</td>
+              <td>FFPE Tissue Block</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>12</td>
+              <td class="panel-name">Somatic 96hrs Solid Tumour Panel (Oncomine Precision Assay) <i
+                  class="ph ph-arrow-up-right"></i></td>
+              <td>50 key oncology genes Pan Cancer</td>
+              <td>FFPE Tissue Block or 10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td>
+              <td>4 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>13</td>
+              <td class="panel-name">Somatic 96hrs Myeloid Panel (Oncomine Myeloid Assay) <i
+                  class="ph ph-arrow-up-right"></i></td>
+              <td>DNA Panel: Hotspot Gene (23) Full Gene (17) RNA Panel: Expression Gene (5) Expression Control Gene (5)
+                Fusion Driver Gene (29)</td>
+              <td>3ml Bone marrow Aspirate in EDTA Tube</td>
+              <td>4 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>14</td>
+              <td class="panel-name">Somatic Comprehensive Leukaemia Panel (ALL/AML) <i
+                  class="ph ph-arrow-up-right"></i></td>
+              <td>NGS-98 DNA Genes + 119 RNA Fusions</td>
+              <td>3ml Bone Marrow Aspirate in EDTA Tube</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="somatic">
+              <td>15</td>
+              <td class="panel-name">Comprehensive Pan- Liquid Biopsy (CtDNA) <i class="ph ph-arrow-up-right"></i></td>
+              <td>126 Genes and MSI</td>
+              <td>10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td>
+              <td>16 Days</td>
+            </tr>
+
             <!-- Germline -->
-            <tr data-category="germline"><td>16</td><td class="panel-name">Germline Oncomine BRCA 1 and BRCA2 <i class="ph ph-arrow-up-right"></i></td><td>BRCA 1 and BRCA2 - Full Gene</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="germline"><td>17</td><td class="panel-name">Germline Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td><td>NGS-All Human ~23000 genes (100x coverage)</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="germline"><td>18</td><td class="panel-name">Germline Comprehensive Hereditary Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>74 Genes</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="germline"><td>19</td><td class="panel-name">Germline BRCA 1 & 2 deletion/duplication by MLPA <i class="ph ph-arrow-up-right"></i></td><td>BRCA 1 and BRCA2 - Full Gene</td><td>Whole Blood in EDTA Tube</td><td>10 Days</td></tr>
-            
+            <tr data-category="germline">
+              <td>16</td>
+              <td class="panel-name">Germline Oncomine BRCA 1 and BRCA2 <i class="ph ph-arrow-up-right"></i></td>
+              <td>BRCA 1 and BRCA2 - Full Gene</td>
+              <td>Whole Blood in EDTA Tube</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="germline">
+              <td>17</td>
+              <td class="panel-name">Germline Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td>
+              <td>NGS-All Human ~23000 genes (100x coverage)</td>
+              <td>Whole Blood in EDTA Tube</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="germline">
+              <td>18</td>
+              <td class="panel-name">Germline Comprehensive Hereditary Gene Panel <i class="ph ph-arrow-up-right"></i>
+              </td>
+              <td>74 Genes</td>
+              <td>Whole Blood in EDTA Tube</td>
+              <td>16 Days</td>
+            </tr>
+            <tr data-category="germline">
+              <td>19</td>
+              <td class="panel-name">Germline BRCA 1 & 2 deletion/duplication by MLPA <i
+                  class="ph ph-arrow-up-right"></i></td>
+              <td>BRCA 1 and BRCA2 - Full Gene</td>
+              <td>Whole Blood in EDTA Tube</td>
+              <td>10 Days</td>
+            </tr>
+
             <!-- PCR -->
-            <tr data-category="pcr"><td>20</td><td class="panel-name">PCR- EGFR Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 18 19 20 21-Hotspots</td><td>FFPE Tissue Block or 10ml Blood In Streck Tube</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>21</td><td class="panel-name">PCR- KRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 2 3 & 4 -Hotspots</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>22</td><td class="panel-name">PCR- NRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 2 3 & 4 -Hotspots</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>23</td><td class="panel-name">PCR- BRAF Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 15 V600E</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>24</td><td class="panel-name">PCR- DPYD Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>DPYD*2A/DPYD*13/D949V/IVS10 /DPYD*6</td><td>Whole Blood in EDTA Tube</td><td>2 Days</td></tr>
+            <tr data-category="pcr">
+              <td>20</td>
+              <td class="panel-name">PCR- EGFR Mutation Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>Exon 18 19 20 21-Hotspots</td>
+              <td>FFPE Tissue Block or 10ml Blood In Streck Tube</td>
+              <td>2 Days</td>
+            </tr>
+            <tr data-category="pcr">
+              <td>21</td>
+              <td class="panel-name">PCR- KRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>Exon 2 3 & 4 -Hotspots</td>
+              <td>FFPE Tissue Block</td>
+              <td>2 Days</td>
+            </tr>
+            <tr data-category="pcr">
+              <td>22</td>
+              <td class="panel-name">PCR- NRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>Exon 2 3 & 4 -Hotspots</td>
+              <td>FFPE Tissue Block</td>
+              <td>2 Days</td>
+            </tr>
+            <tr data-category="pcr">
+              <td>23</td>
+              <td class="panel-name">PCR- BRAF Mutation Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>Exon 15 V600E</td>
+              <td>FFPE Tissue Block</td>
+              <td>2 Days</td>
+            </tr>
+            <tr data-category="pcr">
+              <td>24</td>
+              <td class="panel-name">PCR- DPYD Mutation Panel <i class="ph ph-arrow-up-right"></i></td>
+              <td>DPYD*2A/DPYD*13/D949V/IVS10 /DPYD*6</td>
+              <td>Whole Blood in EDTA Tube</td>
+              <td>2 Days</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -823,19 +1194,23 @@
   <!-- ==================== TECHNOLOGY ==================== -->
   <section class="technology section-padding bg-light" id="technology">
     <div class="container">
-      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Advanced <span class="text-gradient">Technology</span></h2>
-      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Powered by cutting-edge sequencing systems for unparalleled precision.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Advanced <span
+          class="text-gradient">Technology</span></h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Powered by cutting-edge sequencing
+        systems for unparalleled precision.</p>
 
       <div class="tech-grid reveal-stagger">
         <div class="tech-card">
           <div class="tech-icon"><i class="ph ph-cpu"></i></div>
           <h3>Thermo Fisher Genexus</h3>
-          <p>The first fully integrated next-generation sequencing platform featuring an automated specimen-to-report workflow.</p>
+          <p>The first fully integrated next-generation sequencing platform featuring an automated specimen-to-report
+            workflow.</p>
         </div>
         <div class="tech-card">
           <div class="tech-icon"><i class="ph ph-microscope"></i></div>
           <h3>nCounter Analysis System</h3>
-          <p>Advanced digital counting of nucleic acids for highly multiplexed, direct profiling of individual molecules.</p>
+          <p>Advanced digital counting of nucleic acids for highly multiplexed, direct profiling of individual
+            molecules.</p>
         </div>
       </div>
     </div>
@@ -844,8 +1219,10 @@
   <!-- ==================== RESOURCES ==================== -->
   <section class="resources section-padding" id="resources">
     <div class="container">
-      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Resources & <span class="text-gradient">Insights</span></h2>
-      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Stay updated with the latest in precision oncology, case studies, and clinical research.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Resources & <span
+          class="text-gradient">Insights</span></h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Stay updated with the latest in precision
+        oncology, case studies, and clinical research.</p>
 
       <div class="resources-grid mt-5 reveal-stagger">
         <div class="resource-card">
@@ -859,7 +1236,7 @@
             <button class="btn-link" onclick="openPaper('paper-wgs.html')">Read Paper in Frame &rarr;</button>
           </div>
         </div>
-        
+
         <div class="resource-card">
           <div class="resource-visual card-vis-2">
             <i class="ph ph-brain"></i>
@@ -906,8 +1283,9 @@
       <div class="contact-wrapper reveal-on-scroll reveal-scale">
         <div class="contact-info reveal-on-scroll reveal-slide-left">
           <h2>Ready to advance <br><span class="text-gradient">precision medicine?</span></h2>
-          <p class="mt-4">Whether you're a hospital, a clinic, or an independent practitioner — we have a partnership tier designed for you.</p>
-          
+          <p class="mt-4">Whether you're a hospital, a clinic, or an independent practitioner — we have a partnership
+            tier designed for you.</p>
+
           <ul class="contact-details mt-5">
             <li>
               <i class="ph ph-envelope-simple"></i>
@@ -923,7 +1301,7 @@
             </li>
           </ul>
         </div>
-        
+
         <div class="contact-form-container reveal-on-scroll reveal-slide-right">
           <form class="contact-form">
             <div class="form-group">
@@ -1007,4 +1385,5 @@
   <!-- Removed Three.js for 3D DNA as we are using an image -->
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
