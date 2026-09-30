@@ -322,10 +322,11 @@ ul {
 }
 
 .hero-desc {
-  font-size: 1.125rem;
+  font-size: 1.22rem;
   color: var(--color-text-muted);
-  margin-bottom: 2.5rem;
-  max-width: 500px;
+  margin-bottom: 2.25rem;
+  max-width: 530px;
+  line-height: 1.55;
 }
 
 /* Features */
@@ -342,15 +343,15 @@ ul {
 }
 
 .feature-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: rgba(0, 102, 255, 0.1);
   color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   flex-shrink: 0;
 }
 
@@ -360,20 +361,20 @@ ul {
 }
 
 .feature-text strong {
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   color: var(--color-text-main);
   font-weight: 600;
 }
 
 .feature-text span {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
 }
 
 .hero-cta-group {
   display: flex;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.75rem;
 }
 
 /* Stats */
@@ -391,13 +392,13 @@ ul {
 
 .stat strong {
   font-family: var(--font-heading);
-  font-size: 1.25rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: var(--color-text-main);
 }
 
 .stat span {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
 }
 
@@ -1297,61 +1298,61 @@ ul {
   }
   .hero-content {
     flex: 0 0 46% !important;
-    max-width: 510px !important;
+    max-width: 530px !important;
     text-align: left !important;
     z-index: 2;
   }
   .hero-title {
-    font-size: clamp(2.7rem, 3.5vw, 3.5rem) !important;
-    line-height: 1.08 !important;
-    margin-bottom: 0.8rem !important;
+    font-size: clamp(3.0rem, 3.8vw, 3.8rem) !important;
+    line-height: 1.06 !important;
+    margin-bottom: 0.9rem !important;
   }
   .hero-desc {
-    font-size: 0.92rem !important;
-    line-height: 1.45 !important;
-    margin-bottom: 1.1rem !important;
-    max-width: 460px !important;
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
+    margin-bottom: 1.25rem !important;
+    max-width: 500px !important;
   }
   .hero-features {
     justify-content: flex-start !important;
-    gap: 0.6rem !important;
-    margin-bottom: 1.15rem !important;
+    gap: 0.75rem !important;
+    margin-bottom: 1.3rem !important;
   }
   .feature-item {
-    gap: 0.5rem !important;
-    padding: 0.3rem 0.5rem !important;
+    gap: 0.55rem !important;
+    padding: 0.35rem 0.55rem !important;
   }
   .feature-icon {
-    width: 30px !important;
-    height: 30px !important;
-    font-size: 0.95rem !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1.05rem !important;
   }
   .feature-text strong {
-    font-size: 0.8rem !important;
+    font-size: 0.9rem !important;
   }
   .feature-text span {
-    font-size: 0.66rem !important;
+    font-size: 0.75rem !important;
   }
   .hero-cta-group {
     justify-content: flex-start !important;
-    gap: 0.75rem !important;
-    margin-bottom: 1.15rem !important;
+    gap: 0.85rem !important;
+    margin-bottom: 1.3rem !important;
   }
   .hero-cta-group .btn {
-    padding: 0.5rem 1.1rem !important;
-    font-size: 0.85rem !important;
+    padding: 0.55rem 1.25rem !important;
+    font-size: 0.92rem !important;
     width: auto !important;
   }
   .hero-stats {
     justify-content: flex-start !important;
-    gap: 1.25rem !important;
-    padding-top: 0.9rem !important;
+    gap: 1.4rem !important;
+    padding-top: 1rem !important;
   }
   .stat strong {
-    font-size: 1rem !important;
+    font-size: 1.18rem !important;
   }
   .stat span {
-    font-size: 0.66rem !important;
+    font-size: 0.74rem !important;
   }
 
   /* Right Visual on Laptops */
@@ -1431,53 +1432,54 @@ ul {
   }
   .hero-content {
     flex: 0 0 46% !important;
-    max-width: 500px !important;
+    max-width: 520px !important;
   }
   .hero-title {
-    font-size: clamp(2.4rem, 3.1vw, 3.0rem) !important;
-    line-height: 1.08 !important;
-    margin-bottom: 0.55rem !important;
+    font-size: clamp(2.65rem, 3.4vw, 3.3rem) !important;
+    line-height: 1.06 !important;
+    margin-bottom: 0.65rem !important;
   }
   .hero-desc {
-    font-size: 0.88rem !important;
-    margin-bottom: 0.85rem !important;
-    line-height: 1.4 !important;
+    font-size: 0.98rem !important;
+    margin-bottom: 0.95rem !important;
+    line-height: 1.45 !important;
+    max-width: 490px !important;
   }
   .hero-features {
-    margin-bottom: 0.85rem !important;
-    gap: 0.45rem !important;
+    margin-bottom: 0.95rem !important;
+    gap: 0.55rem !important;
   }
   .feature-item {
     padding: 0.25rem 0.45rem !important;
   }
   .feature-icon {
-    width: 28px !important;
-    height: 28px !important;
-    font-size: 0.85rem !important;
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 0.92rem !important;
   }
   .feature-text strong {
-    font-size: 0.78rem !important;
+    font-size: 0.86rem !important;
   }
   .feature-text span {
-    font-size: 0.64rem !important;
+    font-size: 0.72rem !important;
   }
   .hero-cta-group {
-    margin-bottom: 0.85rem !important;
-    gap: 0.6rem !important;
+    margin-bottom: 0.95rem !important;
+    gap: 0.7rem !important;
   }
   .hero-cta-group .btn {
-    padding: 0.45rem 1rem !important;
-    font-size: 0.82rem !important;
+    padding: 0.5rem 1.15rem !important;
+    font-size: 0.88rem !important;
   }
   .hero-stats {
-    padding-top: 0.65rem !important;
-    gap: 1.1rem !important;
+    padding-top: 0.75rem !important;
+    gap: 1.25rem !important;
   }
   .stat strong {
-    font-size: 0.95rem !important;
+    font-size: 1.08rem !important;
   }
   .stat span {
-    font-size: 0.62rem !important;
+    font-size: 0.7rem !important;
   }
   .hero-visual {
     flex: 0 0 54% !important;

@@ -21,14 +21,16 @@ const mimeTypes = {
   '.eot': 'application/vnd.ms-fontobject',
   '.otf': 'application/font-otf',
   '.wasm': 'application/wasm',
-  '.webp': 'image/webp'
+  '.webp': 'image/webp',
+  '.ico': 'image/x-icon'
 };
 
 const server = http.createServer((request, response) => {
   console.log(`${request.method} ${request.url}`);
 
-  // Determine file path
-  let filePath = path.join(PUBLIC_DIR, request.url === '/' ? 'index.html' : request.url);
+  // Determine file path, strip query strings
+  const cleanUrl = request.url.split('?')[0];
+  let filePath = path.join(PUBLIC_DIR, cleanUrl === '/' ? 'index.html' : cleanUrl);
   
   // Handle paths without extensions (e.g., /about -> /about.html) if needed, but here it's SPA
   const extname = String(path.extname(filePath)).toLowerCase();
