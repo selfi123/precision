@@ -31,28 +31,81 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Diagnostic Panels Filtering
+  // Diagnostic Panels Filtering & Real-time Search
   const filterBtns = document.querySelectorAll('.filter-btn');
-  const tableRows = document.querySelectorAll('#panel-table-body tr');
+  const searchInput = document.getElementById('panel-search-input');
+  const searchClearBtn = document.getElementById('panel-search-clear');
+  const resultsCountEl = document.getElementById('panel-results-count');
+  const tableRows = document.querySelectorAll('#panel-table-body .panel-row');
+  const noResultsRow = document.getElementById('no-results-row');
+
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  function applyFilters() {
+    let visibleCount = 0;
+    const term = currentSearch.toLowerCase().trim();
+
+    tableRows.forEach(row => {
+      const categories = (row.getAttribute('data-category') || '').split(' ');
+      const matchesCategory = currentFilter === 'all' || categories.includes(currentFilter);
+
+      let matchesSearch = true;
+      if (term) {
+        const rowText = row.innerText.toLowerCase();
+        matchesSearch = rowText.includes(term);
+      }
+
+      if (matchesCategory && matchesSearch) {
+        row.style.display = '';
+        visibleCount++;
+      } else {
+        row.style.display = 'none';
+      }
+    });
+
+    if (resultsCountEl) {
+      resultsCountEl.innerHTML = `Showing <strong>${visibleCount}</strong> of ${tableRows.length} diagnostic panels`;
+    }
+
+    if (noResultsRow) {
+      noResultsRow.style.display = visibleCount === 0 ? '' : 'none';
+    }
+
+    const scrollBox = document.querySelector('.panel-table-scrollbox');
+    if (scrollBox) {
+      scrollBox.scrollTop = 0;
+    }
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      // Remove active class from all
       filterBtns.forEach(b => b.classList.remove('active'));
-      // Add active class to clicked
       btn.classList.add('active');
-
-      const filter = btn.getAttribute('data-filter');
-
-      tableRows.forEach(row => {
-        if (filter === 'all' || row.getAttribute('data-category') === filter) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      });
+      currentFilter = btn.getAttribute('data-filter') || 'all';
+      applyFilters();
     });
   });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+      currentSearch = e.target.value;
+      if (searchClearBtn) {
+        searchClearBtn.style.display = currentSearch ? 'flex' : 'none';
+      }
+      applyFilters();
+    });
+  }
+
+  if (searchClearBtn) {
+    searchClearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      currentSearch = '';
+      searchClearBtn.style.display = 'none';
+      searchInput.focus();
+      applyFilters();
+    });
+  }
 
   // ==================== SCROLL REVEAL ANIMATIONS ====================
   const revealElements = document.querySelectorAll('.reveal-on-scroll, .reveal-stagger');
