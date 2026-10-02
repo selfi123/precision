@@ -1080,1742 +1080,409 @@
       <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">A comprehensive menu of testing solutions
         for all clinical scenarios.</p>
 
-            <!-- Search & Filters Container -->
+      <!-- Search & Filters Container -->
       <div class="panel-controls-wrapper reveal-on-scroll reveal-scale">
         <div class="panel-search-box">
           <i class="ph ph-magnifying-glass search-icon"></i>
-          <input type="text" id="panel-search-input" placeholder="Search by panel name, gene (BRCA, EGFR, KRAS, TP53...) or cancer type..." autocomplete="off" />
+          <input type="text" id="panel-search-input" placeholder="Search by panel name, gene (BRCA, EGFR, KRAS, TP53...) or sample type..." autocomplete="off" />
           <button type="button" id="panel-search-clear" class="search-clear-btn" title="Clear search" style="display: none;">
             <i class="ph ph-x"></i>
           </button>
         </div>
 
         <div class="panel-filters-container">
-          <button class="filter-btn active" data-filter="all">All <span class="badge">94</span></button>
-          <button class="filter-btn" data-filter="germline">Hereditary Cancer Tests <span class="badge">24</span></button>
-          <button class="filter-btn" data-filter="somatic">Somatic Cancer Tests <span class="badge">46</span></button>
-          <button class="filter-btn" data-filter="specialized">Non-NGS Specialty Tests <span class="badge">29</span></button>
-          <button class="filter-btn" data-filter="hematology">Hematological Disorders <span class="badge">9</span></button>
-          <button class="filter-btn" data-filter="liquid">Liquid Biopsy <span class="badge">14</span></button>
+          <button class="filter-btn active" data-filter="all">All Panels <span class="badge">24</span></button>
+          <button class="filter-btn" data-filter="somatic">Somatic Cancer Panels <span class="badge">15</span></button>
+          <button class="filter-btn" data-filter="germline">Germline &amp; Hereditary <span class="badge">4</span></button>
+          <button class="filter-btn" data-filter="pcr">Rapid PCR &amp; Hotspots <span class="badge">5</span></button>
         </div>
 
         <div class="panel-results-count" id="panel-results-count">
-          Showing <strong>94</strong> of 94 diagnostic panels
+          Showing <strong>24</strong> of 24 diagnostic panels
         </div>
       </div>
 
       <!-- Enclosed Scrollable Diagnostic Panels Card -->
       <div class="panel-table-enclosure reveal-on-scroll reveal-slide-up">
         <div class="panel-table-scrollbox">
-        <table class="panel-table futuristic-table">
-          <thead>
-            <tr>
-              <th style="width: 55px; text-align: center;">#</th>
-              <th style="min-width: 260px;">Test Name</th>
-              <th style="min-width: 340px;">Description</th>
-              <th style="min-width: 290px;">Applicable Cancers</th>
-            </tr>
-          </thead>
-          <tbody id="panel-table-body">
-            <tr data-category="germline hematology" class="panel-row">
+          <table class="panel-table futuristic-table">
+            <thead>
+              <tr>
+                <th style="width: 55px; text-align: center;">#</th>
+                <th style="min-width: 260px;">Panel Name</th>
+                <th style="min-width: 320px;">Test Coverage / Target Genes</th>
+                <th style="min-width: 240px;">Sample Requirements</th>
+                <th style="min-width: 120px; text-align: center;">TAT</th>
+              </tr>
+            </thead>
+            <tbody id="panel-table-body">
+            <tr data-category="somatic" class="panel-row">
               <td class="panel-index">1</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-3-gene-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline 3 Gene Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
+                <span class="panel-title-text">Somatic Whole Exome Sequencing</span>
+                <span class="panel-type-badge">NGS Exome</span>
               </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes the BRCA1, BRCA2, and TP53 genes for mutations associated with hereditary cancer risks</p>
+              <td class="panel-cover-cell">NGS-All Human ~23,000 genes (300x coverage)</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
               </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Fallopian Tube Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Testicular Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Uterine Cancer</span><span class="cancer-tag">Cervical Cancer</span><span class="cancer-tag">Skin Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Hematologic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Soft Tissue Sarcoma</span><span class="cancer-tag">Adrenal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">2</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/hboc-basic-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">HBOC Basic Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test screens for mutations in the BRCA1, BRCA2, PALB2, and TP53 genes, which are linked to hereditary breast and ovarian cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Fallopian Tube Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Testicular Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Uterine Cancer</span><span class="cancer-tag">Cervical Cancer</span><span class="cancer-tag">Skin Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Hematologic Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">3</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/hboc-comprehensive-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">HBOC Comprehensive Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates mutations in 20 genes associated with hereditary breast and ovarian cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Hereditary Breast and Ovarian Cancer</span><span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">4</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-brca1-brca2-test/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline BRCA1 &amp; BRCA2 Test</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects mutations in the BRCA1 and BRCA2 genes, which are associated with hereditary breast and ovarian cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Hereditary Breast and Ovarian Cancer</span><span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">5</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/lynch-syndrome-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Lynch Syndrome Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel tests for mutations in 5 genes associated with Lynch syndrome</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Small Intestine Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Kidney Cancer</span><span class="cancer-tag">Ureter Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Bladder Cancer</span><span class="cancer-tag">Prostate Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">6</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-colorectal-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Colorectal Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes 14 genes to assess the risk of hereditary colorectal cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">7</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-endocrine-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Endocrine Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test covers 13 genes, which are associated with hereditary Endocrine Cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Endocrine Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">8</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-renal-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Renal Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test includes 7 genes linked to hereditary renal cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Renal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">9</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-prostate-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Prostate Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates 12 genes, for mutations associated with hereditary prostate cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Prostate Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">10</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-nervous-system-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Nervous System Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test screens for mutations in 15 genes which are associated with hereditary nervous system cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Nervous System Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">11</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-skin-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Skin Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test covers 10 genes which are linked to hereditary skin cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Skin Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">12</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-pancreatic-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Pancreatic Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test includes 13 genes associated with hereditary pancreatic cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Pancreatic Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">13</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-panel-gynaecological-cancer/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Panel - Gynaecological Cancer</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes 12 genes, for mutations linked to hereditary gynecological cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Fallopian Tube Cancer</span><span class="cancer-tag">Cervical Cancer</span><span class="cancer-tag">Skin Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">14</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/hereditary-cancer-test/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Hereditary Cancer Test</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This comprehensive test evaluates 36 genes associated with hereditary cancer syndromes across multiple organ systems, including ACMG recommended genes</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Hereditary Cancers</span><span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Uterine Cancer (Endometrial Cancer)</span><span class="cancer-tag">Skin Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Hematologic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Soft Tissue Sarcoma</span><span class="cancer-tag">Lung Cancer</span><span class="cancer-tag">Adrenal Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline hematology" class="panel-row">
-              <td class="panel-index">15</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/hereditary-cancer-test-rapid/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Hereditary Cancer Test - RAPID</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test is a rapid version of the hereditary cancer test, analyzing 35 genes for hereditary cancer syndromes, including ACMG recommended genes</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Hereditary Cancers</span><span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Uterine Cancer (Endometrial Cancer)</span><span class="cancer-tag">Skin Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Hematologic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Soft Tissue Sarcoma</span><span class="cancer-tag">Lung Cancer</span><span class="cancer-tag">Adrenal Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline hematology" class="panel-row">
-              <td class="panel-index">16</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/germline-homologous-recombination-repair-test-hrr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Germline Homologous Recombination Repair Test (HRR)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This germline test analyzes 14 genes involved in homologous recombination repair pathways</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Gastric Cancer</span><span class="cancer-tag">Biliary Duct Cancer</span><span class="cancer-tag">Lung Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline somatic" class="panel-row">
-              <td class="panel-index">17</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-brca-test/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic BRCA Test</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects mutations in BRCA1 and BRCA2 genes in tumor tissue for the identification of therapeutic targets</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Fallopian Tube Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Testicular Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Uterine Cancer</span><span class="cancer-tag">Cervical Cancer</span><span class="cancer-tag">Skin Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Hematologic Cancer</span>
-                </div>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
               </td>
             </tr>
             <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">2</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Comprehensive Genomics Profiling (MSI+TMB+HRD)</span>
+                <span class="panel-type-badge">Comprehensive CGP</span>
+              </td>
+              <td class="panel-cover-cell">NGS-1080 DNA Genes + 104 fusion partners, MSI + TMB + HRD</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">3</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Lung Gene Panel</span>
+                <span class="panel-type-badge">Lung Cancer</span>
+              </td>
+              <td class="panel-cover-cell">126 Genes and MSI</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">4</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Pan-Solid Tumour Panel</span>
+                <span class="panel-type-badge">Pan-Solid Tumors</span>
+              </td>
+              <td class="panel-cover-cell">126 Genes and MSI</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">5</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Sarcoma Gene Panel</span>
+                <span class="panel-type-badge">Sarcoma</span>
+              </td>
+              <td class="panel-cover-cell">NGS-571 DNA Genes + 2,660 RNA fusion partners, TMB and MSI</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">6</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Endometrium Panel</span>
+                <span class="panel-type-badge">HRR Genes</span>
+              </td>
+              <td class="panel-cover-cell">51 HRR Genes</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">7</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Targeted Lung Cancer Gene Panel</span>
+                <span class="panel-type-badge">Targeted NGS</span>
+              </td>
+              <td class="panel-cover-cell">12 Genes</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">8</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Targeted Breast Cancer Gene Panel</span>
+                <span class="panel-type-badge">Targeted NGS</span>
+              </td>
+              <td class="panel-cover-cell">25 Genes</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">9</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Targeted Colorectal Cancer Gene Panel</span>
+                <span class="panel-type-badge">Targeted NGS</span>
+              </td>
+              <td class="panel-cover-cell">41 Genes + 11 MSI Markers</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">10</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Targeted Ovarian Cancer Gene Panel</span>
+                <span class="panel-type-badge">Targeted NGS</span>
+              </td>
+              <td class="panel-cover-cell">26 Genes</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">11</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Targeted Endometrium Cancer Gene Panel</span>
+                <span class="panel-type-badge">Targeted NGS</span>
+              </td>
+              <td class="panel-cover-cell">34 Genes</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic rapid" class="panel-row">
+              <td class="panel-index">12</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic 96hrs Solid Tumour Panel (Oncomine Precision Assay)</span>
+                <span class="panel-type-badge">Rapid Oncomine</span>
+              </td>
+              <td class="panel-cover-cell">50 key oncology genes Pan-Cancer</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block or 10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge tat-rapid"><i class="ph ph-lightning"></i> 4 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic rapid" class="panel-row">
+              <td class="panel-index">13</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic 96hrs Myeloid Panel (Oncomine Myeloid Assay)</span>
+                <span class="panel-type-badge">Rapid Myeloid</span>
+              </td>
+              <td class="panel-cover-cell">DNA Panel: Hotspot Gene (23), Full Gene (17); RNA Panel: Expression Gene (5), Expression Control Gene (5), Fusion Driver Gene (29)</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>3ml Bone Marrow Aspirate in EDTA Tube</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge tat-rapid"><i class="ph ph-lightning"></i> 4 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic" class="panel-row">
+              <td class="panel-index">14</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Somatic Comprehensive Leukaemia Panel (ALL/AML)</span>
+                <span class="panel-type-badge">Hematology NGS</span>
+              </td>
+              <td class="panel-cover-cell">NGS-98 DNA Genes + 119 RNA Fusions</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>3ml Bone Marrow Aspirate in EDTA Tube</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="somatic liquid" class="panel-row">
+              <td class="panel-index">15</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Comprehensive Pan-Liquid Biopsy (ctDNA)</span>
+                <span class="panel-type-badge">Liquid Biopsy</span>
+              </td>
+              <td class="panel-cover-cell">126 Genes and MSI</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="germline" class="panel-row">
+              <td class="panel-index">16</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Germline Oncomine BRCA 1 and BRCA2</span>
+                <span class="panel-type-badge">Hereditary NGS</span>
+              </td>
+              <td class="panel-cover-cell">BRCA1 and BRCA2 - Full Gene</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>Whole Blood in EDTA Tube</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="germline" class="panel-row">
+              <td class="panel-index">17</td>
+              <td class="panel-name-cell">
+                <span class="panel-title-text">Germline Whole Exome Sequencing</span>
+                <span class="panel-type-badge">Germline Exome</span>
+              </td>
+              <td class="panel-cover-cell">NGS-All Human ~23,000 genes (100x coverage)</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>Whole Blood in EDTA Tube</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
+              </td>
+            </tr>
+            <tr data-category="germline" class="panel-row">
               <td class="panel-index">18</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-homologous-recombination-repair-test-shrr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Homologous Recombination Repair Test (sHRR)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
+                <span class="panel-title-text">Germline Comprehensive Hereditary Gene Panel</span>
+                <span class="panel-type-badge">Pan-Hereditary</span>
               </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates 19 genes involved in the somatic homologous recombination repair pathway</p>
+              <td class="panel-cover-cell">74 Genes</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>Whole Blood in EDTA Tube</span>
               </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Gastric Cancer</span><span class="cancer-tag">Biliary Duct Cancer</span><span class="cancer-tag">Lung Cancer</span>
-                </div>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">16 Days</span>
               </td>
             </tr>
             <tr data-category="germline" class="panel-row">
               <td class="panel-index">19</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/homologous-recombination-deficiency-test-hrd/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Homologous Recombination Deficiency Test (HRD)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
+                <span class="panel-title-text">Germline BRCA 1 & 2 Deletion/Duplication by MLPA</span>
+                <span class="panel-type-badge">MLPA CNV</span>
               </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes 19 genes in the HRR pathway (including BRCA1 &amp; BRCA2) along with genomic instability to assess homologous recombination deficiency</p>
+              <td class="panel-cover-cell">BRCA1 and BRCA2 - Full Gene Deletions / Duplications</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>Whole Blood in EDTA Tube</span>
               </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Ovarian Cancer</span>
-                </div>
+              <td class="panel-tat-cell">
+                <span class="tat-badge">10 Days</span>
               </td>
             </tr>
-            <tr data-category="somatic" class="panel-row">
+            <tr data-category="pcr rapid" class="panel-row">
               <td class="panel-index">20</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/homologous-recombination-deficiency-test-hrd-rapid/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Homologous Recombination Deficiency Test (HRD) - RAPID</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
+                <span class="panel-title-text">PCR- EGFR Mutation Panel</span>
+                <span class="panel-type-badge">Rapid PCR</span>
               </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test is a rapid version of the HRD test that evaluates 19 HRR genes along with genomic instability</p>
+              <td class="panel-cover-cell">Exons 18, 19, 20, 21 - Hotspots (including T790M, L858R, Del19)</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block or 10ml Blood in Streck Tube</span>
               </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Ovarian Cancer</span>
-                </div>
+              <td class="panel-tat-cell">
+                <span class="tat-badge tat-rapid"><i class="ph ph-lightning"></i> 2 Days</span>
               </td>
             </tr>
-            <tr data-category="germline somatic" class="panel-row">
+            <tr data-category="pcr rapid" class="panel-row">
               <td class="panel-index">21</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/homologous-recombination-deficiency-test-plus-hrd-plus/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Homologous Recombination Deficiency Test Plus (HRD Plus)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
+                <span class="panel-title-text">PCR- KRAS Mutation Panel</span>
+                <span class="panel-type-badge">Rapid PCR</span>
               </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes both somatic and germline BRCA1 and BRCA2 genes along with genomic instability</p>
+              <td class="panel-cover-cell">Exons 2, 3 & 4 - Hotspots</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
               </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Ovarian Cancer</span>
-                </div>
+              <td class="panel-tat-cell">
+                <span class="tat-badge tat-rapid"><i class="ph ph-lightning"></i> 2 Days</span>
               </td>
             </tr>
-            <tr data-category="somatic" class="panel-row">
+            <tr data-category="pcr rapid" class="panel-row">
               <td class="panel-index">22</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/egfr-tissue/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">EGFR (Tissue)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
+                <span class="panel-title-text">PCR- NRAS Mutation Panel</span>
+                <span class="panel-type-badge">Rapid PCR</span>
               </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects mutations in the EGFR gene (Exons 18, 19, 20, and 21), including the resistance mutation T790M</p>
+              <td class="panel-cover-cell">Exons 2, 3 & 4 - Hotspots</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
               </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Lung Cancer</span><span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Head &amp; Neck Cancer</span><span class="cancer-tag">Glioblastoma</span>
-                </div>
+              <td class="panel-tat-cell">
+                <span class="tat-badge tat-rapid"><i class="ph ph-lightning"></i> 2 Days</span>
               </td>
             </tr>
-            <tr data-category="liquid" class="panel-row">
+            <tr data-category="pcr rapid" class="panel-row">
               <td class="panel-index">23</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/egfr-liquid-biopsy/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">EGFR (Liquid Biopsy)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
+                <span class="panel-title-text">PCR- BRAF Mutation Panel</span>
+                <span class="panel-type-badge">Rapid PCR</span>
               </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies EGFR mutations in plasma, including T790M and common driver mutations like L858R and Del19</p>
+              <td class="panel-cover-cell">Exon 15 V600E Hotspot</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>FFPE Tissue Block</span>
               </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Lung Cancer</span><span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Head &amp; Neck Cancer</span><span class="cancer-tag">Glioblastoma</span>
-                </div>
+              <td class="panel-tat-cell">
+                <span class="tat-badge tat-rapid"><i class="ph ph-lightning"></i> 2 Days</span>
               </td>
             </tr>
-            <tr data-category="somatic" class="panel-row">
+            <tr data-category="pcr rapid" class="panel-row">
               <td class="panel-index">24</td>
               <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/lung-cancer-essential-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Lung Cancer Essential Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel tests for mutations in 7 genes using DNA sequencing and fusions in 4 genes using RNA sequencing</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Lung Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">25</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/lung-cancer-actionable-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Lung Cancer Actionable Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates the presence of PDL-1 along with mutations in 7 genes using DNA sequencing and fusions in 4 genes using RNA sequencing for lung cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Lung Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">26</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/lung-cancer-comprehensive-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Lung Cancer Comprehensive Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This comprehensive panel evaluates the presence of PDL-1 along with mutations in 14 genes using DNA sequencing and fusions in 7 genes using RNA sequencing for lung cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Lung Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">27</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/breast-cancer-essential-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Breast Cancer Essential Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel analyzes mutations in 8 important genes commonly associated with breast cancer. These mutations provide insights into tumor behavior, prognosis, and potential response to targeted therapies.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">28</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/breast-cancer-actionable-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Breast Cancer Actionable Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel analyzes mutations in 8 genes and assesses 4 IHC markers commonly associated with breast cancer. These insights help oncologists select targeted therapies, assess prognosis, and explore clinical trial options for personalized care.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">29</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/colorectal-cancer-essential-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Colorectal Cancer Essential Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel evaluates 7 genes for mutations associated with colorectal cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">30</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/colorectal-cancer-actionable-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Colorectal Cancer Actionable Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes 7 genes associated with colorectal cancer along with Microsatellite Instability (MSI) by PCR</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">31</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/colorectal-cancer-comprehensive-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Colorectal Cancer Comprehensive Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This comprehensive panel evaluates 22 genes associated with colorectal cancer along with MSI by PCR</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">32</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/endometrial-cancer-test/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Endometrial Cancer Test</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies mutations in dMMR genes, POLE, and TP53 for endometrial cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Endometrial Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">33</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/thyroid-cancer-basic-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Thyroid Cancer Basic Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel analyzes SNVs/CNVs in 10 genes to provide critical information for selecting targeted therapies.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Thyroid Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">34</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/thyroid-cancer-advance-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Thyroid Cancer Advance Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel analyzes mutations in 6 genes using DNA sequencing and fusions in 5 genes using RNA sequencing.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Thyroid Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">35</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/thyroid-cancer-essential-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Thyroid Cancer Essential Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel analyzes SNVs/CNVs in 11 genes to provide critical information for selecting targeted therapies and is often performed at the time of diagnosis.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Thyroid Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">36</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-74-dnarna/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 74 (DNA+RNA)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel evaluates mutations in 74 genes using DNA sequencing and fusions in 14 genes using RNA sequencing for targeted somatic cancer therapy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">37</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-74-dnarna-rapid/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 74 (DNA+RNA) (RAPID)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test is a rapid version of the Somatic Advantage 74 Test. It evaluates mutations in 74 genes using DNA sequencing and fusions in 14 genes using RNA sequencing for targeted somatic cancer therapy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic liquid" class="panel-row">
-              <td class="panel-index">38</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-74-liquid-biopsy/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 74 Liquid Biopsy</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates mutations in 74 genes using DNA sequencing and fusions in 14 genes using RNA sequencing through a non-invasive liquid biopsy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic liquid" class="panel-row">
-              <td class="panel-index">39</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-74-liquid-biopsy-rapid/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 74 Liquid Biopsy- RAPID</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test is a rapid version of the Somatic Advantage 74 Liquid Biopsy. It evaluates mutations in 74 genes using DNA sequencing and fusions in 14 genes using RNA sequencing through a non-invasive liquid biopsy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic liquid" class="panel-row">
-              <td class="panel-index">40</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-74-duo/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 74 Duo</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test offers a dual evaluation (through tissue biopsy and liquid biopsy) of mutations in 74 genes using DNA sequencing and fusions in 14 genes using RNA sequencing for somatic cancer profiling</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic liquid" class="panel-row">
-              <td class="panel-index">41</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-74-reflex/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 74 Reflex</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test includes analysis of mutations in 74 genes using DNA sequencing and fusions in 14 genes using RNA sequencing using tissue biopsies; the results of these are reflexed into liquid biopsy analysis</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">42</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-74-basic/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 74 - Basic</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">The Somatic Advantage 74 Basic test is a targeted next-generation sequencing (NGS) assay for the genomic profiling of solid tumors. Aligned with international guidelines, the test supports precision oncology by detecting clinically actionable variants that inform diagnosis, prognosis, and therapeutic decision making.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">43</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-advanced-dnarna/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Advanced (DNA+RNA)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This comprehensive panel evaluates mutations in 523 genes using DNA sequencing and fusions in 55 genes using RNA sequencing; it also analyzes Tumor Mutation Burden (TMB) and MSI</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">44</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-advanced-dnarna-rapid/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Advanced (DNA+RNA)- RAPID</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test is a rapid version of the Somatic Advantage 500 panel, and evaluates mutations in 523 genes using DNA sequencing and fusions in 55 genes using RNA sequencing; it also analyzes Tumor Mutation Burden (TMB) and MSI</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="liquid" class="panel-row">
-              <td class="panel-index">45</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/lung-cancer-essential-panel-lb/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Lung Cancer Essential Panel - LB</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates SNVs/CNVs/InDels and fusions in 11 genes associated with Lung Cancer from a minimally invasive blood sample</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Lung Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="liquid" class="panel-row">
-              <td class="panel-index">46</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/colorectal-cancer-essential-panel-lb/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Colorectal Cancer Essential Panel - LB</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates SNVs/CNVs/InDels in 7 genes associated with Colorectal Cancer from a minimally invasive blood sample</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">47</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-standard-dnarna/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Standard (DNA+RNA)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel evaluates mutations in 523 genes using DNA sequencing and fusions in 55 genes using RNA sequencing; it also analyzes Tumor Mutation Burden (TMB) and Microsatellite Instability (MSI)</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">48</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-standard-dnarna-rapid/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Standard (DNA+RNA) (Rapid)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test is a rapid version of the Somatic Advantage 500 Standard Panel. It evaluates mutations in 523 genes using DNA sequencing and fusions in 55 genes using RNA sequencing; it also analyzes Tumor Mutation Burden (TMB) and Microsatellite Instability (MSI)</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">49</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-nexus/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Nexus</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">The SA500 Nexus is a comprehensive genomic testing platform that integrates DNA, RNA, and protein insights across 500+ cancer genes, enabling precise, clinically actionable guidance for personalized therapy selection and treatment optimization.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic liquid" class="panel-row">
-              <td class="panel-index">50</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-nexus-plus/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Nexus Plus</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">The SA500 Nexus Plus is an advanced genomic platform that combines tissue and liquid biopsy profiling across 500+ cancer genes, offering a comprehensive view of tumor heterogeneity, treatment response, resistance, and inherited risk.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic liquid" class="panel-row">
-              <td class="panel-index">51</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-advanced-liquid-biopsy/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Advanced - Liquid Biopsy</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test is a minimally invasive solution for comprehensive molecular profiling. It evaluates mutations in 523 genes using DNA sequencing and fusions in 55 genes; it also analyzes Tumor Mutation Burden (TMB) and MSI</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">52</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/breast-cancer-prognostification-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Breast Cancer Prognostification Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates biomarkers such as ER, PR, HER-2/neu, and Ki67 for breast cancer prognosis</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">53</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/final-diagnosis-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Final Diagnosis Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This panel provides sequential testing to determine the final diagnosis of cancer</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">54</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/pdl-1-22c3-dako/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">PDL-1 22C3 (Dako)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates the expression of the PDL-1 biomarker using the 22C3 clone for immunotherapy with Keytruda (pembrolizumab)</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">NSCLC</span><span class="cancer-tag">All Solid Tumors</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">55</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/pdl-1-sp142-ventana/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">PDL-1 SP142 (Ventana)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test uses the SP142 clone to determine PDL-1 expression levels for immunotherapy with Tecentriq (atezolizumab)</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">TNBC</span><span class="cancer-tag">Urothelial Carcinoma</span><span class="cancer-tag">NSCLC</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">56</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/pdl-1-sp263-ventana/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">PDL-1 SP263 (Ventana)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test assesses PDL-1 expression using the SP263 clone for guiding immunotherapy with Tecentriq (atezolizumab) and Imfinzi (durvalumab)</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">NSCLC</span><span class="cancer-tag">Head and Neck Cancer</span><span class="cancer-tag">Bladder Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">57</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/msi-by-ihc/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MSI by IHC</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates MLH1, MSH2, MSH6, and PMS2 proteins for Microsatellite Instability (MSI) by IHC</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Kidney Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">58</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/msi-by-pcr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MSI by PCR</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test assesses mutations in MMR genes for Microsatellite Instability (MSI) using PCR methodology</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Kidney Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">59</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/head-neck-therapeutic-test/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Head &amp; Neck Therapeutic Test</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates EGFR, P53, and P16 genes for mutations relevant to Head and Neck Cancer therapy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Head and Neck Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">60</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/gastric-her-2/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Gastric HER-2</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects HER-2/neu overexpression in Gastric Cancer for targeted therapy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Gastric Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">61</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mst-sanger-sequencing/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MST (Sanger Sequencing)</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies specific gene variants using Sanger sequencing for mutation confirmation</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Cancers</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline specialized" class="panel-row">
-              <td class="panel-index">62</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-brca1/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA BRCA1</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects large genomic rearrangements in the BRCA1 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Hereditary Breast and Ovarian Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline specialized" class="panel-row">
-              <td class="panel-index">63</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-brca2/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA BRCA2</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates large genomic rearrangements in the BRCA2 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Hereditary Breast and Ovarian Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">64</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-chek2/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA CHEK2</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects large genomic rearrangements in the CHEK2 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Hereditary Breast and Ovarian Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">65</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-mlh1/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA MLH1</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies large genomic rearrangements in the MLH1 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Small Intestine Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Kidney Cancer</span><span class="cancer-tag">Ureter Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Bladder Cancer</span><span class="cancer-tag">Prostate Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">66</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-msh2/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA MSH2</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes large genomic rearrangements in the MSH2 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Small Intestine Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Kidney Cancer</span><span class="cancer-tag">Ureter Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Bladder Cancer</span><span class="cancer-tag">Prostate Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">67</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-tp53/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA TP53</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects large genomic rearrangements in the TP53 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Li-Fraumeni Syndrome</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">68</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-pms2/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA PMS2</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies large genomic rearrangements in the PMS2 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Small Intestine Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Kidney Cancer</span><span class="cancer-tag">Ureter Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Bladder Cancer</span><span class="cancer-tag">Prostate Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">69</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-cyp21a2/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA CYP21A2</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates large genomic rearrangements in the CYP21A2 gene using Multiplex Ligation-dependent Probe Amplification</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline specialized" class="panel-row">
-              <td class="panel-index">70</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/hereditary-cancer-test-plus/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Hereditary Cancer Test Plus</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test includes capture-based NGS for 137 genes along with digital MLPA for 28 genes to detect genetic variants associated with inherited cancers, including several rare cancers</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Hereditary Cancers</span><span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Ovarian Cancer</span><span class="cancer-tag">Prostate Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Uterine Cancer (Endometrial Cancer)</span><span class="cancer-tag">Skin Cancer</span><span class="cancer-tag">Brain Cancer</span><span class="cancer-tag">Hematologic Cancer</span><span class="cancer-tag">Liver Cancer</span><span class="cancer-tag">Soft Tissue Sarcoma</span><span class="cancer-tag">Lung Cancer</span><span class="cancer-tag">Adrenal Cancer</span><span class="cancer-tag">Stomach Cancer</span><span class="cancer-tag">Colorectal Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline specialized hematology" class="panel-row">
-              <td class="panel-index">71</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/hereditary-cancer-test-plus-rapid/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Hereditary Cancer Test Plus - RAPID</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This rapid test includes capture-based NGS for 137 genes along with digital MLPA for 28 genes to detect genetic variants associated with inherited cancers, including several rare cancers — with an expedited turnaround time to enable timely clinical decision-making</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Hereditary Cancers</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="liquid specialized" class="panel-row">
-              <td class="panel-index">72</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/braf-v600-by-pcr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">BRAF V600 by PCR</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects the BRAF V600 mutation in blood samples, which is commonly associated with various cancers and can inform targeted therapy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Melanoma</span><span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Thyroid Cancer</span><span class="cancer-tag">Non-Small Cell Lung Cancer (NSCLC)</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">73</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/jak2-mutation-analysis-v617f-by-qpcr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">JAK2 Mutation Analysis (V617F) by qPCR</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies the JAK2 V617F mutation in blood, a key marker in diagnosing Myeloproliferative Neoplasms such as Polycythemia Vera and Essential Thrombocythemia</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Myeloproliferative Neoplasms (PV</span><span class="cancer-tag">ET</span><span class="cancer-tag">PMF)</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic specialized" class="panel-row">
-              <td class="panel-index">74</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/kras-gene-analysis-by-pcr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">KRAS gene analysis by PCR</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects mutations in the KRAS gene from FFPE tissue samples to support the diagnosis and personalized treatment of certain cancers</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">NSCLC</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">75</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-rb1/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA RB1</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects deletions or duplications in the RB1 gene, which are associated with Retinoblastoma and other cancer predispositions</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Retinoblastoma</span><span class="cancer-tag">Osteosarcoma</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">76</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-nf1/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA NF1</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies large deletions or duplications in the NF1 gene, aiding in the diagnosis of Type 1 Neurofibromatosis</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Type 1 Neurofibromatosis</span><span class="cancer-tag">Gliomas</span><span class="cancer-tag">Pheochromocytoma</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">77</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-atm/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA ATM</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test analyzes copy number changes in the ATM gene, which is linked to Ataxia-Telangiectasia and increased cancer risk</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast cancer</span><span class="cancer-tag">Pancreatic Cancer</span><span class="cancer-tag">Lymphoid Cancers</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">78</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/mlpa-mecp2/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">MLPA MECP2</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies deletions or duplications in the MECP2 gene, associated with Rett syndrome and related neurodevelopmental disorders</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">79</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/kras-nras-braf-by-pcr-sequencing/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">KRAS, NRAS &amp; BRAF BY PCR - Sequencing</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects mutations in the KRAS, NRAS, and BRAF genes from FFPE samples to guide targeted therapy in cancers such as Colorectal Cancer and Melanoma</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Melanoma</span><span class="cancer-tag">NSCLC</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">80</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/gist-theranostic-panel-by-pcr-c-kit-pdgfr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">GIST Theranostic Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test identifies mutations in the C-kit and PDGFR genes in FFPE tissue samples to support diagnosis and therapy selection in Gastrointestinal Stromal Tumors</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Gastrointestinal Stromal Tumors</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="liquid specialized" class="panel-row">
-              <td class="panel-index">81</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/pik3ca-mutation-by-pcr/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">PIK3CA - Mutation by PCR</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects mutations in the PIK3CA gene from blood samples, which can inform targeted treatment strategies in certain cancers</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Endometrial Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic specialized" class="panel-row">
-              <td class="panel-index">82</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/her2-neu-amplification-by-fish/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">HER2/neu Amplification by FISH</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test determines HER2 gene amplification in FFPE tissue samples to guide treatment decisions in Breast and Gastric Cancers</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span><span class="cancer-tag">Gastric Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="liquid specialized" class="panel-row">
-              <td class="panel-index">83</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/digital-mlpa/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Digital MLPA</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test evaluates copy number variations across 27 genetic markers using digital MLPA technology on blood samples, aiding in the diagnosis of various genetic disorders</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Hereditary Cancers</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="liquid" class="panel-row">
-              <td class="panel-index">84</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/breast-cancer-essential-panel-lb/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Breast Cancer Liquid Biopsy</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This liquid biopsy test evaluates genetic changes in 6 genes associated with breast cancer using a blood sample.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Breast Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic liquid" class="panel-row">
-              <td class="panel-index">85</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-standard-lb/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Standard - LB</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test uses an in-house panel to provide a minimally invasive solution for comprehensive molecular profiling. It evaluates mutations in 523 genes using DNA sequencing and fusions in 55 genes; it also analyzes Tumor Mutation Burden (TMB) and MSI</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">86</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/pole-gene-by-ngs/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">POLE gene by NGS</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This test detects pathogenic variants in the POLE gene that are associated with an ultramutated tumor phenotype, for prognosis, and treatment decision-making.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Endometrial Cancer</span><span class="cancer-tag">Colorectal Cancer</span><span class="cancer-tag">Ovarian Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">87</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/glioma-essential-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Glioma Essential Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This is a targeted DNA and RNA-based molecular profiling test designed to identify clinically relevant genomic alterations in gliomas.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Gliomas</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="specialized" class="panel-row">
-              <td class="panel-index">88</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/glioma-comprehensive-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Glioma Comprehensive Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This is a multimodal molecular profiling assay that combines NGS, PCR, and FISH to support accurate diagnosis, classification, prognostic assessment, and personalized treatment planning in gliomas.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Gliomas</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">89</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/sarcoma-comprehensive-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Sarcoma Comprehensive Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This is an advanced NGS assay designed to detect clinically relevant gene fusions, SNVs, InDels, and CNVs across a broad spectrum of sarcoma subtypes.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Sarcomas</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">90</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/tmb-analysis/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">TMB Analysis</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This is a genomic test that measures the number of somatic (tumor-specific) mutations present within a tumor genome and is used to identify patients who may benefit from immunotherapy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All solid tumors</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="germline" class="panel-row">
-              <td class="panel-index">91</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/oncopgx-panel/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">OncoPGx Panel</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">This is a comprehensive germline pharmacogenomics (PGx) test that identifies inherited genetic variants influencing the metabolism, efficacy, and toxicity of oncology medications.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Colorectal cancer</span><span class="cancer-tag">colon cancer</span><span class="cancer-tag">rectal cancer</span><span class="cancer-tag">gastric (stomach) cancer</span><span class="cancer-tag">pancreatic cancer</span><span class="cancer-tag">breast cancer (including hormone receptor-positive and metastatic)</span><span class="cancer-tag">non-small cell lung cancer</span><span class="cancer-tag">bladder cancer (urothelial carcinoma)</span><span class="cancer-tag">acute lymphoblastic leukemia (ALL)</span><span class="cancer-tag">acute myeloid leukemia (AML)</span><span class="cancer-tag">acute non-lymphocytic leukemia</span><span class="cancer-tag">head and neck cancers</span><span class="cancer-tag">uterine cancer</span><span class="cancer-tag">skin cancers</span><span class="cancer-tag">and other advanced or metastatic solid tumors where fluoropyrimidines or antifolates are used.</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic specialized" class="panel-row">
-              <td class="panel-index">92</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-sa-500-nexus-portfolio/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 Nexus Portfolio</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                <div class="panel-subvariants"><span class="subvariant-label">Sub-assays:</span> <span class="subvariant-pills">Somatic Advantage 500 Nexus Plus &bull; Somatic Advantage 500 Nexus</span></div>
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">The SA500 Nexus range delivers comprehensive, clinically actionable insights by integrating IHC, molecular tumor profiling, and inherited risk assessment for personalized cancer care.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">93</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/somatic-advantage-500-sa500-portfolio/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Somatic Advantage 500 (SA500) Portfolio</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                <div class="panel-subvariants"><span class="subvariant-label">Sub-assays:</span> <span class="subvariant-pills">SA500 Advanced &bull; SA500 Standard &bull; SA500 Advanced LB &bull; SA500 Standard LB</span></div>
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">A comprehensive NGS assay profiling 500+ cancer-associated genes across DNA and RNA to uncover actionable mutations, gene fusions, TMB, and MSI—from tissue or a minimally invasive blood draw.</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">All Solid Tumors</span><span class="cancer-tag">Comprehensive Profiling</span>
-                </div>
-              </td>
-            </tr>
-            <tr data-category="somatic" class="panel-row">
-              <td class="panel-index">94</td>
-              <td class="panel-name-cell">
-                <a href="https://strandls.com/oncology/strand-hrd/" target="_blank" rel="noopener noreferrer" class="panel-link" title="View official panel details">
-                  <span class="panel-title-text">Strand HRD</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                <div class="panel-subvariants"><span class="subvariant-label">Sub-assays:</span> <span class="subvariant-pills">HRD &bull; HRD Plus</span></div>
-              </td>
-              <td class="panel-desc-cell">
-                <p class="panel-desc-text">NGS-based assessment of 19 HRR genes and genomic scarring to identify patients eligible for PARP inhibitor therapy</p>
-              </td>
-              <td class="panel-cancers-cell">
-                <div class="cancer-tags-container">
-                  <span class="cancer-tag">Ovarian Cancer</span>
-                </div>
-              </td>
-            </tr>
-            <tr id="no-results-row" style="display: none;">
-              <td colspan="4" class="no-results-cell">
-                <i class="ph ph-warning-circle" style="font-size: 2rem; display: block; margin-bottom: 0.5rem; color: #94A3B8;"></i>
-                No matching diagnostic panels found. Try adjusting your search keywords or filter category.
-              </td>
-            </tr>
-          </tbody>
+                <span class="panel-title-text">PCR- DPYD Mutation Panel</span>
+                <span class="panel-type-badge">Pharmacogenomics</span>
+              </td>
+              <td class="panel-cover-cell">DPYD*2A / DPYD*13 / D949V / IVS14 / DPYD*6 (Fluoropyrimidine Toxicity)</td>
+              <td class="panel-sample-cell">
+                <i class="ph ph-test-tube sample-icon"></i>
+                <span>Whole Blood in EDTA Tube</span>
+              </td>
+              <td class="panel-tat-cell">
+                <span class="tat-badge tat-rapid"><i class="ph ph-lightning"></i> 2 Days</span>
+              </td>
+            </tr>
+              <tr id="no-results-row" style="display: none;">
+                <td colspan="5" class="no-results-cell">
+                  <i class="ph ph-warning-circle" style="font-size: 2rem; display: block; margin-bottom: 0.5rem; color: #94A3B8;"></i>
+                  No matching diagnostic panels found. Try adjusting your search keywords or filter category.
+                </td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </div>
