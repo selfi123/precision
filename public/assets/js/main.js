@@ -128,4 +128,110 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     revealElements.forEach(el => el.classList.add('is-revealed'));
   }
+
+  // ==================== CONTACT FORM (RESEND) ====================
+  const contactForm = document.getElementById('contact-form');
+  const contactStatus = document.getElementById('contact-status');
+  const submitBtn = document.getElementById('contact-submit-btn');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nameInput = document.getElementById('contact-name');
+      const emailInput = document.getElementById('contact-email');
+      const messageInput = document.getElementById('contact-message');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      if (!name || !email) {
+        showStatus('Please fill in your name and email address.', 'error');
+        return;
+      }
+
+      // Set loading state
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.setAttribute('data-original-html', submitBtn.innerHTML);
+        submitBtn.innerHTML = `
+          <span class="btn-text">Sending Inquiry...</span>
+          <i class="ph ph-spinner-gap spin-animation"></i>
+        `;
+      }
+      hideStatus();
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          showStatus(`
+            <div class="status-content">
+              <i class="ph ph-check-circle status-icon"></i>
+              <div>
+                <strong>Thank you, ${escapeHtml(name)}!</strong>
+                <p>Your inquiry has been sent to our genomics team at <em>admin@precisionalleledx.in</em>. We will review and respond shortly.</p>
+              </div>
+            </div>
+          `, 'success');
+          contactForm.reset();
+        } else {
+          showStatus(`
+            <div class="status-content">
+              <i class="ph ph-warning-circle status-icon"></i>
+              <div>
+                <strong>Submission Error:</strong>
+                <p>${escapeHtml(result.error || 'Could not send message. Please write directly to admin@precisionalleledx.in')}</p>
+              </div>
+            </div>
+          `, 'error');
+        }
+      } catch (err) {
+        console.error('Contact form submission error:', err);
+        showStatus(`
+          <div class="status-content">
+            <i class="ph ph-warning-circle status-icon"></i>
+            <div>
+              <strong>Network Error:</strong>
+              <p>Unable to connect to the server. Please write directly to <a href="mailto:admin@precisionalleledx.in">admin@precisionalleledx.in</a>.</p>
+            </div>
+          </div>
+        `, 'error');
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          const orig = submitBtn.getAttribute('data-original-html');
+          if (orig) submitBtn.innerHTML = orig;
+        }
+      }
+    });
+
+    function showStatus(html, type) {
+      if (!contactStatus) return;
+      contactStatus.className = `contact-status-box status-${type}`;
+      contactStatus.innerHTML = html;
+      contactStatus.style.display = 'block';
+    }
+
+    function hideStatus() {
+      if (!contactStatus) return;
+      contactStatus.style.display = 'none';
+      contactStatus.innerHTML = '';
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.innerText = str;
+      return div.innerHTML;
+    }
+  }
 });
