@@ -234,4 +234,145 @@ document.addEventListener('DOMContentLoaded', () => {
       return div.innerHTML;
     }
   }
+
+  // ==================== INTERACTIVE GENOMIC PIPELINE STEPPER ====================
+  const stepBtns = document.querySelectorAll('#pipeline-stepper-stages .stage-step');
+  const liveInfoBadge = document.getElementById('live-info-badge');
+  const liveInfoDesc = document.getElementById('live-info-desc');
+  const intelCards = document.querySelectorAll('.px-intel-card');
+  const dnaStageCore = document.getElementById('dna-stage-core');
+
+  const stageData = {
+    1: {
+      badgeIcon: 'ph-target',
+      badgeTag: 'STAGE 01 &bull; EARLY DETECTION & LIQUID BIOPSY',
+      desc: 'Ultra-sensitive ctDNA liquid biopsy detecting circulating tumor alleles down to <strong>&lt; 0.5% VAF limit</strong> before radiological recurrence.',
+      targetCardId: 'intel-card-detect'
+    },
+    2: {
+      badgeIcon: 'ph-dna',
+      badgeTag: 'STAGE 02 &bull; COMPREHENSIVE GENOMIC PROFILING',
+      desc: 'Deep high-throughput sequencing covering <strong>500+ cancer genes</strong> for SNVs, Indels, CNVs, Fusions, and TMB/MSI-H.',
+      targetCardId: 'intel-card-sequence'
+    },
+    3: {
+      badgeIcon: 'ph-brain',
+      badgeTag: 'STAGE 03 &bull; AI-ASSISTED CLINICAL DECISION SUPPORT',
+      desc: 'Automated variant curation mapped in real-time against <strong>Tier I/II NCCN &amp; ESMO</strong> clinical practice standards.',
+      targetCardId: 'intel-card-understand'
+    },
+    4: {
+      badgeIcon: 'ph-shield-check',
+      badgeTag: 'STAGE 04 &bull; PERSONALIZED ONCOLOGY & MATCHING',
+      desc: 'Evidence-based pairing to <strong>FDA-approved targeted TKIs</strong>, antibody-drug conjugates, immunotherapy, and global clinical trials.',
+      targetCardId: 'intel-card-match'
+    },
+    5: {
+      badgeIcon: 'ph-trend-up',
+      badgeTag: 'STAGE 05 &bull; RAPID 4-DAY SAMPLE-TO-ACTION',
+      desc: 'Delivering validated clinical action reports in <strong>4 days</strong>, maximizing therapeutic response and patient overall survival.',
+      targetCardId: 'all'
+    }
+  };
+
+  let currentStep = 1;
+  let autoPlayInterval = null;
+
+  function setActiveStage(stepNum, isManual = false) {
+    currentStep = parseInt(stepNum, 10);
+    const data = stageData[currentStep];
+    if (!data) return;
+
+    // 1. Update buttons
+    stepBtns.forEach(btn => {
+      const bStep = parseInt(btn.getAttribute('data-step'), 10);
+      const isActive = bStep === currentStep;
+      btn.classList.toggle('active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    // 2. Update dynamic live info strip with smooth fade
+    if (liveInfoBadge && liveInfoDesc) {
+      liveInfoBadge.style.opacity = '0.3';
+      liveInfoDesc.style.opacity = '0.3';
+
+      setTimeout(() => {
+        liveInfoBadge.innerHTML = `<i class="ph ${data.badgeIcon}"></i> <span>${data.badgeTag}</span>`;
+        liveInfoDesc.innerHTML = data.desc;
+        liveInfoBadge.style.opacity = '1';
+        liveInfoDesc.style.opacity = '1';
+      }, 100);
+    }
+
+    // 3. Highlight corresponding card
+    intelCards.forEach(card => {
+      card.classList.remove('card-highlighted');
+    });
+
+    if (dnaStageCore) {
+      if (data.targetCardId === 'all') {
+        dnaStageCore.classList.add('highlight-all');
+        intelCards.forEach(card => card.classList.add('card-highlighted'));
+      } else {
+        dnaStageCore.classList.remove('highlight-all');
+        const targetCard = document.getElementById(data.targetCardId);
+        if (targetCard) {
+          targetCard.classList.add('card-highlighted');
+        }
+      }
+    }
+
+    if (isManual) {
+      // User clicked manually -> stop auto-play so user retains full control
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+    }
+  }
+
+  // Button Click Handlers
+  stepBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const step = btn.getAttribute('data-step');
+      setActiveStage(step, true);
+    });
+  });
+
+  // Card Click Handlers (clicking card also activates stage)
+  intelCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const step = card.getAttribute('data-step');
+      if (step) {
+        setActiveStage(step, true);
+      }
+    });
+  });
+
+  // Auto-play cycle every 6 seconds until user clicks or hovers
+  function startAutoPlay() {
+    if (autoPlayInterval) clearInterval(autoPlayInterval);
+    autoPlayInterval = setInterval(() => {
+      const nextStep = currentStep >= 5 ? 1 : currentStep + 1;
+      setActiveStage(nextStep, false);
+    }, 6000);
+  }
+
+  // Pause auto-play when hovering the stepper card
+  const stepperCard = document.querySelector('.pipeline-stepper-card');
+  if (stepperCard) {
+    stepperCard.addEventListener('mouseenter', () => {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+    });
+  }
+
+  // Start initial stage
+  if (stepBtns.length > 0) {
+    setActiveStage(1, false);
+    startAutoPlay();
+  }
 });
