@@ -1,153 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
   <url>
     <loc>https://www.precisionalleledx.in/</loc>
-    <lastmod>2026-10-02</lastmod>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Research & Clinical Insights -->
   <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-whole-exome-sequencing.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.precisionalleledx.in/paper-wgs.html</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-comprehensive-genomics-profiling.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.precisionalleledx.in/paper-ai.html</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-lung-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-pan-solid-tumour-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-sarcoma-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-endometrium-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-targeted-lung-cancer-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-targeted-breast-cancer-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-targeted-colorectal-cancer-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-targeted-ovarian-cancer-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-targeted-endometrium-cancer-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-96hrs-solid-tumour-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-96hrs-myeloid-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/somatic-comprehensive-leukaemia-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/comprehensive-pan-liquid-biopsy.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/germline-oncomine-brca1-brca2.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/germline-whole-exome-sequencing.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/germline-comprehensive-hereditary-gene-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/germline-brca-deletion-duplication-mlpa.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/pcr-egfr-mutation-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/pcr-kras-mutation-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/pcr-nras-mutation-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/pcr-braf-mutation-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.precisionalleledx.in/panels/pcr-dpyd-mutation-panel.html</loc>
-    <lastmod>2026-10-02</lastmod>
+    <loc>https://www.precisionalleledx.in/paper-spatial.html</loc>
+    <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
