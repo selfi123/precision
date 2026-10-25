@@ -5,11 +5,15 @@ const path = require('path');
 const PORT = process.env.PORT || 3002;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 
-// Resend Configuration
+// Resend Configuration (For High-Priority Contact Inquiries)
 // Configured via process.env.RESEND_API_KEY in Render.com Environment Variables
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'admin@precisionalleledx.in';
 const RESEND_FROM_EMAIL = process.env.RESEND_FROM || 'Precision Allele.Dx <onboarding@resend.dev>';
+
+// Google Sheets & Silent Subscriber Storage (No email notifications to owner)
+const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || '';
+const SUBSCRIBERS_FILE = path.join(__dirname, 'data', 'subscribers.csv');
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -162,6 +166,34 @@ async function handleContactInquiry(request, response) {
   });
 }
 
+function saveSubscriberLocally(email, timestamp) {
+  try {
+    const dataDir = path.dirname(SUBSCRIBERS_FILE);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
+    
+    // Check if file exists, if not write CSV header
+    if (!fs.existsSync(SUBSCRIBERS_FILE)) {
+      fs.writeFileSync(SUBSCRIBERS_FILE, 'Timestamp,Email,Source\n', 'utf8');
+    }
+
+    // Check if email already exists (prevent duplicate rows)
+    const content = fs.readFileSync(SUBSCRIBERS_FILE, 'utf8');
+    if (content.toLowerCase().includes(email.toLowerCase())) {
+      console.log(`[Subscribers] ${email} is already in subscribers.csv (skipped duplicate).`);
+      return false;
+    }
+
+    fs.appendFileSync(SUBSCRIBERS_FILE, `"${timestamp}","${email}","Website Footer Newsletter"\n`, 'utf8');
+    console.log(`[Subscribers] Successfully appended ${email} to data/subscribers.csv`);
+    return true;
+  } catch (err) {
+    console.warn('[Subscribers Warning] Could not save to local CSV:', err.message);
+    return false;
+  }
+}
+
 async function handleNewsletterSubscription(request, response) {
   let body = '';
   request.on('data', chunk => {
@@ -187,45 +219,31 @@ async function handleNewsletterSubscription(request, response) {
       const safeEmail = escapeHtml(email.trim());
       const receivedDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'medium' }) + ' IST';
 
-      console.log(`[Newsletter Subscription] New subscriber registered: ${safeEmail} at ${receivedDate}`);
+      console.log(`[Newsletter Subscription] New registration: ${safeEmail} at ${receivedDate}`);
 
-      // Dispatch alert email to admin if RESEND_API_KEY is configured
-      if (RESEND_API_KEY) {
+      // 1. Silent Local CSV Backup (deduplicated)
+      saveSubscriberLocally(safeEmail, receivedDate);
+
+      // 2. Real-time Google Sheet Webhook Sync (Zero email notifications sent to owner)
+      if (GOOGLE_SHEET_WEBHOOK_URL) {
         try {
-          const htmlContent = `
-            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-              <div style="background: linear-gradient(135deg, #0088ff 0%, #7b2fbe 100%); padding: 24px; color: #ffffff;">
-                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.85; margin-bottom: 4px;">Precision Allele.Dx</div>
-                <h1 style="margin: 0; font-size: 20px; font-weight: 700; color: #ffffff;">New Newsletter Subscriber</h1>
-              </div>
-              <div style="padding: 24px;">
-                <p style="font-size: 15px; color: #334155; line-height: 1.5;">A new clinical professional or researcher has subscribed to the Precision Oncology Intelligence Digest:</p>
-                <div style="background: #f8fafc; border-left: 4px solid #00E5FF; padding: 12px 16px; border-radius: 6px; font-size: 16px; font-weight: 600; color: #0f172a; margin: 16px 0;">
-                  ${safeEmail}
-                </div>
-                <div style="font-size: 13px; color: #64748b;">Subscribed at: ${receivedDate}</div>
-              </div>
-            </div>
-          `;
-
-          await fetch('https://api.resend.com/emails', {
+          console.log(`[Google Sheets] Forwarding ${safeEmail} to Google Sheet...`);
+          await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
             method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${RESEND_API_KEY}`,
-              'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-              from: RESEND_FROM_EMAIL,
-              to: [NOTIFICATION_EMAIL],
-              subject: `[New Newsletter Subscriber] ${safeEmail}`,
-              html: htmlContent
+              email: safeEmail,
+              timestamp: receivedDate,
+              source: 'Website Footer Newsletter'
             })
           });
-        } catch (mailErr) {
-          console.warn('[Resend Warning] Could not notify admin of subscription:', mailErr.message);
+          console.log('[Google Sheets] Appended subscriber to Google Sheet.');
+        } catch (sheetErr) {
+          console.warn('[Google Sheets Warning] Could not sync with Google Sheet:', sheetErr.message);
         }
       }
 
+      // Instant confirmation to user with zero inbox spam for owner
       response.writeHead(200);
       return response.end(JSON.stringify({
         success: true,
