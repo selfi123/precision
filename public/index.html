@@ -127,11 +127,12 @@
     .hero {
       position: relative;
       min-height: 94vh;
-      padding-top: 135px;
+      padding-top: 140px;
       padding-bottom: 3.5rem;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       background: radial-gradient(circle at 75% 35%, rgba(0, 229, 255, 0.09) 0%, rgba(240, 247, 255, 0.55) 40%, #FFFFFF 75%),
                   linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
       overflow: hidden;
@@ -185,7 +186,7 @@
       padding: 0 4% !important;
       display: grid !important;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) !important;
-      align-items: center !important;
+      align-items: flex-start !important;
       gap: clamp(2rem, 3.8vw, 5rem) !important;
     }
 
@@ -880,188 +881,193 @@
     @keyframes floatCard3 { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
     @keyframes floatCard4 { 0% { transform: translateY(0); } 100% { transform: translateY(6px); } }
 
-    /* ==================== LAPTOP & SCALED DISPLAY RESPONSIVE RULES (1025px - 1440px) ==================== */
-    @media (max-width: 1440px) {
+    /* ==================== LAPTOP & SCALED DISPLAY RESPONSIVE RULES (1025px - 1600px) ==================== */
+    @media (max-width: 1600px) {
       .header {
-        padding: 0.85rem 0 !important;
+        padding: 0.75rem 0 !important;
       }
       .header-container {
         padding: 0 3% !important;
       }
       .logo-icon {
-        width: 58px !important;
-        height: 68px !important;
+        width: 52px !important;
+        height: 60px !important;
         margin-top: -2px !important;
       }
       .logo-icon img {
-        width: 58px !important;
-        height: 58px !important;
+        width: 52px !important;
+        height: 52px !important;
       }
       .logo-text-block {
-        padding-top: 8px !important;
+        padding-top: 6px !important;
       }
       .logo-main-text {
-        font-size: 2rem !important;
+        font-size: 1.85rem !important;
       }
       .logo-subtext {
-        font-size: 0.68rem !important;
-        letter-spacing: 0.16em !important;
+        font-size: 0.62rem !important;
+        letter-spacing: 0.15em !important;
       }
       .main-nav ul {
-        gap: 1.5rem !important;
-        padding: 0.42rem 1.3rem !important;
+        gap: 1.3rem !important;
+        padding: 0.38rem 1.15rem !important;
       }
       .main-nav a {
-        font-size: 0.9rem !important;
+        font-size: 0.86rem !important;
       }
       .header-actions .btn {
-        font-size: 0.86rem !important;
-        padding: 0.55rem 1.35rem !important;
+        font-size: 0.84rem !important;
+        padding: 0.5rem 1.25rem !important;
       }
 
       .hero {
         min-height: auto !important;
-        padding-top: 110px !important;
+        padding-top: 105px !important;
         padding-bottom: 2rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
       }
       .hero-container {
         padding: 0 3% !important;
-        gap: 2rem !important;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) !important;
+        gap: 1.75rem !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.42fr) !important;
+        align-items: flex-start !important;
       }
       .hero-title {
-        font-size: clamp(2.3rem, 2.7vw, 3rem) !important;
-        margin-bottom: 0.85rem !important;
+        font-size: clamp(2.3rem, 2.7vw, 2.9rem) !important;
+        margin-bottom: 0.75rem !important;
         line-height: 1.12 !important;
       }
       .hero-desc {
-        font-size: 0.95rem !important;
-        line-height: 1.52 !important;
-        margin-bottom: 1.25rem !important;
-        max-width: 480px !important;
+        font-size: 0.92rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.15rem !important;
+        max-width: 460px !important;
       }
       .hero-cta-group {
-        margin-bottom: 1.35rem !important;
-        gap: 0.85rem !important;
+        margin-bottom: 1.15rem !important;
+        gap: 0.75rem !important;
       }
       .hero-cta-group .btn-gradient,
       .hero-cta-group .btn-white {
-        font-size: 0.9rem !important;
-        padding: 0.68rem 1.45rem !important;
+        font-size: 0.86rem !important;
+        padding: 0.62rem 1.35rem !important;
       }
       .hero-trust-matrix {
-        padding-top: 1rem !important;
-        gap: clamp(1rem, 1.8vw, 1.8rem) !important;
+        padding-top: 0.85rem !important;
+        gap: clamp(1rem, 1.6vw, 1.6rem) !important;
       }
       .trust-value {
-        font-size: clamp(1.6rem, 1.9vw, 1.95rem) !important;
+        font-size: clamp(1.5rem, 1.8vw, 1.85rem) !important;
       }
       .trust-label {
-        font-size: 0.78rem !important;
+        font-size: 0.75rem !important;
       }
       .trust-label em {
-        font-size: 0.7rem !important;
+        font-size: 0.68rem !important;
       }
       .trust-divider {
-        height: 34px !important;
+        height: 32px !important;
       }
 
       .genomic-matrix-wrapper {
-        gap: 0.55rem !important;
+        gap: 0.5rem !important;
       }
       .pipeline-stepper-card {
-        padding: 0.65rem 1.1rem 0.55rem !important;
-        gap: 0.45rem !important;
+        padding: 0.6rem 1rem 0.5rem !important;
+        gap: 0.4rem !important;
       }
       .pipeline-title {
-        font-size: 0.84rem !important;
+        font-size: 0.82rem !important;
       }
       .pipeline-meta {
-        font-size: 0.7rem !important;
-        padding: 0.18rem 0.55rem !important;
+        font-size: 0.68rem !important;
+        padding: 0.16rem 0.52rem !important;
       }
       button.stage-step {
-        padding: 0.28rem 0.5rem !important;
-        gap: 0.28rem !important;
+        padding: 0.25rem 0.45rem !important;
+        gap: 0.25rem !important;
       }
       .step-num {
-        font-size: 0.58rem !important;
-        padding: 0.08rem 0.26rem !important;
+        font-size: 0.55rem !important;
+        padding: 0.07rem 0.24rem !important;
       }
       .step-label {
-        font-size: 0.64rem !important;
+        font-size: 0.62rem !important;
       }
 
       .dna-stage-core {
-        height: 420px !important;
+        height: 400px !important;
       }
       .dna-model {
-        width: 250px !important;
-        height: 380px !important;
-      }
-      .orbit-outer {
-        width: 340px !important;
+        width: 220px !important;
         height: 340px !important;
       }
+      .orbit-outer {
+        width: 300px !important;
+        height: 300px !important;
+      }
       .orbit-inner {
-        width: 250px !important;
-        height: 250px !important;
+        width: 220px !important;
+        height: 220px !important;
       }
       .dna-chroma-glow {
-        width: 300px !important;
-        height: 350px !important;
-        filter: blur(36px) !important;
+        width: 270px !important;
+        height: 320px !important;
+        filter: blur(32px) !important;
       }
 
       .px-intel-card {
-        padding: 0.6rem 0.8rem !important;
-        gap: 0.3rem !important;
-        border-radius: 12px !important;
+        padding: 0.52rem 0.72rem !important;
+        gap: 0.25rem !important;
+        border-radius: 11px !important;
       }
       .px-card-icon {
-        width: 28px !important;
-        height: 28px !important;
-        font-size: 0.9rem !important;
-        border-radius: 8px !important;
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.85rem !important;
+        border-radius: 7px !important;
       }
       .px-card-category {
-        font-size: 0.56rem !important;
+        font-size: 0.54rem !important;
       }
       .px-card-title-group h4 {
-        font-size: 0.84rem !important;
+        font-size: 0.8rem !important;
       }
       .px-card-summary {
-        font-size: 0.7rem !important;
-        line-height: 1.32 !important;
+        font-size: 0.66rem !important;
+        line-height: 1.28 !important;
       }
       .b-chip {
-        font-size: 0.6rem !important;
-        padding: 0.12rem 0.38rem !important;
+        font-size: 0.58rem !important;
+        padding: 0.1rem 0.35rem !important;
       }
       .m-tag {
-        font-size: 0.62rem !important;
-        padding: 0.12rem 0.4rem !important;
+        font-size: 0.6rem !important;
+        padding: 0.1rem 0.38rem !important;
       }
 
       .px-card-tl {
-        top: 2px !important;
+        top: 0 !important;
         left: 0 !important;
-        width: clamp(215px, 15vw, 245px) !important;
+        width: clamp(205px, 14.5vw, 235px) !important;
       }
       .px-card-tr {
-        top: 2px !important;
+        top: 0 !important;
         right: 0 !important;
-        width: clamp(210px, 14.5vw, 240px) !important;
+        width: clamp(200px, 14vw, 230px) !important;
       }
       .px-card-bl {
-        bottom: 2px !important;
+        bottom: 0 !important;
         left: 0 !important;
-        width: clamp(215px, 15vw, 245px) !important;
+        width: clamp(205px, 14.5vw, 235px) !important;
       }
       .px-card-br {
-        bottom: 2px !important;
+        bottom: 0 !important;
         right: 0 !important;
-        width: clamp(210px, 14.5vw, 240px) !important;
+        width: clamp(200px, 14vw, 230px) !important;
       }
 
       /* Sections on 1440px Laptops */
@@ -1133,13 +1139,18 @@
       }
 
       .hero {
-        padding-top: 86px !important;
-        padding-bottom: 1rem !important;
+        padding-top: 102px !important;
+        padding-bottom: 1.25rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
       }
       .hero-container {
         padding: 0 2% !important;
         gap: 1.25rem !important;
         grid-template-columns: minmax(0, 1fr) minmax(0, 1.48fr) !important;
+        align-items: flex-start !important;
       }
       .hero-title {
         font-size: 2.15rem !important;
