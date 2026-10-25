@@ -1063,187 +1063,285 @@
         right: 0 !important;
         width: clamp(210px, 14.5vw, 240px) !important;
       }
+
+      /* Sections on 1440px Laptops */
+      .solutions-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 1.25rem !important;
+      }
+      .solution-card {
+        padding: 1.5rem 1.25rem !important;
+      }
+      .solution-card .card-header h3 {
+        font-size: 1.12rem !important;
+      }
+      .solution-card .card-body li {
+        font-size: 0.86rem !important;
+      }
+      .bio-banner {
+        padding: 2.75rem 2.5rem !important;
+        gap: 2.5rem !important;
+      }
+      .resources-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
+      }
+      .contact-wrapper {
+        gap: 2.5rem !important;
+      }
+      .contact-info, .contact-form-container {
+        padding: 3rem 2.5rem !important;
+      }
     }
 
     @media (max-width: 1280px) {
       .header {
-        padding: 0.7rem 0 !important;
+        padding: 0.65rem 0 !important;
       }
       .header-container {
         padding: 0 2.5% !important;
       }
       .logo-icon {
-        width: 50px !important;
-        height: 58px !important;
+        width: 48px !important;
+        height: 56px !important;
         margin-top: -2px !important;
       }
       .logo-icon img {
-        width: 50px !important;
-        height: 50px !important;
+        width: 48px !important;
+        height: 48px !important;
       }
       .logo-text-block {
-        padding-top: 6px !important;
+        padding-top: 5px !important;
       }
       .logo-main-text {
-        font-size: 1.75rem !important;
+        font-size: 1.7rem !important;
       }
       .logo-subtext {
-        font-size: 0.6rem !important;
+        font-size: 0.58rem !important;
         letter-spacing: 0.14em !important;
       }
       .main-nav ul {
-        gap: 1.15rem !important;
-        padding: 0.35rem 1.1rem !important;
+        gap: 1.1rem !important;
+        padding: 0.35rem 1rem !important;
       }
       .main-nav a {
-        font-size: 0.84rem !important;
+        font-size: 0.82rem !important;
       }
       .header-actions .btn {
-        font-size: 0.82rem !important;
-        padding: 0.48rem 1.15rem !important;
+        font-size: 0.8rem !important;
+        padding: 0.45rem 1.1rem !important;
       }
 
       .hero {
-        padding-top: 100px !important;
-        padding-bottom: 1.5rem !important;
+        padding-top: 86px !important;
+        padding-bottom: 1rem !important;
       }
       .hero-container {
-        padding: 0 2.5% !important;
-        gap: 1.5rem !important;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) !important;
+        padding: 0 2% !important;
+        gap: 1.25rem !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.48fr) !important;
       }
       .hero-title {
-        font-size: 2.2rem !important;
-        margin-bottom: 0.65rem !important;
+        font-size: 2.15rem !important;
+        margin-bottom: 0.55rem !important;
         line-height: 1.1 !important;
       }
       .hero-desc {
-        font-size: 0.88rem !important;
-        line-height: 1.45 !important;
-        margin-bottom: 1rem !important;
-        max-width: 420px !important;
+        font-size: 0.86rem !important;
+        line-height: 1.42 !important;
+        margin-bottom: 0.85rem !important;
+        max-width: 410px !important;
       }
       .hero-cta-group {
-        margin-bottom: 1rem !important;
+        margin-bottom: 0.85rem !important;
         gap: 0.65rem !important;
       }
       .hero-cta-group .btn-gradient,
       .hero-cta-group .btn-white {
-        font-size: 0.84rem !important;
-        padding: 0.58rem 1.25rem !important;
+        font-size: 0.82rem !important;
+        padding: 0.52rem 1.15rem !important;
       }
       .hero-trust-matrix {
-        padding-top: 0.85rem !important;
-        gap: 1rem !important;
+        padding-top: 0.75rem !important;
+        gap: 0.85rem !important;
       }
       .trust-value {
-        font-size: 1.5rem !important;
+        font-size: 1.45rem !important;
       }
       .trust-label {
-        font-size: 0.72rem !important;
+        font-size: 0.7rem !important;
       }
       .trust-label em {
-        font-size: 0.64rem !important;
+        font-size: 0.62rem !important;
       }
       .trust-divider {
-        height: 28px !important;
+        height: 26px !important;
       }
 
       .genomic-matrix-wrapper {
-        gap: 0.45rem !important;
-      }
-      .pipeline-stepper-card {
-        padding: 0.55rem 0.95rem 0.45rem !important;
         gap: 0.35rem !important;
       }
+      .pipeline-stepper-card {
+        padding: 0.5rem 0.85rem 0.4rem !important;
+        gap: 0.3rem !important;
+      }
       .pipeline-title {
-        font-size: 0.8rem !important;
+        font-size: 0.78rem !important;
       }
       .pipeline-meta {
-        font-size: 0.68rem !important;
-        padding: 0.15rem 0.5rem !important;
+        font-size: 0.66rem !important;
+        padding: 0.12rem 0.45rem !important;
       }
       button.stage-step {
-        padding: 0.22rem 0.42rem !important;
-        gap: 0.22rem !important;
+        padding: 0.2rem 0.38rem !important;
+        gap: 0.2rem !important;
       }
       .step-num {
-        font-size: 0.55rem !important;
-        padding: 0.06rem 0.22rem !important;
+        font-size: 0.52rem !important;
+        padding: 0.05rem 0.2rem !important;
       }
       .step-label {
-        font-size: 0.6rem !important;
+        font-size: 0.58rem !important;
       }
 
       .dna-stage-core {
-        height: 380px !important;
+        height: 350px !important;
       }
       .dna-model {
-        width: 220px !important;
-        height: 340px !important;
+        width: 195px !important;
+        height: 305px !important;
       }
       .orbit-outer {
-        width: 300px !important;
-        height: 300px !important;
+        width: 260px !important;
+        height: 260px !important;
       }
       .orbit-inner {
-        width: 220px !important;
-        height: 220px !important;
+        width: 195px !important;
+        height: 195px !important;
       }
       .dna-chroma-glow {
-        width: 270px !important;
-        height: 310px !important;
+        width: 240px !important;
+        height: 270px !important;
+        filter: blur(28px) !important;
       }
 
       .px-intel-card {
-        padding: 0.48rem 0.68rem !important;
-        gap: 0.22rem !important;
-        border-radius: 11px !important;
+        padding: 0.42rem 0.62rem !important;
+        gap: 0.2rem !important;
+        border-radius: 10px !important;
       }
       .px-card-icon {
-        width: 26px !important;
-        height: 26px !important;
-        font-size: 0.82rem !important;
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.78rem !important;
         border-radius: 6px !important;
       }
       .px-card-category {
-        font-size: 0.52rem !important;
+        font-size: 0.5rem !important;
       }
       .px-card-title-group h4 {
-        font-size: 0.78rem !important;
+        font-size: 0.75rem !important;
       }
       .px-card-summary {
-        font-size: 0.65rem !important;
-        line-height: 1.25 !important;
+        font-size: 0.62rem !important;
+        line-height: 1.22 !important;
       }
       .b-chip {
+        font-size: 0.54rem !important;
+        padding: 0.06rem 0.28rem !important;
+      }
+      .m-tag {
         font-size: 0.56rem !important;
         padding: 0.08rem 0.32rem !important;
       }
-      .m-tag {
-        font-size: 0.58rem !important;
-        padding: 0.1rem 0.35rem !important;
-      }
 
       .px-card-tl {
-        width: 205px !important;
+        width: 195px !important;
         left: 0 !important;
-        top: 0 !important;
+        top: -6px !important;
       }
       .px-card-tr {
-        width: 200px !important;
+        width: 190px !important;
         right: 0 !important;
-        top: 0 !important;
+        top: -6px !important;
       }
       .px-card-bl {
-        width: 205px !important;
+        width: 195px !important;
         left: 0 !important;
-        bottom: 0 !important;
+        bottom: -6px !important;
       }
       .px-card-br {
-        width: 200px !important;
+        width: 190px !important;
         right: 0 !important;
-        bottom: 0 !important;
+        bottom: -6px !important;
+      }
+
+      /* Sections on 1280px Laptops */
+      .solutions-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 0.85rem !important;
+      }
+      .solution-card {
+        padding: 1.35rem 1rem !important;
+        border-radius: 14px !important;
+      }
+      .solution-card .card-header h3 {
+        font-size: 1.02rem !important;
+        margin-bottom: 0.65rem !important;
+      }
+      .solution-card .card-body li {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.45rem !important;
+      }
+      .bio-banner {
+        padding: 2.25rem 2rem !important;
+        gap: 2rem !important;
+        border-radius: 18px !important;
+      }
+      .bio-content h2 {
+        font-size: 1.85rem !important;
+      }
+      .bio-content p {
+        font-size: 0.92rem !important;
+      }
+      .bio-stats {
+        gap: 1.4rem !important;
+      }
+      .bio-stats .b-stat strong {
+        font-size: 2rem !important;
+      }
+      .bio-stats .b-stat span {
+        font-size: 0.72rem !important;
+      }
+      .resources-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.15rem !important;
+      }
+      .resource-content {
+        padding: 1.2rem 1rem !important;
+      }
+      .resource-content h3 {
+        font-size: 1.02rem !important;
+      }
+      .resource-content p {
+        font-size: 0.84rem !important;
+      }
+      .contact-wrapper {
+        gap: 2rem !important;
+        border-radius: 20px !important;
+      }
+      .contact-info {
+        padding: 2.5rem 2rem !important;
+      }
+      .contact-form-container {
+        padding: 2.5rem 2rem !important;
+      }
+      .contact-info h2 {
+        font-size: 1.85rem !important;
+      }
+      .contact-cities-grid {
+        gap: 0.45rem !important;
       }
     }
 
@@ -1455,6 +1553,11 @@
       .trust-divider {
         display: none !important;
       }
+
+      .solutions-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem !important;
+      }
     }
 
     /* ==================== OUR VISION: WHITE THEME GRADIENT OVERLAY ==================== */
@@ -1555,17 +1658,19 @@
 
     .solutions-grid {
       display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
-      gap: 1.8rem !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: clamp(1rem, 1.4vw, 1.75rem) !important;
     }
 
     .solution-card {
-      padding: 2rem 1.8rem !important;
+      padding: clamp(1.4rem, 1.6vw, 2rem) clamp(1rem, 1.25vw, 1.5rem) !important;
       border-radius: 18px !important;
       border: 1px solid rgba(226, 232, 240, 0.9) !important;
       background: #FFFFFF !important;
       box-shadow: 0 10px 30px -5px rgba(13, 27, 42, 0.06) !important;
       transition: all 0.3s ease !important;
+      display: flex !important;
+      flex-direction: column !important;
     }
 
     .solution-card:hover {
@@ -1575,17 +1680,23 @@
     }
 
     .solution-card .card-header h3 {
-      font-size: 1.25rem !important;
+      font-size: clamp(1.05rem, 1.15vw, 1.22rem) !important;
       font-weight: 800 !important;
       color: #0D1B2A !important;
-      margin-bottom: 1rem !important;
+      margin-bottom: 0.85rem !important;
+      line-height: 1.25 !important;
+    }
+
+    .solution-card .card-body ul {
+      padding-left: 1.1rem !important;
+      margin: 0 !important;
     }
 
     .solution-card .card-body li {
-      font-size: 0.95rem !important;
-      line-height: 1.6 !important;
+      font-size: clamp(0.8rem, 0.86vw, 0.92rem) !important;
+      line-height: 1.45 !important;
       color: #475569 !important;
-      margin-bottom: 0.75rem !important;
+      margin-bottom: 0.55rem !important;
     }
 
     /* Refined Bioinformatics Banner */
@@ -1791,6 +1902,9 @@
       }
       .link-col ul {
         gap: 0.35rem !important;
+      }
+      .solutions-grid {
+        grid-template-columns: 1fr !important;
       }
     }
   </style>
