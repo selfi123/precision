@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Precision Allele.Dx | Next-Generation Cancer Diagnostics & NGS Oncology</title>
+  <title>[Editorial 3D DNA] Precision Allele.Dx | Next-Generation Cancer Diagnostics & NGS Oncology</title>
 
   <!-- SEO Core Meta Tags -->
   <meta name="description" content="Precision Allele.Dx is India's leading Next-Generation Sequencing (NGS) precision oncology diagnostics laboratory. Offering 94+ specialized genomic panels including HBOC, HRD, Somatic Profiling, and Liquid Biopsy across Chennai, Bangalore, Mumbai, Kolkata, Delhi, and Hyderabad.">
@@ -12,13 +13,13 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://www.precisionalleledx.in/">
 
-  <!-- Google Search Compliant Favicons & Brand Icons (Multiple of 48px) -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <!-- Google Search Compliant Favicons (Must be 48px square multiple, PNG/ICO prioritized) -->
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/favicon-48x48.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon-96x96.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/images/favicon-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/images/favicon-512x512.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#0D1B2A">
@@ -83,7 +84,15 @@
           { "@type": "City", "name": "Delhi" },
           { "@type": "City", "name": "Hyderabad" }
         ],
-        "medicalSpecialty": "Oncology"
+        "medicalSpecialty": "Oncology",
+        "knowsAbout": [
+          "Next-Generation Sequencing",
+          "Cancer Diagnostics",
+          "Liquid Biopsy",
+          "Hereditary Cancer Panels",
+          "Somatic Gene Profiling",
+          "Precision Oncology"
+        ]
       },
       {
         "@type": "WebSite",
@@ -100,17 +109,2566 @@
   }
   </script>
 
-  <!-- Fonts -->
+  <!-- Fonts (Plus Jakarta Sans for authoritative clinical headings + Inter for high-readability body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
   <!-- Icons (Phosphor Icons) -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* ==================== HERO SECTION: ARCHITECTURAL REDESIGN ==================== */
+    .hero {
+      position: relative;
+      min-height: 94vh;
+      padding-top: 135px;
+      padding-bottom: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 75% 35%, rgba(0, 229, 255, 0.09) 0%, rgba(240, 247, 255, 0.55) 40%, #FFFFFF 75%),
+                  linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      overflow: hidden;
+    }
+
+    /* Ambient Scientific Grid and Data Pips */
+    .hero-grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(0, 102, 255, 0.12) 1.2px, transparent 1.2px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse 70% 60% at 75% 48%, black 15%, transparent 75%);
+      -webkit-mask-image: radial-gradient(ellipse 70% 60% at 75% 48%, black 15%, transparent 75%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-bg-glow {
+      position: absolute;
+      top: 30%;
+      right: 10%;
+      width: 650px;
+      height: 650px;
+      background: radial-gradient(circle, rgba(0, 102, 255, 0.12) 0%, rgba(123, 47, 190, 0.08) 45%, transparent 70%);
+      pointer-events: none;
+      filter: blur(75px);
+      z-index: 0;
+    }
+
+    /* ==================== EXPANSIVE FULL-WIDTH FLUID CONTAINER ==================== */
+    .header-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 4% !important;
+    }
+
+    .container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 4% !important;
+    }
+
+    .hero-container {
+      position: relative;
+      z-index: 2;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 auto !important;
+      padding: 0 4% !important;
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) !important;
+      align-items: center !important;
+      gap: clamp(2rem, 3.8vw, 5rem) !important;
+    }
+
+    .hero-content {
+      max-width: 640px !important;
+      width: 100% !important;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.42rem 1.15rem;
+      background: rgba(0, 102, 255, 0.06);
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #0066FF;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.25rem;
+      backdrop-filter: blur(8px);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00E5FF;
+      box-shadow: 0 0 10px #00E5FF;
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { transform: scale(0.9); opacity: 0.7; }
+      50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 14px #00C8BE; }
+    }
+
+    /* Brand Logo Prominence Scaling */
+    .brand-logo-container {
+      display: flex !important;
+      align-items: flex-start !important;
+      gap: 0.35rem !important;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .brand-logo-container:hover {
+      transform: scale(1.02) !important;
+    }
+
+    .logo-icon {
+      width: 86px !important;
+      height: 98px !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      margin-top: -6px !important;
+    }
+
+    .logo-icon img {
+      width: 86px !important;
+      height: 86px !important;
+      max-width: none !important;
+      display: block !important;
+    }
+
+    .logo-text-block {
+      display: flex !important;
+      flex-direction: column !important;
+      padding-top: 14px !important;
+    }
+
+    .logo-main-text {
+      font-family: 'Poppins', sans-serif !important;
+      font-size: 2.85rem !important;
+      line-height: 1 !important;
+      font-weight: 600 !important;
+      letter-spacing: -0.02em !important;
+    }
+
+    .text-recision {
+      color: #102A6B !important;
+    }
+
+    .text-allele-dx {
+      background: linear-gradient(90deg, #00E5FF, #0066FF, #7B2FBE, #D62BC7, #F5861F) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      font-weight: 700 !important;
+    }
+
+    .logo-divider {
+      height: 2px !important;
+      background: linear-gradient(90deg, rgba(0, 102, 255, 0.4), rgba(123, 47, 190, 0.4), transparent) !important;
+      margin: 0.45rem 0 0.35rem 0 !important;
+      width: 100% !important;
+      border-radius: 2px !important;
+    }
+
+    .logo-subtext {
+      font-family: var(--font-body) !important;
+      font-size: 0.92rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.24em !important;
+      background: linear-gradient(90deg, #00C8BE, #2B44C4, #D62BC7, #F5861F) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      text-transform: uppercase !important;
+    }
+
+    .main-nav a {
+      font-size: 0.98rem !important;
+      font-weight: 600 !important;
+    }
+
+    .header-actions .btn {
+      font-size: 0.95rem !important;
+      padding: 0.68rem 1.6rem !important;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 3.6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      color: #0D1B2A;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-desc {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 1.18vw, 1.18rem);
+      line-height: 1.68;
+      color: #334155;
+      margin-bottom: 2rem;
+      max-width: 540px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      margin-bottom: 2.4rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta-group .btn-gradient {
+      box-shadow: 0 10px 24px -4px rgba(0, 102, 255, 0.35);
+      font-size: 1rem;
+      padding: 0.85rem 1.85rem;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    .hero-cta-group .btn-white {
+      border: 1.5px solid #CBD5E1;
+      font-size: 1rem;
+      padding: 0.85rem 1.85rem;
+      color: #1E293B;
+      background: #FFFFFF;
+      border-radius: 12px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .hero-cta-group .btn-white:hover {
+      border-color: #0066FF;
+      color: #0066FF;
+      box-shadow: 0 8px 20px -4px rgba(0, 102, 255, 0.15);
+    }
+
+    /* Unified Clinical Trust Matrix */
+    .hero-trust-matrix {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.4rem, 2.4vw, 2.8rem);
+      padding-top: 1.6rem;
+      border-top: 1.5px solid #E2E8F0;
+    }
+
+    .trust-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      flex-shrink: 0;
+    }
+
+    .trust-value {
+      font-family: var(--font-heading);
+      font-size: clamp(1.85rem, 2.4vw, 2.45rem);
+      font-weight: 800;
+      color: #0D1B2A;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      white-space: nowrap !important;
+    }
+
+    .trust-label {
+      font-size: clamp(0.82rem, 0.9vw, 0.92rem);
+      font-weight: 700;
+      color: #1E293B;
+      line-height: 1.3;
+    }
+
+    .trust-label em {
+      font-style: normal;
+      font-weight: 500;
+      color: #64748B;
+      font-size: clamp(0.75rem, 0.82vw, 0.85rem);
+      display: block;
+      margin-top: 0.1rem;
+    }
+
+    .trust-divider {
+      width: 1.5px;
+      height: 48px;
+      background: #CBD5E1;
+    }
+
+    /* ==================== ENLARGED GENOMIC MATRIX & 3D DNA CANVAS ==================== */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .genomic-matrix-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 980px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.95rem;
+    }
+
+    /* Clinical Pipeline Stepper Card (Top of Visual) */
+    .pipeline-stepper-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 16px;
+      padding: 0.85rem 1.35rem 0.75rem;
+      box-shadow: 0 10px 28px -6px rgba(0, 102, 255, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .pipeline-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 0.55rem;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    .pipeline-tag {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+    }
+
+    .live-beacon {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00E5FF;
+      box-shadow: 0 0 10px #00E5FF;
+      animation: beaconGlow 2s infinite ease-in-out;
+    }
+
+    @keyframes beaconGlow {
+      0%, 100% { transform: scale(0.9); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 12px #0066FF; }
+    }
+
+    .pipeline-title {
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #0D1B2A;
+      letter-spacing: -0.01em;
+    }
+
+    .pipeline-meta {
+      font-family: var(--font-heading);
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #0066FF;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(0, 102, 255, 0.08);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+    }
+
+    .pipeline-stages {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(0.25rem, 0.4vw, 0.55rem);
+    }
+
+    button.stage-step {
+      display: flex;
+      align-items: center;
+      gap: clamp(0.25rem, 0.35vw, 0.45rem);
+      padding: 0.4rem clamp(0.45rem, 0.6vw, 0.85rem);
+      border-radius: 9px;
+      background: rgba(241, 245, 249, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer !important;
+      flex: 1 1 auto;
+      justify-content: center;
+      outline: none;
+      font-family: inherit;
+      user-select: none;
+    }
+
+    button.stage-step:hover {
+      background: rgba(0, 102, 255, 0.09);
+      border-color: rgba(0, 102, 255, 0.35);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 102, 255, 0.14);
+    }
+
+    button.stage-step:active {
+      transform: translateY(0);
+    }
+
+    button.stage-step.active {
+      background: #0066FF !important;
+      border-color: #0066FF !important;
+      box-shadow: 0 6px 18px rgba(0, 102, 255, 0.35) !important;
+    }
+
+    button.stage-step.active .step-num {
+      background: #FFFFFF !important;
+      color: #0066FF !important;
+      font-weight: 800;
+    }
+
+    button.stage-step.active .step-label {
+      color: #FFFFFF !important;
+    }
+
+    .step-num {
+      font-family: var(--font-heading);
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #64748B;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 0.12rem 0.35rem;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+    }
+
+    .step-label {
+      font-family: var(--font-heading);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: #1E293B;
+      letter-spacing: 0.04em;
+      transition: all 0.2s ease;
+    }
+
+    .stage-arrow {
+      font-size: 0.68rem;
+      color: #CBD5E1;
+      flex-shrink: 0;
+    }
+
+    /* Live Dynamic Pipeline Info Ribbon */
+    .pipeline-live-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 0.55rem;
+      margin-top: 0.15rem;
+      border-top: 1px solid rgba(226, 232, 240, 0.75);
+      font-size: 0.78rem;
+    }
+
+    .live-info-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(0, 102, 255, 0.08);
+      color: #0066FF;
+      font-weight: 800;
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+
+    .live-info-text {
+      color: #475569;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      margin: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .live-info-text strong {
+      color: #0D1B2A;
+    }
+
+    /* Central 3D DNA Stage Core */
+    .dna-stage-core {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      height: 540px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dna-orbit-halo {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+    }
+
+    .orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px dashed rgba(0, 102, 255, 0.18);
+      pointer-events: none;
+    }
+
+    .orbit-outer {
+      width: 480px;
+      height: 480px;
+      animation: rotateOrbit 40s linear infinite;
+    }
+
+    .orbit-inner {
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      animation: rotateOrbitRev 30s linear infinite;
+    }
+
+    @keyframes rotateOrbit {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rotateOrbitRev {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(-360deg); }
+    }
+
+    .dna-chroma-glow {
+      position: absolute;
+      width: 420px;
+      height: 480px;
+      background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.32) 0%, rgba(123, 47, 190, 0.2) 40%, rgba(214, 43, 199, 0.08) 65%, transparent 75%);
+      filter: blur(48px);
+      pointer-events: none;
+      animation: ambientAuraPulse 7s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientAuraPulse {
+      0% { opacity: 0.75; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+
+    .dna-model {
+      position: absolute !important;
+      inset: auto !important;
+      top: 50% !important;
+      left: 50% !important;
+      right: auto !important;
+      bottom: auto !important;
+      margin: 0 !important;
+      transform: translate(-50%, -50%) !important;
+      width: 360px !important;
+      height: 520px !important;
+      max-width: none !important;
+      max-height: none !important;
+      object-fit: cover !important;
+      z-index: 2 !important;
+      -webkit-mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 18%, rgba(0, 0, 0, 0.95) 36%, rgba(0, 0, 0, 0.55) 64%, rgba(0, 0, 0, 0.15) 84%, transparent 100%) !important;
+      mask-image: radial-gradient(ellipse 46% 48% at 50% 50%, black 18%, rgba(0, 0, 0, 0.95) 36%, rgba(0, 0, 0, 0.55) 64%, rgba(0, 0, 0, 0.15) 84%, transparent 100%) !important;
+      animation: floatDNA 7s ease-in-out infinite alternate !important;
+      pointer-events: none !important;
+    }
+
+    @keyframes floatDNA {
+      0% { transform: translate(-50%, -50%) translateY(0); }
+      50% { transform: translate(-50%, -50%) translateY(-8px); }
+      100% { transform: translate(-50%, -50%) translateY(6px); }
+    }
+
+    /* 4 Clinical Intelligence Cards Framing DNA */
+    .px-intel-card {
+      position: absolute;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(226, 232, 240, 0.95);
+      border-radius: 16px;
+      padding: 0.85rem 1.15rem;
+      box-shadow: 0 12px 30px -6px rgba(13, 27, 42, 0.08), 0 0 0 1px rgba(255, 255, 255, 0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      text-align: left !important;
+      cursor: pointer !important;
+      user-select: none;
+    }
+
+    .px-intel-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      border-color: rgba(0, 229, 255, 0.5);
+      box-shadow: 0 18px 40px -8px rgba(0, 102, 255, 0.2), 0 0 0 1px rgba(0, 229, 255, 0.35);
+    }
+
+    .px-intel-card.card-highlighted {
+      border-color: #00E5FF !important;
+      box-shadow: 0 0 0 2px #00E5FF, 0 18px 42px -6px rgba(0, 229, 255, 0.42) !important;
+      transform: translateY(-6px) scale(1.03) !important;
+      background: rgba(255, 255, 255, 0.99) !important;
+    }
+
+    .px-intel-card.card-highlighted .px-card-icon {
+      transform: scale(1.12);
+      transition: transform 0.25s ease;
+    }
+
+    .dna-stage-core.highlight-all .dna-chroma-glow {
+      filter: blur(36px) !important;
+      opacity: 1 !important;
+      transform: scale(1.15) !important;
+    }
+
+    .px-card-head {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      flex-direction: row !important;
+      text-align: left !important;
+    }
+
+    .px-card-icon {
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 10px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 1.15rem !important;
+      flex-shrink: 0 !important;
+      box-shadow: none !important;
+      position: relative !important;
+      transition: transform 0.25s ease;
+    }
+
+    .px-card-icon::after {
+      display: none !important;
+    }
+
+    .ic-blue { background: rgba(0, 102, 255, 0.1) !important; color: #0066FF !important; }
+    .ic-cyan { background: rgba(0, 229, 255, 0.18) !important; color: #0099FF !important; }
+    .ic-purple { background: rgba(123, 47, 190, 0.1) !important; color: #7B2FBE !important; }
+    .ic-emerald { background: rgba(16, 185, 129, 0.12) !important; color: #10B981 !important; }
+
+    .px-card-title-group {
+      display: flex !important;
+      flex-direction: column !important;
+      text-align: left !important;
+    }
+
+    .px-card-category {
+      font-family: var(--font-heading);
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #64748B;
+    }
+
+    .px-card-title-group h4 {
+      font-family: var(--font-heading);
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: #0D1B2A;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .px-card-summary {
+      font-size: 0.78rem;
+      color: #475569;
+      line-height: 1.4;
+      font-weight: 500;
+      text-align: left !important;
+      margin: 0;
+    }
+
+    .biomarker-chips, .metric-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.15rem;
+    }
+
+    .b-chip {
+      font-family: var(--font-heading);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.2rem 0.52rem;
+      border-radius: 6px;
+      background: rgba(241, 245, 249, 0.9);
+      color: #334155;
+      border: 1px solid rgba(226, 232, 240, 0.85);
+      transition: all 0.2s ease;
+    }
+
+    .px-intel-card:hover .b-chip {
+      background: #FFFFFF;
+      border-color: rgba(0, 102, 255, 0.2);
+    }
+
+    .b-chip.highlight {
+      background: rgba(0, 102, 255, 0.08);
+      color: #0066FF;
+      border-color: rgba(0, 102, 255, 0.2);
+    }
+
+    .m-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #0066FF;
+      background: rgba(0, 102, 255, 0.07);
+      padding: 0.2rem 0.52rem;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* Perimeter Coordinates Framing the Helix */
+    .px-card-tl {
+      top: 8px;
+      left: 0;
+      width: clamp(260px, 18vw, 320px);
+      animation: floatCard1 7s ease-in-out infinite alternate;
+    }
+
+    .px-card-tr {
+      top: 8px;
+      right: 0;
+      width: clamp(250px, 17.5vw, 310px);
+      animation: floatCard2 7.5s ease-in-out infinite alternate -1s;
+    }
+
+    .px-card-bl {
+      bottom: 8px;
+      left: 0;
+      width: clamp(260px, 18vw, 320px);
+      animation: floatCard3 6.8s ease-in-out infinite alternate -2s;
+    }
+
+    .px-card-br {
+      bottom: 8px;
+      right: 0;
+      width: clamp(250px, 17.5vw, 310px);
+      animation: floatCard4 7.2s ease-in-out infinite alternate -1.5s;
+    }
+
+    @keyframes floatCard1 { 0% { transform: translateY(0); } 100% { transform: translateY(-7px); } }
+    @keyframes floatCard2 { 0% { transform: translateY(0); } 100% { transform: translateY(7px); } }
+    @keyframes floatCard3 { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
+    @keyframes floatCard4 { 0% { transform: translateY(0); } 100% { transform: translateY(6px); } }
+
+    /* ==================== LAPTOP & SCALED DISPLAY RESPONSIVE RULES (1025px - 1600px) ==================== */
+    @media (max-width: 1600px) {
+      .header {
+        padding: 0.65rem 0 !important;
+      }
+      .header-container {
+        padding: 0 3% !important;
+      }
+      .logo-icon {
+        width: 52px !important;
+        height: 60px !important;
+        margin-top: -2px !important;
+      }
+      .logo-icon img {
+        width: 52px !important;
+        height: 52px !important;
+      }
+      .logo-text-block {
+        padding-top: 6px !important;
+      }
+      .logo-main-text {
+        font-size: 1.85rem !important;
+      }
+      .logo-subtext {
+        font-size: 0.62rem !important;
+        letter-spacing: 0.15em !important;
+      }
+      .main-nav ul {
+        gap: 1.3rem !important;
+        padding: 0.38rem 1.15rem !important;
+      }
+      .main-nav a {
+        font-size: 0.86rem !important;
+      }
+      .header-actions .btn {
+        font-size: 0.84rem !important;
+        padding: 0.5rem 1.25rem !important;
+      }
+
+      .hero {
+        min-height: auto !important;
+        padding-top: 122px !important;
+        padding-bottom: 2rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+      }
+      .hero-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 4% !important;
+        gap: clamp(2rem, 3vw, 4rem) !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) !important;
+        align-items: center !important;
+      }
+      .hero-content {
+        max-width: 620px !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+      }
+      .hero-title {
+        font-size: clamp(2.6rem, 3.2vw, 3.6rem) !important;
+        margin-bottom: 1.15rem !important;
+        line-height: 1.1 !important;
+      }
+      .hero-desc {
+        font-size: 1rem !important;
+        line-height: 1.62 !important;
+        margin-bottom: 1.85rem !important;
+        max-width: 530px !important;
+      }
+      .hero-cta-group {
+        margin-bottom: 2rem !important;
+        gap: 0.95rem !important;
+      }
+      .hero-cta-group .btn-gradient,
+      .hero-cta-group .btn-white {
+        font-size: 0.95rem !important;
+        padding: 0.78rem 1.65rem !important;
+      }
+      .hero-trust-matrix {
+        padding-top: 1.35rem !important;
+        gap: clamp(1.2rem, 2vw, 2.2rem) !important;
+      }
+      .trust-value {
+        font-size: clamp(1.65rem, 2vw, 1.95rem) !important;
+      }
+      .trust-label {
+        font-size: 0.76rem !important;
+      }
+      .trust-label em {
+        font-size: 0.68rem !important;
+      }
+      .trust-divider {
+        height: 34px !important;
+      }
+
+      .genomic-matrix-wrapper {
+        gap: 0.95rem !important;
+      }
+      .pipeline-stepper-card {
+        padding: 0.6rem 1rem 0.5rem !important;
+        gap: 0.4rem !important;
+      }
+      .pipeline-title {
+        font-size: 0.82rem !important;
+      }
+      .pipeline-meta {
+        font-size: 0.68rem !important;
+        padding: 0.16rem 0.52rem !important;
+      }
+      button.stage-step {
+        padding: 0.25rem 0.45rem !important;
+        gap: 0.25rem !important;
+      }
+      .step-num {
+        font-size: 0.55rem !important;
+        padding: 0.07rem 0.24rem !important;
+      }
+      .step-label {
+        font-size: 0.62rem !important;
+      }
+
+      .dna-stage-core {
+        height: 520px !important;
+      }
+      .dna-model {
+        width: 340px !important;
+        height: 500px !important;
+      }
+      .orbit-outer {
+        width: 420px !important;
+        height: 420px !important;
+      }
+      .orbit-inner {
+        width: 310px !important;
+        height: 310px !important;
+      }
+      .dna-chroma-glow {
+        width: 380px !important;
+        height: 440px !important;
+        filter: blur(40px) !important;
+      }
+
+      .px-intel-card {
+        padding: 0.52rem 0.72rem !important;
+        gap: 0.25rem !important;
+        border-radius: 11px !important;
+      }
+      .px-card-icon {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.85rem !important;
+        border-radius: 7px !important;
+      }
+      .px-card-category {
+        font-size: 0.54rem !important;
+      }
+      .px-card-title-group h4 {
+        font-size: 0.8rem !important;
+      }
+      .px-card-summary {
+        font-size: 0.66rem !important;
+        line-height: 1.28 !important;
+      }
+      .b-chip {
+        font-size: 0.58rem !important;
+        padding: 0.1rem 0.35rem !important;
+      }
+      .m-tag {
+        font-size: 0.6rem !important;
+        padding: 0.1rem 0.38rem !important;
+      }
+
+      .px-card-tl {
+        top: 8px !important;
+        left: 0 !important;
+        width: clamp(225px, 16vw, 275px) !important;
+      }
+      .px-card-tr {
+        top: 8px !important;
+        right: 0 !important;
+        width: clamp(215px, 15vw, 265px) !important;
+      }
+      .px-card-bl {
+        bottom: 8px !important;
+        left: 0 !important;
+        width: clamp(225px, 16vw, 275px) !important;
+      }
+      .px-card-br {
+        bottom: 8px !important;
+        right: 0 !important;
+        width: clamp(215px, 15vw, 265px) !important;
+      }
+
+      /* Sections on 1440px Laptops */
+      .solutions-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 1.25rem !important;
+      }
+      .solution-card {
+        padding: 1.5rem 1.25rem !important;
+      }
+      .solution-card .card-header h3 {
+        font-size: 1.12rem !important;
+      }
+      .solution-card .card-body li {
+        font-size: 0.86rem !important;
+      }
+      .bio-banner {
+        padding: 2.75rem 2.5rem !important;
+        gap: 2.5rem !important;
+      }
+      .resources-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
+      }
+      .contact-wrapper {
+        gap: 2.5rem !important;
+      }
+      .contact-info, .contact-form-container {
+        padding: 3rem 2.5rem !important;
+      }
+    }
+
+    @media (max-width: 1280px) {
+      .header {
+        padding: 0.55rem 0 !important;
+      }
+      .header-container {
+        padding: 0 2.5% !important;
+      }
+      .logo-icon {
+        width: 48px !important;
+        height: 56px !important;
+        margin-top: -2px !important;
+      }
+      .logo-icon img {
+        width: 48px !important;
+        height: 48px !important;
+      }
+      .logo-text-block {
+        padding-top: 5px !important;
+      }
+      .logo-main-text {
+        font-size: 1.7rem !important;
+      }
+      .logo-subtext {
+        font-size: 0.58rem !important;
+        letter-spacing: 0.14em !important;
+      }
+      .main-nav ul {
+        gap: 1.1rem !important;
+        padding: 0.35rem 1rem !important;
+      }
+      .main-nav a {
+        font-size: 0.82rem !important;
+      }
+      .header-actions .btn {
+        font-size: 0.8rem !important;
+        padding: 0.45rem 1.1rem !important;
+      }
+
+      .hero {
+        padding-top: 114px !important;
+        padding-bottom: 1.5rem !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+      }
+      .hero-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+        padding: 0 4% !important;
+        gap: 2rem !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr) !important;
+        align-items: center !important;
+      }
+      .hero-content {
+        max-width: 580px !important;
+        width: 100% !important;
+        margin-top: 0 !important;
+      }
+      .hero-title {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+        line-height: 1.12 !important;
+      }
+      .hero-desc {
+        font-size: 0.94rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 1.6rem !important;
+        max-width: 490px !important;
+      }
+      .hero-cta-group {
+        margin-bottom: 1.7rem !important;
+        gap: 0.85rem !important;
+      }
+      .hero-cta-group .btn-gradient,
+      .hero-cta-group .btn-white {
+        font-size: 0.86rem !important;
+        padding: 0.65rem 1.35rem !important;
+      }
+      .hero-trust-matrix {
+        padding-top: 1.2rem !important;
+        gap: 1.2rem !important;
+      }
+      .trust-value {
+        font-size: 1.55rem !important;
+      }
+      .trust-label {
+        font-size: 0.72rem !important;
+      }
+      .trust-label em {
+        font-size: 0.64rem !important;
+      }
+      .trust-divider {
+        height: 30px !important;
+      }
+
+      .genomic-matrix-wrapper {
+        gap: 0.95rem !important;
+      }
+      .pipeline-stepper-card {
+        padding: 0.5rem 0.85rem 0.4rem !important;
+        gap: 0.3rem !important;
+      }
+      .pipeline-title {
+        font-size: 0.78rem !important;
+      }
+      .pipeline-meta {
+        font-size: 0.66rem !important;
+        padding: 0.12rem 0.45rem !important;
+      }
+      button.stage-step {
+        padding: 0.2rem 0.38rem !important;
+        gap: 0.2rem !important;
+      }
+      .step-num {
+        font-size: 0.52rem !important;
+        padding: 0.05rem 0.2rem !important;
+      }
+      .step-label {
+        font-size: 0.58rem !important;
+      }
+
+      .dna-stage-core {
+        height: 490px !important;
+      }
+      .dna-model {
+        width: 310px !important;
+        height: 460px !important;
+      }
+      .orbit-outer {
+        width: 380px !important;
+        height: 380px !important;
+      }
+      .orbit-inner {
+        width: 270px !important;
+        height: 270px !important;
+      }
+      .dna-chroma-glow {
+        width: 330px !important;
+        height: 390px !important;
+        filter: blur(34px) !important;
+      }
+
+      .px-intel-card {
+        padding: 0.42rem 0.62rem !important;
+        gap: 0.2rem !important;
+        border-radius: 10px !important;
+      }
+      .px-card-icon {
+        width: 24px !important;
+        height: 24px !important;
+        font-size: 0.78rem !important;
+        border-radius: 6px !important;
+      }
+      .px-card-category {
+        font-size: 0.5rem !important;
+      }
+      .px-card-title-group h4 {
+        font-size: 0.75rem !important;
+      }
+      .px-card-summary {
+        font-size: 0.62rem !important;
+        line-height: 1.22 !important;
+      }
+      .b-chip {
+        font-size: 0.54rem !important;
+        padding: 0.06rem 0.28rem !important;
+      }
+      .m-tag {
+        font-size: 0.56rem !important;
+        padding: 0.08rem 0.32rem !important;
+      }
+
+      .px-card-tl {
+        width: 205px !important;
+        left: 0 !important;
+        top: 6px !important;
+      }
+      .px-card-tr {
+        width: 200px !important;
+        right: 0 !important;
+        top: 6px !important;
+      }
+      .px-card-bl {
+        width: 205px !important;
+        left: 0 !important;
+        bottom: 6px !important;
+      }
+      .px-card-br {
+        width: 200px !important;
+        right: 0 !important;
+        bottom: 6px !important;
+      }
+
+      /* Sections on 1280px Laptops */
+      .solutions-grid {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 0.85rem !important;
+      }
+      .solution-card {
+        padding: 1.35rem 1rem !important;
+        border-radius: 14px !important;
+      }
+      .solution-card .card-header h3 {
+        font-size: 1.02rem !important;
+        margin-bottom: 0.65rem !important;
+      }
+      .solution-card .card-body li {
+        font-size: 0.8rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.45rem !important;
+      }
+      .bio-banner {
+        padding: 2.25rem 2rem !important;
+        gap: 2rem !important;
+        border-radius: 18px !important;
+      }
+      .bio-content h2 {
+        font-size: 1.85rem !important;
+      }
+      .bio-content p {
+        font-size: 0.92rem !important;
+      }
+      .bio-stats {
+        gap: 1.4rem !important;
+      }
+      .bio-stats .b-stat strong {
+        font-size: 2rem !important;
+      }
+      .bio-stats .b-stat span {
+        font-size: 0.72rem !important;
+      }
+      .resources-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.15rem !important;
+      }
+      .resource-content {
+        padding: 1.2rem 1rem !important;
+      }
+      .resource-content h3 {
+        font-size: 1.02rem !important;
+      }
+      .resource-content p {
+        font-size: 0.84rem !important;
+      }
+      .contact-wrapper {
+        gap: 2rem !important;
+        border-radius: 20px !important;
+      }
+      .contact-info {
+        padding: 2.5rem 2rem !important;
+      }
+      .contact-form-container {
+        padding: 2.5rem 2rem !important;
+      }
+      .contact-info h2 {
+        font-size: 1.85rem !important;
+      }
+      .contact-cities-grid {
+        gap: 0.45rem !important;
+      }
+    }
+
+    /* ==================== MOBILE & TABLET RESPONSIVE ADAPTATION (<= 1024px) ==================== */
+    @media (max-width: 1024px) {
+      .logo-icon {
+        width: 44px !important;
+        height: 54px !important;
+        margin-top: -2px !important;
+      }
+      .logo-icon img {
+        width: 44px !important;
+        height: 44px !important;
+      }
+      .logo-text-block {
+        padding-top: 6px !important;
+      }
+      .logo-main-text {
+        font-size: 1.45rem !important;
+      }
+      .logo-subtext {
+        font-size: 0.52rem !important;
+        letter-spacing: 0.12em !important;
+      }
+
+      .hero {
+        padding-top: 105px;
+        padding-bottom: 3.5rem;
+      }
+
+      .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        padding: 0 1rem !important;
+      }
+
+      .hero-content {
+        display: contents !important;
+      }
+
+      .hero-badge {
+        order: 1 !important;
+        align-self: center !important;
+        margin-bottom: 0.5rem !important;
+      }
+
+      .hero-title {
+        order: 2 !important;
+        text-align: center !important;
+        font-size: clamp(2.3rem, 7.5vw, 3rem) !important;
+        margin-bottom: 0.75rem !important;
+      }
+
+      .hero-desc {
+        order: 3 !important;
+        text-align: center !important;
+        margin: 0 auto 1.25rem !important;
+        font-size: 1.05rem !important;
+        max-width: 100% !important;
+      }
+
+      /* DNA Visual displays FIRST right after hero headings */
+      .hero-visual {
+        order: 4 !important;
+        width: 100% !important;
+        margin: 0.5rem auto 1.5rem !important;
+      }
+
+      .genomic-matrix-wrapper {
+        max-width: 100% !important;
+        gap: 1rem !important;
+      }
+
+      .pipeline-stepper-card {
+        padding: 0.65rem 0.85rem !important;
+        overflow: hidden !important;
+      }
+
+      .pipeline-header {
+        flex-wrap: wrap !important;
+        gap: 0.4rem !important;
+      }
+
+      .pipeline-stages {
+        gap: 0.2rem !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding-bottom: 2px !important;
+        scrollbar-width: none !important;
+      }
+
+      .pipeline-stages::-webkit-scrollbar {
+        display: none !important;
+      }
+
+      .stage-step {
+        padding: 0.2rem 0.35rem !important;
+        gap: 0.2rem !important;
+        flex-shrink: 0 !important;
+      }
+
+      .step-num {
+        font-size: 0.52rem !important;
+        padding: 0.08rem 0.25rem !important;
+      }
+
+      .step-label {
+        font-size: 0.56rem !important;
+        letter-spacing: 0.02em !important;
+      }
+
+      .stage-arrow {
+        font-size: 0.5rem !important;
+        flex-shrink: 0 !important;
+      }
+
+      .pipeline-live-info {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 0.35rem !important;
+        padding-top: 0.45rem !important;
+      }
+
+      .live-info-badge {
+        font-size: 0.6rem !important;
+        padding: 0.15rem 0.5rem !important;
+      }
+
+      .live-info-text {
+        font-size: 0.72rem !important;
+        line-height: 1.35 !important;
+      }
+
+      .dna-stage-core {
+        height: auto !important;
+        min-height: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 0.85rem !important;
+        position: relative !important;
+        width: 100% !important;
+      }
+
+      .dna-orbit-halo {
+        display: none !important;
+      }
+
+      .dna-model {
+        position: relative !important;
+        inset: auto !important;
+        top: 0 !important;
+        left: 0 !important;
+        transform: none !important;
+        width: 250px !important;
+        height: 250px !important;
+        margin: 0.5rem auto !important;
+        animation: none !important;
+        order: 1 !important;
+      }
+
+      .px-intel-card {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        animation: none !important;
+        padding: 0.8rem 0.95rem !important;
+        box-sizing: border-box !important;
+        order: 2 !important;
+      }
+
+      .px-card-tl, .px-card-tr, .px-card-bl, .px-card-br {
+        top: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        right: auto !important;
+        width: 100% !important;
+      }
+
+      .hero-cta-group {
+        order: 5 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        gap: 0.75rem !important;
+        margin-bottom: 2rem !important;
+      }
+
+      .hero-cta-group .btn {
+        width: 100% !important;
+        padding: 0.95rem 1.4rem !important;
+        font-size: 1rem !important;
+      }
+
+      .hero-trust-matrix {
+        order: 6 !important;
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.75rem !important;
+        text-align: center !important;
+        padding-top: 1.25rem !important;
+      }
+
+      .trust-divider {
+        display: none !important;
+      }
+
+      .solutions-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem !important;
+      }
+    }
+
+    
+    /* ==================== OUR VISION: VIDEO BACKGROUND (MICROSCOPY) ==================== */
+    .vision {
+      position: relative;
+      overflow: hidden;
+      padding: 7rem 0;
+      isolation: isolate;
+      background: #FFFFFF;
+    }
+
+    .vision-video-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .vision-bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.88;
+      filter: saturate(1.25) contrast(1.08) brightness(1.02);
+    }
+
+    .vision-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(180deg, 
+          #FFFFFF 0%, 
+          rgba(255, 255, 255, 0.65) 6%, 
+          rgba(255, 255, 255, 0.18) 25%, 
+          rgba(240, 247, 255, 0.12) 50%, 
+          rgba(255, 255, 255, 0.18) 75%, 
+          rgba(255, 255, 255, 0.65) 94%, 
+          #FFFFFF 100%
+        ),
+        radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.16), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(123, 47, 190, 0.14), transparent 50%);
+      z-index: 1;
+    }
+
+    .vision-container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .vision-live-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      padding: 0.45rem 1.2rem;
+      background: rgba(0, 102, 255, 0.06);
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #0066FF;
+    }
+
+    .live-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00E5FF;
+      box-shadow: 0 0 10px #00E5FF;
+      animation: pulseLiveDot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseLiveDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
+
+    .vision-box {
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 24px;
+      padding: 4rem 3.5rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 20px 50px -15px rgba(0, 102, 255, 0.1), 0 0 0 1px rgba(255, 255, 255, 0.95);
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .vision-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 60px -15px rgba(0, 102, 255, 0.18), 0 0 0 1px rgba(0, 102, 255, 0.25);
+    }
+
+    .vision-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.42rem 1.15rem;
+      background: rgba(0, 102, 255, 0.08);
+      color: #0066FF;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .vision-box .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: #0D1B2A;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.025em;
+    }
+
+    .vision-box .lead {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 1.25vw, 1.22rem);
+      line-height: 1.7;
+      color: #334155;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Refined Solutions & Capabilities Grid */
+    .solutions {
+      padding: 5rem 0 !important;
+    }
+
+    .solutions .section-title {
+      font-size: clamp(2.2rem, 3vw, 2.8rem) !important;
+      font-weight: 800 !important;
+    }
+
+    .solutions .section-subtitle {
+      font-size: 1.1rem !important;
+      max-width: 800px !important;
+      margin-bottom: 2.8rem !important;
+    }
+
+    .solutions-grid {
+      display: grid !important;
+      grid-template-columns: repeat(4, 1fr) !important;
+      gap: clamp(1rem, 1.4vw, 1.75rem) !important;
+    }
+
+    .solution-card {
+      padding: clamp(1.4rem, 1.6vw, 2rem) clamp(1rem, 1.25vw, 1.5rem) !important;
+      border-radius: 18px !important;
+      border: 1px solid rgba(226, 232, 240, 0.9) !important;
+      background: #FFFFFF !important;
+      box-shadow: 0 10px 30px -5px rgba(13, 27, 42, 0.06) !important;
+      transition: all 0.3s ease !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .solution-card:hover {
+      transform: translateY(-5px) !important;
+      box-shadow: 0 18px 40px -10px rgba(0, 102, 255, 0.15) !important;
+      border-color: rgba(0, 102, 255, 0.3) !important;
+    }
+
+    .solution-card .card-header h3 {
+      font-size: clamp(1.05rem, 1.15vw, 1.22rem) !important;
+      font-weight: 800 !important;
+      color: #0D1B2A !important;
+      margin-bottom: 0.85rem !important;
+      line-height: 1.25 !important;
+    }
+
+    .solution-card .card-body ul {
+      padding-left: 1.1rem !important;
+      margin: 0 !important;
+    }
+
+    .solution-card .card-body li {
+      font-size: clamp(0.8rem, 0.86vw, 0.92rem) !important;
+      line-height: 1.45 !important;
+      color: #475569 !important;
+      margin-bottom: 0.55rem !important;
+    }
+
+    
+    /* ==================== BIOINFORMATICS & CLINICAL DECISION SUPPORT (OPTION 2 DESIGN) ==================== */
+    .bioinformatics {
+      position: relative;
+      background: #06090F;
+      overflow: hidden;
+      padding: 7.5rem 0 !important;
+      isolation: isolate;
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .bio-video-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bio-bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.80;
+      filter: saturate(1.25) contrast(1.1) brightness(1.02);
+    }
+
+    .bio-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 85% 30%, rgba(0, 229, 255, 0.28), transparent 55%),
+        radial-gradient(ellipse at 15% 70%, rgba(123, 47, 190, 0.24), transparent 55%),
+        linear-gradient(135deg, rgba(6, 9, 15, 0.65) 0%, rgba(11, 17, 30, 0.42) 50%, rgba(6, 9, 15, 0.70) 100%);
+      pointer-events: none;
+    }
+
+    .bio-light-streak {
+      position: absolute;
+      top: -20%;
+      right: 15%;
+      width: 65%;
+      height: 140%;
+      background: linear-gradient(125deg, transparent 35%, rgba(0, 229, 255, 0.12) 48%, rgba(168, 85, 247, 0.14) 52%, rgba(245, 158, 11, 0.08) 56%, transparent 68%);
+      filter: blur(40px);
+      pointer-events: none;
+      transform: rotate(-12deg);
+    }
+
+    .bio-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 4%;
+    }
+
+    .bio-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.3fr);
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .bio-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 100%;
+    }
+
+    .bio-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.42rem 1.15rem;
+      background: rgba(0, 229, 255, 0.10);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      color: #00E5FF;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    }
+
+    .bio-title {
+      font-size: clamp(2.3rem, 3.6vw, 3.2rem) !important;
+      font-weight: 800 !important;
+      line-height: 1.18 !important;
+      color: #FFFFFF !important;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.35rem !important;
+    }
+
+    .bio-gradient {
+      background: linear-gradient(135deg, #00E5FF 0%, #38BDF8 40%, #A855F7 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bio-desc {
+      font-size: 1.05rem !important;
+      line-height: 1.72 !important;
+      color: #CBD5E1 !important;
+      margin-bottom: 2.2rem !important;
+      font-weight: 400;
+      max-width: 540px;
+    }
+
+    .bio-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.75rem 1.65rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bio-action-btn:hover {
+      background: linear-gradient(135deg, #00E5FF, #0066FF);
+      border-color: #00E5FF;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 102, 255, 0.35);
+    }
+
+    .bio-action-btn i {
+      font-size: 1.05rem;
+      transition: transform 0.3s ease;
+    }
+
+    .bio-action-btn:hover i {
+      transform: translate(2px, -2px);
+    }
+
+    /* 2x2 Grid for Bioinformatics Boxes */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.35rem;
+    }
+
+    .bio-card {
+      border-radius: 24px;
+      padding: 2.1rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 172px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bio-card.glass-dark {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .bio-card.glass-dark:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 229, 255, 0.45);
+      box-shadow: 0 26px 55px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 229, 255, 0.2);
+    }
+
+    .bio-card.card-solid-white {
+      background: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 255, 255, 0.25);
+    }
+
+    .bio-card.card-solid-white:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 45px rgba(0, 229, 255, 0.45);
+    }
+
+    .bio-card-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      max-width: 65%;
+    }
+
+    .bio-number {
+      font-size: clamp(2.3rem, 3.2vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      font-feature-settings: 'tnum' on, 'lnum' on;
+    }
+
+    .bio-number.bio-badge-num {
+      font-size: clamp(1.7rem, 2.3vw, 2.1rem);
+      letter-spacing: 0.02em;
+      color: #00E5FF;
+    }
+
+    .bio-number .plus {
+      color: #00E5FF;
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    .bio-card-label {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #94A3B8;
+      margin-top: 0.65rem;
+      line-height: 1.35;
+    }
+
+    .bio-card.card-solid-white .bio-feature-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #0A0F1D;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    .bio-card.card-solid-white .bio-feature-sub {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #64748B;
+      margin-top: 0.45rem;
+      line-height: 1.35;
+    }
+
+    .bio-visual-container {
+      width: 96px;
+      height: 96px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .bio-3d-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 16px;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .bio-card:hover .bio-3d-img {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    @media (max-width: 1280px) {
+      .bio-layout {
+        gap: 3rem;
+      }
+      .bio-card {
+        padding: 1.7rem 1.4rem;
+        min-height: 155px;
+      }
+      .bio-visual-container {
+        width: 82px;
+        height: 82px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .bio-layout {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .bio-content {
+        text-align: center;
+        align-items: center;
+      }
+      .bio-desc {
+        max-width: 680px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .bio-grid {
+        grid-template-columns: 1fr;
+      }
+      .bio-card {
+        min-height: 140px;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      .vision {
+        padding: 4.5rem 1rem;
+      }
+      .vision-box {
+        padding: 2.5rem 1.5rem;
+        border-radius: 20px;
+      }
+      .vision-box .section-title {
+        font-size: 2.1rem;
+      }
+      .vision-box .lead {
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+    }
+
+    /* ==================== COMPACT FOOTER STYLING ==================== */
+    .footer {
+      background: radial-gradient(circle at 85% 10%, rgba(0, 229, 255, 0.08), transparent 35%),
+                  radial-gradient(circle at 15% 90%, rgba(123, 47, 190, 0.1), transparent 40%),
+                  #0A131F !important;
+      position: relative;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 2.25rem 0 1.25rem !important;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 2.5rem;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-brand-logo .logo-icon {
+      width: 46px !important;
+      height: 52px !important;
+      margin-top: -2px !important;
+    }
+
+    .footer-brand-logo .logo-icon img {
+      width: 46px !important;
+      height: 46px !important;
+    }
+
+    .footer-brand-logo .logo-text-block {
+      padding-top: 4px !important;
+    }
+
+    .footer-brand-logo .logo-main-text {
+      font-size: 1.55rem !important;
+      line-height: 1 !important;
+    }
+
+    .footer-brand-logo .logo-divider {
+      margin: 3px 0 2px !important;
+    }
+
+    .footer-brand-logo .logo-subtext {
+      font-size: 0.56rem !important;
+      letter-spacing: 0.14em !important;
+    }
+
+    .footer-brand p {
+      color: #94A3B8;
+      font-size: 0.84rem !important;
+      line-height: 1.42 !important;
+      margin-top: 0.6rem !important;
+      margin-bottom: 0 !important;
+    }
+
+    .footer-contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      margin-top: 0.75rem !important;
+      padding: 0.35rem 0.85rem !important;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #00E5FF;
+      font-size: 0.78rem !important;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .footer-contact-badge:hover {
+      background: rgba(0, 229, 255, 0.12);
+      border-color: rgba(0, 229, 255, 0.35);
+    }
+
+    .footer-contact-badge a {
+      color: #00E5FF;
+      text-decoration: none;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: clamp(1.75rem, 3.5vw, 3.5rem) !important;
+    }
+
+    .link-col h4 {
+      font-family: var(--font-heading);
+      font-size: 0.84rem !important;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem !important;
+      color: #F8FAFC !important;
+    }
+
+    .link-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.42rem !important;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .link-col a {
+      color: #94A3B8;
+      font-size: 0.84rem !important;
+      line-height: 1.35 !important;
+      transition: color 0.2s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .link-col a:hover {
+      color: #00E5FF !important;
+      transform: translateX(2px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 1rem !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.07) !important;
+      color: #64748B;
+      font-size: 0.78rem !important;
+    }
+
+    .footer-bottom p {
+      margin: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        padding: 2rem 0 1.25rem !important;
+      }
+      .footer-top {
+        flex-direction: column !important;
+        gap: 1.5rem !important;
+        margin-bottom: 1.25rem !important;
+      }
+      .footer-links {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.25rem 1rem !important;
+      }
+      .link-col h4 {
+        margin-bottom: 0.5rem !important;
+      }
+      .link-col ul {
+        gap: 0.35rem !important;
+      }
+      .solutions-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  
+  /* ==================== GEN_IO STYLE LIGHT EDITORIAL HERO ==================== */
+  .editorial-hero {
+    position: relative;
+    min-height: 94vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 45%, #E9EFF6 100%);
+    overflow: hidden;
+    padding: 7rem 0 4rem;
+  }
+
+  .editorial-hero-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: 
+      radial-gradient(circle at 72% 40%, rgba(215, 224, 226, 0.55), transparent 65%),
+      radial-gradient(circle at 18% 75%, rgba(0, 180, 216, 0.08), transparent 50%);
+  }
+
+  .editorial-hero-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4%;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.25fr);
+    align-items: center;
+    min-height: 75vh;
+    gap: 3rem;
+  }
+
+  /* Left Editorial Content */
+  .editorial-left {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .editorial-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.42rem 1.15rem;
+    background: rgba(15, 23, 42, 0.05);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #0F172A;
+    margin-bottom: 1.6rem;
+  }
+
+  .editorial-badge .badge-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #00B4D8;
+    box-shadow: 0 0 8px rgba(0, 180, 216, 0.6);
+  }
+
+  .editorial-title {
+    font-family: var(--font-heading, 'Plus Jakarta Sans', sans-serif);
+    font-size: clamp(2.6rem, 4.3vw, 4rem);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+    margin-bottom: 1.6rem;
+  }
+
+  .editorial-title .highlight-bold {
+    color: #0B132B;
+    position: relative;
+  }
+
+  .editorial-title .highlight-accent {
+    color: #0077B6;
+    font-weight: 800;
+  }
+
+  .editorial-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.9rem 2rem;
+    background: #00B4D8;
+    color: #FFFFFF !important;
+    font-size: 0.98rem;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0, 180, 216, 0.28);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-bottom: 2.2rem;
+  }
+
+  .editorial-cta-btn:hover {
+    background: #0096C7;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 35px rgba(0, 180, 216, 0.38);
+    color: #FFFFFF !important;
+  }
+
+  .editorial-cta-btn i {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+  }
+
+  .editorial-cta-btn:hover i {
+    transform: translate(2px, -2px);
+  }
+
+  .editorial-desc {
+    font-size: 1.05rem;
+    line-height: 1.68;
+    color: #475569;
+    max-width: 500px;
+    margin-bottom: 2.2rem;
+    font-weight: 400;
+  }
+
+  .editorial-trust-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .editorial-trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #64748B;
+  }
+
+  .editorial-trust-item i {
+    color: #00B4D8;
+    font-size: 1.05rem;
+  }
+
+  /* Right Stage with Floating Hospital Card */
+  .editorial-right {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  /* The 3D Botanical DNA Canvas spanning ~80% across the hero page */
+  .editorial-dna-stage {
+    position: absolute;
+    top: 48%;
+    right: 3%;
+    width: 78vw;
+    max-width: 1180px;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.96;
+  }
+
+  .editorial-dna-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 25px 60px rgba(15, 23, 42, 0.12));
+    animation: gentleFloatDNA 8s ease-in-out infinite;
+  }
+
+  @keyframes gentleFloatDNA {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-12px) rotate(1deg);
+    }
+  }
+
+  /* Gen_IO Style Clean White Hospital Floating Card */
+  .editorial-floating-card {
+    position: relative;
+    z-index: 4;
+    width: 100%;
+    max-width: 440px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2.2rem 2rem;
+    border: 1px solid rgba(226, 232, 240, 0.9);
+    box-shadow: 0 25px 60px -15px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(255, 255, 255, 0.9);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .editorial-floating-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 32px 70px -15px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(0, 180, 216, 0.3);
+  }
+
+  .card-top-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #0077B6;
+    margin-bottom: 0.85rem;
+  }
+
+  .floating-card-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.25;
+    color: #0F172A;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.015em;
+  }
+
+  .floating-card-title .highlight {
+    color: #00B4D8;
+  }
+
+  .floating-card-sub {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #64748B;
+    margin-bottom: 1.6rem;
+  }
+
+  .floating-card-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(226, 232, 240, 0.8);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    margin-bottom: 1.6rem;
+  }
+
+  .f-metric {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .f-metric strong {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #0F172A;
+    line-height: 1.1;
+  }
+
+  .f-metric strong .accent {
+    color: #00B4D8;
+    font-size: 0.95em;
+  }
+
+  .f-metric span {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 0.3rem;
+  }
+
+  .floating-card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.85rem 1.4rem;
+    background: #0F172A;
+    color: #FFFFFF !important;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .floating-card-btn:hover {
+    background: #1E293B;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    color: #FFFFFF !important;
+  }
+
+  /* Comparison Banner for index_3d.html */
+  .preview-pill-banner {
+    position: fixed;
+    top: 96px;
+    right: 24px;
+    z-index: 99999;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 180, 216, 0.4);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .preview-pill-banner .badge {
+    background: #00B4D8;
+    color: #FFFFFF;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+  }
+  .preview-pill-banner a {
+    color: #CBD5E1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .preview-pill-banner a:hover {
+    color: #00E5FF;
+  }
+  @media (max-width: 768px) {
+    .preview-pill-banner {
+      top: auto;
+      bottom: 20px;
+      right: 50%;
+      transform: translateX(50%);
+      width: max-content;
+      max-width: 95vw;
+    }
+  }
+
+  /* Responsive Rules */
+  @media (max-width: 1200px) {
+    .editorial-hero-container {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .editorial-dna-wrapper {
+      left: -30%;
+      width: 145%;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .editorial-hero-container {
+      grid-template-columns: 1fr;
+      padding-top: 3rem;
+      gap: 3.5rem;
+    }
+    .editorial-left {
+      max-width: 100%;
+      text-align: center;
+      align-items: center;
+    }
+    .editorial-desc {
+      max-width: 600px;
+    }
+    .editorial-right {
+      min-height: 480px;
+    }
+    .editorial-dna-wrapper {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      max-width: 650px;
+    }
+    .editorial-floating-card {
+      margin: 0 auto;
+    }
+  }
+
+  </style>
 </head>
+
 <body>
 
   <!-- ==================== HEADER ==================== -->
@@ -118,7 +2676,7 @@
     <div class="container header-container">
       <a href="#" class="brand-logo-container">
         <div class="logo-icon">
-          <img src="assets/images/final_logo.svg" width="72" height="72" alt="Precision AI Logo" />
+          <img src="assets/images/final_logo.svg" width="86" height="86" alt="Precision AI Logo" />
         </div>
         <div class="logo-text-block">
           <div class="logo-main-text">
@@ -128,13 +2686,11 @@
           <div class="logo-subtext">PRECISION IN EVERY ALLELE</div>
         </div>
       </a>
-      
+
       <nav class="main-nav">
         <ul>
           <li><a href="#about">About</a></li>
           <li><a href="#solutions">Solutions</a></li>
-          <li><a href="#panels">Diagnostic Panels</a></li>
-          <li><a href="#technology">Technology</a></li>
           <li><a href="#resources">Resources</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
@@ -147,15 +2703,13 @@
         </button>
       </div>
     </div>
-    
+
     <!-- Mobile Navigation Overlay -->
     <div class="mobile-nav-overlay" id="mobile-nav">
       <div class="mobile-nav-container">
         <ul>
           <li><a href="#about" class="mobile-link">About</a></li>
           <li><a href="#solutions" class="mobile-link">Solutions</a></li>
-          <li><a href="#panels" class="mobile-link">Diagnostic Panels</a></li>
-          <li><a href="#technology" class="mobile-link">Technology</a></li>
           <li><a href="#resources" class="mobile-link">Resources</a></li>
           <li><a href="#contact" class="mobile-link">Contact</a></li>
         </ul>
@@ -163,169 +2717,119 @@
     </div>
   </header>
 
-  <!-- ==================== HERO SECTION ==================== -->
-  <section class="hero">
-    <div class="hero-bg-glow"></div>
-    <div class="container hero-container">
-      
-      <!-- Hero Left: Content -->
-      <div class="hero-content">
-        
-        <h1 class="hero-title">
-          Precision in <br>
-          every <span class="text-gradient">allele.</span>
+  
+  <!-- ==================== LIGHT EDITORIAL HERO (GEN_IO REFERENCE) ==================== -->
+  <section class="editorial-hero">
+    <div class="editorial-hero-bg"></div>
+
+    <!-- 3D Botanical DNA Helix spanning ~80% across the hero canvas -->
+    <div class="editorial-dna-stage">
+      <img src="assets/images/dna_botanical_helix_transparent.png" alt="Precision Allele 3D DNA Helix" class="editorial-dna-img" />
+    </div>
+
+    <div class="container editorial-hero-container">
+
+      <!-- Hero Left: Editorial Content -->
+      <div class="editorial-left reveal-on-scroll reveal-slide-left">
+        <div class="editorial-badge">
+          <span class="badge-dot"></span>
+          <span>NEXT-GENERATION ONCOLOGY GENOMICS</span>
+        </div>
+
+        <h1 class="editorial-title">
+          Decoding your <span class="highlight-bold">DNA</span> &ndash;<br>
+          <span class="highlight-accent">unlocking</span> your future.
         </h1>
-        
-        <p class="hero-desc">
-          High-end next-generation sequencing solutions designed to turn complex genomic signals into clear, actionable insights for cancer care.
+
+        <a href="#solutions" class="editorial-cta-btn">
+          <span>Discover more</span>
+          <i class="ph ph-arrow-up-right"></i>
+        </a>
+
+        <p class="editorial-desc">
+          Combine cutting-edge next-generation sequencing with advanced clinical oncology research to personalize cancer diagnosis and targeted therapeutics like never before.
         </p>
-        
-        <div class="hero-features">
-          <div class="feature-item">
-            <div class="feature-icon"><i class="ph ph-dna"></i></div>
-            <div class="feature-text">
-              <strong>High-End NGS</strong>
-              <span>Deep coverage. Greater insight.</span>
-            </div>
+
+        <div class="editorial-trust-bar">
+          <div class="editorial-trust-item">
+            <i class="ph ph-shield-check"></i>
+            <span>NABL &amp; CAP Accredited</span>
           </div>
-          <div class="feature-item">
-            <div class="feature-icon"><i class="ph ph-target"></i></div>
-            <div class="feature-text">
-              <strong>Pan-Cancer Panels</strong>
-              <span>Comprehensive molecular profiling.</span>
-            </div>
+          <div class="editorial-trust-item">
+            <i class="ph ph-dna"></i>
+            <span>94+ Targeted Panels</span>
           </div>
-          <div class="feature-item">
-            <div class="feature-icon"><i class="ph ph-lightning"></i></div>
-            <div class="feature-text">
-              <strong>Rapid Turnaround</strong>
-              <span>Actionable reports in record time.</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="hero-cta-group">
-          <a href="#panels" class="btn btn-primary btn-gradient">Explore diagnostic panels <i class="ph ph-arrow-up-right"></i></a>
-          <a href="#solutions" class="btn btn-secondary btn-white">Discover our approach</a>
-        </div>
-        
-        <div class="hero-stats">
-          <div class="stat">
-            <strong>25+</strong>
-            <span>Diagnostic Panels</span>
-          </div>
-          <div class="stat">
-            <strong>Multiple</strong>
-            <span>Tumor Types</span>
-          </div>
-          <div class="stat">
-            <strong>NGS</strong>
-            <span>DNA &bull; RNA &bull; ctDNA</span>
-          </div>
-          <div class="stat">
-            <strong>Actionable</strong>
-            <span>Clinical Insights</span>
+          <div class="editorial-trust-item">
+            <i class="ph ph-certificate"></i>
+            <span>NCCN &amp; ESMO Aligned</span>
           </div>
         </div>
       </div>
-      
-      <!-- Hero Right: 3D Visualization / Glass Cards -->
-      <div class="hero-visual">
-        <div class="visual-wrapper">
-          <!-- Central DNA 3D Model Container -->
-          <div id="dna-canvas-container" class="dna-model"></div>
-          
-          <!-- Floating Glass Cards -->
-          <div class="glass-card card-tl">
-            <div class="card-icon"><i class="ph ph-file-text"></i></div>
-            <div class="card-text">
-              <strong>Comprehensive<br>Genomic Profiling</strong>
-              <span>SNV &bull; CNV &bull; MSI &bull; TMB<br>Fusion &bull; HRD</span>
-            </div>
+
+      <!-- Hero Right: Floating Hospital Card overlaid on DNA -->
+      <div class="editorial-right">
+
+        <!-- Gen_IO Style Clean White Hospital Floating Card -->
+        <div class="editorial-floating-card reveal-on-scroll reveal-scale">
+          <div class="card-top-tag">
+            <i class="ph ph-sparkle"></i> CLINICAL EXCELLENCE
           </div>
-          
-          <div class="glass-card card-tr highlight-card">
-            <div class="card-text text-right">
-              <strong class="text-gradient-purple">From<br>Sequence<br>to Better<br>Outcomes</strong>
-              <div class="card-list">
-                <span>DETECT</span>
-                <span>UNDERSTAND</span>
-                <span>MATCH</span>
-                <span>TREAT</span>
-                <span>IMPROVE</span>
-              </div>
+          <h3 class="floating-card-title">
+            Empower your <span class="highlight">future</span> with Precision Allele solutions
+          </h3>
+          <p class="floating-card-sub">
+            We provide deep molecular and genetic insights to guide individualized cancer treatment and clinical decision support.
+          </p>
+
+          <div class="floating-card-metrics">
+            <div class="f-metric">
+              <strong>94<span class="accent">+</span></strong>
+              <span>Panels</span>
             </div>
-            <div class="card-icon"><i class="ph ph-list-dashes"></i></div>
-          </div>
-          
-          <div class="glass-card card-mr">
-            <div class="card-icon"><i class="ph ph-clock"></i></div>
-            <div class="card-text">
-              <strong>Deep Sequencing</strong>
-              <span>High resolution<br>Accurate detection</span>
+            <div class="f-metric">
+              <strong>&lt; 0.5<span class="accent">%</span></strong>
+              <span>ctDNA VAF</span>
             </div>
-          </div>
-          
-          <div class="glass-card card-bl">
-            <div class="card-icon"><i class="ph ph-chart-bar"></i></div>
-            <div class="card-text">
-              <strong>Clinical Decision<br>Support</strong>
-              <span>Therapy matching &<br>trial opportunities</span>
-            </div>
-          </div>
-          
-          <div class="glass-card card-br">
-            <div class="card-icon"><i class="ph ph-users-three"></i></div>
-            <div class="card-text">
-              <strong>Personalized<br>Oncology</strong>
-              <span>For better patient<br>outcomes</span>
+            <div class="f-metric">
+              <strong>4<span class="accent">-Day</span></strong>
+              <span>Rapid TAT</span>
             </div>
           </div>
 
-          <!-- Base Carousel -->
-          <div class="visual-base">
-            <div class="base-carousel">
-              <div class="carousel-item">
-                <div class="c-icon"><i class="ph ph-waveform"></i></div>
-                <span>SNV</span>
-              </div>
-              <div class="carousel-item">
-                <div class="c-icon"><i class="ph ph-copy"></i></div>
-                <span>CNV</span>
-              </div>
-              <div class="carousel-item">
-                <div class="c-icon"><i class="ph ph-target"></i></div>
-                <span>MSI</span>
-              </div>
-              <div class="carousel-item">
-                <div class="c-icon"><i class="ph ph-git-merge"></i></div>
-                <span>FUSION</span>
-              </div>
-              <div class="carousel-item">
-                <div class="c-icon"><i class="ph ph-activity"></i></div>
-                <span>TMB</span>
-              </div>
-              <div class="carousel-item">
-                <div class="c-icon"><i class="ph ph-intersect"></i></div>
-                <span>HRD</span>
-              </div>
-            </div>
-          </div>
-
+          <a href="#contact" class="floating-card-btn">
+            <span>Contact us</span>
+            <i class="ph ph-arrow-right"></i>
+          </a>
         </div>
+
       </div>
-      
+
     </div>
   </section>
 
-  <!-- ==================== OUR VISION ==================== -->
+
+    <!-- ==================== OUR VISION (MICROSCOPY VIDEO BACKGROUND) ==================== -->
   <section class="vision section-padding" id="about">
-    <div class="container">
-      <div class="vision-box">
+    <div class="vision-video-wrap">
+      <video class="vision-bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/videos/vision_microscope_bg.mp4" type="video/mp4">
+      </video>
+      <div class="vision-video-overlay"></div>
+    </div>
+
+    <div class="container vision-container">
+      <div class="vision-box reveal-on-scroll reveal-scale">
+        <div class="vision-badge"><i class="ph ph-compass"></i> OUR GUIDING PURPOSE</div>
         <h2 class="section-title text-center">Our Vision</h2>
         <p class="text-center lead">
-          Transforming precision oncology through accessible, high-resolution genomic diagnostics. We aim to empower oncologists and clinicians worldwide with actionable, comprehensive molecular insights that guide individualized patient care and improve clinical outcomes across all tumor types.
+          Transforming precision oncology through accessible, high-resolution genomic diagnostics. We aim to empower
+          oncologists and clinicians worldwide with actionable, comprehensive molecular insights that guide
+          individualized patient care and improve clinical outcomes across all tumor types.
         </p>
+        <div class="vision-live-tag">
+          <span class="live-pulse-dot"></span>
+          <span>HIGH-THROUGHPUT NGS PLATFORM &bull; AUTOMATED CLINICAL GENOMICS</span>
+        </div>
       </div>
     </div>
   </section>
@@ -333,10 +2837,12 @@
   <!-- ==================== SOLUTIONS / CAPABILITIES ==================== -->
   <section class="solutions section-padding bg-light" id="solutions">
     <div class="container">
-      <h2 class="section-title text-center">Precision Oncology & Genomic Diagnostics</h2>
-      <p class="section-subtitle text-center">Comprehensive biomarker profiling and clinical decision support designed for personalized cancer therapy.</p>
-      
-      <div class="solutions-grid">
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Precision Oncology & Genomic Diagnostics
+      </h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Comprehensive biomarker profiling and
+        clinical decision support designed for personalized cancer therapy.</p>
+
+      <div class="solutions-grid reveal-stagger">
         <!-- Solution 1 -->
         <div class="solution-card">
           <div class="card-header">
@@ -345,7 +2851,8 @@
           <div class="card-body">
             <ul>
               <li>Multi-gene Next-Generation Sequencing (NGS) panels targeting actionable driver mutations.</li>
-              <li>Detects key single nucleotide variants (SNVs), indels, copy number variations (CNVs), and gene fusions.</li>
+              <li>Detects key single nucleotide variants (SNVs), indels, copy number variations (CNVs), and gene
+                fusions.</li>
               <li>Guides precision treatment access tailored to tumor molecular profile.</li>
             </ul>
           </div>
@@ -372,7 +2879,8 @@
           </div>
           <div class="card-body">
             <ul>
-              <li>Targeted germline panel testing for inherited predisposition genes (e.g., BRCA1/2, Lynch syndrome).</li>
+              <li>Targeted germline panel testing for inherited predisposition genes (e.g., BRCA1/2, Lynch syndrome).
+              </li>
               <li>Comprehensive risk assessment for familial cancer syndromes.</li>
               <li>Empowers proactive screening and risk-reduction strategies.</li>
             </ul>
@@ -396,123 +2904,126 @@
     </div>
   </section>
 
-  <!-- ==================== BIOINFORMATICS BANNER ==================== -->
-  <section class="bioinformatics">
-    <div class="container">
-      <div class="bio-banner">
-        <div class="bio-content">
-          <h2>Bioinformatics & Clinical Decision Support</h2>
-          <p>Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.</p>
+    <!-- ==================== BIOINFORMATICS & CLINICAL DECISION SUPPORT (OPTION 2 DESIGN) ==================== -->
+  <section class="bioinformatics" id="bioinformatics">
+    <!-- Ambient Sequencer Video Background -->
+    <div class="bio-video-wrap">
+      <video class="bio-bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/videos/bioinformatics_sequencer_bg.mp4" type="video/mp4">
+      </video>
+      <div class="bio-video-overlay"></div>
+    </div>
+    <div class="bio-light-streak"></div>
+
+    <div class="container bio-container">
+      <div class="bio-layout">
+
+        <!-- Left Column: Existing Title & Content -->
+        <div class="bio-content reveal-on-scroll reveal-slide-left">
+          <div class="bio-tag">
+            <i class="ph ph-cpu"></i> NEXT-GENERATION SEQUENCING INTELLIGENCE
+          </div>
+          <h2 class="bio-title">
+            Bioinformatics &amp;<br>
+            <span class="bio-gradient">Clinical Decision Support</span>
+          </h2>
+          <p class="bio-desc">
+            Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.
+          </p>
+          <a href="#contact" class="bio-action-btn">
+            <span>Request Sample Report</span>
+            <i class="ph ph-arrow-up-right"></i>
+          </a>
         </div>
-        
-        <div class="bio-stats">
-          <div class="b-stat">
-            <strong>&lt; 0.5%</strong>
-            <span>ALLELE FREQUENCY SENSITIVITY</span>
+
+        <!-- Right Column: 2x2 Grid of Existing Stats (Option 2 Design with 3D Visual Badges) -->
+        <div class="bio-grid reveal-on-scroll reveal-scale">
+
+          <!-- Box 1: < 0.5% Allele Frequency Sensitivity -->
+          <div class="bio-card glass-dark">
+            <div class="bio-card-text">
+              <div class="bio-number">&lt; 0.5<span class="plus">%</span></div>
+              <div class="bio-card-label">Allele Frequency Sensitivity</div>
+            </div>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_prism.jpg" alt="Allele Frequency Sensitivity 3D Visual" class="bio-3d-img" />
+            </div>
           </div>
-          <div class="divider"></div>
-          <div class="b-stat">
-            <strong>4-21 Days</strong>
-            <span>SAMPLE-TO-REPORT TAT</span>
+
+          <!-- Box 2: 4-21 Days Sample-to-Report TAT -->
+          <div class="bio-card glass-dark">
+            <div class="bio-card-text">
+              <div class="bio-number">4-21<span class="plus"> Days</span></div>
+              <div class="bio-card-label">Sample-to-Report Turnaround (TAT)</div>
+            </div>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_ring.jpg" alt="Turnaround Time 3D Visual" class="bio-3d-img" />
+            </div>
           </div>
-          <div class="divider"></div>
-          <div class="b-stat">
-            <strong>CAP / NABL</strong>
-            <span>QUALITY ACCREDITATIONS</span>
+
+          <!-- Box 3: CAP / NABL Quality Accreditations -->
+          <div class="bio-card glass-dark">
+            <div class="bio-card-text">
+              <div class="bio-number bio-badge-num">CAP / NABL</div>
+              <div class="bio-card-label">Accredited Quality Standards</div>
+            </div>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_ribbon.jpg" alt="Quality Standards 3D Visual" class="bio-3d-img" />
+            </div>
           </div>
+
+          <!-- Box 4: Signature White Contrast Card (From Existing Content) -->
+          <div class="bio-card card-solid-white">
+            <div class="bio-card-text">
+              <div class="bio-feature-title">CLINICAL DECISION INTELLIGENCE &amp; TUMOR BOARD REPORTS</div>
+              <div class="bio-feature-sub">FDA-Approved Targeted Therapies &bull; Open Clinical Trial Matching</div>
+            </div>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_sphere.jpg" alt="Tumor Board Reports 3D Visual" class="bio-3d-img" />
+            </div>
+          </div>
+
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ==================== DIAGNOSTIC PANELS ==================== -->
-  <section class="panels section-padding" id="panels">
-    <div class="container">
-      <h2 class="section-title text-center">Our Diagnostic Panels</h2>
-      <p class="section-subtitle text-center">A comprehensive menu of testing solutions for all clinical scenarios.</p>
-
-            <div class="panel-filters-container">
-        <button class="filter-btn active" data-filter="all">All <span class="badge">24</span></button>
-        <button class="filter-btn" data-filter="somatic">Somatic <span class="badge">15</span></button>
-        <button class="filter-btn" data-filter="germline">Germline <span class="badge">4</span></button>
-        <button class="filter-btn" data-filter="pcr">PCR <span class="badge">5</span></button>
-      </div>
-
-      <div class="table-responsive mt-5">
-        <table class="panel-table futuristic-table">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>PANEL</th>
-              <th>TEST COVER</th>
-              <th>SAMPLE TYPE</th>
-              <th>TAT</th>
-            </tr>
-          </thead>
-          <tbody id="panel-table-body">
-            <!-- Somatic -->
-            <tr data-category="somatic"><td>1</td><td class="panel-name">Somatic Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td><td>NGS-All Human ~23000 genes (300x coverage)</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>2</td><td class="panel-name">Somatic Comprehensive Genomics Profiling (MSI+TMB+HRD) <i class="ph ph-arrow-up-right"></i></td><td>NGS-1080 DNA Genes +104 fusion partners MSI+TMB+HRD</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>3</td><td class="panel-name">Somatic Lung Gene panel <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>4</td><td class="panel-name">Somatic Pan-Solid Tumour Panel <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>5</td><td class="panel-name">Somatic Sarcoma Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>NGS-571 DNA Genes + 2660 RNA fusion partners, TMB and MSI</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>6</td><td class="panel-name">Somatic Endometrium Panel <i class="ph ph-arrow-up-right"></i></td><td>51 HRR Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>7</td><td class="panel-name">Somatic Targeted Lung cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>12 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>8</td><td class="panel-name">Somatic Targeted Breast Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>25 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>9</td><td class="panel-name">Somatic Targeted Colorectal Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>41 genes + 11 MSI Markers</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>10</td><td class="panel-name">Somatic Targeted Ovarian Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>26 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>11</td><td class="panel-name">Somatic Targeted endometrium Cancer Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>34 Genes</td><td>FFPE Tissue Block</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>12</td><td class="panel-name">Somatic 96hrs Solid Tumour Panel (Oncomine Precision Assay) <i class="ph ph-arrow-up-right"></i></td><td>50 key oncology genes Pan Cancer</td><td>FFPE Tissue Block or 10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td><td>4 Days</td></tr>
-            <tr data-category="somatic"><td>13</td><td class="panel-name">Somatic 96hrs Myeloid Panel (Oncomine Myeloid Assay) <i class="ph ph-arrow-up-right"></i></td><td>DNA Panel: Hotspot Gene (23) Full Gene (17) RNA Panel: Expression Gene (5) Expression Control Gene (5) Fusion Driver Gene (29)</td><td>3ml Bone marrow Aspirate in EDTA Tube</td><td>4 Days</td></tr>
-            <tr data-category="somatic"><td>14</td><td class="panel-name">Somatic Comprehensive Leukaemia Panel (ALL/AML) <i class="ph ph-arrow-up-right"></i></td><td>NGS-98 DNA Genes + 119 RNA Fusions</td><td>3ml Bone Marrow Aspirate in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="somatic"><td>15</td><td class="panel-name">Comprehensive Pan- Liquid Biopsy (CtDNA) <i class="ph ph-arrow-up-right"></i></td><td>126 Genes and MSI</td><td>10ml Blood in Streck Tube / CSF or Pleural Fluid in EDTA Tube</td><td>16 Days</td></tr>
-            
-            <!-- Germline -->
-            <tr data-category="germline"><td>16</td><td class="panel-name">Germline Oncomine BRCA 1 and BRCA2 <i class="ph ph-arrow-up-right"></i></td><td>BRCA 1 and BRCA2 - Full Gene</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="germline"><td>17</td><td class="panel-name">Germline Whole Exome Sequencing <i class="ph ph-arrow-up-right"></i></td><td>NGS-All Human ~23000 genes (100x coverage)</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="germline"><td>18</td><td class="panel-name">Germline Comprehensive Hereditary Gene Panel <i class="ph ph-arrow-up-right"></i></td><td>74 Genes</td><td>Whole Blood in EDTA Tube</td><td>16 Days</td></tr>
-            <tr data-category="germline"><td>19</td><td class="panel-name">Germline BRCA 1 & 2 deletion/duplication by MLPA <i class="ph ph-arrow-up-right"></i></td><td>BRCA 1 and BRCA2 - Full Gene</td><td>Whole Blood in EDTA Tube</td><td>10 Days</td></tr>
-            
-            <!-- PCR -->
-            <tr data-category="pcr"><td>20</td><td class="panel-name">PCR- EGFR Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 18 19 20 21-Hotspots</td><td>FFPE Tissue Block or 10ml Blood In Streck Tube</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>21</td><td class="panel-name">PCR- KRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 2 3 & 4 -Hotspots</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>22</td><td class="panel-name">PCR- NRAS Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 2 3 & 4 -Hotspots</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>23</td><td class="panel-name">PCR- BRAF Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>Exon 15 V600E</td><td>FFPE Tissue Block</td><td>2 Days</td></tr>
-            <tr data-category="pcr"><td>24</td><td class="panel-name">PCR- DPYD Mutation Panel <i class="ph ph-arrow-up-right"></i></td><td>DPYD*2A/DPYD*13/D949V/IVS10 /DPYD*6</td><td>Whole Blood in EDTA Tube</td><td>2 Days</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==================== TECHNOLOGY ==================== -->
+<!-- ==================== TECHNOLOGY ==================== 
   <section class="technology section-padding bg-light" id="technology">
     <div class="container">
-      <h2 class="section-title text-center">Advanced <span class="text-gradient">Technology</span></h2>
-      <p class="section-subtitle text-center">Powered by cutting-edge sequencing systems for unparalleled precision.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Advanced <span
+          class="text-gradient">Technology</span></h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Powered by cutting-edge sequencing
+        systems for unparalleled precision.</p>
 
-      <div class="tech-grid">
+      <div class="tech-grid reveal-stagger">
         <div class="tech-card">
           <div class="tech-icon"><i class="ph ph-cpu"></i></div>
           <h3>Thermo Fisher Genexus</h3>
-          <p>The first fully integrated next-generation sequencing platform featuring an automated specimen-to-report workflow.</p>
+          <p>The first fully integrated next-generation sequencing platform featuring an automated specimen-to-report
+            workflow.</p>
         </div>
         <div class="tech-card">
           <div class="tech-icon"><i class="ph ph-microscope"></i></div>
           <h3>nCounter Analysis System</h3>
-          <p>Advanced digital counting of nucleic acids for highly multiplexed, direct profiling of individual molecules.</p>
+          <p>Advanced digital counting of nucleic acids for highly multiplexed, direct profiling of individual
+            molecules.</p>
         </div>
       </div>
     </div>
-  </section>
+  </section> 
+-->
 
   <!-- ==================== RESOURCES ==================== -->
   <section class="resources section-padding" id="resources">
     <div class="container">
-      <h2 class="section-title text-center">Resources & <span class="text-gradient">Insights</span></h2>
-      <p class="section-subtitle text-center">Stay updated with the latest in precision oncology, case studies, and clinical research.</p>
+      <h2 class="section-title text-center reveal-on-scroll reveal-slide-up">Resources & <span
+          class="text-gradient">Insights</span></h2>
+      <p class="section-subtitle text-center reveal-on-scroll reveal-slide-up">Stay updated with the latest in precision
+        oncology, case studies, and clinical research.</p>
 
-      <div class="resources-grid mt-5">
+      <div class="resources-grid mt-5 reveal-stagger">
         <div class="resource-card">
           <div class="resource-visual card-vis-1">
             <i class="ph ph-microscope"></i>
@@ -524,7 +3035,7 @@
             <button class="btn-link" onclick="openPaper('paper-wgs.html')">Read Paper in Frame &rarr;</button>
           </div>
         </div>
-        
+
         <div class="resource-card">
           <div class="resource-visual card-vis-2">
             <i class="ph ph-brain"></i>
@@ -568,11 +3079,12 @@
   <!-- ==================== CONTACT ==================== -->
   <section class="contact section-padding bg-light" id="contact">
     <div class="container">
-      <div class="contact-wrapper">
-        <div class="contact-info">
+      <div class="contact-wrapper reveal-on-scroll reveal-scale">
+        <div class="contact-info reveal-on-scroll reveal-slide-left">
           <h2>Ready to advance <br><span class="text-gradient">precision medicine?</span></h2>
-          <p class="mt-4">Whether you're a hospital, a clinic, or an independent practitioner — we have a partnership tier designed for you.</p>
-          
+          <p class="mt-4">Whether you're a hospital, a clinic, or an independent practitioner — we have a partnership
+            tier designed for you.</p>
+
           <ul class="contact-details mt-5">
             <li class="contact-email-row">
               <i class="ph ph-envelope-simple"></i>
@@ -590,49 +3102,47 @@
 
               <div class="contact-cities-grid">
                 <div class="city-pill">
-                  <span class="city-dot"></span>
                   <span class="city-name">Chennai</span>
                 </div>
                 <div class="city-pill">
-                  <span class="city-dot"></span>
                   <span class="city-name">Bangalore</span>
                 </div>
                 <div class="city-pill">
-                  <span class="city-dot"></span>
                   <span class="city-name">Mumbai</span>
                 </div>
                 <div class="city-pill">
-                  <span class="city-dot"></span>
                   <span class="city-name">Kolkata</span>
                 </div>
                 <div class="city-pill">
-                  <span class="city-dot"></span>
                   <span class="city-name">Delhi</span>
                 </div>
                 <div class="city-pill">
-                  <span class="city-dot"></span>
                   <span class="city-name">Hyderabad</span>
                 </div>
               </div>
             </li>
           </ul>
         </div>
-        
-        <div class="contact-form-container">
-          <form class="contact-form">
+
+        <div class="contact-form-container reveal-on-scroll reveal-slide-right">
+          <form class="contact-form" id="contact-form">
             <div class="form-group">
-              <label>Full Name</label>
-              <input type="text" placeholder="Dr. John Smith" required>
+              <label for="contact-name">Full Name</label>
+              <input type="text" id="contact-name" name="name" placeholder="Dr. John Smith" required>
             </div>
             <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="doctor@hospital.com" required>
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" name="email" placeholder="doctor@hospital.com" required>
             </div>
             <div class="form-group">
-              <label>Message</label>
-              <textarea rows="4" placeholder="How can we partner together?"></textarea>
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" rows="4" placeholder="How can we partner together?" required></textarea>
             </div>
-            <button class="btn btn-primary btn-gradient w-100">Send Inquiry</button>
+            <div id="contact-status" class="contact-status-box" style="display: none;" role="alert"></div>
+            <button type="submit" id="contact-submit-btn" class="btn btn-primary btn-gradient w-100">
+              <span class="btn-text">Send Inquiry</span>
+              <i class="ph ph-paper-plane-tilt"></i>
+            </button>
           </form>
         </div>
       </div>
@@ -642,11 +3152,11 @@
   <!-- ==================== FOOTER ==================== -->
   <footer class="footer">
     <div class="container">
-      <div class="footer-top">
+      <div class="footer-top reveal-on-scroll reveal-slide-up">
         <div class="footer-brand">
           <a href="#" class="brand-logo-container footer-brand-logo">
             <div class="logo-icon">
-              <img src="assets/images/final_logo.svg" width="72" height="72" alt="Precision AI Logo" />
+              <img src="assets/images/final_logo.svg" width="86" height="86" alt="Precision AI Logo" />
             </div>
             <div class="logo-text-block">
               <div class="logo-main-text">
@@ -656,7 +3166,11 @@
               <div class="logo-subtext">PRECISION IN EVERY ALLELE</div>
             </div>
           </a>
-          <p>Next-Generation Sequencing Solutions for Cancer Diagnostics.</p>
+          <p>Next-Generation Sequencing Solutions for Precision Oncology &amp; Clinical Cancer Diagnostics.</p>
+          <div class="footer-contact-badge">
+            <i class="ph ph-envelope-simple"></i>
+            <a href="mailto:admin@precisionalleledx.in">admin@precisionalleledx.in</a>
+          </div>
         </div>
         <div class="footer-links">
           <div class="link-col">
@@ -668,16 +3182,34 @@
             </ul>
           </div>
           <div class="link-col">
-            <h4>Diagnostics</h4>
+            <h4>Solutions</h4>
             <ul>
-              <li><a href="#panels">Panel Menu</a></li>
-              <li><a href="#technology">Technology</a></li>
-              <li><a href="#">Sample Requirements</a></li>
+              <li><a href="#solutions">Genomic Solutions</a></li>
+              <li><a href="#resources">Case Studies &amp; Insights</a></li>
+              <li><a href="#contact">Sample Logistics</a></li>
+            </ul>
+          </div>
+          <div class="link-col">
+            <h4>Research &amp; Insights</h4>
+            <ul>
+              <li><a href="#resources">Clinical Case Studies</a></li>
+              <li><a href="#resources">Peer-Reviewed Papers</a></li>
+              <li><a href="#resources">Variant Actionability</a></li>
+              <li><a href="#resources">Oncology CME Webinars</a></li>
+            </ul>
+          </div>
+          <div class="link-col">
+            <h4>Clinical Rigor</h4>
+            <ul>
+              <li><a href="#about">NCCN Guidelines</a></li>
+              <li><a href="#about">ESMO Standards</a></li>
+              <li><a href="#solutions">Deep NGS Coverage</a></li>
+              <li><a href="#contact">Tumor Board Support</a></li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="footer-bottom">
+      <div class="footer-bottom reveal-on-scroll">
         <p>&copy; 2026 Precision Allele.Dx | Oncology Genomics Division. All rights reserved.</p>
       </div>
     </div>
@@ -698,9 +3230,17 @@
     }
   </script>
 
-  <!-- Three.js for 3D DNA -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="assets/js/dna3d.js"></script>
+  <!-- Removed Three.js for 3D DNA as we are using an image -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Floating Comparison Preview Banner -->
+  <div class="preview-pill-banner">
+    <span class="badge">index_3d.html</span>
+    <span>Light Editorial Layout + 3D Botanical DNA</span>
+    <span>&bull;</span>
+    <a href="index.html">View Main index.html &rarr;</a>
+  </div>
+
 </body>
+
 </html>

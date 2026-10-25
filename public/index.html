@@ -1586,30 +1586,92 @@
       }
     }
 
-    /* ==================== OUR VISION: WHITE THEME GRADIENT OVERLAY ==================== */
+    
+    /* ==================== OUR VISION: VIDEO BACKGROUND (MICROSCOPY) ==================== */
     .vision {
       position: relative;
+      overflow: hidden;
+      padding: 7rem 0;
+      isolation: isolate;
+      background: #FFFFFF;
+    }
+
+    .vision-video-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .vision-bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.88;
+      filter: saturate(1.25) contrast(1.08) brightness(1.02);
+    }
+
+    .vision-video-overlay {
+      position: absolute;
+      inset: 0;
       background: 
         linear-gradient(180deg, 
           #FFFFFF 0%, 
-          rgba(255, 255, 255, 0.90) 14%, 
-          rgba(238, 246, 255, 0.82) 50%, 
-          rgba(255, 255, 255, 0.90) 86%, 
+          rgba(255, 255, 255, 0.65) 6%, 
+          rgba(255, 255, 255, 0.18) 25%, 
+          rgba(240, 247, 255, 0.12) 50%, 
+          rgba(255, 255, 255, 0.18) 75%, 
+          rgba(255, 255, 255, 0.65) 94%, 
           #FFFFFF 100%
         ),
-        url('assets/images/vision_genomics.jpg') center/cover no-repeat;
-      padding: 7rem 0;
-      overflow: hidden;
+        radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.16), transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(123, 47, 190, 0.14), transparent 50%);
+      z-index: 1;
     }
 
-    .vision::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 25% 30%, rgba(0, 229, 255, 0.16), transparent 55%),
-                  radial-gradient(circle at 75% 70%, rgba(123, 47, 190, 0.12), transparent 60%);
-      pointer-events: none;
+    .vision-container {
+      position: relative;
+      z-index: 2;
     }
+
+    .vision-live-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      padding: 0.45rem 1.2rem;
+      background: rgba(0, 102, 255, 0.06);
+      border: 1px solid rgba(0, 102, 255, 0.2);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #0066FF;
+    }
+
+    .live-pulse-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00E5FF;
+      box-shadow: 0 0 10px #00E5FF;
+      animation: pulseLiveDot 2s infinite ease-in-out;
+    }
+
+    @keyframes pulseLiveDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.75); }
+    }
+
 
     .vision-box {
       background: rgba(255, 255, 255, 0.96);
@@ -1725,39 +1787,317 @@
       margin-bottom: 0.55rem !important;
     }
 
-    /* Refined Bioinformatics Banner */
+    
+    /* ==================== BIOINFORMATICS & CLINICAL DECISION SUPPORT (OPTION 2 DESIGN) ==================== */
     .bioinformatics {
-      padding: 3rem 0 5rem !important;
+      position: relative;
+      background: #06090F;
+      overflow: hidden;
+      padding: 7.5rem 0 !important;
+      isolation: isolate;
+      color: #FFFFFF;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .bio-banner {
-      padding: 3.5rem 3.2rem !important;
-      border-radius: 22px !important;
-      max-width: 1320px !important;
-      margin: 0 auto !important;
-      box-shadow: 0 20px 50px -12px rgba(13, 27, 42, 0.15) !important;
+    .bio-video-wrap {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
     }
 
-    .bio-content h2 {
-      font-size: clamp(2rem, 2.6vw, 2.5rem) !important;
+    .bio-bg-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.80;
+      filter: saturate(1.25) contrast(1.1) brightness(1.02);
+    }
+
+    .bio-video-overlay {
+      position: absolute;
+      inset: 0;
+      background: 
+        radial-gradient(ellipse at 85% 30%, rgba(0, 229, 255, 0.28), transparent 55%),
+        radial-gradient(ellipse at 15% 70%, rgba(123, 47, 190, 0.24), transparent 55%),
+        linear-gradient(135deg, rgba(6, 9, 15, 0.65) 0%, rgba(11, 17, 30, 0.42) 50%, rgba(6, 9, 15, 0.70) 100%);
+      pointer-events: none;
+    }
+
+    .bio-light-streak {
+      position: absolute;
+      top: -20%;
+      right: 15%;
+      width: 65%;
+      height: 140%;
+      background: linear-gradient(125deg, transparent 35%, rgba(0, 229, 255, 0.12) 48%, rgba(168, 85, 247, 0.14) 52%, rgba(245, 158, 11, 0.08) 56%, transparent 68%);
+      filter: blur(40px);
+      pointer-events: none;
+      transform: rotate(-12deg);
+    }
+
+    .bio-container {
+      position: relative;
+      z-index: 2;
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 4%;
+    }
+
+    .bio-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 1.3fr);
+      gap: 4.5rem;
+      align-items: center;
+    }
+
+    .bio-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 100%;
+    }
+
+    .bio-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.42rem 1.15rem;
+      background: rgba(0, 229, 255, 0.10);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      color: #00E5FF;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.2);
+    }
+
+    .bio-title {
+      font-size: clamp(2.3rem, 3.6vw, 3.2rem) !important;
       font-weight: 800 !important;
-      margin-bottom: 1rem !important;
+      line-height: 1.18 !important;
+      color: #FFFFFF !important;
+      letter-spacing: -0.025em;
+      margin-bottom: 1.35rem !important;
     }
 
-    .bio-content p {
+    .bio-gradient {
+      background: linear-gradient(135deg, #00E5FF 0%, #38BDF8 40%, #A855F7 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .bio-desc {
       font-size: 1.05rem !important;
-      line-height: 1.65 !important;
+      line-height: 1.72 !important;
+      color: #CBD5E1 !important;
+      margin-bottom: 2.2rem !important;
+      font-weight: 400;
+      max-width: 540px;
     }
 
-    .bio-stats .b-stat strong {
-      font-size: clamp(2.2rem, 2.8vw, 2.8rem) !important;
-      font-weight: 800 !important;
+    .bio-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #FFFFFF;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.75rem 1.65rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .bio-stats .b-stat span {
-      font-size: 0.85rem !important;
-      letter-spacing: 0.06em !important;
+    .bio-action-btn:hover {
+      background: linear-gradient(135deg, #00E5FF, #0066FF);
+      border-color: #00E5FF;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(0, 102, 255, 0.35);
     }
+
+    .bio-action-btn i {
+      font-size: 1.05rem;
+      transition: transform 0.3s ease;
+    }
+
+    .bio-action-btn:hover i {
+      transform: translate(2px, -2px);
+    }
+
+    /* 2x2 Grid for Bioinformatics Boxes */
+    .bio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.35rem;
+    }
+
+    .bio-card {
+      border-radius: 24px;
+      padding: 2.1rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 172px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bio-card.glass-dark {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+
+    .bio-card.glass-dark:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 229, 255, 0.45);
+      box-shadow: 0 26px 55px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 229, 255, 0.2);
+    }
+
+    .bio-card.card-solid-white {
+      background: #FFFFFF;
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.5), 0 0 35px rgba(255, 255, 255, 0.25);
+    }
+
+    .bio-card.card-solid-white:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 45px rgba(0, 229, 255, 0.45);
+    }
+
+    .bio-card-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      z-index: 1;
+      max-width: 65%;
+    }
+
+    .bio-number {
+      font-size: clamp(2.3rem, 3.2vw, 2.9rem);
+      font-weight: 800;
+      line-height: 1;
+      color: #FFFFFF;
+      letter-spacing: -0.03em;
+      font-feature-settings: 'tnum' on, 'lnum' on;
+    }
+
+    .bio-number.bio-badge-num {
+      font-size: clamp(1.7rem, 2.3vw, 2.1rem);
+      letter-spacing: 0.02em;
+      color: #00E5FF;
+    }
+
+    .bio-number .plus {
+      color: #00E5FF;
+      font-weight: 700;
+      margin-left: 2px;
+    }
+
+    .bio-card-label {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: #94A3B8;
+      margin-top: 0.65rem;
+      line-height: 1.35;
+    }
+
+    .bio-card.card-solid-white .bio-feature-title {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: #0A0F1D;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+    }
+
+    .bio-card.card-solid-white .bio-feature-sub {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #64748B;
+      margin-top: 0.45rem;
+      line-height: 1.35;
+    }
+
+    .bio-visual-container {
+      width: 96px;
+      height: 96px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .bio-3d-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 16px;
+      filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.4));
+      transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .bio-card:hover .bio-3d-img {
+      transform: scale(1.1) rotate(4deg);
+    }
+
+    @media (max-width: 1280px) {
+      .bio-layout {
+        gap: 3rem;
+      }
+      .bio-card {
+        padding: 1.7rem 1.4rem;
+        min-height: 155px;
+      }
+      .bio-visual-container {
+        width: 82px;
+        height: 82px;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .bio-layout {
+        grid-template-columns: 1fr;
+        gap: 3.5rem;
+      }
+      .bio-content {
+        text-align: center;
+        align-items: center;
+      }
+      .bio-desc {
+        max-width: 680px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .bio-grid {
+        grid-template-columns: 1fr;
+      }
+      .bio-card {
+        min-height: 140px;
+      }
+    }
+
 
     @media (max-width: 768px) {
       .vision {
@@ -1931,731 +2271,6 @@
       }
       .solutions-grid {
         grid-template-columns: 1fr !important;
-      }
-    }
-
-    /* ==========================================================================
-       GENOMIC INFRASTRUCTURE & DISCOVERY LAB (DUAL-VIDEO SHOWCASE SECTION)
-       ========================================================================== */
-    .video-showcase-section {
-      position: relative;
-      padding: 4rem 0 3rem;
-      width: 100%;
-      overflow: hidden;
-      background: transparent;
-    }
-
-    .video-showcase-container {
-      width: 100%;
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 0 4%;
-      box-sizing: border-box;
-    }
-
-    .video-showcase-card {
-      position: relative;
-      border-radius: 28px;
-      overflow: hidden;
-      background: #060c18;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 30px 90px -15px rgba(2, 6, 23, 0.75), 0 0 0 1px rgba(0, 102, 255, 0.18);
-      min-height: 640px;
-      display: flex;
-      flex-direction: column;
-      isolation: isolate;
-    }
-
-    /* Video Background Layers */
-    .video-bg-layer {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 1;
-      pointer-events: none;
-    }
-
-    .bg-video-stream {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0;
-      transition: opacity 1.3s cubic-bezier(0.4, 0, 0.2, 1);
-      will-change: opacity;
-    }
-
-    .bg-video-stream.active {
-      opacity: 0.36; /* Low opacity as requested */
-    }
-
-    .video-overlay-gradient {
-      position: absolute;
-      inset: 0;
-      background: 
-        linear-gradient(135deg, rgba(6, 12, 24, 0.94) 0%, rgba(9, 20, 36, 0.82) 45%, rgba(0, 70, 180, 0.32) 100%),
-        radial-gradient(circle at 85% 20%, rgba(0, 168, 255, 0.18), transparent 50%),
-        radial-gradient(circle at 15% 85%, rgba(13, 27, 42, 0.85), transparent 60%);
-      z-index: 2;
-    }
-
-    .video-overlay-grid {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-      background-size: 28px 28px;
-      opacity: 0.35;
-      z-index: 3;
-    }
-
-
-
-    /* Content Layer */
-    .showcase-content-layer {
-      position: relative;
-      z-index: 10;
-      padding: 2rem 2.5rem 1.8rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-      flex: 1;
-    }
-
-    /* Top Bar */
-    .showcase-top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      padding-bottom: 1.1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .showcase-status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-      background: rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 100px;
-      padding: 0.4rem 0.95rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .live-dot-pulse {
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: #00E5FF;
-      box-shadow: 0 0 12px #00E5FF;
-      animation: pulseGlow 2s infinite;
-    }
-
-    .status-live-text {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      color: #00E5FF;
-      text-transform: uppercase;
-    }
-
-    .status-facility {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      color: #94A3B8;
-      border-left: 1px solid rgba(255, 255, 255, 0.15);
-      padding-left: 0.7rem;
-    }
-
-    .showcase-stream-selector {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 0.3rem;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .stream-tab-btn {
-      background: transparent;
-      border: 1px solid transparent;
-      color: #94A3B8;
-      padding: 0.4rem 0.95rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      font-family: inherit;
-    }
-
-    .stream-tab-btn:hover {
-      color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .stream-tab-btn.active {
-      background: rgba(0, 102, 255, 0.25);
-      border-color: #00E5FF;
-      color: #FFFFFF;
-      box-shadow: 0 0 16px rgba(0, 229, 255, 0.28);
-    }
-
-    .showcase-audio-ctrl {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .audio-toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #E2E8F0;
-      padding: 0.38rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: inherit;
-      transition: all 0.2s ease;
-    }
-
-    .audio-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.12);
-      color: #00E5FF;
-      border-color: rgba(0, 229, 255, 0.35);
-    }
-
-    /* Main Grid */
-    .showcase-main-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.95fr;
-      gap: 2.6rem;
-      align-items: center;
-      flex: 1;
-    }
-
-    /* Left Story Column */
-    .showcase-story-col {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .showcase-category-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #00E5FF;
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid rgba(0, 229, 255, 0.28);
-      padding: 0.3rem 0.8rem;
-      border-radius: 100px;
-      margin-bottom: 0.95rem;
-      align-self: flex-start;
-    }
-
-    .showcase-heading {
-      font-size: clamp(1.85rem, 2.5vw, 2.35rem);
-      font-weight: 800;
-      line-height: 1.18;
-      color: #FFFFFF;
-      margin-bottom: 0.85rem;
-      letter-spacing: -0.025em;
-    }
-
-    .highlight-text-cyan {
-      background: linear-gradient(135deg, #00E5FF 0%, #3B82F6 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .showcase-lead {
-      font-size: 0.96rem;
-      line-height: 1.62;
-      color: #CBD5E1;
-      margin-bottom: 1.25rem;
-      max-width: 600px;
-    }
-
-    /* Dynamic Telemetry Box (Overlay HUD) */
-    .stream-telemetry-box {
-      background: rgba(10, 22, 38, 0.65);
-      border: 1px solid rgba(0, 229, 255, 0.22);
-      border-radius: 16px;
-      padding: 0.9rem 1.2rem;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
-      margin-bottom: 1.35rem;
-      transition: all 0.4s ease;
-    }
-
-    .telemetry-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 0.7rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .telemetry-step-badge {
-      font-size: 0.66rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      color: #060c18;
-      background: #00E5FF;
-      padding: 0.2rem 0.55rem;
-      border-radius: 100px;
-      text-transform: uppercase;
-    }
-
-    .telemetry-title {
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: #F8FAFC;
-    }
-
-    .telemetry-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .telemetry-metric {
-      display: flex;
-      flex-direction: column;
-      gap: 0.15rem;
-    }
-
-    .telemetry-metric .t-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #94A3B8;
-      font-weight: 600;
-    }
-
-    .telemetry-metric .t-val {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: #38BDF8;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .showcase-actions {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-showcase-primary {
-      background: linear-gradient(135deg, #0066FF 0%, #00C6FF 100%);
-      color: #FFFFFF !important;
-      padding: 0.75rem 1.45rem;
-      border-radius: 100px;
-      font-weight: 700;
-      font-size: 0.88rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 8px 24px rgba(0, 102, 255, 0.35);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn-showcase-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 102, 255, 0.5);
-      color: #FFFFFF;
-    }
-
-    .btn-showcase-secondary {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #F8FAFC;
-      padding: 0.75rem 1.3rem;
-      border-radius: 100px;
-      font-weight: 600;
-      font-size: 0.88rem;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      backdrop-filter: blur(8px);
-      transition: all 0.2s ease;
-      font-family: inherit;
-    }
-
-    .btn-showcase-secondary:hover {
-      background: rgba(255, 255, 255, 0.14);
-      border-color: #00E5FF;
-      color: #00E5FF;
-      transform: translateY(-2px);
-    }
-
-    /* Right Metrics Column (2x2 Glass Grid inspired by Screenshot 2) */
-    .showcase-metrics-col {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.1rem;
-    }
-
-    .metric-glass-card {
-      background: rgba(13, 26, 46, 0.58);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 18px;
-      padding: 1.25rem 1.15rem;
-      backdrop-filter: blur(14px);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 145px;
-    }
-
-    .metric-glass-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(0, 229, 255, 0.45);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35), 0 0 24px rgba(0, 229, 255, 0.18);
-    }
-
-    .metric-card-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 0.75rem;
-      gap: 0.5rem;
-    }
-
-    .metric-huge-number {
-      font-size: clamp(1.85rem, 2.3vw, 2.35rem);
-      font-weight: 800;
-      color: #FFFFFF;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-    }
-
-    .metric-icon-box {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.35rem;
-      flex-shrink: 0;
-    }
-
-    .cyan-glow {
-      background: rgba(0, 229, 255, 0.12);
-      color: #00E5FF;
-      border: 1px solid rgba(0, 229, 255, 0.32);
-      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-    }
-
-    .purple-glow {
-      background: rgba(168, 85, 247, 0.12);
-      color: #C084FC;
-      border: 1px solid rgba(168, 85, 247, 0.32);
-      box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
-    }
-
-    .green-glow {
-      background: rgba(34, 197, 94, 0.12);
-      color: #4ADE80;
-      border: 1px solid rgba(34, 197, 94, 0.32);
-      box-shadow: 0 0 15px rgba(34, 197, 94, 0.2);
-    }
-
-    .gold-glow {
-      background: rgba(234, 179, 8, 0.12);
-      color: #FACC15;
-      border: 1px solid rgba(234, 179, 8, 0.32);
-      box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
-    }
-
-    .metric-card-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #F8FAFC;
-      margin-bottom: 0.35rem;
-    }
-
-    .metric-card-desc {
-      font-size: 0.78rem;
-      line-height: 1.45;
-      color: #94A3B8;
-      margin: 0;
-    }
-
-    /* Bottom Bar & Floating Switcher Widget (from Screenshot 1) */
-    .showcase-bottom-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      padding-top: 1.4rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .showcase-bottom-left-info {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .info-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.78rem;
-      font-weight: 600;
-      color: #94A3B8;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 0.4rem 0.85rem;
-      border-radius: 100px;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-    }
-
-    .info-pill i {
-      color: #00E5FF;
-    }
-
-    /* Floating Switcher Widget */
-    .floating-switcher-widget {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(9, 18, 32, 0.82);
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 20px;
-      padding: 0.65rem 0.9rem 0.65rem 0.65rem;
-      backdrop-filter: blur(18px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), 0 0 24px rgba(0, 102, 255, 0.18);
-      max-width: 480px;
-      width: 100%;
-      transition: all 0.3s ease;
-      cursor: pointer;
-    }
-
-    .floating-switcher-widget:hover {
-      border-color: #00E5FF;
-      transform: translateY(-2px);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 28px rgba(0, 229, 255, 0.25);
-    }
-
-    .widget-preview-box {
-      position: relative;
-      width: 88px;
-      height: 58px;
-      border-radius: 12px;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      background: #000;
-    }
-
-    .thumb-mini-video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-
-    .thumb-play-icon {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #FFFFFF;
-      font-size: 1.1rem;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(2px);
-      transition: transform 0.2s ease;
-    }
-
-    .floating-switcher-widget:hover .thumb-play-icon {
-      transform: scale(1.15);
-      color: #00E5FF;
-    }
-
-    .widget-progress-track {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background: rgba(255, 255, 255, 0.25);
-    }
-
-    .widget-progress-fill {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg, #00E5FF, #3B82F6);
-      transition: width 0.1s linear;
-    }
-
-    .widget-content {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .widget-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.15rem;
-    }
-
-    .widget-badge {
-      font-size: 0.66rem;
-      font-weight: 800;
-      color: #00E5FF;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .widget-status {
-      font-size: 0.66rem;
-      color: #64748B;
-      font-weight: 500;
-    }
-
-    .widget-title {
-      font-size: 0.86rem;
-      font-weight: 700;
-      color: #FFFFFF;
-      margin: 0 0 0.15rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .widget-desc {
-      font-size: 0.72rem;
-      color: #94A3B8;
-      margin: 0;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .widget-controls {
-      display: flex;
-      align-items: center;
-      gap: 0.35rem;
-      flex-shrink: 0;
-    }
-
-    .widget-nav-btn {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      background: rgba(255, 255, 255, 0.06);
-      color: #CBD5E1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      font-size: 0.95rem;
-    }
-
-    .widget-nav-btn:hover {
-      background: #00E5FF;
-      color: #060c18;
-      border-color: #00E5FF;
-      transform: scale(1.1);
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-      50% {
-        opacity: 0.45;
-        transform: scale(1.15);
-      }
-    }
-
-    /* Responsive queries */
-    @media (max-width: 1120px) {
-      .showcase-main-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-      }
-      .showcase-content-layer {
-        padding: 2rem 2rem 2.2rem;
-      }
-      .floating-switcher-widget {
-        max-width: 100%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .video-showcase-section {
-        padding: 2.5rem 0;
-      }
-      .video-showcase-card {
-        border-radius: 20px;
-      }
-      .showcase-content-layer {
-        padding: 1.5rem 1.25rem 1.75rem;
-        gap: 1.5rem;
-      }
-      .showcase-heading {
-        font-size: 1.85rem;
-      }
-      .showcase-metrics-col {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .showcase-top-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.85rem;
-      }
-      .showcase-stream-selector {
-        width: 100%;
-        display: flex;
-      }
-      .stream-tab-btn {
-        flex: 1;
-        justify-content: center;
-        font-size: 0.74rem;
-        padding: 0.4rem 0.5rem;
-      }
-      .showcase-bottom-bar {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .floating-switcher-widget {
-        width: 100%;
       }
     }
   </style>
@@ -2896,9 +2511,16 @@
     </div>
   </section>
 
-  <!-- ==================== OUR VISION ==================== -->
+    <!-- ==================== OUR VISION (MICROSCOPY VIDEO BACKGROUND) ==================== -->
   <section class="vision section-padding" id="about">
-    <div class="container">
+    <div class="vision-video-wrap">
+      <video class="vision-bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/videos/vision_microscope_bg.mp4" type="video/mp4">
+      </video>
+      <div class="vision-video-overlay"></div>
+    </div>
+
+    <div class="container vision-container">
       <div class="vision-box reveal-on-scroll reveal-scale">
         <div class="vision-badge"><i class="ph ph-compass"></i> OUR GUIDING PURPOSE</div>
         <h2 class="section-title text-center">Our Vision</h2>
@@ -2907,6 +2529,10 @@
           oncologists and clinicians worldwide with actionable, comprehensive molecular insights that guide
           individualized patient care and improve clinical outcomes across all tumor types.
         </p>
+        <div class="vision-live-tag">
+          <span class="live-pulse-dot"></span>
+          <span>HIGH-THROUGHPUT NGS PLATFORM &bull; AUTOMATED CLINICAL GENOMICS</span>
+        </div>
       </div>
     </div>
   </section>
@@ -2981,219 +2607,83 @@
     </div>
   </section>
 
-  <!-- ==================== BIOINFORMATICS BANNER ==================== -->
-  <section class="bioinformatics">
-    <div class="container">
-      <div class="bio-banner reveal-on-scroll reveal-scale">
-        <div class="bio-content reveal-on-scroll reveal-slide-left">
-          <h2>Bioinformatics & Clinical Decision Support</h2>
-          <p>Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted
-            therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.</p>
-        </div>
-
-        <div class="bio-stats reveal-stagger">
-          <div class="b-stat">
-            <strong>&lt; 0.5%</strong>
-            <span>ALLELE FREQUENCY SENSITIVITY</span>
-          </div>
-          <div class="divider"></div>
-          <div class="b-stat">
-            <strong>4-21 Days</strong>
-            <span>SAMPLE-TO-REPORT TAT</span>
-          </div>
-          <div class="divider"></div>
-          <div class="b-stat">
-            <strong>CAP / NABL</strong>
-            <span>QUALITY ACCREDITATIONS</span>
-          </div>
-        </div>
-      </div>
+    <!-- ==================== BIOINFORMATICS & CLINICAL DECISION SUPPORT (OPTION 2 DESIGN) ==================== -->
+  <section class="bioinformatics" id="bioinformatics">
+    <!-- Ambient Sequencer Video Background -->
+    <div class="bio-video-wrap">
+      <video class="bio-bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/videos/bioinformatics_sequencer_bg.mp4" type="video/mp4">
+      </video>
+      <div class="bio-video-overlay"></div>
     </div>
-  </section>
+    <div class="bio-light-streak"></div>
 
-  <!-- ==================== GENOMIC DISCOVERY & SEQUENCING INFRASTRUCTURE (DUAL-VIDEO CORE) ==================== -->
-  <section class="video-showcase-section reveal-on-scroll reveal-slide-up" id="discovery">
-    <div class="video-showcase-container">
-      <div class="video-showcase-card">
-        
-        <!-- Video Background Layer -->
-        <div class="video-bg-layer" aria-hidden="true">
-          <video class="bg-video-stream active" id="videoStream1" autoplay muted loop playsinline preload="auto">
-            <source src="/assets/videos/8325990-hd_1920_1080_30fps.mp4" type="video/mp4">
-          </video>
-          <video class="bg-video-stream" id="videoStream2" autoplay muted loop playsinline preload="auto">
-            <source src="/assets/videos/8381459-hd_1920_1080_25fps.mp4" type="video/mp4">
-          </video>
-          <div class="video-overlay-gradient"></div>
-          <div class="video-overlay-grid"></div>
+    <div class="container bio-container">
+      <div class="bio-layout">
+
+        <!-- Left Column: Existing Title & Content -->
+        <div class="bio-content reveal-on-scroll reveal-slide-left">
+          <div class="bio-tag">
+            <i class="ph ph-cpu"></i> NEXT-GENERATION SEQUENCING INTELLIGENCE
+          </div>
+          <h2 class="bio-title">
+            Bioinformatics &amp;<br>
+            <span class="bio-gradient">Clinical Decision Support</span>
+          </h2>
+          <p class="bio-desc">
+            Our proprietary pipeline matches identified variants with key open clinical trials, FDA-approved targeted therapies, and guidelines to generate clear, actionable reports for oncologists and tumor boards.
+          </p>
+          <a href="#contact" class="bio-action-btn">
+            <span>Request Sample Report</span>
+            <i class="ph ph-arrow-up-right"></i>
+          </a>
         </div>
 
-        <!-- Content Layer -->
-        <div class="showcase-content-layer">
-          
-          <!-- Top Bar: Status, Stream Tabs & Audio Toggle -->
-          <div class="showcase-top-bar">
-            <div class="showcase-status-badge">
-              <span class="live-dot-pulse"></span>
-              <span class="status-live-text">LIVE CORE TELEMETRY</span>
-              <span class="status-facility">CLIA / CAP ACCREDITED NGS CORE</span>
-            </div>
+        <!-- Right Column: 2x2 Grid of Existing Stats (Option 2 Design with 3D Visual Badges) -->
+        <div class="bio-grid reveal-on-scroll reveal-scale">
 
-            <div class="showcase-stream-selector" role="tablist" aria-label="Surveillance Streams">
-              <button class="stream-tab-btn active" id="streamTab0" data-stream="0" role="tab" aria-selected="true">
-                <i class="ph ph-microscope"></i>
-                <span>Feed 01: Biomarker Discovery</span>
-              </button>
-              <button class="stream-tab-btn" id="streamTab1" data-stream="1" role="tab" aria-selected="false">
-                <i class="ph ph-dna"></i>
-                <span>Feed 02: NGS Cleanroom Core</span>
-              </button>
+          <!-- Box 1: < 0.5% Allele Frequency Sensitivity -->
+          <div class="bio-card glass-dark">
+            <div class="bio-card-text">
+              <div class="bio-number">&lt; 0.5<span class="plus">%</span></div>
+              <div class="bio-card-label">Allele Frequency Sensitivity</div>
             </div>
-
-            <div class="showcase-audio-ctrl">
-              <button class="audio-toggle-btn" id="audioToggleBtn" title="Toggle Audio Playback" aria-label="Toggle Audio">
-                <i class="ph ph-speaker-simple-slash" id="audioIcon"></i>
-                <span id="audioText">Muted</span>
-              </button>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_prism.jpg" alt="Allele Frequency Sensitivity 3D Visual" class="bio-3d-img" />
             </div>
           </div>
 
-          <!-- Main Grid: Story on Left, 2x2 Glass Metric Cards on Right -->
-          <div class="showcase-main-grid">
-            
-            <!-- Left Story Column -->
-            <div class="showcase-story-col">
-              <div class="showcase-category-pill">
-                <i class="ph ph-sparkle"></i>
-                <span>PRECISION ONCOLOGY INFRASTRUCTURE</span>
-              </div>
-
-              <h2 class="showcase-heading">
-                Deciphering Cancer Biology Through <span class="highlight-text-cyan">High-Throughput Automation</span> & Deep Sequencing
-              </h2>
-
-              <p class="showcase-lead">
-                Inside Precision Allele.Dx's dual clinical-grade sequencing facilities. From high-magnification single-cell biomarker inspection to automated NovaSeq robotic library prep, our automated pipeline detects rare somatic mutations with &lt;0.5% variant allele frequency in under 4 days.
-              </p>
-
-              <!-- Dynamic Telemetry Box (Overlay HUD) -->
-              <div class="stream-telemetry-box" id="telemetryBox">
-                <div class="telemetry-header">
-                  <span class="telemetry-step-badge" id="telemetryStep">PHASE 01 OF 02</span>
-                  <span class="telemetry-title" id="telemetryTitle">Specimen Isolation & Cellular Morphology</span>
-                </div>
-                <div class="telemetry-body">
-                  <div class="telemetry-metric">
-                    <span class="t-label">Active Workflow</span>
-                    <span class="t-val" id="telemetryWorkflow">100x Immersion Oil Neoplasm Screening</span>
-                  </div>
-                  <div class="telemetry-metric">
-                    <span class="t-label">Tumor Purity Threshold</span>
-                    <span class="t-val" id="telemetryPurity">&gt; 20% Neoplastic Nuclei Passed</span>
-                  </div>
-                </div>
-              </div>
-
-              <div class="showcase-actions">
-                <a href="#contact" class="btn-showcase-primary">
-                  <span>Connect With Laboratory Directors</span>
-                  <i class="ph ph-arrow-up-right"></i>
-                </a>
-                <button class="btn-showcase-secondary" id="cycleStreamBtn">
-                  <i class="ph ph-arrows-clockwise"></i>
-                  <span>Switch Core Feed</span>
-                </button>
-              </div>
+          <!-- Box 2: 4-21 Days Sample-to-Report TAT -->
+          <div class="bio-card glass-dark">
+            <div class="bio-card-text">
+              <div class="bio-number">4-21<span class="plus"> Days</span></div>
+              <div class="bio-card-label">Sample-to-Report Turnaround (TAT)</div>
             </div>
-
-            <!-- Right Column: 2x2 Glass Metric Cards (from Reference 2) -->
-            <div class="showcase-metrics-col">
-              <div class="metric-glass-card">
-                <div class="metric-card-top">
-                  <div class="metric-huge-number">50,000+</div>
-                  <div class="metric-icon-box cyan-glow">
-                    <i class="ph ph-dna"></i>
-                  </div>
-                </div>
-                <div class="metric-card-title">Clinical Genomes Analyzed</div>
-                <p class="metric-card-desc">Somatic & germline profiles processed with end-to-end sample traceability.</p>
-              </div>
-
-              <div class="metric-glass-card">
-                <div class="metric-card-top">
-                  <div class="metric-huge-number">99.98%</div>
-                  <div class="metric-icon-box purple-glow">
-                    <i class="ph ph-shield-check"></i>
-                  </div>
-                </div>
-                <div class="metric-card-title">Analytical Concordance</div>
-                <p class="metric-card-desc">Benchmarked against CAP, CLIA & NCCN validation reference standards.</p>
-              </div>
-
-              <div class="metric-glass-card">
-                <div class="metric-card-top">
-                  <div class="metric-huge-number">&lt; 0.5%</div>
-                  <div class="metric-icon-box green-glow">
-                    <i class="ph ph-chart-polar"></i>
-                  </div>
-                </div>
-                <div class="metric-card-title">ctDNA Limit of Detection</div>
-                <p class="metric-card-desc">20,000x ultra-deep circulating tumor DNA resolution for minimal residual disease.</p>
-              </div>
-
-              <div class="metric-glass-card">
-                <div class="metric-card-top">
-                  <div class="metric-huge-number">4-Day TAT</div>
-                  <div class="metric-icon-box gold-glow">
-                    <i class="ph ph-certificate"></i>
-                  </div>
-                </div>
-                <div class="metric-card-title">Rapid Clinical Turnaround</div>
-                <p class="metric-card-desc">Sample-to-actionable molecular report with multidisciplinary tumor board curation.</p>
-              </div>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_ring.jpg" alt="Turnaround Time 3D Visual" class="bio-3d-img" />
             </div>
-
           </div>
 
-          <!-- Bottom Bar & Floating Switcher Widget (from Reference 1) -->
-          <div class="showcase-bottom-bar">
-            <div class="showcase-bottom-left-info">
-              <span class="info-pill"><i class="ph ph-check-circle"></i> Dual ISO 15189 Aligned</span>
-              <span class="info-pill"><i class="ph ph-cpu"></i> Automated Specimen-to-Report</span>
-              <span class="info-pill"><i class="ph ph-seal-check"></i> CAP / NABL Accredited Core</span>
+          <!-- Box 3: CAP / NABL Quality Accreditations -->
+          <div class="bio-card glass-dark">
+            <div class="bio-card-text">
+              <div class="bio-number bio-badge-num">CAP / NABL</div>
+              <div class="bio-card-label">Accredited Quality Standards</div>
             </div>
-
-            <!-- Floating Switcher Widget -->
-            <div class="floating-switcher-widget" id="floatingSwitcherWidget" role="button" tabindex="0" aria-label="Toggle next video feed">
-              <div class="widget-preview-box">
-                <video class="thumb-mini-video" id="thumbMiniVideo" muted playsinline loop preload="auto">
-                  <source src="/assets/videos/8381459-hd_1920_1080_25fps.mp4" type="video/mp4">
-                </video>
-                <div class="thumb-play-icon"><i class="ph ph-play-fill"></i></div>
-                <div class="widget-progress-track">
-                  <div class="widget-progress-fill" id="widgetProgressFill"></div>
-                </div>
-              </div>
-
-              <div class="widget-content">
-                <div class="widget-meta">
-                  <span class="widget-badge" id="widgetFeedBadge">FEED 02 OF 02</span>
-                  <span class="widget-status">Click to switch</span>
-                </div>
-                <h4 class="widget-title" id="widgetStreamTitle">Automated NGS Cleanroom Core</h4>
-                <p class="widget-desc" id="widgetStreamDesc">Robotic plate automation & high-throughput Illumina NovaSeq flowcells.</p>
-              </div>
-
-              <div class="widget-controls">
-                <button class="widget-nav-btn" id="widgetPrevBtn" aria-label="Previous Feed" title="Previous Feed">
-                  <i class="ph ph-caret-left"></i>
-                </button>
-                <button class="widget-nav-btn" id="widgetNextBtn" aria-label="Next Feed" title="Next Feed">
-                  <i class="ph ph-caret-right"></i>
-                </button>
-              </div>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_ribbon.jpg" alt="Quality Standards 3D Visual" class="bio-3d-img" />
             </div>
+          </div>
 
+          <!-- Box 4: Signature White Contrast Card (From Existing Content) -->
+          <div class="bio-card card-solid-white">
+            <div class="bio-card-text">
+              <div class="bio-feature-title">CLINICAL DECISION INTELLIGENCE &amp; TUMOR BOARD REPORTS</div>
+              <div class="bio-feature-sub">FDA-Approved Targeted Therapies &bull; Open Clinical Trial Matching</div>
+            </div>
+            <div class="bio-visual-container">
+              <img src="assets/images/impact_icon_sphere.jpg" alt="Tumor Board Reports 3D Visual" class="bio-3d-img" />
+            </div>
           </div>
 
         </div>
@@ -3441,207 +2931,6 @@
       document.getElementById('paper-frame').src = '';
       document.body.style.overflow = 'auto';
     }
-  </script>
-
-  <!-- Dual-Video Showcase Controller -->
-  <script>
-    (function () {
-      const streams = [
-        {
-          id: 0,
-          title: "Microscopic Biomarker Discovery",
-          feedBadge: "FEED 01 OF 02",
-          telemetryStep: "PHASE 01 OF 02",
-          telemetryTitle: "Specimen Isolation & Cellular Morphology",
-          telemetryWorkflow: "100x Immersion Oil Neoplasm Screening",
-          telemetryPurity: "> 20% Neoplastic Nuclei Passed",
-          videoElId: "videoStream1",
-          src: "/assets/videos/8325990-hd_1920_1080_30fps.mp4",
-          altTitle: "Microscopic Biomarker Discovery",
-          altDesc: "Specimen micro-dissection & cellular viability assay."
-        },
-        {
-          id: 1,
-          title: "Automated NGS Cleanroom Core",
-          feedBadge: "FEED 02 OF 02",
-          telemetryStep: "PHASE 02 OF 02",
-          telemetryTitle: "Automated 20,000x Ultra-Deep Sequencing",
-          telemetryWorkflow: "Illumina NovaSeq & Thermo Genexus Integrated",
-          telemetryPurity: "Mean Target Coverage: 1,500x - 20,000x ctDNA",
-          videoElId: "videoStream2",
-          src: "/assets/videos/8381459-hd_1920_1080_25fps.mp4",
-          altTitle: "Automated NGS Cleanroom Core",
-          altDesc: "Robotic plate automation & high-throughput Illumina NovaSeq flowcells."
-        }
-      ];
-
-      let currentStream = 0;
-      let isMuted = true;
-      let lastSwitchTime = Date.now();
-
-      const vid1 = document.getElementById("videoStream1");
-      const vid2 = document.getElementById("videoStream2");
-      const thumbMiniVideo = document.getElementById("thumbMiniVideo");
-      const progressFill = document.getElementById("widgetProgressFill");
-
-      const tab0 = document.getElementById("streamTab0");
-      const tab1 = document.getElementById("streamTab1");
-      const audioBtn = document.getElementById("audioToggleBtn");
-      const audioIcon = document.getElementById("audioIcon");
-      const audioText = document.getElementById("audioText");
-
-      const telemetryStep = document.getElementById("telemetryStep");
-      const telemetryTitle = document.getElementById("telemetryTitle");
-      const telemetryWorkflow = document.getElementById("telemetryWorkflow");
-      const telemetryPurity = document.getElementById("telemetryPurity");
-
-      const widgetFeedBadge = document.getElementById("widgetFeedBadge");
-      const widgetStreamTitle = document.getElementById("widgetStreamTitle");
-      const widgetStreamDesc = document.getElementById("widgetStreamDesc");
-      const floatingSwitcherWidget = document.getElementById("floatingSwitcherWidget");
-      const cycleStreamBtn = document.getElementById("cycleStreamBtn");
-      const widgetPrevBtn = document.getElementById("widgetPrevBtn");
-      const widgetNextBtn = document.getElementById("widgetNextBtn");
-
-      function updateActiveStream(index) {
-        if (index === currentStream && (Date.now() - lastSwitchTime < 1000)) return;
-        currentStream = index;
-        lastSwitchTime = Date.now();
-        const otherIndex = 1 - currentStream;
-
-        // Crossfade videos
-        if (currentStream === 0) {
-          if (vid1) {
-            vid1.classList.add("active");
-            vid1.play().catch(() => {});
-          }
-          if (vid2) {
-            vid2.classList.remove("active");
-          }
-        } else {
-          if (vid2) {
-            vid2.classList.add("active");
-            vid2.play().catch(() => {});
-          }
-          if (vid1) {
-            vid1.classList.remove("active");
-          }
-        }
-
-        // Update tabs
-        if (tab0 && tab1) {
-          tab0.classList.toggle("active", currentStream === 0);
-          tab0.setAttribute("aria-selected", currentStream === 0 ? "true" : "false");
-          tab1.classList.toggle("active", currentStream === 1);
-          tab1.setAttribute("aria-selected", currentStream === 1 ? "true" : "false");
-        }
-
-        // Update Dynamic Telemetry Box
-        const curData = streams[currentStream];
-        if (telemetryStep) telemetryStep.textContent = curData.telemetryStep;
-        if (telemetryTitle) telemetryTitle.textContent = curData.telemetryTitle;
-        if (telemetryWorkflow) telemetryWorkflow.textContent = curData.telemetryWorkflow;
-        if (telemetryPurity) telemetryPurity.textContent = curData.telemetryPurity;
-
-        // Update Floating Switcher Widget to show the OTHER stream
-        const nextData = streams[otherIndex];
-        if (widgetFeedBadge) widgetFeedBadge.textContent = nextData.feedBadge;
-        if (widgetStreamTitle) widgetStreamTitle.textContent = nextData.altTitle;
-        if (widgetStreamDesc) widgetStreamDesc.textContent = nextData.altDesc;
-
-        // Update preview thumbnail video source
-        if (thumbMiniVideo) {
-          const currentSrc = thumbMiniVideo.getAttribute("src") || (thumbMiniVideo.querySelector("source") ? thumbMiniVideo.querySelector("source").getAttribute("src") : "");
-          if (currentSrc !== nextData.src) {
-            thumbMiniVideo.src = nextData.src;
-            thumbMiniVideo.load();
-            thumbMiniVideo.play().catch(() => {});
-          }
-        }
-      }
-
-      function toggleStream() {
-        updateActiveStream(1 - currentStream);
-      }
-
-      // Event listeners
-      if (tab0) tab0.addEventListener("click", () => updateActiveStream(0));
-      if (tab1) tab1.addEventListener("click", () => updateActiveStream(1));
-      if (cycleStreamBtn) cycleStreamBtn.addEventListener("click", toggleStream);
-
-      if (floatingSwitcherWidget) {
-        floatingSwitcherWidget.addEventListener("click", (e) => {
-          if (e.target.closest("#widgetPrevBtn") || e.target.closest("#widgetNextBtn")) return;
-          toggleStream();
-        });
-      }
-      if (widgetPrevBtn) widgetPrevBtn.addEventListener("click", (e) => { e.stopPropagation(); toggleStream(); });
-      if (widgetNextBtn) widgetNextBtn.addEventListener("click", (e) => { e.stopPropagation(); toggleStream(); });
-
-      // Audio Toggle
-      if (audioBtn) {
-        audioBtn.addEventListener("click", () => {
-          isMuted = !isMuted;
-          if (vid1) vid1.muted = isMuted;
-          if (vid2) vid2.muted = isMuted;
-          if (audioIcon) {
-            audioIcon.className = isMuted ? "ph ph-speaker-simple-slash" : "ph ph-speaker-simple-high";
-          }
-          if (audioText) {
-            audioText.textContent = isMuted ? "Muted" : "Sound On";
-          }
-        });
-      }
-
-      // Continuous progress tracking & auto cross-fade
-      function syncProgress() {
-        const activeVid = currentStream === 0 ? vid1 : vid2;
-        if (activeVid && activeVid.duration) {
-          const pct = Math.min(100, Math.max(0, (activeVid.currentTime / activeVid.duration) * 100));
-          if (progressFill) progressFill.style.width = pct + "%";
-
-          // Auto switch to other stream when current video nears end
-          if (activeVid.duration > 3 && (activeVid.duration - activeVid.currentTime < 0.35)) {
-            if (Date.now() - lastSwitchTime > 3000) {
-              toggleStream();
-            }
-          }
-        }
-        requestAnimationFrame(syncProgress);
-      }
-
-      // Initialize
-      function initShowcase() {
-        if (vid1) vid1.play().catch(() => {});
-        if (vid2) vid2.play().catch(() => {});
-        if (thumbMiniVideo) thumbMiniVideo.play().catch(() => {});
-        requestAnimationFrame(syncProgress);
-
-        const showcaseCard = document.querySelector(".video-showcase-card");
-        if (showcaseCard && "IntersectionObserver" in window) {
-          const obs = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                if (currentStream === 0 && vid1) vid1.play().catch(() => {});
-                if (currentStream === 1 && vid2) vid2.play().catch(() => {});
-                if (thumbMiniVideo) thumbMiniVideo.play().catch(() => {});
-              } else {
-                if (vid1) vid1.pause();
-                if (vid2) vid2.pause();
-                if (thumbMiniVideo) thumbMiniVideo.pause();
-              }
-            });
-          }, { threshold: 0.1 });
-          obs.observe(showcaseCard);
-        }
-      }
-
-      if (document.readyState === "loading") {
-        document.addEventListener("DOMContentLoaded", initShowcase);
-      } else {
-        initShowcase();
-      }
-    })();
   </script>
 
   <!-- Removed Three.js for 3D DNA as we are using an image -->
