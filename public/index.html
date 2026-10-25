@@ -880,8 +880,375 @@
     @keyframes floatCard3 { 0% { transform: translateY(0); } 100% { transform: translateY(-6px); } }
     @keyframes floatCard4 { 0% { transform: translateY(0); } 100% { transform: translateY(6px); } }
 
-    /* ==================== MOBILE RESPONSIVE ADAPTATION ==================== */
-    @media (max-width: 991px) {
+    /* ==================== LAPTOP & SCALED DISPLAY RESPONSIVE RULES (1025px - 1440px) ==================== */
+    @media (max-width: 1440px) {
+      .header {
+        padding: 0.85rem 0 !important;
+      }
+      .header-container {
+        padding: 0 3% !important;
+      }
+      .logo-icon {
+        width: 58px !important;
+        height: 68px !important;
+        margin-top: -2px !important;
+      }
+      .logo-icon img {
+        width: 58px !important;
+        height: 58px !important;
+      }
+      .logo-text-block {
+        padding-top: 8px !important;
+      }
+      .logo-main-text {
+        font-size: 2rem !important;
+      }
+      .logo-subtext {
+        font-size: 0.68rem !important;
+        letter-spacing: 0.16em !important;
+      }
+      .main-nav ul {
+        gap: 1.5rem !important;
+        padding: 0.42rem 1.3rem !important;
+      }
+      .main-nav a {
+        font-size: 0.9rem !important;
+      }
+      .header-actions .btn {
+        font-size: 0.86rem !important;
+        padding: 0.55rem 1.35rem !important;
+      }
+
+      .hero {
+        min-height: auto !important;
+        padding-top: 110px !important;
+        padding-bottom: 2rem !important;
+      }
+      .hero-container {
+        padding: 0 3% !important;
+        gap: 2rem !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr) !important;
+      }
+      .hero-title {
+        font-size: clamp(2.3rem, 2.7vw, 3rem) !important;
+        margin-bottom: 0.85rem !important;
+        line-height: 1.12 !important;
+      }
+      .hero-desc {
+        font-size: 0.95rem !important;
+        line-height: 1.52 !important;
+        margin-bottom: 1.25rem !important;
+        max-width: 480px !important;
+      }
+      .hero-cta-group {
+        margin-bottom: 1.35rem !important;
+        gap: 0.85rem !important;
+      }
+      .hero-cta-group .btn-gradient,
+      .hero-cta-group .btn-white {
+        font-size: 0.9rem !important;
+        padding: 0.68rem 1.45rem !important;
+      }
+      .hero-trust-matrix {
+        padding-top: 1rem !important;
+        gap: clamp(1rem, 1.8vw, 1.8rem) !important;
+      }
+      .trust-value {
+        font-size: clamp(1.6rem, 1.9vw, 1.95rem) !important;
+      }
+      .trust-label {
+        font-size: 0.78rem !important;
+      }
+      .trust-label em {
+        font-size: 0.7rem !important;
+      }
+      .trust-divider {
+        height: 34px !important;
+      }
+
+      .genomic-matrix-wrapper {
+        gap: 0.55rem !important;
+      }
+      .pipeline-stepper-card {
+        padding: 0.65rem 1.1rem 0.55rem !important;
+        gap: 0.45rem !important;
+      }
+      .pipeline-title {
+        font-size: 0.84rem !important;
+      }
+      .pipeline-meta {
+        font-size: 0.7rem !important;
+        padding: 0.18rem 0.55rem !important;
+      }
+      button.stage-step {
+        padding: 0.28rem 0.5rem !important;
+        gap: 0.28rem !important;
+      }
+      .step-num {
+        font-size: 0.58rem !important;
+        padding: 0.08rem 0.26rem !important;
+      }
+      .step-label {
+        font-size: 0.64rem !important;
+      }
+
+      .dna-stage-core {
+        height: 420px !important;
+      }
+      .dna-model {
+        width: 250px !important;
+        height: 380px !important;
+      }
+      .orbit-outer {
+        width: 340px !important;
+        height: 340px !important;
+      }
+      .orbit-inner {
+        width: 250px !important;
+        height: 250px !important;
+      }
+      .dna-chroma-glow {
+        width: 300px !important;
+        height: 350px !important;
+        filter: blur(36px) !important;
+      }
+
+      .px-intel-card {
+        padding: 0.6rem 0.8rem !important;
+        gap: 0.3rem !important;
+        border-radius: 12px !important;
+      }
+      .px-card-icon {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.9rem !important;
+        border-radius: 8px !important;
+      }
+      .px-card-category {
+        font-size: 0.56rem !important;
+      }
+      .px-card-title-group h4 {
+        font-size: 0.84rem !important;
+      }
+      .px-card-summary {
+        font-size: 0.7rem !important;
+        line-height: 1.32 !important;
+      }
+      .b-chip {
+        font-size: 0.6rem !important;
+        padding: 0.12rem 0.38rem !important;
+      }
+      .m-tag {
+        font-size: 0.62rem !important;
+        padding: 0.12rem 0.4rem !important;
+      }
+
+      .px-card-tl {
+        top: 2px !important;
+        left: 0 !important;
+        width: clamp(215px, 15vw, 245px) !important;
+      }
+      .px-card-tr {
+        top: 2px !important;
+        right: 0 !important;
+        width: clamp(210px, 14.5vw, 240px) !important;
+      }
+      .px-card-bl {
+        bottom: 2px !important;
+        left: 0 !important;
+        width: clamp(215px, 15vw, 245px) !important;
+      }
+      .px-card-br {
+        bottom: 2px !important;
+        right: 0 !important;
+        width: clamp(210px, 14.5vw, 240px) !important;
+      }
+    }
+
+    @media (max-width: 1280px) {
+      .header {
+        padding: 0.7rem 0 !important;
+      }
+      .header-container {
+        padding: 0 2.5% !important;
+      }
+      .logo-icon {
+        width: 50px !important;
+        height: 58px !important;
+        margin-top: -2px !important;
+      }
+      .logo-icon img {
+        width: 50px !important;
+        height: 50px !important;
+      }
+      .logo-text-block {
+        padding-top: 6px !important;
+      }
+      .logo-main-text {
+        font-size: 1.75rem !important;
+      }
+      .logo-subtext {
+        font-size: 0.6rem !important;
+        letter-spacing: 0.14em !important;
+      }
+      .main-nav ul {
+        gap: 1.15rem !important;
+        padding: 0.35rem 1.1rem !important;
+      }
+      .main-nav a {
+        font-size: 0.84rem !important;
+      }
+      .header-actions .btn {
+        font-size: 0.82rem !important;
+        padding: 0.48rem 1.15rem !important;
+      }
+
+      .hero {
+        padding-top: 100px !important;
+        padding-bottom: 1.5rem !important;
+      }
+      .hero-container {
+        padding: 0 2.5% !important;
+        gap: 1.5rem !important;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr) !important;
+      }
+      .hero-title {
+        font-size: 2.2rem !important;
+        margin-bottom: 0.65rem !important;
+        line-height: 1.1 !important;
+      }
+      .hero-desc {
+        font-size: 0.88rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 1rem !important;
+        max-width: 420px !important;
+      }
+      .hero-cta-group {
+        margin-bottom: 1rem !important;
+        gap: 0.65rem !important;
+      }
+      .hero-cta-group .btn-gradient,
+      .hero-cta-group .btn-white {
+        font-size: 0.84rem !important;
+        padding: 0.58rem 1.25rem !important;
+      }
+      .hero-trust-matrix {
+        padding-top: 0.85rem !important;
+        gap: 1rem !important;
+      }
+      .trust-value {
+        font-size: 1.5rem !important;
+      }
+      .trust-label {
+        font-size: 0.72rem !important;
+      }
+      .trust-label em {
+        font-size: 0.64rem !important;
+      }
+      .trust-divider {
+        height: 28px !important;
+      }
+
+      .genomic-matrix-wrapper {
+        gap: 0.45rem !important;
+      }
+      .pipeline-stepper-card {
+        padding: 0.55rem 0.95rem 0.45rem !important;
+        gap: 0.35rem !important;
+      }
+      .pipeline-title {
+        font-size: 0.8rem !important;
+      }
+      .pipeline-meta {
+        font-size: 0.68rem !important;
+        padding: 0.15rem 0.5rem !important;
+      }
+      button.stage-step {
+        padding: 0.22rem 0.42rem !important;
+        gap: 0.22rem !important;
+      }
+      .step-num {
+        font-size: 0.55rem !important;
+        padding: 0.06rem 0.22rem !important;
+      }
+      .step-label {
+        font-size: 0.6rem !important;
+      }
+
+      .dna-stage-core {
+        height: 380px !important;
+      }
+      .dna-model {
+        width: 220px !important;
+        height: 340px !important;
+      }
+      .orbit-outer {
+        width: 300px !important;
+        height: 300px !important;
+      }
+      .orbit-inner {
+        width: 220px !important;
+        height: 220px !important;
+      }
+      .dna-chroma-glow {
+        width: 270px !important;
+        height: 310px !important;
+      }
+
+      .px-intel-card {
+        padding: 0.48rem 0.68rem !important;
+        gap: 0.22rem !important;
+        border-radius: 11px !important;
+      }
+      .px-card-icon {
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 0.82rem !important;
+        border-radius: 6px !important;
+      }
+      .px-card-category {
+        font-size: 0.52rem !important;
+      }
+      .px-card-title-group h4 {
+        font-size: 0.78rem !important;
+      }
+      .px-card-summary {
+        font-size: 0.65rem !important;
+        line-height: 1.25 !important;
+      }
+      .b-chip {
+        font-size: 0.56rem !important;
+        padding: 0.08rem 0.32rem !important;
+      }
+      .m-tag {
+        font-size: 0.58rem !important;
+        padding: 0.1rem 0.35rem !important;
+      }
+
+      .px-card-tl {
+        width: 205px !important;
+        left: 0 !important;
+        top: 0 !important;
+      }
+      .px-card-tr {
+        width: 200px !important;
+        right: 0 !important;
+        top: 0 !important;
+      }
+      .px-card-bl {
+        width: 205px !important;
+        left: 0 !important;
+        bottom: 0 !important;
+      }
+      .px-card-br {
+        width: 200px !important;
+        right: 0 !important;
+        bottom: 0 !important;
+      }
+    }
+
+    /* ==================== MOBILE & TABLET RESPONSIVE ADAPTATION (<= 1024px) ==================== */
+    @media (max-width: 1024px) {
       .logo-icon {
         width: 44px !important;
         height: 54px !important;
