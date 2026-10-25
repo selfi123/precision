@@ -5,15 +5,11 @@ const path = require('path');
 const PORT = process.env.PORT || 3002;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 
-// Resend Configuration (For High-Priority Contact Inquiries)
+// Resend Configuration
 // Configured via process.env.RESEND_API_KEY in Render.com Environment Variables
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const NOTIFICATION_EMAIL = process.env.NOTIFICATION_EMAIL || 'admin@precisionalleledx.in';
 const RESEND_FROM_EMAIL = process.env.RESEND_FROM || 'Precision Allele.Dx <onboarding@resend.dev>';
-
-// Google Sheets & Silent Subscriber Storage (No email notifications to owner)
-const GOOGLE_SHEET_WEBHOOK_URL = process.env.GOOGLE_SHEET_WEBHOOK_URL || '';
-const SUBSCRIBERS_FILE = path.join(__dirname, 'data', 'subscribers.csv');
 
 const mimeTypes = {
   '.html': 'text/html',
@@ -166,101 +162,6 @@ async function handleContactInquiry(request, response) {
   });
 }
 
-function saveSubscriberLocally(email, timestamp) {
-  try {
-    const dataDir = path.dirname(SUBSCRIBERS_FILE);
-    if (!fs.existsSync(dataDir)) {
-      fs.mkdirSync(dataDir, { recursive: true });
-    }
-    
-    // Check if file exists, if not write CSV header
-    if (!fs.existsSync(SUBSCRIBERS_FILE)) {
-      fs.writeFileSync(SUBSCRIBERS_FILE, 'Timestamp,Email,Source\n', 'utf8');
-    }
-
-    // Check if email already exists (prevent duplicate rows)
-    const content = fs.readFileSync(SUBSCRIBERS_FILE, 'utf8');
-    if (content.toLowerCase().includes(email.toLowerCase())) {
-      console.log(`[Subscribers] ${email} is already in subscribers.csv (skipped duplicate).`);
-      return false;
-    }
-
-    fs.appendFileSync(SUBSCRIBERS_FILE, `"${timestamp}","${email}","Website Footer Newsletter"\n`, 'utf8');
-    console.log(`[Subscribers] Successfully appended ${email} to data/subscribers.csv`);
-    return true;
-  } catch (err) {
-    console.warn('[Subscribers Warning] Could not save to local CSV:', err.message);
-    return false;
-  }
-}
-
-async function handleNewsletterSubscription(request, response) {
-  let body = '';
-  request.on('data', chunk => {
-    body += chunk;
-    if (body.length > 1e6) {
-      request.destroy();
-    }
-  });
-
-  request.on('end', async () => {
-    response.setHeader('Access-Control-Allow-Origin', '*');
-    response.setHeader('Content-Type', 'application/json');
-
-    try {
-      const data = JSON.parse(body || '{}');
-      const { email } = data;
-
-      if (!email || !email.includes('@') || !email.includes('.')) {
-        response.writeHead(400);
-        return response.end(JSON.stringify({ success: false, error: 'A valid email address is required.' }));
-      }
-
-      const safeEmail = escapeHtml(email.trim());
-      const receivedDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'medium' }) + ' IST';
-
-      console.log(`[Newsletter Subscription] New registration: ${safeEmail} at ${receivedDate}`);
-
-      // 1. Silent Local CSV Backup (deduplicated)
-      saveSubscriberLocally(safeEmail, receivedDate);
-
-      // 2. Real-time Google Sheet Webhook Sync (Zero email notifications sent to owner)
-      if (GOOGLE_SHEET_WEBHOOK_URL) {
-        try {
-          console.log(`[Google Sheets] Forwarding ${safeEmail} to Google Sheet...`);
-          await fetch(GOOGLE_SHEET_WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email: safeEmail,
-              timestamp: receivedDate,
-              source: 'Website Footer Newsletter'
-            })
-          });
-          console.log('[Google Sheets] Appended subscriber to Google Sheet.');
-        } catch (sheetErr) {
-          console.warn('[Google Sheets Warning] Could not sync with Google Sheet:', sheetErr.message);
-        }
-      }
-
-      // Instant confirmation to user with zero inbox spam for owner
-      response.writeHead(200);
-      return response.end(JSON.stringify({
-        success: true,
-        message: 'Thank you for subscribing! You are now enrolled in Precision Oncology Monthly Intelligence.'
-      }));
-
-    } catch (err) {
-      console.error('[Server Error in Newsletter Handler]', err);
-      response.writeHead(500);
-      return response.end(JSON.stringify({
-        success: false,
-        error: 'An internal error occurred while processing your subscription.'
-      }));
-    }
-  });
-}
-
 const server = http.createServer((request, response) => {
   console.log(`${request.method} ${request.url}`);
 
@@ -278,11 +179,6 @@ const server = http.createServer((request, response) => {
   const cleanUrl = request.url.split('?')[0];
   if (request.method === 'POST' && (cleanUrl === '/api/contact' || cleanUrl === '/api/inquiry')) {
     return handleContactInquiry(request, response);
-  }
-
-  // API Endpoint: /api/newsletter or /api/subscribe
-  if (request.method === 'POST' && (cleanUrl === '/api/newsletter' || cleanUrl === '/api/subscribe')) {
-    return handleNewsletterSubscription(request, response);
   }
 
   // Static File Serving

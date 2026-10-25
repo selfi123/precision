@@ -300,60 +300,14 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoPlay();
   }
 
-  // ==================== FOOTER NEWSLETTER SUBSCRIPTION ====================
-  const newsletterForm = document.getElementById('newsletter-form');
-  const newsletterStatus = document.getElementById('newsletter-status');
-  const newsletterBtn = document.getElementById('newsletter-btn');
-
-  if (newsletterForm) {
-    newsletterForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const emailInput = document.getElementById('newsletter-email');
-      const email = emailInput ? emailInput.value.trim() : '';
-
-      if (!email || !email.includes('@')) {
-        showNewsletterStatus('Please enter a valid clinical or personal email address.', 'error');
-        return;
-      }
-
-      const origHtml = newsletterBtn ? newsletterBtn.innerHTML : '';
-      if (newsletterBtn) {
-        newsletterBtn.disabled = true;
-        newsletterBtn.innerHTML = '<span>Subscribing...</span> <i class="ph ph-spinner ph-spin"></i>';
-      }
-
-      try {
-        const response = await fetch('/api/newsletter', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email })
-        });
-
-        const result = await response.json();
-        if (result.success) {
-          showNewsletterStatus(result.message || 'Thank you for subscribing! Welcome to Precision Oncology Monthly Intelligence.', 'success');
-          newsletterForm.reset();
-        } else {
-          showNewsletterStatus(result.error || 'Could not process subscription. Please write to admin@precisionalleledx.in', 'error');
-        }
-      } catch (err) {
-        console.error('Newsletter submission error:', err);
-        // Fallback for static environment
-        showNewsletterStatus('Thank you for subscribing! Welcome to Precision Oncology Monthly Intelligence.', 'success');
-        newsletterForm.reset();
-      } finally {
-        if (newsletterBtn) {
-          newsletterBtn.disabled = false;
-          newsletterBtn.innerHTML = origHtml;
-        }
+  // Portal CTA Button: smooth scroll and autofill consultation message
+  const portalCtaBtn = document.querySelector('.portal-cta-btn');
+  if (portalCtaBtn) {
+    portalCtaBtn.addEventListener('click', () => {
+      const messageField = document.getElementById('contact-message');
+      if (messageField && !messageField.value.trim()) {
+        messageField.value = 'Hello, I would like to request access / a demonstration of the Digital Physician Portal and Specimen Intelligence Suite.';
       }
     });
-
-    function showNewsletterStatus(msg, type) {
-      if (!newsletterStatus) return;
-      newsletterStatus.className = `newsletter-status-msg status-${type}`;
-      newsletterStatus.innerHTML = `<i class="ph ${type === 'success' ? 'ph-check-circle' : 'ph-warning-circle'}"></i> <span>${msg}</span>`;
-      newsletterStatus.style.display = 'block';
-    }
   }
 });
