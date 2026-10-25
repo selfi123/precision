@@ -299,15 +299,4 @@ document.addEventListener('DOMContentLoaded', () => {
     setActiveStage(1, false);
     startAutoPlay();
   }
-
-  // Portal CTA Button: smooth scroll and autofill consultation message
-  const portalCtaBtn = document.querySelector('.portal-cta-btn');
-  if (portalCtaBtn) {
-    portalCtaBtn.addEventListener('click', () => {
-      const messageField = document.getElementById('contact-message');
-      if (messageField && !messageField.value.trim()) {
-        messageField.value = 'Hello, I would like to request access / a demonstration of the Digital Physician Portal and Specimen Intelligence Suite.';
-      }
-    });
-  }
 });
