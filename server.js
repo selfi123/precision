@@ -162,6 +162,87 @@ async function handleContactInquiry(request, response) {
   });
 }
 
+async function handleNewsletterSubscription(request, response) {
+  let body = '';
+  request.on('data', chunk => {
+    body += chunk;
+    if (body.length > 1e6) {
+      request.destroy();
+    }
+  });
+
+  request.on('end', async () => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Content-Type', 'application/json');
+
+    try {
+      const data = JSON.parse(body || '{}');
+      const { email } = data;
+
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        response.writeHead(400);
+        return response.end(JSON.stringify({ success: false, error: 'A valid email address is required.' }));
+      }
+
+      const safeEmail = escapeHtml(email.trim());
+      const receivedDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Kolkata', dateStyle: 'full', timeStyle: 'medium' }) + ' IST';
+
+      console.log(`[Newsletter Subscription] New subscriber registered: ${safeEmail} at ${receivedDate}`);
+
+      // Dispatch alert email to admin if RESEND_API_KEY is configured
+      if (RESEND_API_KEY) {
+        try {
+          const htmlContent = `
+            <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+              <div style="background: linear-gradient(135deg, #0088ff 0%, #7b2fbe 100%); padding: 24px; color: #ffffff;">
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; opacity: 0.85; margin-bottom: 4px;">Precision Allele.Dx</div>
+                <h1 style="margin: 0; font-size: 20px; font-weight: 700; color: #ffffff;">New Newsletter Subscriber</h1>
+              </div>
+              <div style="padding: 24px;">
+                <p style="font-size: 15px; color: #334155; line-height: 1.5;">A new clinical professional or researcher has subscribed to the Precision Oncology Intelligence Digest:</p>
+                <div style="background: #f8fafc; border-left: 4px solid #00E5FF; padding: 12px 16px; border-radius: 6px; font-size: 16px; font-weight: 600; color: #0f172a; margin: 16px 0;">
+                  ${safeEmail}
+                </div>
+                <div style="font-size: 13px; color: #64748b;">Subscribed at: ${receivedDate}</div>
+              </div>
+            </div>
+          `;
+
+          await fetch('https://api.resend.com/emails', {
+            method: 'POST',
+            headers: {
+              'Authorization': `Bearer ${RESEND_API_KEY}`,
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              from: RESEND_FROM_EMAIL,
+              to: [NOTIFICATION_EMAIL],
+              subject: `[New Newsletter Subscriber] ${safeEmail}`,
+              html: htmlContent
+            })
+          });
+        } catch (mailErr) {
+          console.warn('[Resend Warning] Could not notify admin of subscription:', mailErr.message);
+        }
+      }
+
+      response.writeHead(200);
+      return response.end(JSON.stringify({
+        success: true,
+        message: 'Thank you for subscribing! You are now enrolled in Precision Oncology Monthly Intelligence.'
+      }));
+
+    } catch (err) {
+      console.error('[Server Error in Newsletter Handler]', err);
+      response.writeHead(500);
+      return response.end(JSON.stringify({
+        success: false,
+        error: 'An internal error occurred while processing your subscription.'
+      }));
+    }
+  });
+}
+
 const server = http.createServer((request, response) => {
   console.log(`${request.method} ${request.url}`);
 
@@ -179,6 +260,11 @@ const server = http.createServer((request, response) => {
   const cleanUrl = request.url.split('?')[0];
   if (request.method === 'POST' && (cleanUrl === '/api/contact' || cleanUrl === '/api/inquiry')) {
     return handleContactInquiry(request, response);
+  }
+
+  // API Endpoint: /api/newsletter or /api/subscribe
+  if (request.method === 'POST' && (cleanUrl === '/api/newsletter' || cleanUrl === '/api/subscribe')) {
+    return handleNewsletterSubscription(request, response);
   }
 
   // Static File Serving
