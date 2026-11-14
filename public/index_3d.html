@@ -1985,6 +1985,72 @@
       box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), 0 0 45px rgba(0, 229, 255, 0.45);
     }
 
+    /* Box 4: Nationwide Genomic Reach Signature Glow Card */
+    .bio-card.card-genomic-reach {
+      background: linear-gradient(135deg, rgba(12, 38, 74, 0.9) 0%, rgba(5, 18, 38, 0.96) 100%);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(0, 229, 255, 0.65);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(0, 229, 255, 0.25), inset 0 0 16px rgba(0, 229, 255, 0.1);
+      padding: 1.25rem 1.45rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .bio-card.card-genomic-reach:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 229, 255, 0.95);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.65), 0 0 42px rgba(0, 229, 255, 0.45), inset 0 0 20px rgba(0, 229, 255, 0.18);
+    }
+
+    .bio-reach-text {
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-heading);
+      font-size: clamp(1.15rem, 1.45vw, 1.42rem);
+      font-weight: 700;
+      line-height: 1.22;
+      letter-spacing: -0.015em;
+      flex-shrink: 0;
+    }
+
+    .reach-title-white {
+      color: #FFFFFF;
+    }
+
+    .reach-title-cyan {
+      color: #00E5FF;
+      text-shadow: 0 0 14px rgba(0, 229, 255, 0.6);
+    }
+
+    .bio-reach-divider {
+      width: 2px;
+      height: 68px;
+      background: #00E5FF;
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.8), 0 0 20px rgba(0, 229, 255, 0.4);
+      border-radius: 2px;
+      margin: 0 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .bio-reach-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      height: 100%;
+    }
+
+    .reach-map-glow-img {
+      height: 118px;
+      width: auto;
+      max-width: 130px;
+      object-fit: contain;
+      mix-blend-mode: screen;
+      filter: drop-shadow(0 0 12px rgba(0, 229, 255, 0.55));
+    }
+
     .bio-card-text {
       display: flex;
       flex-direction: column;
@@ -3379,14 +3445,16 @@
             </div>
           </div>
 
-          <!-- Box 4: Signature White Contrast Card (From Existing Content) -->
-          <div class="bio-card card-solid-white">
-            <div class="bio-card-text">
-              <div class="bio-feature-title">CLINICAL DECISION INTELLIGENCE &amp; TUMOR BOARD REPORTS</div>
-              <div class="bio-feature-sub">FDA-Approved Targeted Therapies &bull; Open Clinical Trial Matching</div>
+          <!-- Box 4: Nationwide Genomic Reach Card -->
+          <div class="bio-card card-genomic-reach">
+            <div class="bio-reach-text">
+              <span class="reach-title-white">Nationwide</span>
+              <span class="reach-title-cyan">Genomic</span>
+              <span class="reach-title-white">Reach</span>
             </div>
-            <div class="bio-visual-container">
-              <img src="assets/images/impact_icon_sphere.jpg" alt="Tumor Board Reports 3D Visual" class="bio-3d-img" />
+            <div class="bio-reach-divider"></div>
+            <div class="bio-reach-visual">
+              <img src="assets/images/india_reach_map_perfect.png" alt="Nationwide Genomic Reach Across India" class="reach-map-glow-img" />
             </div>
           </div>
 
