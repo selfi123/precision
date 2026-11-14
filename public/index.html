@@ -1375,9 +1375,12 @@
         padding: 0 0.5rem !important;
       }
 
-      /* 2. Hero Section Compactness */
+      /* 2. Hero Section Compactness (Eliminates excessive gap below header) */
       .hero {
-        padding-top: 84px !important;
+        min-height: auto !important;
+        height: auto !important;
+        display: block !important;
+        padding-top: 76px !important;
         padding-bottom: 2rem !important;
       }
       .hero-container {
