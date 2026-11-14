@@ -2315,7 +2315,352 @@
       margin: 0 !important;
     }
 
+    /* ============================================================
+       COMPREHENSIVE NATIVE MOBILE OPTIMIZATION (ALL SECTIONS)
+       ============================================================ */
     @media (max-width: 768px) {
+      /* 1. Global Section Spacing & Hierarchy */
+      .section-padding {
+        padding: 3rem 0 !important;
+      }
+      .section-title {
+        font-size: clamp(1.6rem, 5.2vw, 1.95rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.5rem !important;
+      }
+      .section-subtitle {
+        font-size: 0.92rem !important;
+        line-height: 1.55 !important;
+        margin: 0 auto 1.75rem !important;
+        padding: 0 0.5rem !important;
+      }
+
+      /* 2. Hero Section Compactness */
+      .hero {
+        padding-top: 84px !important;
+        padding-bottom: 2rem !important;
+      }
+      .hero-container {
+        padding: 0 4% !important;
+        gap: 1.35rem !important;
+      }
+      .hero-badge {
+        font-size: 0.74rem !important;
+        padding: 0.35rem 0.9rem !important;
+        margin-bottom: 0.85rem !important;
+      }
+      .hero-title {
+        font-size: clamp(2rem, 6.8vw, 2.55rem) !important;
+        line-height: 1.12 !important;
+        margin-bottom: 0.85rem !important;
+      }
+      .hero-desc {
+        font-size: 0.94rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 1.5rem !important;
+        max-width: 100% !important;
+      }
+      .hero-cta-group {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.65rem !important;
+        width: 100% !important;
+        margin-bottom: 1.5rem !important;
+      }
+      .hero-cta-group .btn {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 0.75rem 1.4rem !important;
+        font-size: 0.92rem !important;
+      }
+
+      /* Compact Horizontal 3-Stat Trust Matrix */
+      .hero-trust-matrix {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.4rem !important;
+        padding-top: 1.15rem !important;
+        border-top: 1px solid rgba(226, 232, 240, 0.85) !important;
+        width: 100% !important;
+        text-align: center !important;
+        flex-direction: row !important;
+      }
+      .trust-item {
+        align-items: center !important;
+      }
+      .trust-value {
+        font-size: clamp(1.35rem, 4.4vw, 1.65rem) !important;
+        line-height: 1.1 !important;
+        margin-bottom: 0.15rem !important;
+      }
+      .trust-label {
+        font-size: 0.72rem !important;
+        line-height: 1.25 !important;
+      }
+      .trust-label em {
+        font-size: 0.64rem !important;
+        margin-top: 0.15rem !important;
+      }
+      .trust-divider {
+        display: none !important;
+      }
+
+      /* Hide redundant floating cards on mobile to prevent collision with Vision */
+      .hero-cards-overlay {
+        display: none !important;
+      }
+
+      /* 3. Our Vision Section (Compact & Proportional) */
+      .vision {
+        padding: 2.75rem 0 2.25rem !important;
+      }
+      .vision-box {
+        padding: 1.85rem 1.25rem !important;
+        border-radius: 18px !important;
+        margin: 0 4% !important;
+        width: auto !important;
+        box-shadow: 0 10px 30px -10px rgba(0, 102, 255, 0.1) !important;
+      }
+      .vision-box .section-title {
+        font-size: 1.7rem !important;
+        margin-bottom: 0.65rem !important;
+      }
+      .vision-box .lead {
+        font-size: 0.92rem !important;
+        line-height: 1.6 !important;
+        color: #475569 !important;
+        margin-bottom: 1.2rem !important;
+      }
+      .vision-live-tag {
+        font-size: 0.68rem !important;
+        padding: 0.4rem 0.85rem !important;
+        letter-spacing: 0.04em !important;
+        line-height: 1.35 !important;
+        white-space: normal !important;
+        text-align: center !important;
+        display: inline-flex !important;
+        justify-content: center !important;
+        margin-top: 0.85rem !important;
+        max-width: 100% !important;
+      }
+
+      /* 4. Solutions Section (Compact 1-Column Cards) */
+      .solutions-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.85rem !important;
+      }
+      .solution-card {
+        padding: 1.35rem 1.25rem !important;
+        border-radius: 14px !important;
+      }
+      .solution-card .card-header h3 {
+        font-size: 1.15rem !important;
+        margin-bottom: 0.5rem !important;
+      }
+      .solution-card .card-body ul li {
+        font-size: 0.86rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 0.4rem !important;
+      }
+
+      /* 5. Bioinformatics Section (Compact Streamlined Stat Cards) */
+      .bioinformatics {
+        padding: 3rem 0 2.5rem !important;
+      }
+      .bio-layout {
+        gap: 1.75rem !important;
+        text-align: center !important;
+      }
+      .bio-content {
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .bio-tag {
+        font-size: 0.68rem !important;
+        padding: 0.35rem 0.85rem !important;
+        margin-bottom: 0.85rem !important;
+      }
+      .bio-title {
+        font-size: clamp(1.75rem, 5.5vw, 2.1rem) !important;
+        line-height: 1.2 !important;
+        margin-bottom: 0.75rem !important;
+      }
+      .bio-desc {
+        font-size: 0.92rem !important;
+        line-height: 1.55 !important;
+        margin-bottom: 1.25rem !important;
+        max-width: 100% !important;
+      }
+      .bio-action-btn {
+        padding: 0.75rem 1.5rem !important;
+        font-size: 0.9rem !important;
+        width: 100% !important;
+        max-width: 280px !important;
+        justify-content: center !important;
+        margin: 0 auto 1.5rem !important;
+      }
+      .bio-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.65rem !important;
+        width: 100% !important;
+      }
+      .bio-card {
+        min-height: auto !important;
+        height: auto !important;
+        padding: 0.95rem 1.25rem !important;
+        border-radius: 16px !important;
+      }
+      .bio-card-text {
+        max-width: 72% !important;
+      }
+      .bio-number {
+        font-size: 1.85rem !important;
+        line-height: 1 !important;
+      }
+      .bio-number.bio-badge-num {
+        font-size: 1.45rem !important;
+      }
+      .bio-card-label {
+        font-size: 0.8rem !important;
+        margin-top: 0.25rem !important;
+        line-height: 1.3 !important;
+      }
+      .bio-visual-container {
+        width: 52px !important;
+        height: 52px !important;
+        flex-shrink: 0 !important;
+      }
+      .bio-3d-img {
+        width: 52px !important;
+        height: 52px !important;
+        border-radius: 12px !important;
+      }
+
+      /* Box 4: Nationwide Genomic Reach on Mobile */
+      .bio-card.card-genomic-reach {
+        padding: 0.85rem 1.15rem !important;
+        min-height: auto !important;
+        height: auto !important;
+        border-radius: 16px !important;
+      }
+      .bio-reach-text {
+        font-size: 1.12rem !important;
+        line-height: 1.18 !important;
+      }
+      .bio-reach-divider {
+        height: 48px !important;
+        margin: 0 0.75rem !important;
+      }
+      .bio-reach-visual {
+        height: auto !important;
+      }
+      .reach-map-glow-img {
+        height: 65px !important;
+        max-width: 80px !important;
+        width: auto !important;
+        mix-blend-mode: normal !important;
+      }
+
+      /* 6. Technology Section */
+      .tech-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.85rem !important;
+      }
+      .tech-card {
+        padding: 1.4rem 1.25rem !important;
+        border-radius: 14px !important;
+      }
+      .tech-card .tech-icon {
+        width: 52px !important;
+        height: 52px !important;
+        font-size: 1.6rem !important;
+        margin-bottom: 0.85rem !important;
+      }
+      .tech-card h3 {
+        font-size: 1.2rem !important;
+        margin-bottom: 0.45rem !important;
+      }
+      .tech-card p {
+        font-size: 0.88rem !important;
+        line-height: 1.5 !important;
+      }
+
+      /* 7. Resources Section */
+      .resources-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.15rem !important;
+      }
+      .resource-card {
+        border-radius: 16px !important;
+      }
+      .resource-visual {
+        height: 135px !important;
+      }
+      .resource-body {
+        padding: 1.25rem !important;
+      }
+      .resource-tag {
+        font-size: 0.7rem !important;
+        margin-bottom: 0.45rem !important;
+      }
+      .resource-title {
+        font-size: 1.08rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 0.45rem !important;
+      }
+      .resource-meta {
+        font-size: 0.8rem !important;
+      }
+
+      /* 8. Contact Section */
+      .contact-wrapper {
+        padding: 1.4rem 1rem !important;
+        border-radius: 18px !important;
+        gap: 1.75rem !important;
+      }
+      .contact-info {
+        padding: 0.5rem !important;
+      }
+      .contact-info h3 {
+        font-size: 1.4rem !important;
+        margin-bottom: 0.65rem !important;
+      }
+      .contact-info p {
+        font-size: 0.88rem !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1.15rem !important;
+      }
+      .contact-details li {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.75rem !important;
+      }
+      .contact-cities-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.4rem !important;
+        margin-top: 0.4rem !important;
+      }
+      .city-pill {
+        padding: 0.35rem 0.65rem !important;
+        font-size: 0.76rem !important;
+      }
+      .contact-form-container {
+        padding: 1.25rem !important;
+        border-radius: 14px !important;
+      }
+      .form-group {
+        margin-bottom: 0.9rem !important;
+      }
+      .form-group label {
+        font-size: 0.82rem !important;
+        margin-bottom: 0.3rem !important;
+      }
+      .form-group input,
+      .form-group textarea {
+        padding: 0.65rem 0.85rem !important;
+        font-size: 0.92rem !important;
+      }
+
+      /* 9. Footer Compact Styling */
       .footer {
         padding: 2rem 0 1.25rem !important;
       }
@@ -2335,10 +2680,8 @@
       .link-col ul {
         gap: 0.35rem !important;
       }
-      .solutions-grid {
-        grid-template-columns: 1fr !important;
-      }
     }
+
   
   /* ==========================================================================
      GLOBAL THEME CONTROLLER & ADAPTIVE STYLING
