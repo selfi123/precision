@@ -181,11 +181,11 @@ ul {
 }
 
 .logo-icon {
-  width: 86px;
-  height: 98px;
+  width: 72px;
+  height: 82px;
   display: flex;
   align-items: flex-start;
-  margin-top: -6px;
+  margin-top: -5px;
 }
 
 .logo-icon img {
@@ -198,12 +198,12 @@ ul {
 .logo-text-block {
   display: flex;
   flex-direction: column;
-  padding-top: 14px;
+  padding-top: 10px;
 }
 
 .logo-main-text {
   font-family: 'Poppins', sans-serif;
-  font-size: 2.85rem;
+  font-size: 2.38rem;
   line-height: 1;
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -223,16 +223,16 @@ ul {
 .logo-divider {
   height: 2px;
   background: linear-gradient(90deg, rgba(0, 102, 255, 0.4), rgba(123, 47, 190, 0.4), transparent);
-  margin: 0.45rem 0 0.35rem 0;
+  margin: 0.35rem 0 0.28rem 0;
   width: 100%;
   border-radius: 2px;
 }
 
 .logo-subtext {
   font-family: var(--font-body);
-  font-size: 0.92rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  letter-spacing: 0.24em;
+  letter-spacing: 0.22em;
   background: linear-gradient(90deg, #00C8BE, #2B44C4, #D62BC7, #F5861F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
