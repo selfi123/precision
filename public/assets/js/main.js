@@ -299,4 +299,57 @@ document.addEventListener('DOMContentLoaded', () => {
     setActiveStage(1, false);
     startAutoPlay();
   }
+
+  // -----------------------------------------------------------------
+  // Background Video Guard (Prevents iOS Low Power Mode Play Button)
+  // -----------------------------------------------------------------
+  const bgVideos = document.querySelectorAll('.vision-bg-video, .bio-bg-video');
+  bgVideos.forEach((video) => {
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.controls = false;
+    video.removeAttribute('controls');
+
+    const hideBlockedVideo = () => {
+      video.classList.remove('is-playing');
+      video.style.display = 'none';
+    };
+
+    const showPlayingVideo = () => {
+      if (!video.paused) {
+        video.style.display = '';
+        video.classList.add('is-playing');
+      }
+    };
+
+    // Respect user reduced-motion preference
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      hideBlockedVideo();
+      return;
+    }
+
+    video.addEventListener('playing', showPlayingVideo);
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise
+        .then(() => {
+          showPlayingVideo();
+        })
+        .catch(() => {
+          // Autoplay blocked (e.g., iOS Low Power Mode / Data Saver / WKWebView policy).
+          // Hide <video> completely so iOS cannot draw its native play-button overlay;
+          // the high-res CSS poster fallback underneath remains seamlessly visible.
+          hideBlockedVideo();
+        });
+    }
+
+    // Safety net: if autoplay silently stalled and is no longer loading, hide video
+    setTimeout(() => {
+      if (video.paused && video.currentTime === 0 && video.networkState !== 2) {
+        hideBlockedVideo();
+      }
+    }, 3000);
+  });
 });

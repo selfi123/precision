@@ -618,6 +618,16 @@
       pointer-events: none;
     }
 
+    .vision-video-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/images/vision_microscope_poster.jpg') center center / cover no-repeat;
+      opacity: 0.88;
+      filter: saturate(1.25) contrast(1.08) brightness(1.02);
+      z-index: 0;
+    }
+
     .vision-bg-video {
       position: absolute;
       top: 50%;
@@ -628,8 +638,26 @@
       height: auto;
       transform: translate(-50%, -50%);
       object-fit: cover;
-      opacity: 0.88;
+      opacity: 0;
+      transition: opacity 0.45s ease;
       filter: saturate(1.25) contrast(1.08) brightness(1.02);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .vision-bg-video.is-playing {
+      opacity: 0.88;
+    }
+
+    .vision-bg-video::-webkit-media-controls,
+    .vision-bg-video::-webkit-media-controls-panel,
+    .vision-bg-video::-webkit-media-controls-play-button,
+    .vision-bg-video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+      -webkit-appearance: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
     }
 
     .vision-video-overlay {
@@ -822,6 +850,16 @@
       pointer-events: none;
     }
 
+    .bio-video-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('assets/images/bioinformatics_sequencer_poster.jpg') center center / cover no-repeat;
+      opacity: 0.80;
+      filter: saturate(1.25) contrast(1.1) brightness(1.02);
+      z-index: 0;
+    }
+
     .bio-bg-video {
       position: absolute;
       top: 50%;
@@ -832,8 +870,26 @@
       height: auto;
       transform: translate(-50%, -50%);
       object-fit: cover;
-      opacity: 0.80;
+      opacity: 0;
+      transition: opacity 0.45s ease;
       filter: saturate(1.25) contrast(1.1) brightness(1.02);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bio-bg-video.is-playing {
+      opacity: 0.80;
+    }
+
+    .bio-bg-video::-webkit-media-controls,
+    .bio-bg-video::-webkit-media-controls-panel,
+    .bio-bg-video::-webkit-media-controls-play-button,
+    .bio-bg-video::-webkit-media-controls-start-playback-button {
+      display: none !important;
+      -webkit-appearance: none !important;
+      opacity: 0 !important;
+      pointer-events: none !important;
+      visibility: hidden !important;
     }
 
     .bio-video-overlay {
@@ -843,6 +899,7 @@
         radial-gradient(ellipse at 85% 30%, rgba(0, 229, 255, 0.28), transparent 55%),
         radial-gradient(ellipse at 15% 70%, rgba(123, 47, 190, 0.24), transparent 55%),
         linear-gradient(135deg, rgba(6, 9, 15, 0.65) 0%, rgba(11, 17, 30, 0.42) 50%, rgba(6, 9, 15, 0.70) 100%);
+      z-index: 1;
       pointer-events: none;
     }
 
@@ -1897,7 +1954,7 @@
     <!-- ==================== OUR VISION (MICROSCOPY VIDEO BACKGROUND) ==================== -->
   <section class="vision section-padding" id="about">
     <div class="vision-video-wrap">
-      <video class="vision-bg-video" autoplay muted loop playsinline preload="auto">
+      <video class="vision-bg-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" aria-hidden="true" tabindex="-1">
         <source src="assets/videos/vision_microscope_bg.mp4" type="video/mp4">
       </video>
       <div class="vision-video-overlay"></div>
@@ -1994,7 +2051,7 @@
   <section class="bioinformatics" id="bioinformatics">
     <!-- Ambient Sequencer Video Background -->
     <div class="bio-video-wrap">
-      <video class="bio-bg-video" autoplay muted loop playsinline preload="auto">
+      <video class="bio-bg-video" autoplay muted loop playsinline webkit-playsinline disablepictureinpicture disableremoteplayback controlsList="nodownload nofullscreen noremoteplayback" preload="metadata" aria-hidden="true" tabindex="-1">
         <source src="assets/videos/bioinformatics_sequencer_bg.mp4" type="video/mp4">
       </video>
       <div class="bio-video-overlay"></div>
