@@ -169,7 +169,7 @@ ul {
 
 .brand-logo-container {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.35rem;
   text-decoration: none;
   flex-shrink: 0;
@@ -178,6 +178,42 @@ ul {
 
 .brand-logo-container:hover {
   transform: scale(1.02);
+}
+
+.brand-logo-img {
+  display: block;
+  height: 64px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.footer-brand-logo .brand-logo-img {
+  height: 46px;
+  width: auto;
+}
+
+@media (max-width: 1200px) {
+  .brand-logo-img {
+    height: 54px;
+  }
+}
+
+@media (max-width: 992px) {
+  .brand-logo-img {
+    height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .brand-logo-img {
+    height: 36px;
+    max-width: 68vw;
+  }
+  .footer-brand-logo .brand-logo-img {
+    height: 40px;
+    max-width: 72vw;
+  }
 }
 
 .logo-icon {
