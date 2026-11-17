@@ -182,37 +182,37 @@ ul {
 
 .brand-logo-img {
   display: block;
-  height: 64px;
+  height: 82px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
 }
 
 .footer-brand-logo .brand-logo-img {
-  height: 46px;
+  height: 58px;
   width: auto;
 }
 
 @media (max-width: 1200px) {
   .brand-logo-img {
-    height: 54px;
+    height: 68px;
   }
 }
 
 @media (max-width: 992px) {
   .brand-logo-img {
-    height: 48px;
+    height: 58px;
   }
 }
 
 @media (max-width: 768px) {
   .brand-logo-img {
-    height: 36px;
-    max-width: 68vw;
+    height: 44px;
+    max-width: 74vw;
   }
   .footer-brand-logo .brand-logo-img {
-    height: 40px;
-    max-width: 72vw;
+    height: 48px;
+    max-width: 78vw;
   }
 }
 
